@@ -285,6 +285,24 @@
   .upsell-skip{font-size:11px;color:var(--text-muted);text-align:center;margin-top:12px;cursor:pointer;letter-spacing:.5px}
   .upsell-skip:hover{color:var(--text-dim)}
 
+  /* mode badges — clearly label each side */
+  .checkout-mode-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;border-radius:2px}
+  .online-badge{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:var(--white)}
+  .inperson-badge{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold)}
+  .checkout-mode-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;font-weight:600}
+
+  /* price comparison table on right side */
+  .checkout-upsell-compare{background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.07);padding:16px;margin-bottom:20px}
+  .compare-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+  .compare-row:last-child{border-bottom:none}
+  .compare-label{font-size:13px;color:var(--text-dim)}
+  .compare-price-small{font-size:13px;color:var(--green,#2ecc71);font-weight:600}
+  .compare-price-add{font-size:15px;font-weight:700;color:var(--gold-light)}
+  .compare-row.highlight .compare-label{color:var(--white);font-weight:600}
+  .compare-row.total{padding-top:10px}
+  .compare-row.total .compare-label{font-size:13px;font-weight:700;color:var(--white)}
+  .compare-price-total{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--gold-light)}
+
   /* Responsive modal */
   @media(max-width:700px){
     .checkout-panel{grid-template-columns:1fr}
@@ -337,15 +355,17 @@
   <div class="checkout-panel">
     <button class="checkout-close" onclick="closeCheckout()" aria-label="Close">×</button>
 
-    <!-- LEFT: Order summary + Stripe buy button at bottom -->
+    <!-- LEFT: ONLINE TICKET — $19 -->
     <div class="checkout-summary">
+      <div class="checkout-mode-badge online-badge">🏠 Online Ticket</div>
       <div class="checkout-eyebrow">Millionaire Mind Intensive</div>
       <div class="checkout-city-name" id="checkoutCityName">Malaga, <strong>Spain</strong></div>
       <div class="checkout-event-date" id="checkoutDate">22–24 May 2026</div>
       <div class="checkout-event-time" id="checkoutTime">9am–8pm GMT+2</div>
       <div class="checkout-divider"></div>
+      <div class="checkout-mode-label">What's included online:</div>
       <div class="checkout-items">
-        <div class="checkout-item">Full 3-Day Live Access (Online)</div>
+        <div class="checkout-item">Full 3-day live stream — watch from anywhere</div>
         <div class="checkout-item">Millionaire Mind Digital Workbook</div>
         <div class="checkout-item">Pre-Training Intention Sheet</div>
         <div class="checkout-item">Alumni Peer Network — 200+ Entrepreneurs</div>
@@ -357,33 +377,43 @@
         <span class="checkout-price-badge">Early Bird</span>
       </div>
       <div class="checkout-guarantee">100% Money-Back · If Day 1 doesn't blow your mind, we refund every cent</div>
-      <!-- Buy button lives here -->
-      <div class="checkout-stripe-label">Secure Checkout</div>
+      <div class="checkout-stripe-label">Secure your online seat</div>
       <div id="stripeButtonContainer"></div>
     </div>
 
-    <!-- RIGHT: Live Event In-Person upsell -->
+    <!-- RIGHT: IN-PERSON UPGRADE — $39 -->
     <div class="checkout-upsell">
-      <div class="checkout-upsell-tag">Upgrade Your Experience</div>
-      <h3 class="checkout-upsell-heading">Join Us <em>In Person</em> in <span id="upsellCityName">the Room</span></h3>
-      <p class="checkout-upsell-desc">You've secured your online seat. For just $39 more, be physically in the room — feel the energy, make the connections, and get the full experience that online simply can't replicate.</p>
+      <div class="checkout-mode-badge inperson-badge">🏛 In-Person Upgrade</div>
+      <div class="checkout-upsell-tag">Add to your online ticket</div>
+      <h3 class="checkout-upsell-heading">Be Physically <em>In the Room</em> in <span id="upsellCityName">the City</span></h3>
+      <p class="checkout-upsell-desc">Your $19 online seat is confirmed on the left. Add this upgrade to also attend in person at the venue — same event, different experience.</p>
       <div class="checkout-upsell-divider"></div>
+      <div class="checkout-mode-label" style="margin-bottom:12px">Extra benefits in-person:</div>
       <ul class="checkout-upsell-points">
-        <li>Physical seat at the venue</li>
-        <li>Live interaction with Arnon in the room</li>
-        <li>In-person networking with 200+ entrepreneurs</li>
-        <li>Priority seating — limited capacity</li>
-        <li>Access to VIP evening social</li>
+        <li>Physical seat at the <span id="upsellCityName2">venue</span></li>
+        <li>Live energy in the room with 200+ entrepreneurs</li>
+        <li>Direct interaction with Arnon on stage</li>
+        <li>In-person networking and peer connections</li>
+        <li>Access to VIP evening social after Day 1</li>
       </ul>
-      <div class="checkout-upsell-price">
-        <span class="checkout-upsell-price-num">$39</span>
-        <span class="checkout-upsell-price-note">one-time upgrade · today only</span>
+      <div class="checkout-upsell-compare">
+        <div class="compare-row">
+          <span class="compare-label">Online ticket</span>
+          <span class="compare-price-small">$19 ✓ secured</span>
+        </div>
+        <div class="compare-row highlight">
+          <span class="compare-label">+ In-Person upgrade</span>
+          <span class="compare-price-add">+ $39</span>
+        </div>
+        <div class="compare-row total">
+          <span class="compare-label">Total to attend in person</span>
+          <span class="compare-price-total">$58</span>
+        </div>
       </div>
       <div id="stripeUpsellContainer">
-        <!-- Stripe upsell buy button injected by JS -->
-        <div style="text-align:center;padding:16px;border:1px dashed rgba(201,168,76,0.25);width:100%;font-size:12px;color:var(--text-muted)">In-Person Upgrade button — add Stripe ID to activate</div>
+        <div style="text-align:center;padding:16px;border:1px dashed rgba(201,168,76,0.25);width:100%;font-size:12px;color:var(--text-muted)">In-Person Upgrade — add Stripe ID to activate</div>
       </div>
-      <div class="upsell-skip" onclick="closeUpsell()">No thanks, online is fine for me →</div>
+      <div class="upsell-skip" onclick="closeUpsell()">No thanks — online only →</div>
     </div>
 
   </div>
@@ -1013,8 +1043,9 @@ function openCheckout(ev) {
   document.getElementById('checkoutDate').textContent = ev.dates;
   document.getElementById('checkoutTime').textContent = ev.time;
 
-  // Populate upsell city name on right panel
+  // Populate upsell city name on right panel (two spans)
   document.getElementById('upsellCityName').textContent = ev.city;
+  document.getElementById('upsellCityName2').textContent = ev.city;
 
   const acct  = ev.stripeAccount || 'eu';
   const pubKey = STRIPE_KEYS[acct];
