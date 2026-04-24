@@ -277,8 +277,8 @@
 
 <script>
   // ── CONFIG ──────────────────────────────────────────────────────────────────
-  // Replace with your actual Zapier Catch Hook URL
-  const ZAPIER_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/YOUR_HOOK_ID/YOUR_HOOK_KEY/';
+  const LANDING_PAGE   = 'https://event.millionairemind.online';
+  const ZAPIER_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/3435365/ujvv088/';
 
   // Read email injected by ActiveCampaign: ?email=%CONTACT_EMAIL%
   const params     = new URLSearchParams(window.location.search);
@@ -286,13 +286,13 @@
 
   // City metadata for AC field population
   const CITY_META = {
-    'Kuala Lumpur': { date:'1–3 May 2026',      cartUrl:'/kl-cart',     tag:'city-kl'        },
-    'Malaga':       { date:'22–24 May 2026',     cartUrl:'/mal-cart',    tag:'city-malaga'     },
-    'Warsaw':       { date:'12–14 June 2026',    cartUrl:'/war-cart',    tag:'city-warsaw'     },
-    'London':       { date:'3–5 July 2026',      cartUrl:'/lon-cart',    tag:'city-london'     },
-    'Cologne':      { date:'10–12 July 2026',    cartUrl:'/col-cart',    tag:'city-cologne'    },
-    'Rotterdam':    { date:'15–17 Oct 2026',     cartUrl:'/rot-cart',    tag:'city-rotterdam'  },
-    'Online':       { date:'Any 2026 event',     cartUrl:'/online-cart', tag:'city-online'     }
+    'Kuala Lumpur': { date:'1–3 May 2026',      cartUrl:`${LANDING_PAGE}/?city=kuala-lumpur`, tag:'city-kl'        },
+    'Malaga':       { date:'22–24 May 2026',     cartUrl:`${LANDING_PAGE}/?city=malaga`,       tag:'city-malaga'    },
+    'Warsaw':       { date:'12–14 June 2026',    cartUrl:`${LANDING_PAGE}/?city=warsaw`,       tag:'city-warsaw'    },
+    'London':       { date:'3–5 July 2026',      cartUrl:`${LANDING_PAGE}/?city=london`,       tag:'city-london'    },
+    'Cologne':      { date:'10–12 July 2026',    cartUrl:`${LANDING_PAGE}/?city=cologne`,      tag:'city-cologne'   },
+    'Rotterdam':    { date:'15–17 Oct 2026',     cartUrl:`${LANDING_PAGE}/?city=rotterdam`,    tag:'city-rotterdam' },
+    'Online':       { date:'Any 2026 event',     cartUrl:`${LANDING_PAGE}/`,                   tag:'city-online'    }
   };
 
   // ── ZAPIER WEBHOOK ──────────────────────────────────────────────────────────
