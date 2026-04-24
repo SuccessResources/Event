@@ -239,40 +239,57 @@
   .checkout-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease}
   .checkout-modal.open{opacity:1;pointer-events:all}
   .checkout-backdrop{position:absolute;inset:0;background:rgba(5,11,20,0.88);backdrop-filter:blur(6px);cursor:pointer}
-  .checkout-panel{position:relative;z-index:1;background:var(--navy-mid);border:1px solid rgba(201,168,76,0.25);width:100%;max-width:860px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;transform:translateY(24px);transition:transform .35s ease}
+  .checkout-panel{position:relative;z-index:1;background:var(--navy-mid);border:1px solid rgba(201,168,76,0.25);width:100%;max-width:900px;max-height:90vh;overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;transform:translateY(24px);transition:transform .35s ease}
   .checkout-modal.open .checkout-panel{transform:translateY(0)}
-  /* Close button */
   .checkout-close{position:absolute;top:16px;right:16px;width:36px;height:36px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:2;font-family:inherit;line-height:1}
   .checkout-close:hover{background:rgba(255,255,255,0.12);color:var(--white)}
-  /* Left — event summary */
-  .checkout-summary{padding:40px 36px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:0}
+
+  /* LEFT — order summary + buy button at bottom */
+  .checkout-summary{padding:36px 32px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column}
   .checkout-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-  .checkout-city-name{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:4px}
+  .checkout-city-name{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,38px);font-weight:300;color:var(--white);line-height:1.05;margin-bottom:4px}
   .checkout-city-name strong{font-weight:700}
   .checkout-event-date{font-size:15px;font-weight:600;color:var(--gold);margin-bottom:4px}
-  .checkout-event-time{font-size:13px;color:var(--text-muted);margin-bottom:28px}
-  .checkout-divider{height:1px;background:rgba(255,255,255,0.06);margin-bottom:24px}
-  /* Value items */
-  .checkout-items{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+  .checkout-event-time{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+  .checkout-divider{height:1px;background:rgba(255,255,255,0.06);margin-bottom:20px}
+  .checkout-items{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
   .checkout-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-dim)}
   .checkout-item::before{content:'→';color:var(--gold);font-size:11px;margin-top:1px;flex-shrink:0}
-  /* Price */
-  .checkout-price-row{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .checkout-price-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
   .checkout-price-was{font-size:15px;text-decoration:line-through;color:var(--text-muted)}
-  .checkout-price-now{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;color:var(--gold-light);line-height:1}
+  .checkout-price-now{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold-light);line-height:1}
   .checkout-price-badge{background:var(--gold);color:var(--navy);padding:3px 10px;font-size:11px;font-weight:700;letter-spacing:1px;align-self:center}
-  .checkout-guarantee{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+  .checkout-guarantee{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;margin-bottom:24px}
   .checkout-guarantee::before{content:'🛡';font-size:13px}
-  /* Right — Stripe */
-  .checkout-stripe-wrap{padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:16px}
-  .checkout-stripe-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
-  /* Stripe buy button container */
+  /* buy button sits at bottom of left panel */
+  .checkout-stripe-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
   #stripeButtonContainer{min-height:60px;display:flex;align-items:center;justify-content:center}
+
+  /* RIGHT — live event upsell */
+  .checkout-upsell{padding:36px 32px;background:rgba(201,168,76,0.03);border-left:1px solid rgba(201,168,76,0.12);display:flex;flex-direction:column}
+  .checkout-upsell-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .checkout-upsell-tag::before{content:'';width:20px;height:1px;background:var(--gold)}
+  .checkout-upsell-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,28px);font-weight:600;color:var(--white);line-height:1.15;margin-bottom:12px}
+  .checkout-upsell-heading em{font-style:italic;font-weight:300;color:var(--gold-light)}
+  .checkout-upsell-desc{font-size:13px;color:var(--text-dim);line-height:1.65;margin-bottom:20px}
+  .checkout-upsell-divider{height:1px;background:rgba(201,168,76,0.15);margin-bottom:20px}
+  .checkout-upsell-points{list-style:none;padding:0;margin-bottom:24px;flex:1}
+  .checkout-upsell-points li{font-size:13px;color:var(--text-dim);padding:7px 0;padding-left:18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.5}
+  .checkout-upsell-points li:last-child{border-bottom:none}
+  .checkout-upsell-points li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-size:11px;font-weight:700}
+  .checkout-upsell-price{display:flex;align-items:baseline;gap:8px;margin-bottom:16px}
+  .checkout-upsell-price-num{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:var(--gold-light);line-height:1}
+  .checkout-upsell-price-note{font-size:12px;color:var(--text-muted)}
+  /* upsell CTA — Stripe button area */
+  #stripeUpsellContainer{min-height:52px;display:flex;align-items:center;justify-content:center}
+  .upsell-skip{font-size:11px;color:var(--text-muted);text-align:center;margin-top:12px;cursor:pointer;letter-spacing:.5px}
+  .upsell-skip:hover{color:var(--text-dim)}
+
   /* Responsive modal */
   @media(max-width:700px){
     .checkout-panel{grid-template-columns:1fr}
     .checkout-summary{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:28px 24px}
-    .checkout-stripe-wrap{padding:28px 24px}
+    .checkout-upsell{padding:28px 24px}
   }
 
   /* ── RESPONSIVE ── */
@@ -320,7 +337,7 @@
   <div class="checkout-panel">
     <button class="checkout-close" onclick="closeCheckout()" aria-label="Close">×</button>
 
-    <!-- LEFT: Event summary + price -->
+    <!-- LEFT: Order summary + Stripe buy button at bottom -->
     <div class="checkout-summary">
       <div class="checkout-eyebrow">Millionaire Mind Intensive</div>
       <div class="checkout-city-name" id="checkoutCityName">Malaga, <strong>Spain</strong></div>
@@ -328,7 +345,7 @@
       <div class="checkout-event-time" id="checkoutTime">9am–8pm GMT+2</div>
       <div class="checkout-divider"></div>
       <div class="checkout-items">
-        <div class="checkout-item">Full 3-Day Live Access (Online + In-Person VIP)</div>
+        <div class="checkout-item">Full 3-Day Live Access (Online)</div>
         <div class="checkout-item">Millionaire Mind Digital Workbook</div>
         <div class="checkout-item">Pre-Training Intention Sheet</div>
         <div class="checkout-item">Alumni Peer Network — 200+ Entrepreneurs</div>
@@ -340,14 +357,33 @@
         <span class="checkout-price-badge">Early Bird</span>
       </div>
       <div class="checkout-guarantee">100% Money-Back · If Day 1 doesn't blow your mind, we refund every cent</div>
+      <!-- Buy button lives here -->
+      <div class="checkout-stripe-label">Secure Checkout</div>
+      <div id="stripeButtonContainer"></div>
     </div>
 
-    <!-- RIGHT: Stripe Buy Button -->
-    <div class="checkout-stripe-wrap">
-      <div class="checkout-stripe-label">Secure Checkout</div>
-      <div id="stripeButtonContainer">
-        <!-- <stripe-buy-button> injected by JS based on selected city -->
+    <!-- RIGHT: Live Event In-Person upsell -->
+    <div class="checkout-upsell">
+      <div class="checkout-upsell-tag">Upgrade Your Experience</div>
+      <h3 class="checkout-upsell-heading">Join Us <em>In Person</em> in <span id="upsellCityName">the Room</span></h3>
+      <p class="checkout-upsell-desc">You've secured your online seat. For just $39 more, be physically in the room — feel the energy, make the connections, and get the full experience that online simply can't replicate.</p>
+      <div class="checkout-upsell-divider"></div>
+      <ul class="checkout-upsell-points">
+        <li>Physical seat at the venue</li>
+        <li>Live interaction with Arnon in the room</li>
+        <li>In-person networking with 200+ entrepreneurs</li>
+        <li>Priority seating — limited capacity</li>
+        <li>Access to VIP evening social</li>
+      </ul>
+      <div class="checkout-upsell-price">
+        <span class="checkout-upsell-price-num">$39</span>
+        <span class="checkout-upsell-price-note">one-time upgrade · today only</span>
       </div>
+      <div id="stripeUpsellContainer">
+        <!-- Stripe upsell buy button injected by JS -->
+        <div style="text-align:center;padding:16px;border:1px dashed rgba(201,168,76,0.25);width:100%;font-size:12px;color:var(--text-muted)">In-Person Upgrade button — add Stripe ID to activate</div>
+      </div>
+      <div class="upsell-skip" onclick="closeUpsell()">No thanks, online is fine for me →</div>
     </div>
 
   </div>
@@ -960,44 +996,58 @@ function buildEventsGrid(featuredEvent, featuredLabel) {
 }
 
 // ─── STRIPE CHECKOUT MODAL ───────────────────────────────────────────────────
+
+// Upsell buy button IDs — add once created in Stripe Dashboard
+// Use the same stripeAccount as the main event for that city
+const UPSELL_INPERSON = {
+  my: { buttonId: '' }, // Malaysia entity — add buy_btn_xxx
+  eu: { buttonId: '' }  // European entity — add buy_btn_xxx
+};
+
 function openCheckout(ev) {
   if (!ev) return;
 
-  // Populate modal summary
+  // Populate left panel
   document.getElementById('checkoutCityName').innerHTML =
     `${ev.flag} ${ev.city}, <strong>${ev.country}</strong>`;
   document.getElementById('checkoutDate').textContent = ev.dates;
   document.getElementById('checkoutTime').textContent = ev.time;
 
-  // Inject Stripe Buy Button for this city
-  const container = document.getElementById('stripeButtonContainer');
-  container.innerHTML = ''; // clear any previous button
+  // Populate upsell city name on right panel
+  document.getElementById('upsellCityName').textContent = ev.city;
 
-  if (ev.stripeButtonId && ev.stripeButtonId.startsWith('buy_btn_') && !ev.stripeButtonId.includes('_ID')) {
-    const pubKey = STRIPE_KEYS[ev.stripeAccount] || STRIPE_KEYS.eu;
-    if (pubKey && !pubKey.includes('YOUR_')) {
-      const btn = document.createElement('stripe-buy-button');
-      btn.setAttribute('buy-button-id', ev.stripeButtonId);
-      btn.setAttribute('publishable-key', pubKey);
-      container.appendChild(btn);
-    } else {
-      container.innerHTML = `
-        <div style="text-align:center;padding:32px 20px;border:1px dashed rgba(201,168,76,0.25);width:100%">
-          <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Stripe Key Missing</div>
-          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">
-            Add the <code style="color:var(--gold-light);background:rgba(201,168,76,0.08);padding:2px 6px">${ev.stripeAccount}</code> publishable key<br>to <code style="color:var(--gold-light);background:rgba(201,168,76,0.08);padding:2px 6px">STRIPE_KEYS</code> to activate checkout for <strong style="color:var(--white)">${ev.city}</strong>.
-          </div>
-        </div>`;
-    }
+  const acct  = ev.stripeAccount || 'eu';
+  const pubKey = STRIPE_KEYS[acct];
+
+  // ── Main buy button (left panel) ──────────────────────────────
+  const container = document.getElementById('stripeButtonContainer');
+  container.innerHTML = '';
+  if (ev.stripeButtonId && ev.stripeButtonId.startsWith('buy_btn_') && pubKey && !pubKey.includes('YOUR_')) {
+    const btn = document.createElement('stripe-buy-button');
+    btn.setAttribute('buy-button-id', ev.stripeButtonId);
+    btn.setAttribute('publishable-key', pubKey);
+    container.appendChild(btn);
   } else {
-    // Placeholder shown until Stripe IDs are configured
     container.innerHTML = `
-      <div style="text-align:center;padding:32px 20px;border:1px dashed rgba(201,168,76,0.25);width:100%">
-        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Stripe Buy Button</div>
-        <div style="font-size:13px;color:var(--text-muted);line-height:1.6">
-          Add your <code style="color:var(--gold-light);background:rgba(201,168,76,0.08);padding:2px 6px">stripeButtonId</code><br>
-          for <strong style="color:var(--white)">${ev.city}</strong> to activate checkout.
-        </div>
+      <div style="text-align:center;padding:20px;border:1px dashed rgba(201,168,76,0.25);width:100%">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">Stripe Buy Button</div>
+        <div style="font-size:12px;color:var(--text-muted)">Add <code style="color:var(--gold-light)">stripeButtonId</code> for <strong style="color:var(--white)">${ev.city}</strong></div>
+      </div>`;
+  }
+
+  // ── In-Person upsell button (right panel) ──────────────────────
+  const upsellContainer = document.getElementById('stripeUpsellContainer');
+  upsellContainer.innerHTML = '';
+  const upsellId = UPSELL_INPERSON[acct] && UPSELL_INPERSON[acct].buttonId;
+  if (upsellId && upsellId.startsWith('buy_btn_') && pubKey && !pubKey.includes('YOUR_')) {
+    const upsellBtn = document.createElement('stripe-buy-button');
+    upsellBtn.setAttribute('buy-button-id', upsellId);
+    upsellBtn.setAttribute('publishable-key', pubKey);
+    upsellContainer.appendChild(upsellBtn);
+  } else {
+    upsellContainer.innerHTML = `
+      <div style="text-align:center;padding:16px;border:1px dashed rgba(201,168,76,0.25);width:100%;font-size:12px;color:var(--text-muted)">
+        In-Person Upgrade button — add Stripe ID to activate
       </div>`;
   }
 
@@ -1006,12 +1056,16 @@ function openCheckout(ev) {
   document.body.style.overflow = 'hidden';
 }
 
+function closeUpsell() {
+  // User skips the upsell — just close the modal
+  closeCheckout();
+}
 function closeCheckout() {
   document.getElementById('checkoutModal').classList.remove('open');
   document.body.style.overflow = '';
-  // Remove Stripe button so it doesn't persist in DOM
   setTimeout(() => {
     document.getElementById('stripeButtonContainer').innerHTML = '';
+    document.getElementById('stripeUpsellContainer').innerHTML = '';
   }, 300);
 }
 
