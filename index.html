@@ -793,28 +793,27 @@ const TRAINERS = {
 // ─── EVENT DATA ───────────────────────────────────────────────────────────────
 const EVENTS = [
   // tzOffset = GMT offset in hours (used for timezone-based routing for virtual attendees)
-  {city:"Kuala Lumpur", country:"Malaysia",       flag:"🇲🇾", dates:"1–3 May 2026",      time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-05-01T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPf03IMbI04nnt8ezfDNzTf", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
-  {city:"Malaga",        country:"Spain",          flag:"🇪🇸", dates:"22–24 May 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-05-22T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ", trainer:"arnon", geo:["ES","PT","MA","DZ","TN","LY","IT","MT","GR","CY","AL","BA","ME","MK","RS","SI","HR","AD","SM","VA"],featured:false},
-  {city:"Warsaw",        country:"Poland",         flag:"🇵🇱", dates:"12–14 June 2026",   time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-06-12T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh", trainer:"arnon", geo:["PL","CZ","SK","HU","UA","BY","LT","LV","EE","MD"],featured:false},
-  {city:"London",        country:"United Kingdom", flag:"🇬🇧", dates:"3–5 July 2026",     time:"9am–8pm GMT+1", tzOffset:1,  eventDate:new Date("2026-07-03T09:00:00+01:00"), stripeButtonId:"buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY", trainer:"arnon", geo:["GB","IE"],featured:false},
-  {city:"Cologne",       country:"Germany",        flag:"🇩🇪", dates:"10–12 July 2026",   time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-07-10T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg3zGY6RiRFzHX0gvy1rME", trainer:"arnon", geo:["DE","AT","CH","LI","LU"],featured:false},
-  // Johor Bahru — second MY event, inherits SE Asia geo so it takes over after KL May passes
-  {city:"Johor Bahru",   country:"Malaysia",       flag:"🇲🇾", dates:"31 Jul–2 Aug 2026", time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-07-31T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPfYcIMbI04nnt8A0I6vlBn", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
-  // Geneva — French/Swiss region, takes over from Cologne after July
-  {city:"Geneva",        country:"Switzerland",    flag:"🇨🇭", dates:"11–13 Sep 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-09-11T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj", trainer:"arnon", geo:["CH","LI","FR","MC"],featured:false},
-  // Madrid — second Spain event, inherits same geo as Malaga after May
-  {city:"Madrid",        country:"Spain",          flag:"🇪🇸", dates:"25–27 Sep 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-09-25T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg", trainer:"arnon", geo:["ES","PT","MA","DZ","TN","LY","IT","MT","GR","CY","AL","BA","ME","MK","RS","SI","HR","AD","SM","VA"],featured:false},
-  {city:"Rotterdam",     country:"Netherlands",    flag:"🇳🇱", dates:"15–17 Oct 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-10-15T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv", trainer:"arnon", geo:["NL","BE","DK","SE","NO","FI","IS"],featured:false},
-  // KL Oct — third MY event, same SE Asia geo as KL May and JB
-  {city:"Kuala Lumpur",  country:"Malaysia",       flag:"🇲🇾", dates:"30 Oct–1 Nov 2026", time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-10-30T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPfbSIMbI04nnt8RtV6MNBj", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
-  // Birmingham — second UK event, same geo as London
-  {city:"Birmingham",    country:"United Kingdom", flag:"🇬🇧", dates:"6–8 Nov 2026",      time:"9am–8pm GMT+0", tzOffset:0,  eventDate:new Date("2026-11-06T09:00:00+00:00"), stripeButtonId:"buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe", trainer:"arnon", geo:["GB","IE"],featured:false},
-  {city:"Brussels",      country:"Belgium",        flag:"🇧🇪", dates:"20–22 Nov 2026",    time:"9am–8pm GMT+1", tzOffset:1,  eventDate:new Date("2026-11-20T09:00:00+01:00"), stripeButtonId:"buy_btn_1TPg9lGY6RiRFzHX2buGBRix", trainer:"arnon", geo:["BE","FR","MC","LU","BG","RO","BH","KW","QA","OM","SA","AE","JO","IL","EG","LB","IQ","IR","SY","TR","AZ","GE","AM","KZ","UZ","TM","TJ","KG"],featured:false}
+  {city:"Kuala Lumpur", country:"Malaysia",       flag:"🇲🇾", dates:"1–3 May 2026",      time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-05-01T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPf03IMbI04nnt8ezfDNzTf", stripeAccount:"my", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
+  {city:"Malaga",        country:"Spain",          flag:"🇪🇸", dates:"22–24 May 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-05-22T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ", stripeAccount:"eu", trainer:"arnon", geo:["ES","PT","MA","DZ","TN","LY","IT","MT","GR","CY","AL","BA","ME","MK","RS","SI","HR","AD","SM","VA"],featured:false},
+  {city:"Warsaw",        country:"Poland",         flag:"🇵🇱", dates:"12–14 June 2026",   time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-06-12T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh", stripeAccount:"eu", trainer:"arnon", geo:["PL","CZ","SK","HU","UA","BY","LT","LV","EE","MD"],featured:false},
+  {city:"London",        country:"United Kingdom", flag:"🇬🇧", dates:"3–5 July 2026",     time:"9am–8pm GMT+1", tzOffset:1,  eventDate:new Date("2026-07-03T09:00:00+01:00"), stripeButtonId:"buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY", stripeAccount:"eu", trainer:"arnon", geo:["GB","IE"],featured:false},
+  {city:"Cologne",       country:"Germany",        flag:"🇩🇪", dates:"10–12 July 2026",   time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-07-10T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg3zGY6RiRFzHX0gvy1rME", stripeAccount:"eu", trainer:"arnon", geo:["DE","AT","CH","LI","LU"],featured:false},
+  {city:"Johor Bahru",   country:"Malaysia",       flag:"🇲🇾", dates:"31 Jul–2 Aug 2026", time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-07-31T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPfYcIMbI04nnt8A0I6vlBn", stripeAccount:"my", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
+  {city:"Geneva",        country:"Switzerland",    flag:"🇨🇭", dates:"11–13 Sep 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-09-11T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj", stripeAccount:"eu", trainer:"arnon", geo:["CH","LI","FR","MC"],featured:false},
+  {city:"Madrid",        country:"Spain",          flag:"🇪🇸", dates:"25–27 Sep 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-09-25T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg", stripeAccount:"eu", trainer:"arnon", geo:["ES","PT","MA","DZ","TN","LY","IT","MT","GR","CY","AL","BA","ME","MK","RS","SI","HR","AD","SM","VA"],featured:false},
+  {city:"Rotterdam",     country:"Netherlands",    flag:"🇳🇱", dates:"15–17 Oct 2026",    time:"9am–8pm GMT+2", tzOffset:2,  eventDate:new Date("2026-10-15T09:00:00+02:00"), stripeButtonId:"buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv", stripeAccount:"eu", trainer:"arnon", geo:["NL","BE","DK","SE","NO","FI","IS"],featured:false},
+  {city:"Kuala Lumpur",  country:"Malaysia",       flag:"🇲🇾", dates:"30 Oct–1 Nov 2026", time:"9am–8pm GMT+8", tzOffset:8,  eventDate:new Date("2026-10-30T09:00:00+08:00"), stripeButtonId:"buy_btn_1TPfbSIMbI04nnt8RtV6MNBj", stripeAccount:"my", trainer:"arnon", geo:["MY","SG","BN","ID","PH","TH","VN","MM","KH","LA","TL","CN","HK","MO","TW","JP","KR","MN","AU","NZ","FJ","PG","IN","LK","BD","PK","NP","BT","MV","AF"],featured:false},
+  {city:"Birmingham",    country:"United Kingdom", flag:"🇬🇧", dates:"6–8 Nov 2026",      time:"9am–8pm GMT+0", tzOffset:0,  eventDate:new Date("2026-11-06T09:00:00+00:00"), stripeButtonId:"buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe", stripeAccount:"eu", trainer:"arnon", geo:["GB","IE"],featured:false},
+  {city:"Brussels",      country:"Belgium",        flag:"🇧🇪", dates:"20–22 Nov 2026",    time:"9am–8pm GMT+1", tzOffset:1,  eventDate:new Date("2026-11-20T09:00:00+01:00"), stripeButtonId:"buy_btn_1TPg9lGY6RiRFzHX2buGBRix", stripeAccount:"eu", trainer:"arnon", geo:["BE","FR","MC","LU","BG","RO","BH","KW","QA","OM","SA","AE","JO","IL","EG","LB","IQ","IR","SY","TR","AZ","GE","AM","KZ","UZ","TM","TJ","KG"],featured:false}
 ];
 
 // ─── STRIPE CONFIG ────────────────────────────────────────────────────────────
-// Replace with your Stripe publishable key (pk_live_... or pk_test_...)
-const STRIPE_PUBLISHABLE_KEY = 'pk_live_51H7bbGIMbI04nnt8o8Wws5ZRWJTOEybppaWlmOHjM8kIRHZCrFV0F7u5UAGgL5KKN4TQcnkoeOkz66dYwL8kdqSZ00B0fTMNIp';
+// Multiple Stripe accounts supported — one per entity/tax region.
+// Add each account's publishable key here, then reference by name in EVENTS.
+const STRIPE_KEYS = {
+  my:  'pk_live_51H7bbGIMbI04nnt8o8Wws5ZRWJTOEybppaWlmOHjM8kIRHZCrFV0F7u5UAGgL5KKN4TQcnkoeOkz66dYwL8kdqSZ00B0fTMNIp', // Malaysia entity
+  eu:  'pk_live_YOUR_EU_KEY',   // European entity — replace with real key
+};
 
 // ─── CITY SLUG MAP ────────────────────────────────────────────────────────────
 const CITY_SLUGS = {
@@ -975,11 +974,21 @@ function openCheckout(ev) {
   container.innerHTML = ''; // clear any previous button
 
   if (ev.stripeButtonId && ev.stripeButtonId.startsWith('buy_btn_') && !ev.stripeButtonId.includes('_ID')) {
-    // Real Stripe Buy Button
-    const btn = document.createElement('stripe-buy-button');
-    btn.setAttribute('buy-button-id', ev.stripeButtonId);
-    btn.setAttribute('publishable-key', STRIPE_PUBLISHABLE_KEY);
-    container.appendChild(btn);
+    const pubKey = STRIPE_KEYS[ev.stripeAccount] || STRIPE_KEYS.eu;
+    if (pubKey && !pubKey.includes('YOUR_')) {
+      const btn = document.createElement('stripe-buy-button');
+      btn.setAttribute('buy-button-id', ev.stripeButtonId);
+      btn.setAttribute('publishable-key', pubKey);
+      container.appendChild(btn);
+    } else {
+      container.innerHTML = `
+        <div style="text-align:center;padding:32px 20px;border:1px dashed rgba(201,168,76,0.25);width:100%">
+          <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Stripe Key Missing</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">
+            Add the <code style="color:var(--gold-light);background:rgba(201,168,76,0.08);padding:2px 6px">${ev.stripeAccount}</code> publishable key<br>to <code style="color:var(--gold-light);background:rgba(201,168,76,0.08);padding:2px 6px">STRIPE_KEYS</code> to activate checkout for <strong style="color:var(--white)">${ev.city}</strong>.
+          </div>
+        </div>`;
+    }
   } else {
     // Placeholder shown until Stripe IDs are configured
     container.innerHTML = `
