@@ -9,7 +9,7 @@
 <!-- Stripe -->
 <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 <!-- Brand fonts: Cinzel = Trajan Pro web equivalent | Montserrat = Gotham web equivalent -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════════════
    MILLIONAIRE MIND® BRAND GUIDE — LIGHT / WHITE THEME
@@ -51,12 +51,12 @@ h2.stitle strong{font-weight:700}
 .brand-logo{font-family:"Cinzel",serif;font-weight:700;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-lt) 0%,var(--gold) 50%,var(--gold-lt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-lt);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:flex-end;transition:background .3s}.nav-scrolled{background:rgba(255,255,255,0.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid var(--border-lt)}
 .nav-logo{display:flex;align-items:center;gap:0;text-decoration:none}
 .nav-logo-text{font-family:"Cinzel",serif;font-size:17px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1.5px;line-height:1}
 .nav-logo-sub{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest);margin-left:10px;border-left:1px solid var(--border);padding-left:10px}
-.btn-nav{background:var(--green);color:#fff;padding:10px 24px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s}
-.btn-nav:hover{background:var(--forest)}
+.btn-nav{background:rgba(255,255,255,0.92);color:var(--gold);padding:9px 22px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--gold);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:7px;border-radius:4px}
+.btn-nav:hover{background:var(--gold);color:#fff}
 
 /* ── CORNER STICKER ── */
 .corner-sticker{
@@ -105,37 +105,49 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
+.hero{min-height:100vh;display:flex;align-items:center;padding:170px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
 .hero::after{display:none}
 .zen-deco{display:none}
 .hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center}
 .hero-left{}
-.hero-sig{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.hero-brand{margin-bottom:32px}
-.hero-brand-main{font-family:"Cinzel",serif;font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold-lt) 0%,var(--gold) 55%,var(--gold-lt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;letter-spacing:3px}
-.hero-brand-sub{font-family:"Montserrat",sans-serif;font-size:clamp(10px,1.2vw,13px);font-weight:600;letter-spacing:6px;text-transform:uppercase;color:var(--forest);display:block;margin-top:4px;padding-left:2px}
-.hero-rule{width:48px;height:2px;background:linear-gradient(90deg,var(--gold-lt),var(--gold));margin:14px 0}
-.hero-title{font-family:"Montserrat",sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:200;line-height:1.2;color:var(--forest);margin-bottom:18px}
-.hero-title strong{font-weight:700;color:var(--forest)}
-.hero-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:12px}
-.hero-audience{display:inline-flex;align-items:center;gap:8px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;color:var(--forest);margin-bottom:30px;background:var(--green-lt);padding:8px 16px;border-left:3px solid var(--green)}
+.hero-sig{display:none}
+.hero-brand{display:none}
+.hero-brand-main,.hero-brand-sub,.hero-rule{display:none}
+/* ── HERO REDESIGN — matches premium mockup ── */
+.live-tag{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.live-tag::before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%;flex-shrink:0;animation:pulse 1.5s infinite}
+.hero-title{font-family:"Playfair Display",serif;font-size:clamp(42px,5.5vw,72px);font-weight:900;line-height:1.05;color:var(--forest);margin-bottom:22px;letter-spacing:-0.5px}
+.hero-title strong{font-weight:900;color:var(--forest)}
+.hero-rule-line{width:44px;height:2.5px;background:linear-gradient(90deg,var(--gold-lt),var(--gold));margin-bottom:22px}
+.hero-impact{margin-bottom:10px}
+.hero-impact p{font-family:"Open Sans",sans-serif;font-size:clamp(17px,1.6vw,21px);font-weight:500;color:var(--forest);line-height:1.5;margin-bottom:4px}
+.hero-tagline{font-family:"Open Sans",sans-serif;font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:26px}
+.hero-sub{display:none}
+.hero-audience{display:none}
+.hero-access{display:none}
+/* price */
+.price-now{font-family:"Cinzel",serif;font-size:clamp(44px,5vw,64px);font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.price-was{display:none}
+.price-badge{background:#f5ebd4;color:var(--gold);padding:6px 16px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:20px;border:none}
+.price-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+/* CTA */
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--forest);color:#fff;padding:18px 36px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;border-radius:6px;width:100%;max-width:480px}
+.btn-primary::after{content:"→";font-size:16px;transition:transform .25s}
+.btn-primary:hover{background:#1a4a0a;transform:translateY(-1px);box-shadow:0 8px 32px rgba(5,75,3,0.25)}
+.btn-primary:hover::after{transform:translateX(5px)}
+/* trust */
+.hero-trust{display:flex;align-items:center;gap:8px;font-family:"Open Sans",sans-serif;font-size:13px;color:var(--muted);margin-top:12px}
 /* live pill */
-.live-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--green-md);padding:6px 14px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);background:var(--green-lt);margin-bottom:22px}
-.live-pill .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite}
+.live-pill{display:none}.live-pill .dot{display:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 /* hero meta */
-.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.hero-meta{display:none}
 .hm{display:flex;flex-direction:column;gap:3px}
 .hm-l{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted-lt)}
 .hm-v{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;color:var(--forest)}
 .hm-v.grn{color:var(--green)}
 /* countdown */
-.countdown{display:flex;gap:4px;align-items:flex-start;margin-bottom:28px}
-.cd-block{text-align:center;min-width:64px;background:var(--off-white);padding:10px 8px 8px}
-.cd-num{font-family:"Cinzel",serif;font-size:36px;font-weight:700;color:var(--forest);line-height:1;display:block}
-.cd-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted-lt);margin-top:4px}
-.cd-sep{font-family:"Cinzel",serif;font-size:28px;color:var(--green-md);padding-top:10px;padding-left:2px;padding-right:2px}
-.cd-live{font-family:"Cinzel",serif;font-size:20px;color:var(--green);font-weight:600;padding:10px 0}
+.countdown,.cd-block,.cd-num,.cd-label,.cd-sep,.cd-live{display:none}
 /* price */
 .price-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px}
 .price-was{font-size:15px;text-decoration:line-through;color:var(--muted-lt)}
@@ -354,7 +366,7 @@ footer a:hover{color:var(--gold-lt)}
 @media(max-width:1040px){.trainer-grid{grid-template-columns:240px 1fr;gap:40px}}
 @media(max-width:900px){
   nav{padding:0 20px}
-  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:90px 20px 46vh;align-items:flex-start}
+  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:160px 20px 48vh;align-items:flex-start}
   .hero-inner{grid-template-columns:1fr;gap:0}
   section{padding:64px 20px}
   .stats-bar{padding:28px 20px}.stats-bar .si{grid-template-columns:1fr 1fr}
@@ -434,7 +446,7 @@ footer a:hover{color:var(--gold-lt)}
 
 <!-- NAV -->
 <nav style="justify-content:flex-end">
-  <button class="btn-nav" onclick="openFeatured()">Register Now</button>
+  <button class="btn-nav" onclick="openFeatured()">&#128274; Secure Seat</button>
 </nav>
 
 <!-- ╔══════════════════════════════════════╗ -->
@@ -444,33 +456,28 @@ footer a:hover{color:var(--gold-lt)}
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="live-pill"><span class="dot"></span>Live Online &middot; Join from Anywhere in the World</div>
-      <div class="hero-loc-row" id="heroLoc" style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:16px"></div>
-      <h1 class="hero-title">Why Most Business Owners Will<br><strong>Never Be Financially Free</strong></h1>
-      <p class="hero-sub">It has nothing to do with money &mdash; and everything to do with what&rsquo;s running underneath. In this live 3-day online experience, discover the hidden roots controlling your financial results and exactly how to change them.</p>
-      <div class="hero-audience">&#8594;&nbsp; Built for business owners, entrepreneurs &amp; professionals who know something is still holding them back.</div>
-      <div class="hero-meta">
-        <div class="hm"><div class="hm-l">Next Event</div><div class="hm-v grn" id="heroDates">&mdash;</div></div>
-        <div class="hm"><div class="hm-l">Time</div><div class="hm-v" id="heroTime">&mdash;</div></div>
-        <div class="hm"><div class="hm-l">Format</div><div class="hm-v">Live Online + VIP In-Person</div></div>
-        <div class="hm"><div class="hm-l">Platform</div><div class="hm-v">Zoom &middot; Any Device</div></div>
+      <!-- Hidden JS targets for geo/countdown — kept for JS compatibility -->
+      <div id="heroTag" style="display:none"></div>
+      <div id="heroLoc" style="display:none"></div>
+      <div style="display:none">
+        <span id="heroDates"></span><span id="heroTime"></span>
+        <div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div>
       </div>
-      <div class="countdown" id="countdown">
-        <div class="cd-block"><span class="cd-num" id="cdD">--</span><div class="cd-label">Days</div></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-block"><span class="cd-num" id="cdH">--</span><div class="cd-label">Hours</div></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-block"><span class="cd-num" id="cdM">--</span><div class="cd-label">Mins</div></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-block"><span class="cd-num" id="cdS">--</span><div class="cd-label">Secs</div></div>
+      <!-- Visible hero content -->
+      <div class="live-tag">Live Online &middot; Join from Anywhere</div>
+      <h1 class="hero-title">Why Most Business Owners Will Never Be <strong>Financially Free</strong></h1>
+      <div class="hero-rule-line"></div>
+      <div class="hero-impact">
+        <p>It&rsquo;s not about money.</p>
+        <p>It&rsquo;s about what&rsquo;s running underneath.</p>
       </div>
+      <p class="hero-tagline">Identify and break the patterns limiting your income.</p>
       <div class="price-row">
-        <span class="price-was">$199</span>
-        <span class="price-now">$29</span>
+        <span class="price-now" id="heroPriceNow">$29</span>
         <span class="price-badge">Early Bird</span>
       </div>
-      <button class="btn-primary" onclick="openFeatured()">Secure My Online Seat</button>
-      <div class="hero-access">&#127757; Attend from home, office, or anywhere &middot; VIP in-person upgrade available</div>
+      <button class="btn-primary" onclick="openFeatured()">Secure My Seat</button>
+      <div class="hero-trust">&#9203; Takes less than 60 seconds</div>
     </div>
     <div class="hero-right" id="heroTag">
       <div class="hr-label">Live Online Event</div>
@@ -852,6 +859,7 @@ function initPage(ev){
   document.getElementById('heroTime').textContent=ev.time;
   document.title='MMI Online \u00b7 '+ev.city+' '+ev.dates+' \u2014 Millionaire Mind Intensive';
   startCountdown(ev.eventDate);
+  updateHeroPrice(ev);
   renderTrainer(ev.trainer);
   buildGrid();
   document.getElementById('geoLoader').classList.add('hide');
@@ -961,6 +969,19 @@ function toggleFaq(btn){btn.classList.toggle('open');btn.nextElementSibling.clas
 function switchDay(idx,btn){
   document.querySelectorAll('.day-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
   document.querySelectorAll('.day-content').forEach((c,i)=>c.classList.toggle('active',i===idx));
+}
+
+// ── NAV SCROLL ────────────────────────────────────────────────────────
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>20) nav.classList.add('nav-scrolled');
+  else nav.classList.remove('nav-scrolled');
+},{passive:true});
+
+// ── HERO PRICE UPDATE ──────────────────────────────────────────────────────
+function updateHeroPrice(ev){
+  const el=document.getElementById('heroPriceNow');
+  if(el&&ev){const cs=SYM[ev.cur]||'$';el.textContent=cs+ev.price;}
 }
 
 // ── BOOT ────────────────────────────────────────────────────────────
