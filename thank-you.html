@@ -157,6 +157,17 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 .social-icon:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08)}
 .social-icon svg{width:16px;height:16px;fill:rgba(255,255,255,0.6)}
 
+/* ── URGENCY + SOCIAL PROOF ─────────────────────────────────────── */
+.vip-urgency-box{background:#FFF8F0;border:1px solid rgba(184,147,90,0.3);border-radius:6px;padding:14px 18px;font-size:13px;color:var(--ink-mid);text-align:center;line-height:1.65;margin-bottom:20px}
+.vip-urgency-box strong{color:var(--forest);display:block;margin-top:4px}
+.social-proof-quotes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;max-width:680px;margin-left:auto;margin-right:auto}
+.spq-item{background:var(--off-white);border:1px solid var(--border-lt);border-radius:8px;padding:20px 22px}
+.spq-text{font-family:"Playfair Display",serif;font-size:14px;font-style:italic;color:var(--forest);line-height:1.65;margin-bottom:10px}
+.spq-name{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted-lt)}
+.final-urgency-box{background:var(--forest);color:#fff;border-radius:8px;padding:18px 24px;font-size:13px;line-height:1.65;text-align:center;margin-bottom:24px;max-width:560px;margin-left:auto;margin-right:auto}
+.final-urgency-box strong{display:block;margin-top:6px;font-weight:700;color:var(--gold-lt)}
+@media(max-width:600px){.social-proof-quotes{grid-template-columns:1fr}}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   nav{padding:0 20px;height:64px}
@@ -213,12 +224,14 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
       <div class="confirm-check">
         <svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 7"/></svg>
       </div>
-      <h1 class="confirm-title">Your Seat<br>Is Confirmed</h1>
-      <div class="confirm-subtitle">Welcome to the Millionaire Mind<sup style="font-size:7px">®</sup> Global Tour</div>
+      <h1 class="confirm-title">You&rsquo;re In &mdash;<br>But This Will Decide<br>Your Experience</h1>
+      <div class="confirm-subtitle">Millionaire Mind<sup style="font-size:7px">®</sup> Global Tour &mdash; <span id="confirmCityShort2">Your City</span></div>
       <div class="confirm-body">
-        <p>You&rsquo;re now part of a movement happening across cities worldwide.</p>
-        <p><strong id="confirmCityShort">Your city</strong> is your stop.</p>
-        <p>Take a moment &mdash; this could be the turning point.</p>
+        <p>Most people will attend this event.</p>
+        <p>They&rsquo;ll feel inspired&hellip; take notes&hellip; and go back to their old patterns.</p>
+        <p>But a small group will experience something different.</p>
+        <p>They&rsquo;ll be challenged. They&rsquo;ll be seen. They&rsquo;ll make real decisions.</p>
+        <p><strong>The difference? The level they choose to enter at.</strong></p>
       </div>
       <div class="confirm-info-box">
         <div class="confirm-info-row">
@@ -249,59 +262,73 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
   <div class="hero-right">
     <div class="vip-card">
       <div style="text-align:center">
-        <span class="vip-badge">Limited Upgrade</span>
+        <span class="vip-badge">⚠ Important — Read This Now</span>
       </div>
-      <h2 class="vip-title" style="text-align:center">Upgrade to VIP</h2>
+      <h2 class="vip-title">Upgrade to the<br>Full VIP Experience</h2>
       <div class="vip-rule" style="margin:0 auto 14px"></div>
-      <p class="vip-desc">A different level of experience &mdash;<br>for those who want more than just attendance.</p>
+      <p class="vip-desc">The standard ticket gets you in the room.<br>VIP is where the real transformation happens.</p>
       <ul class="vip-benefits">
         <li class="vip-benefit">
           <div class="vip-benefit-icon">
-            <svg viewBox="0 0 20 20"><path d="M4 10.5C4 8 6.5 6 10 6s6 2 6 4.5"/><path d="M7 17h6M10 13v4"/><circle cx="10" cy="4" r="2"/></svg>
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="6.5,10.5 9,13 14.5,7.5"/></svg>
           </div>
           <div>
-            <div class="vip-benefit-title">Front row access to the room</div>
-            <div class="vip-benefit-sub">Best seats in the virtual room.</div>
+            <div class="vip-benefit-title">Direct interaction with the trainer</div>
+            <div class="vip-benefit-sub">Not just listening &mdash; being coached live in the room.</div>
           </div>
         </li>
         <li class="vip-benefit">
           <div class="vip-benefit-icon">
-            <svg viewBox="0 0 20 20"><circle cx="8" cy="7" r="3"/><path d="M2 17c0-3 2.7-5 6-5"/><circle cx="14" cy="7" r="2.5"/><path d="M14 12c2.5.6 4 2.5 4 5"/></svg>
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="6.5,10.5 9,13 14.5,7.5"/></svg>
           </div>
           <div>
-            <div class="vip-benefit-title">Private VIP session with the trainer</div>
-            <div class="vip-benefit-sub">Exclusive Q&amp;A and deeper interaction.</div>
+            <div class="vip-benefit-title">Be called out, challenged, and coached live</div>
+            <div class="vip-benefit-sub">The breakthroughs happen when you&rsquo;re seen, not when you watch.</div>
           </div>
         </li>
         <li class="vip-benefit">
           <div class="vip-benefit-icon">
-            <svg viewBox="0 0 20 20"><circle cx="7" cy="7" r="2.5"/><circle cx="13" cy="7" r="2.5"/><path d="M1 17c0-2.8 2.7-5 6-5"/><path d="M13 12c3.3 0 6 2.2 6 5"/></svg>
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="6.5,10.5 9,13 14.5,7.5"/></svg>
           </div>
           <div>
-            <div class="vip-benefit-title">High-level networking environment</div>
-            <div class="vip-benefit-sub">Connect with ambitious entrepreneurs.</div>
+            <div class="vip-benefit-title">Surround yourself with high-level players</div>
+            <div class="vip-benefit-sub">Not spectators &mdash; people who are also all in.</div>
           </div>
         </li>
         <li class="vip-benefit">
           <div class="vip-benefit-icon">
-            <svg viewBox="0 0 20 20"><path d="M10 2l1.5 5h5l-4 3 1.5 5L10 12l-4 3 1.5-5-4-3h5z"/></svg>
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="6.5,10.5 9,13 14.5,7.5"/></svg>
+          </div>
+          <div>
+            <div class="vip-benefit-title">Walk away with real decisions made</div>
+            <div class="vip-benefit-sub">Not just motivation &mdash; actual clarity and a committed next move.</div>
+          </div>
+        </li>
+        <li class="vip-benefit">
+          <div class="vip-benefit-icon">
+            <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><polyline points="6.5,10.5 9,13 14.5,7.5"/></svg>
           </div>
           <div>
             <div class="vip-benefit-title">Exclusive bonus materials</div>
-            <div class="vip-benefit-sub">VIP-only resources and frameworks.</div>
+            <div class="vip-benefit-sub">VIP-only resources and frameworks you keep forever.</div>
           </div>
         </li>
       </ul>
-      <div class="vip-today">Today Only</div>
+      <div class="vip-today">Today Only &mdash; This Page Only</div>
       <div class="vip-price-row">
         <span class="vip-price-now">$97</span>
         <span class="vip-price-was">$397</span>
       </div>
+      <p style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:18px;line-height:1.6">That&rsquo;s less than the cost of one business dinner &mdash;<br>for a completely different experience.</p>
+      <div class="vip-urgency-box">
+        Once you leave this page, you cannot come back to this offer.<br>
+        <strong>No second chance. No &ldquo;upgrade later&rdquo;.</strong>
+      </div>
       <div class="stripe-wrap" id="stripeVip"></div>
-      <a href="#final-cta" class="btn-vip" id="btnVipTop">Upgrade My Experience →</a>
+      <a href="#final-cta" class="btn-vip" id="btnVipTop">YES &mdash; I Want the Full Experience →</a>
       <div class="vip-lock">
         <svg viewBox="0 0 20 20"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9"/></svg>
-        Only available on this page
+        Only available on this page &mdash; disappears when you leave
       </div>
     </div>
   </div>
@@ -310,10 +337,10 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 <!-- ── VIDEO BRIDGE ── -->
 <section class="video-bridge">
   <div class="video-bridge-inner">
-    <p class="video-bridge-transition">You&rsquo;re already in.<br><strong>Now, here&rsquo;s how some people choose to experience this differently.</strong></p>
-    <div class="video-optional-label">Optional &mdash; 60 seconds</div>
-    <div class="video-label" style="margin-top:12px">A message about what happens next</div>
-    <h3 class="video-title">The Difference Is the Environment<br>You Place Yourself In</h3>
+    <p class="video-bridge-transition">Most people will leave this page without watching this.<br><strong>The ones who do &mdash; make a different decision.</strong></p>
+    <div class="video-optional-label">Watch This Before You Decide</div>
+    <div class="video-label" style="margin-top:12px">A message from your trainer</div>
+    <h3 class="video-title">Most People Attend.<br>A Few Will Transform.</h3>
     <div class="video-container">
       <iframe id="vimeoFrame"
         src="https://player.vimeo.com/video/1087641142?badge=0&autopause=0&player_id=0&app_id=58479"
@@ -323,9 +350,10 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
       </iframe>
     </div>
     <div class="video-below">
-      <p>Some will attend.</p>
-      <p>Others will fully step into the room.</p>
-      <p>The difference is the environment you place yourself in.</p>
+      <p>Most people will attend this event.</p>
+      <p>They&rsquo;ll take notes. Feel motivated. And within weeks &mdash; nothing changes.</p>
+      <p><strong>But a small group will experience this differently.</strong><br>They&rsquo;ll be challenged. Seen. And they&rsquo;ll leave with real transformation.</p>
+      <p>The difference is not the event.<br>It&rsquo;s the level you choose to enter at.</p>
     </div>
   </div>
 </section>
@@ -423,11 +451,26 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 <!-- ── FINAL CTA ── -->
 <section class="final-cta" id="final-cta">
   <div class="final-cta-inner">
-    <p class="final-cta-notice">This option won&rsquo;t be shown again after you leave.</p>
+    <!-- Social proof -->
+    <div class="social-proof-quotes">
+      <div class="spq-item">
+        <p class="spq-text">&ldquo;I thought VIP was optional. It turned out to be the best decision I made all weekend.&rdquo;</p>
+        <div class="spq-name">Sarah K. &mdash; Entrepreneur</div>
+      </div>
+      <div class="spq-item">
+        <p class="spq-text">&ldquo;VIP is where the real breakthroughs happen. Standard is watching. VIP is doing.&rdquo;</p>
+        <div class="spq-name">Jason M. &mdash; Business Owner</div>
+      </div>
+    </div>
+    <div class="final-urgency-box">
+      ⚠ Once you leave this page, you cannot come back to this offer.<br>
+      No second chance. No &ldquo;upgrade later&rdquo;. This decision happens now.
+    </div>
+    <p class="final-cta-notice">This is the only time you&rsquo;ll see this offer.</p>
     <div class="final-cta-actions">
-      <a href="#" class="btn-final-vip" id="btnVipFinal">Upgrade to VIP →</a>
+      <a href="#" class="btn-final-vip" id="btnVipFinal">YES &mdash; I Want the Full Experience →</a>
       <span class="final-or">or</span>
-      <button class="btn-continue" onclick="window.location.href='https://event.millionairemind.online'">Continue with standard access</button>
+      <button class="btn-continue" onclick="window.location.href='https://event.millionairemind.online'">No, I&rsquo;ll stay standard and miss the VIP experience</button>
     </div>
   </div>
 </section>
@@ -545,6 +588,8 @@ const STRIPE_KEYS = {
   // Hero left
   document.getElementById('confirmCity').textContent = cityName;
   document.getElementById('confirmCityShort').textContent = short;
+  var cs2 = document.getElementById('confirmCityShort2');
+  if(cs2) cs2.textContent = short;
   document.getElementById('confirmDates').textContent = dates;
   document.getElementById('confirmTime').textContent  = time;
   // City bg photo
