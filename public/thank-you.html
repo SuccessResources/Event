@@ -538,6 +538,21 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 </footer>
 
 <script>
+var CONFIRM_URLS = {
+  'kuala-lumpur':     'https://event.millionairemind.online/confirmation.html?event=kl',
+  'kuala-lumpur-oct': 'https://event.millionairemind.online/confirmation.html?event=kl2',
+  'malaga':           'https://event.millionairemind.online/confirmation.html?event=mal',
+  'warsaw':           'https://event.millionairemind.online/confirmation.html?event=war',
+  'london':           'https://event.millionairemind.online/confirmation.html?event=lon',
+  'berlin':           'https://event.millionairemind.online/confirmation.html?event=ber',
+  'johor-bahru':      'https://event.millionairemind.online/confirmation.html?event=jb',
+  'geneva':           'https://event.millionairemind.online/confirmation.html?event=gen',
+  'madrid':           'https://event.millionairemind.online/confirmation.html?event=mad',
+  'rotterdam':        'https://event.millionairemind.online/confirmation.html?event=rot',
+  'birmingham':       'https://event.millionairemind.online/confirmation.html?event=bir',
+  'brussels':         'https://event.millionairemind.online/confirmation.html?event=bru'
+};
+
 var CITY_NAMES = {
   'malaga':       'Malaga, Spain',
   'kuala-lumpur':     'Kuala Lumpur, Malaysia (1-3 May 2026)',
@@ -646,6 +661,13 @@ document.addEventListener('DOMContentLoaded', function() {
   setText('confirmTime',       time);
   setText('footerTrainer',     '- ' + trainer);
   document.title = "You're In - MMI " + short + " 2026";
+
+  // Set confirmation page link on all CTA buttons
+  var confirmUrl = CONFIRM_URLS[city] || 'https://event.millionairemind.online/confirmation.html?event=kl';
+  var btnTop   = document.getElementById('btnVipTop');
+  var btnFinal = document.getElementById('btnVipFinal');
+  if(btnTop)   btnTop.href   = confirmUrl;
+  if(btnFinal) btnFinal.href = confirmUrl;
 
   var bg = document.getElementById('heroBg');
   if (bg) {
