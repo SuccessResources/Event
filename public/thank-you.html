@@ -158,15 +158,15 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 .social-icon svg{width:16px;height:16px;fill:rgba(255,255,255,0.6)}
 
 /* ── VIDEO FACADE ────────────────────────────────────────────────── */
-.video-facade{position:absolute;inset:0;cursor:pointer;background:#1E3932;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.video-container{position:relative;width:100%;padding-top:56.25%;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);border:2px solid var(--border)}
+.video-facade{position:absolute;inset:0;cursor:pointer;background:#1E3932;display:flex;align-items:center;justify-content:center;transition:opacity .35s ease}
 .video-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.play-btn{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;transition:transform .2s}
-.video-facade:hover .play-btn{transform:scale(1.06)}
-.play-circle{width:72px;height:72px;background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.play-btn{position:relative;z-index:2;transition:transform .2s}
+.video-facade:hover .play-btn{transform:scale(1.08)}
+.play-circle{width:72px;height:72px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.4))}
 .play-circle svg{width:72px;height:72px}
-.play-label{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
-.video-facade::before{content:"";position:absolute;inset:0;background:rgba(10,20,16,0.25);transition:background .2s}
-.video-facade:hover::before{background:rgba(10,20,16,0.15)}
+.video-facade::before{content:"";position:absolute;inset:0;background:rgba(10,20,16,0.2);transition:background .2s}
+.video-facade:hover::before{background:rgba(10,20,16,0.08)}
 .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
 
 /* ── URGENCY + SOCIAL PROOF ─────────────────────────────────────── */
@@ -350,14 +350,15 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
     <div class="video-label" style="margin-top:12px">A message from your trainer</div>
     <h3 class="video-title">Most People Attend.<br>A Few Will Transform.</h3>
     <div class="video-container" id="videoContainer">
-      <!-- Facade: custom poster image + play button. Replaced by iframe on click -->
       <div class="video-facade" id="videoFacade" onclick="playVideo()">
         <img src="/assets/video-poster.webp" alt="Play video" class="video-poster" onerror="this.parentElement.style.background='#1E3932'">
         <div class="play-btn">
           <div class="play-circle">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="rgba(255,255,255,0.15)"/><polygon points="10,8 18,12 10,16" fill="#fff"/></svg>
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="27" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
+              <polygon points="23,18 42,28 23,38" fill="#fff"/>
+            </svg>
           </div>
-          <div class="play-label">Watch Now</div>
         </div>
       </div>
     </div>
@@ -622,26 +623,26 @@ const STRIPE_KEYS = {
     btn.setAttribute('buy-button-id', VIP_BTN_ID);
     btn.setAttribute('publishable-key', key);
     wrap.appendChild(btn);
-    // Hide placeholder buttons when Stripe is active
     document.getElementById('btnVipTop').style.display   = 'none';
     document.getElementById('btnVipFinal').style.display = 'none';
   }
-// ── VIDEO FACADE ────────────────────────────────────────────────────────────
+})();
+
+// ── VIDEO FACADE (global) ────────────────────────────────────────────────────
 function playVideo(){
-  var facade = document.getElementById('videoFacade');
+  var facade    = document.getElementById('videoFacade');
   var container = document.getElementById('videoContainer');
-  // Fade out facade
+  if(!facade || !container) return;
   facade.style.opacity = '0';
   facade.style.pointerEvents = 'none';
-  // Inject iframe with autoplay
   var iframe = document.createElement('iframe');
   iframe.src = 'https://player.vimeo.com/video/1087641142?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479';
-  iframe.allow = 'autoplay; fullscreen; picture-in-picture';
-  iframe.allowFullscreen = true;
-  iframe.title = 'MMI VIP Experience';
+  iframe.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
+  iframe.setAttribute('allowfullscreen','');
+  iframe.setAttribute('title','MMI VIP Experience');
+  iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none';
   container.appendChild(iframe);
-  // Remove facade from DOM after transition
-  setTimeout(function(){ facade.remove(); }, 350);
+  setTimeout(function(){ if(facade.parentNode) facade.parentNode.removeChild(facade); }, 350);
 }
 
 
