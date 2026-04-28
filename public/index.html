@@ -539,6 +539,10 @@ footer a:hover{color:var(--gold-lt)}
   .modal-box{padding:0}
   .modal-body{padding:20px}
 }
+.mpanel-buy-btn{display:flex;align-items:center;justify-content:center;background:var(--forest);color:#fff;padding:16px 24px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:100px;transition:all .2s;width:100%;text-align:center}
+.mpanel-buy-btn:hover{background:var(--green);transform:translateY(-1px);box-shadow:0 6px 20px rgba(30,57,50,0.25)}
+.mpanel-buy-btn-live{background:var(--gold);color:#fff}
+.mpanel-buy-btn-live:hover{background:#b8832a}
 </style>
 </head>
 <body>
@@ -647,7 +651,7 @@ footer a:hover{color:var(--gold-lt)}
       </div>
       <div class="mpanel-guarantee">100% Money-Back &middot; If Day 1 doesn&rsquo;t blow your mind, we refund every cent</div>
       <div class="mpanel-cta-label">Secure your online seat</div>
-      <div class="stripe-wrap" id="stripeOnline"></div>
+      <a id="onlineCta" href="#" class="mpanel-buy-btn" target="_blank" rel="noopener">Secure My Online Seat &rarr;</a>
     </div>
     <!-- RIGHT: In-person upgrade -->
     <div class="mpanel-live">
@@ -666,7 +670,7 @@ footer a:hover{color:var(--gold-lt)}
       </ul>
       <div class="mpanel-live-price" id="mLiveNow"></div>
       <div class="mpanel-live-price-note">live event ticket &middot; today only</div>
-      <div class="stripe-wrap" id="stripeLive"></div>
+      <a id="liveCta" href="#" class="mpanel-buy-btn mpanel-buy-btn-live" target="_blank" rel="noopener">Upgrade to In-Person VIP &rarr;</a>
       <button class="mpanel-skip" onclick="closeModal()">No thanks &mdash; online only &rarr;</button>
     </div>
   </div>
@@ -1204,18 +1208,18 @@ const TRAINERS = {
 // liveBtnId = Live Event Stripe Button ID     (local currency per event)
 // price/cur = Live event pass price & currency
 const EVENTS = [
-  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur',dates:'1–3 May 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-05-01T09:00:00+08:00'),btnId:'buy_btn_1TPf03IMbI04nnt8ezfDNzTf',liveBtnId:'buy_btn_1TPiA0GY6RiRFzHXJp4S4uUT',cur:'USD',price:29,trainer:'Alan',geo:['MY','SG','BN','ID','PH','TH','VN','MM','KH','LA','TL','CN','HK','MO','TW','JP','KR','MN','AU','NZ','FJ','PG','IN','LK','BD','PK','NP','BT','MV','AF'],citySlug:'kuala-lumpur'},
-  {city:'Malaga',country:'Spain',flag:'🇪🇸',display:'Malaga',dates:'22–24 May 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-05-22T09:00:00+02:00'),btnId:'buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ',liveBtnId:'buy_btn_1TPidGGY6RiRFzHXxDavnL0k',cur:'EUR',price:29,trainer:'Mac',geo:['ES','PT','MA','DZ','TN','LY','IT','MT','GR','CY','AL','BA','ME','MK','RS','SI','HR','AD','SM','VA'],citySlug:'malaga'},
-  {city:'Warsaw',country:'Poland',flag:'🇵🇱',display:'Warsaw',dates:'12–14 June 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-06-12T09:00:00+02:00'),btnId:'buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh',liveBtnId:'buy_btn_1TPifiGY6RiRFzHXa9sf6SZq',cur:'EUR',price:29,trainer:'Mac',geo:['PL','CZ','SK','HU','UA','BY','LT','LV','EE','MD'],citySlug:'warsaw'},
-  {city:'London',country:'United Kingdom',flag:'🇬🇧',display:'London',dates:'3–5 July 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-07-03T09:00:00+01:00'),btnId:'buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY',liveBtnId:'buy_btn_1TPigsGY6RiRFzHXP19aoxC1',cur:'GBP',price:29,trainer:'Arnon',geo:['GB','IE'],citySlug:'london'},
-  {city:'Berlin',country:'Germany',flag:'🇩🇪',display:'Berlin',dates:'10–12 July 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-07-10T09:00:00+02:00'),btnId:'buy_btn_1TPg3zGY6RiRFzHX0gvy1rME',liveBtnId:'buy_btn_1TPiidGY6RiRFzHXkEBBOhRq',cur:'EUR',price:29,trainer:'Mac',geo:['DE','AT','CH','LI','LU'],citySlug:'berlin'},
-  {city:'Johor Bahru',country:'Malaysia',flag:'🇲🇾',display:'Johor Bahru',dates:'31 Jul–2 Aug 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-07-31T09:00:00+08:00'),btnId:'buy_btn_1TPfYcIMbI04nnt8A0I6vlBn',liveBtnId:'buy_btn_1TPik6GY6RiRFzHXONPpVmIP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'johor-bahru'},
-  {city:'Geneva',country:'Switzerland',flag:'🇨🇭',display:'Geneva',dates:'11–13 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-11T09:00:00+02:00'),btnId:'buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj',liveBtnId:'buy_btn_1TPilKGY6RiRFzHXuortjd9R',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'geneva'},
-  {city:'Madrid',country:'Spain',flag:'🇪🇸',display:'Madrid',dates:'25–27 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-25T09:00:00+02:00'),btnId:'buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg',liveBtnId:'buy_btn_1TPimRGY6RiRFzHXZGLag6XS',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'madrid'},
-  {city:'Rotterdam',country:'Netherlands',flag:'🇳🇱',display:'Rotterdam',dates:'15–17 Oct 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-10-15T09:00:00+02:00'),btnId:'buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv',liveBtnId:'buy_btn_1TPiooGY6RiRFzHXzgyOL3Mp',cur:'EUR',price:29,trainer:'Mac',geo:['NL','BE','DK','SE','NO','FI','IS'],citySlug:'rotterdam'},
-  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur (Oct)',dates:'30 Oct–1 Nov 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-10-30T09:00:00+08:00'),btnId:'buy_btn_1TPfbSIMbI04nnt8RtV6MNBj',liveBtnId:'buy_btn_1TPipzGY6RiRFzHX13MKdfjP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'kuala-lumpur'},
-  {city:'Birmingham',country:'United Kingdom',flag:'🇬🇧',display:'Birmingham',dates:'6–8 Nov 2026',time:'9am–8pm GMT+0',eventDate:new Date('2026-11-06T09:00:00+00:00'),btnId:'buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe',liveBtnId:'buy_btn_1TPir9GY6RiRFzHXttsdQVRy',cur:'GBP',price:29,trainer:'Arnon',geo:[],citySlug:'birmingham'},
-  {city:'Brussels',country:'Belgium',flag:'🇧🇪',display:'Brussels',dates:'20–22 Nov 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-11-20T09:00:00+01:00'),btnId:'buy_btn_1TPg9lGY6RiRFzHX2buGBRix',liveBtnId:'buy_btn_1TPisKGY6RiRFzHXGoW0UU9e',cur:'EUR',price:29,trainer:'Arnon',geo:['BE','FR','MC','LU','BG','RO','BH','KW','QA','OM','SA','AE','JO','IL','EG','LB','IQ','IR','SY','TR','AZ','GE','AM','KZ','UZ','TM','TJ','KG'],citySlug:'brussels'}
+  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur',dates:'1–3 May 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-05-01T09:00:00+08:00'),btnId:'buy_btn_1TPf03IMbI04nnt8ezfDNzTf',cartUrl:'https://www.digistore24.com/product/688424',liveCartUrl:'https://srglobal.thrivecart.com/malaysia-may-standard-cart',liveBtnId:'buy_btn_1TPiA0GY6RiRFzHXJp4S4uUT',cur:'USD',price:29,trainer:'Alan',geo:['MY','SG','BN','ID','PH','TH','VN','MM','KH','LA','TL','CN','HK','MO','TW','JP','KR','MN','AU','NZ','FJ','PG','IN','LK','BD','PK','NP','BT','MV','AF'],citySlug:'kuala-lumpur'},
+  {city:'Malaga',country:'Spain',flag:'🇪🇸',display:'Malaga',dates:'22–24 May 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-05-22T09:00:00+02:00'),btnId:'buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ',cartUrl:'https://www.digistore24.com/product/688425',liveCartUrl:'https://successr.thrivecart.com/spain-may-standard-cart/',liveBtnId:'buy_btn_1TPidGGY6RiRFzHXxDavnL0k',cur:'EUR',price:29,trainer:'Mac',geo:['ES','PT','MA','DZ','TN','LY','IT','MT','GR','CY','AL','BA','ME','MK','RS','SI','HR','AD','SM','VA'],citySlug:'malaga'},
+  {city:'Warsaw',country:'Poland',flag:'🇵🇱',display:'Warsaw',dates:'12–14 June 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-06-12T09:00:00+02:00'),btnId:'buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh',cartUrl:'https://www.digistore24.com/product/688406',liveCartUrl:'https://srglobal.thrivecart.com/poland-june-standard-cart',liveBtnId:'buy_btn_1TPifiGY6RiRFzHXa9sf6SZq',cur:'EUR',price:29,trainer:'Mac',geo:['PL','CZ','SK','HU','UA','BY','LT','LV','EE','MD'],citySlug:'warsaw'},
+  {city:'London',country:'United Kingdom',flag:'🇬🇧',display:'London',dates:'3–5 July 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-07-03T09:00:00+01:00'),btnId:'buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY',cartUrl:'https://www.digistore24.com/product/688426',liveCartUrl:'https://srglobal.thrivecart.com/uk-july-standard-cart',liveBtnId:'buy_btn_1TPigsGY6RiRFzHXP19aoxC1',cur:'GBP',price:29,trainer:'Arnon',geo:['GB','IE'],citySlug:'london'},
+  {city:'Berlin',country:'Germany',flag:'🇩🇪',display:'Berlin',dates:'10–12 July 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-07-10T09:00:00+02:00'),btnId:'buy_btn_1TPg3zGY6RiRFzHX0gvy1rME',cartUrl:'https://www.digistore24.com/product/688428',liveCartUrl:'https://srglobal.thrivecart.com/germany-july-standard-cart',liveBtnId:'buy_btn_1TPiidGY6RiRFzHXkEBBOhRq',cur:'EUR',price:29,trainer:'Mac',geo:['DE','AT','CH','LI','LU'],citySlug:'berlin'},
+  {city:'Johor Bahru',country:'Malaysia',flag:'🇲🇾',display:'Johor Bahru',dates:'31 Jul–2 Aug 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-07-31T09:00:00+08:00'),btnId:'buy_btn_1TPfYcIMbI04nnt8A0I6vlBn',cartUrl:'https://www.digistore24.com/product/688430',liveCartUrl:'https://srglobal.thrivecart.com/malaysia-august-standard-cart',liveBtnId:'buy_btn_1TPik6GY6RiRFzHXONPpVmIP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'johor-bahru'},
+  {city:'Geneva',country:'Switzerland',flag:'🇨🇭',display:'Geneva',dates:'11–13 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-11T09:00:00+02:00'),btnId:'buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj',cartUrl:'https://www.digistore24.com/product/688432',liveCartUrl:'https://srglobal.thrivecart.com/switzerland-september-standard-cart/',liveBtnId:'buy_btn_1TPilKGY6RiRFzHXuortjd9R',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'geneva'},
+  {city:'Madrid',country:'Spain',flag:'🇪🇸',display:'Madrid',dates:'25–27 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-25T09:00:00+02:00'),btnId:'buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg',cartUrl:'https://www.digistore24.com/product/688435',liveCartUrl:'https://successr.thrivecart.com/spain-september-standard-cart',liveBtnId:'buy_btn_1TPimRGY6RiRFzHXZGLag6XS',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'madrid'},
+  {city:'Rotterdam',country:'Netherlands',flag:'🇳🇱',display:'Rotterdam',dates:'15–17 Oct 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-10-15T09:00:00+02:00'),btnId:'buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv',cartUrl:'https://www.digistore24.com/product/688436',liveCartUrl:'https://srglobal.thrivecart.com/netherlands-october-standard-cart',liveBtnId:'buy_btn_1TPiooGY6RiRFzHXzgyOL3Mp',cur:'EUR',price:29,trainer:'Mac',geo:['NL','BE','DK','SE','NO','FI','IS'],citySlug:'rotterdam'},
+  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur (Oct)',dates:'30 Oct–1 Nov 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-10-30T09:00:00+08:00'),btnId:'buy_btn_1TPfbSIMbI04nnt8RtV6MNBj',cartUrl:'https://www.digistore24.com/product/688438',liveCartUrl:'https://srglobal.thrivecart.com/malaysia-november-standard-cart',liveBtnId:'buy_btn_1TPipzGY6RiRFzHX13MKdfjP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'kuala-lumpur'},
+  {city:'Birmingham',country:'United Kingdom',flag:'🇬🇧',display:'Birmingham',dates:'6–8 Nov 2026',time:'9am–8pm GMT+0',eventDate:new Date('2026-11-06T09:00:00+00:00'),btnId:'buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe',cartUrl:'https://www.digistore24.com/product/688439',liveCartUrl:'https://srglobal.thrivecart.com/uk-november-standard-cart',liveBtnId:'buy_btn_1TPir9GY6RiRFzHXttsdQVRy',cur:'GBP',price:29,trainer:'Arnon',geo:[],citySlug:'birmingham'},
+  {city:'Brussels',country:'Belgium',flag:'🇧🇪',display:'Brussels',dates:'20–22 Nov 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-11-20T09:00:00+01:00'),btnId:'buy_btn_1TPg9lGY6RiRFzHX2buGBRix',cartUrl:'https://www.digistore24.com/product/688441',liveCartUrl:'https://srglobal.thrivecart.com/belgium-november-standard-cart',liveBtnId:'buy_btn_1TPisKGY6RiRFzHXGoW0UU9e',cur:'EUR',price:29,trainer:'Arnon',geo:['BE','FR','MC','LU','BG','RO','BH','KW','QA','OM','SA','AE','JO','IL','EG','LB','IQ','IR','SY','TR','AZ','GE','AM','KZ','UZ','TM','TJ','KG'],citySlug:'brussels'}
 ];
 
 // ── GEO FIND ────────────────────────────────────────────────────────
@@ -1417,8 +1421,11 @@ function openModal(onlineBtnId){
       'Access to VIP evening social after Day 1'
     ].map(t=>'<li>'+t+'</li>').join('');
   }
-  injectStripe('stripeOnline', ev.btnId);
-  injectStripe('stripeLive',   ev.liveBtnId);
+  // Set direct checkout links
+  const onlineCta = document.getElementById('onlineCta');
+  if(onlineCta) onlineCta.href = ev.cartUrl || '#';
+  const liveCta = document.getElementById('liveCta');
+  if(liveCta) liveCta.href = ev.liveCartUrl || '#';
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -1426,8 +1433,7 @@ function openFeatured(){if(FEATURED)openModal(FEATURED.btnId);}
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
-  ['stripeOnline','stripeLive'].forEach(id=>{
-    const el=document.getElementById(id);if(el)el.innerHTML='';
+  // links cleared automaticallyif(el)el.innerHTML='';
   });
 }
 document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
