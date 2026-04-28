@@ -538,6 +538,21 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
 </footer>
 
 <script>
+var VIP_URLS = {
+  'kuala-lumpur':     'https://www.digistore24.com/product/688476',
+  'kuala-lumpur-oct': 'https://www.digistore24.com/product/688495',
+  'malaga':           'https://www.digistore24.com/product/688484',
+  'warsaw':           'https://www.digistore24.com/product/688486',
+  'london':           'https://www.digistore24.com/product/688487',
+  'berlin':           'https://www.digistore24.com/product/688489',
+  'johor-bahru':      'https://www.digistore24.com/product/688491',
+  'geneva':           'https://www.digistore24.com/product/688492',
+  'madrid':           'https://www.digistore24.com/product/688493',
+  'rotterdam':        'https://www.digistore24.com/product/688494',
+  'birmingham':       'https://www.digistore24.com/product/688496',
+  'brussels':         'https://www.digistore24.com/product/688497'
+};
+
 var CONFIRM_URLS = {
   'kuala-lumpur':     'https://event.millionairemind.online/confirmation.html?event=kl',
   'kuala-lumpur-oct': 'https://event.millionairemind.online/confirmation.html?event=kl2',
@@ -662,12 +677,17 @@ document.addEventListener('DOMContentLoaded', function() {
   setText('footerTrainer',     '- ' + trainer);
   document.title = "You're In - MMI " + short + " 2026";
 
-  // Set confirmation page link on all CTA buttons
-  var confirmUrl = CONFIRM_URLS[city] || 'https://event.millionairemind.online/confirmation.html?event=kl';
+  // VIP buy buttons → Digistore24 VIP product
+  var vipUrl   = VIP_URLS[city]     || 'https://www.digistore24.com/product/688476';
   var btnTop   = document.getElementById('btnVipTop');
   var btnFinal = document.getElementById('btnVipFinal');
-  if(btnTop)   btnTop.href   = confirmUrl;
-  if(btnFinal) btnFinal.href = confirmUrl;
+  if(btnTop)   btnTop.href   = vipUrl;
+  if(btnFinal) btnFinal.href = vipUrl;
+
+  // Confirmation page link (skip VIP / already registered)
+  var confirmUrl = CONFIRM_URLS[city] || 'https://event.millionairemind.online/confirmation.html?event=kl';
+  var btnSkip  = document.getElementById('btnSkipVip');
+  if(btnSkip) btnSkip.href = confirmUrl;
 
   var bg = document.getElementById('heroBg');
   if (bg) {
