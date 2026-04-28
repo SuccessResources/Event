@@ -54,7 +54,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 .nav-pill-link:hover{color:var(--gold)}
 
 /* ═══════════════ HERO ═══════════════ */
-.hero{background:var(--white);position:relative;overflow:hidden;min-height:520px;display:grid;grid-template-columns:50% 50%}
+.hero{background:var(--white) url('https://event.millionairemind.online/assets/confirmation/hero-laptop-desktop.webp') no-repeat right center;background-size:55%;position:relative;overflow:hidden;min-height:520px;display:grid;grid-template-columns:50% 50%}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--white) 42%,rgba(255,255,255,0.1) 52%,transparent 60%);z-index:1;pointer-events:none}
 .hero-inner-grid{display:contents}
 
 /* Left panel */
@@ -92,8 +93,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 .pause-text strong{font-weight:700}
 
 /* Right panel — city image */
-.hero-right{position:relative;overflow:hidden}
-.hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--white) 0%,transparent 5%);z-index:1}
+.hero-right{position:relative}
+
 .hero-city-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0% center;display:block}
 
 /* Gold wave bottom */
@@ -217,7 +218,7 @@ footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;
   .nav-mmi{font-size:22px}
   .nav-pill:nth-child(3){display:none}
   .nav-pill{padding:0 10px;font-size:9px}
-  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero{grid-template-columns:1fr;min-height:auto;background-size:0!important}
   .hero-left{padding:32px 20px 0}
   .hero-script{font-size:28px}
   .hero-title{font-size:52px}
@@ -332,13 +333,8 @@ footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;
     </div>
   </div>
 
-  <!-- Right — city image -->
-  <div class="hero-right">
-    <img class="hero-city-img"
-         src="https://event.millionairemind.online/assets/confirmation/hero-laptop-desktop.webp"
-         alt="Your financial future"
-         onerror="this.style.opacity='0'">
-  </div>
+  <!-- Right — empty spacer, image is hero section background -->
+  <div class="hero-right"></div>
 
   </div><!-- /hero-inner-grid -->
 
