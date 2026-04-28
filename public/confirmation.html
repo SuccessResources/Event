@@ -68,8 +68,23 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .confirm-check svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:2.5}
 .confirm-card-title{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .confirm-card-body{font-size:13px;color:var(--muted);line-height:1.6}
-.hero-img-wrap{width:calc(100% + 48px);margin-right:-48px;position:relative;z-index:1}
-.hero-img-wrap img{width:100%;display:block;object-fit:cover;border-radius:12px 0 0 0}
+.hero-img-wrap{
+  position:absolute;
+  top:0;right:0;bottom:0;
+  width:52%;
+  background-image:url('/assets/confirmation/hero-laptop-desktop.webp');
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+  z-index:0;
+}
+.hero-img-wrap::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, var(--cream) 0%, transparent 30%);
+  z-index:1;
+}
 
 /* ═══════════════ JOURNEY ═══════════════ */
 .journey{background:var(--white);padding:64px 48px}
@@ -265,12 +280,7 @@ footer{background:var(--forest);padding:24px 48px;display:flex;align-items:cente
           <div class="confirm-card-body">You will receive a confirmation email with important details and next steps.</div>
         </div>
       </div>
-      <div class="hero-img-wrap">
-        <picture>
-          <source media="(min-width:769px)" srcset="/assets/confirmation/hero-laptop-desktop.webp">
-          <img src="/assets/confirmation/hero-laptop-mobile.webp" alt="Millionaire Mind Intensive Online Experience" loading="eager" onerror="this.parentElement.style.display='none'">
-        </picture>
-      </div>
+      <div class="hero-img-wrap" id="heroBgImg"></div>
     </div>
   </div>
 </section>
