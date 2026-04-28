@@ -1433,8 +1433,6 @@ function openFeatured(){if(FEATURED)openModal(FEATURED.btnId);}
 function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
-  // links cleared automaticallyif(el)el.innerHTML='';
-  });
 }
 document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
