@@ -497,25 +497,6 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
   .tour-stats-inner{grid-template-columns:1fr 1fr}
 }
 
-/* ── IMMEDIATE CTA STRIP ─────────────────────────────────────────────── */
-.imm-cta-section{background:var(--forest);padding:44px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
-.imm-cta-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.imm-cta-tag{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
-.imm-cta-heading{font-family:"Playfair Display",serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px;letter-spacing:-0.5px}
-.imm-cta-heading strong{color:var(--gold);font-style:italic}
-.imm-cta-sub{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5}
-.imm-cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex-shrink:0}
-.imm-price-row{display:flex;align-items:center;gap:10px}
-.imm-was{font-size:14px;text-decoration:line-through;color:rgba(255,255,255,0.3)}
-.imm-now{font-family:"Playfair Display",serif;font-size:42px;font-weight:700;color:#fff;line-height:1}
-.imm-badge{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);padding:4px 12px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;border-radius:100px;border:1px solid rgba(255,255,255,0.15)}
-.imm-btn{background:#fff;color:var(--forest);padding:14px 32px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:100px;transition:all .25s;white-space:nowrap}
-.imm-btn:hover{background:var(--green-lt);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.2)}
-.imm-note{display:flex;align-items:center;gap:6px;font-family:"Montserrat",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:.5px}
-@media(max-width:900px){
-  .imm-cta-inner{grid-template-columns:1fr;gap:24px}
-  .imm-cta-right{align-items:flex-start}
-}
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:40px 48px;border-top:none}
 footer p{font-family:"Montserrat",sans-serif;font-size:11px;color:rgba(255,255,255,0.45);line-height:2;text-align:center}
@@ -757,27 +738,6 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
-<!-- IMMEDIATE CTA — impulse buy strip -->
-<section class="imm-cta-section">
-  <div class="si">
-    <div class="imm-cta-inner">
-      <div class="imm-cta-left">
-        <div class="imm-cta-tag">Join the Global Tour</div>
-        <h2 class="imm-cta-heading">Now Open in <strong id="immCtaCity">Your City</strong></h2>
-        <p class="imm-cta-sub">3-Day Live Experience &mdash; Online &middot; Join from Anywhere</p>
-      </div>
-      <div class="imm-cta-right">
-        <div class="imm-price-row">
-          <span class="imm-was">$199</span>
-          <span class="imm-now">$19</span>
-          <span class="imm-badge">Early Access</span>
-        </div>
-        <button class="imm-btn" onclick="openFeatured()">Secure My Seat</button>
-        <div class="imm-note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-users-small"/></svg> Limited seats &middot; This stop is filling</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- STATS -->
 <div class="stats-bar">
@@ -799,8 +759,11 @@ footer a:hover{color:var(--gold-lt)}
         <h2 class="tour-header-h2">The Movement<br>Is Global</h2>
         <div class="tour-header-rule"></div>
         <p class="tour-header-sub">From Europe to Asia, this experience is moving city to city &mdash; with thousands stepping in at each stop.</p>
-        <p class="tour-header-accent">You don&rsquo;t join everywhere.<br>You join where the tour meets you.</p>
-        <p class="tour-header-cta-text">Find your city. Step into the room.</p>
+        <div class="tour-urgency-lines">
+          <p>The tour is already moving.</p>
+          <p>London is filling. Berlin is next.<br><strong id="tourUrgencyCity">Your city</strong> is now open.</p>
+        </div>
+        <p class="tour-header-accent">You don&rsquo;t join later.<br>You join when it reaches you.</p>
       </div>
       <div>
         <svg viewBox="0 0 540 230" class="tour-map-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1004,55 +967,57 @@ footer a:hover{color:var(--gold-lt)}
         </ul>
         <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65">All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p>
       </div>
-      <div class="offer-right">
-        <div class="offer-price-label">Full 3-Day Access &mdash; Live Online</div>
-        <div class="offer-price-regular">Regular price: $199</div>
-        <div class="offer-price-now">$19</div>
-        <div class="offer-price-note">Early Access &middot; Limited availability per city</div>
-        <div class="offer-scarcity">This is a global tour. Each city has limited capacity.</div>
+      <div class="offer-right" style="display:flex;flex-direction:column;justify-content:center">
+        <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#fff;line-height:1.5;margin-bottom:28px;opacity:.9">&ldquo;Once you fix what&rsquo;s running underneath — the results take care of themselves.&rdquo;</p>
         <button class="offer-btn" onclick="openFeatured()">Secure My Seat &nbsp;&rarr;</button>
-        <div class="offer-trust">Join from anywhere &middot; One login per seat &middot; Less than 60 seconds</div>
+        <div class="offer-trust">Live &middot; Interactive &middot; Join from anywhere</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CURRICULUM -->
+<!-- CURRICULUM — light 3-day overview -->
 <section>
   <div class="si">
-    <div class="stag-line"><span>3-Day Programme</span></div>
-    <h2 class="stitle">Three Days That Will <strong>Change Everything</strong></h2>
-    <div class="days-nav">
-      <button class="day-tab active" onclick="switchDay(0,this)">Day 1</button>
-      <button class="day-tab" onclick="switchDay(1,this)">Day 2</button>
-      <button class="day-tab" onclick="switchDay(2,this)">Day 3</button>
+    <div class="stag-line"><span>The 3-Day Process</span></div>
+    <h2 class="stitle">What Happens <strong>Across 3 Days</strong></h2>
+    <div class="day-overview">
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 1</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Understand the Pattern</div>
+          <div class="day-ov-desc">See exactly what&rsquo;s been driving your financial results. Not strategies &mdash; the roots underneath them. You&rsquo;ll identify precisely why what you know and what you do are two different things.</div>
+        </div>
+      </div>
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 2</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Break the Pattern</div>
+          <div class="day-ov-desc">The emotional clearing process. The most powerful 2 hours of the weekend &mdash; and for many, of their financial life. Unresolved beliefs that have been running silently for years are identified and released.</div>
+        </div>
+      </div>
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 3</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Rebuild a New One</div>
+          <div class="day-ov-desc">Your personalised 90-day action plan. You leave with a specific next move and the internal wiring to actually execute it. This is where insight becomes irreversible change.</div>
+        </div>
+      </div>
     </div>
-    <div class="day-content active" id="day0">
-      <div class="session-card"><div class="sess-num">Session 01 &middot; Mindset Day</div><h3 class="sess-title">Winning the Money Game</h3><ul class="sess-pts"><li>Discover the #1 reason most business owners fail at the money game</li><li>Understand the two primary sources of passive income</li><li>Implement a proven money management system (JAW System)</li><li>The roots vs. fruits framework that explains your entire financial history</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 02 &middot; Mindset Day</div><h3 class="sess-title">Financial Freedom Blueprint</h3><ul class="sess-pts"><li>The three keys to financial freedom &mdash; most people only know one</li><li>How time and high ROI are the ultimate wealth-building tools</li><li>Top passive income vehicles: real estate, licensing, internet systems</li><li>Why knowing what to do and doing what you know are completely different skills</li></ul></div>
-    </div>
-    <div class="day-content" id="day1">
-      <div class="session-card"><div class="sess-num">Session 03 &middot; Reconditioning Day</div><h3 class="sess-title">Winning the Mind Game</h3><ul class="sess-pts"><li>Why some people achieve success while others with the same knowledge don&rsquo;t</li><li>The Coin Exercise &mdash; a live demonstration of your unconscious money patterns</li><li>How you do anything is how you do everything: your financial mirror</li><li>Shift your mindset with empowering declarations that actually work</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 04 &middot; Reconditioning Day</div><h3 class="sess-title">Unlock Your Money Personality</h3><ul class="sess-pts"><li>Identify your dominant personality: Saver, Spender, Avoider, or Money Monk</li><li>How your personality shapes your financial habits and decisions</li><li>Strategies to balance your type for long-term financial stability</li><li>Why your biggest financial enemy is often yourself</li></ul></div>
-    </div>
-    <div class="day-content" id="day2">
-      <div class="session-card"><div class="sess-num">Session 05 &middot; Transformation Day</div><h3 class="sess-title">Master Your Money Emotions</h3><ul class="sess-pts"><li>The emotional clearing session &mdash; the most powerful 2 hours of the weekend</li><li>How unresolved guilt, fear, shame and anger are sabotaging your finances right now</li><li>The guided process that permanently releases these blocks</li><li>Why this session is worth more than years of therapy for your financial life</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 06 &middot; Transformation Day</div><h3 class="sess-title">The Power of Action</h3><ul class="sess-pts"><li>Why action is the critical bridge between thoughts, feelings and results</li><li>How to break through your comfort zone &mdash; and why discomfort means you&rsquo;re growing</li><li>Successful people feel fear too &mdash; they just don&rsquo;t let it stop them</li><li>Your personalised action plan for the 90 days after the event</li></ul></div>
-    </div>
+    <p class="day-ov-tagline">This is not theory. It&rsquo;s a guided process that changes how you think, decide and act around money &mdash; permanently.</p>
   </div>
 </section>
 
-<!-- WHO ATTENDS -->
+<!-- WHO ATTENDS — trimmed to 3 bullets -->
 <section class="section-bg-off">
   <div class="si">
     <div class="stag-line"><span>Who This Is For</span></div>
-    <h2 class="stitle">You&rsquo;ve Already Tried <strong>The Strategies</strong></h2>
-    <p style="font-size:15px;color:var(--muted);max-width:620px;line-height:1.75">Every year, thousands of business owners and professionals attend MMI. They share one thing in common: they already know <em>what</em> to do &mdash; they just can&rsquo;t explain why it&rsquo;s not working.</p>
-    <div class="who-grid">
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div class="who-type">Business Owners &amp; Entrepreneurs</div><div class="who-desc">You&rsquo;ve built something real, but <strong>revenue has hit a ceiling</strong>. You work harder than anyone you know &mdash; yet the income isn&rsquo;t following. This changes the internal wiring that&rsquo;s capping your growth.</div><div class="who-q">&ldquo;I was running a &pound;1M business and couldn&rsquo;t understand why I kept self-sabotaging every time we got close to the next level.&rdquo; &mdash; Ryan R.</div></div>
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-trending"/></svg></span><div class="who-type">Senior Professionals &amp; Executives</div><div class="who-desc">High income, but <strong>wealth isn&rsquo;t accumulating</strong> the way it should. You earn well, but lifestyle inflation, bad investments, the feeling there&rsquo;s never enough. This addresses the root.</div><div class="who-q">&ldquo;I was earning six figures and still living like I was broke. The mindset shift at MMI explained everything.&rdquo; &mdash; MMI Graduate</div></div>
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-layers"/></svg></span><div class="who-type">Investors &amp; Freelancers</div><div class="who-desc">You have the knowledge. You understand the vehicles. But <strong>inconsistency and fear keep pulling you back</strong>. MMI identifies the emotional and psychological patterns behind your financial results.</div><div class="who-q">&ldquo;I knew all the theory. What I didn&rsquo;t know was why I kept undoing my own progress.&rdquo; &mdash; MMI Graduate</div></div>
-    </div>
+    <h2 class="stitle">Built for People Who Already Know <strong>Something Is Wrong</strong></h2>
+    <ul class="who-bullets">
+      <li><strong>Business owners &amp; entrepreneurs</strong> who&rsquo;ve hit a revenue ceiling &mdash; working harder, earning more, but wealth isn&rsquo;t building the way it should.</li>
+      <li><strong>Senior professionals &amp; executives</strong> with high income but no lasting wealth &mdash; lifestyle expands, savings don&rsquo;t. Something keeps resetting.</li>
+      <li><strong>Investors &amp; freelancers</strong> who understand all the vehicles but keep undoing their own progress. The knowledge is there. The results aren&rsquo;t following.</li>
+    </ul>
   </div>
 </section>
 
@@ -1133,31 +1098,44 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ — 4 essential questions -->
 <section>
-  <div class="si">
+  <div class="si" style="max-width:740px">
     <div class="stag-line"><span>Common Questions</span></div>
     <h2 class="stitle">Everything You Need <strong>to Know</strong></h2>
     <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is this genuinely a live event &mdash; or a recorded course?<span>+</span></button><p class="faq-a">This is 100% live. Your trainer is on screen for all 3 days, 9am to 8pm. The room is filled with hundreds of other participants. There are live exercises, breakout rooms, and real-time Q&amp;A &mdash; exactly what you&rsquo;d experience in person, delivered directly to your screen.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the content based on T. Harv Eker&rsquo;s teachings?<span>+</span></button><p class="faq-a">Yes. The programme covers all the knowledge imparted by T. Harv Eker himself. Each Lead Trainer is handpicked personally by T. Harv to deliver the full MMI experience with the same depth and impact.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What makes this different from other financial programmes?<span>+</span></button><p class="faq-a">T. Harv Eker&rsquo;s Zen teacher once told him: &ldquo;If what you were looking for was where you were looking &mdash; chances are you would have already found it.&rdquo; MMI doesn&rsquo;t give you more strategies to look in the same places. It changes where you look &mdash; from external circumstances to internal roots.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">I run a business &mdash; can I really take 3 full days away?<span>+</span></button><p class="faq-a">This question is exactly why the online format exists. You attend from your home or office &mdash; no flights, no hotels, no commute. You need a device and a connection. Most business owners find that the 3 days they invest here change the decisions they make for the next 3 years.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are there age restrictions?<span>+</span></button><p class="faq-a">The programme is recommended for ages 16 and over. Children aged 10&ndash;16 are permitted with a purchased ticket and a parent or guardian at all times. Children below 10 are not permitted.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is there only one login per ticket?<span>+</span></button><p class="faq-a">Yes &mdash; one unique login per ticket holder, one device at a time. If you want a second person to have access, they will need to purchase their own ticket.</p></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I upgrade to attend in person?<span>+</span></button><p class="faq-a">Yes. Every event has an optional in-person VIP upgrade available. After registering online, the upgrade option is presented. In-person VIP capacity is limited to the venue size.</p></div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the content based on T. Harv Eker&rsquo;s teachings?<span>+</span></button>
+        <p class="faq-a">Yes. The programme covers all the knowledge imparted by T. Harv Eker himself. Every live event is led by a handpicked certified trainer chosen personally by T. Harv.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What makes this different from other financial programmes?<span>+</span></button>
+        <p class="faq-a">Most financial programmes teach you to work on the fruits &mdash; your income, savings, strategy. MMI works on the roots &mdash; the beliefs, habits and unconscious money programming running underneath. That&rsquo;s why people see change when nothing else has worked.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this a full-day event each day?<span>+</span></button>
+        <p class="faq-a">Yes &mdash; 9am to 8pm each day, fully live and interactive. Everything we do with the online event mirrors the in-person MMI experience, with variations to make the online format equally immersive.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is your refund policy?<span>+</span></button>
+        <p class="faq-a">Attend Day 1. If you don&rsquo;t feel it was worth every cent of your $19, email us within 30 days for a full refund. No questions. No hassle. You have nothing to lose.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="si" style="max-width:700px;margin:0 auto;position:relative;z-index:1">
-    <div class="stag-line" style="justify-content:center"><span>Your Move</span></div>
-    <h2 class="final-title">What if your business grew<br>like <strong>Vishen&rsquo;s did</strong> after this weekend?</h2>
-    <p class="final-sub">The business owners who changed their financial lives didn&rsquo;t do it with a better strategy. They did it by fixing what was running underneath. For the price of a business lunch &mdash; with no travel, no hotel, no time away from your business &mdash; that door is open right now.</p>
-    <button class="btn-primary-light" onclick="openFeatured()">Secure My Online Seat</button>
-    <div class="final-note">Join from anywhere &middot; Live &amp; interactive &middot; VIP in-person upgrade available</div>
+  <div class="si" style="max-width:620px;margin:0 auto;position:relative;z-index:1;text-align:center">
+    <div class="stag-line" style="justify-content:center"><span id="finalCtaCity">Your City</span></div>
+    <h2 class="final-title"><em id="finalCtaCity2">Your City</em> Is Open<br>Right Now</h2>
+    <div class="final-urgency">
+      <p>This tour doesn&rsquo;t stay.</p>
+      <p>When this stop ends &mdash; it moves on.</p>
+      <p>For less than the price of a business lunch,<br>you either step in now&hellip; or watch it pass.</p>
+    </div>
+    <button class="btn-primary-light" onclick="openFeatured()">Secure My Seat</button>
+    <div class="final-note">Live &middot; Limited seats &middot; <span id="finalCtaCity3">Your City</span> only</div>
   </div>
 </section>
 
@@ -1289,10 +1267,16 @@ function initPage(ev){
   // Update hero + immediate CTA city
   const hc=document.getElementById('heroCity');
   if(hc) hc.textContent=ev.city;
-  const ic=document.getElementById('immCtaCity');
-  if(ic) ic.textContent=ev.city;
+  // Tour urgency city (world tour section)
+  const uc=document.getElementById('tourUrgencyCity');
+  if(uc) uc.textContent=ev.city;
+  // Final CTA city labels
   const fc=document.getElementById('finalCtaCity');
-  if(fc) fc.textContent=ev.city+' Is Open';
+  if(fc) fc.textContent=ev.city;
+  const fc2=document.getElementById('finalCtaCity2');
+  if(fc2) fc2.textContent=ev.city;
+  const fc3=document.getElementById('finalCtaCity3');
+  if(fc3) fc3.textContent=ev.city;
   // Update tourCity in events section
   const tc=document.getElementById('tourCity');
   if(tc) tc.textContent=ev.city;
@@ -1352,7 +1336,7 @@ function buildTourSection(featuredEv){
     '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-clock"/></svg>'+featuredEv.time+'</div>'+
     '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-screen"/></svg>Live Online \u00b7 Optional In-Person</div>'+
     '</div>'+
-    '<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)">Join '+featuredEv.city+' \u2192</button>'+
+    '<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)">Secure My Seat \u2192</button>'+
     '<div class="tour-feat-scarcity"><svg class="icon icon-sm" style="color:var(--gold)"><use href="#i-users-small"/></svg>&nbsp;Limited seats. This stop is filling.</div>'+
     '</div>'+
     '<div class="tour-feat-right">'+
