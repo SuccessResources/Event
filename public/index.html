@@ -22,7 +22,7 @@
   --green-lt: #e8f5e3;
   --green-md: #c5e8c0;
   --gold-lt:  #dabf88;
-  --gold:     #a78138;
+  --gold:     #c8a96a;
   --white:    #ffffff;
   --off-white:#f8f6f1;
   --ink:      #1a1a1a;
@@ -47,18 +47,45 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 h2.stitle{font-family:"Montserrat",sans-serif;font-size:clamp(26px,3.8vw,48px);font-weight:200;line-height:1.2;color:var(--forest);margin-bottom:20px}
 h2.stitle strong{font-weight:700}
 
+/* ── SVG ICON SYSTEM ── */
+.icon{width:20px;height:20px;flex-shrink:0;stroke:currentColor;fill:none;display:inline-block;vertical-align:middle}
+.icon-lg{width:26px;height:26px}
+.icon-sm{width:16px;height:16px}
+
 /* ── BRAND LOGO TEXT ── */
 .brand-logo{font-family:"Cinzel",serif;font-weight:700;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-lt) 0%,var(--gold) 50%,var(--gold-lt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-lt);padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-lt);padding:0 44px;height:80px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
 nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
-/* brand block — left */
-.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none}
-.nav-sig{font-family:"Montserrat",sans-serif;font-size:8.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted-lt);line-height:1;margin-bottom:4px}
-.nav-name{font-family:"Cinzel",serif;font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1.5px;line-height:1}
-.nav-divider{width:1px;height:32px;background:var(--border);flex-shrink:0}
-.nav-programme{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest);line-height:1}
+/* brand block — luxury horizontal pill ─────────────────────── */
+.nav-brand{
+  display:inline-flex;align-items:center;gap:14px;
+  text-decoration:none;
+  border:1px solid var(--gold);
+  border-radius:100px;
+  padding:7px 20px 7px 18px;
+  transition:border-color .2s
+}
+.nav-brand:hover{border-color:var(--gold-lt)}
+.nav-sig{
+  font-family:"Montserrat",sans-serif;
+  font-size:7.5px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted-lt);line-height:1;margin-bottom:3px
+}
+.nav-name{
+  font-family:"Cinzel",serif;font-size:16px;font-weight:700;
+  background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  letter-spacing:1.5px;line-height:1
+}
+.nav-divider{width:1px;height:26px;background:var(--border-lt);flex-shrink:0}
+.nav-programme{
+  font-family:"Montserrat",sans-serif;
+  font-size:8px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--forest);line-height:1
+}
 /* CTA — right */
 .btn-nav{background:transparent;color:var(--gold);padding:10px 24px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--gold);cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:8px;border-radius:4px}
 .btn-nav:hover{background:var(--gold);color:#fff}
@@ -74,7 +101,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:110px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 44px 88px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
 .hero::after{display:none}
 .zen-deco{display:none}
 .hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center}
@@ -100,7 +127,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .price-badge{background:#f5ebd4;color:var(--gold);padding:6px 16px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:20px;border:none}
 .price-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
 /* CTA */
-.btn-primary{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--forest);color:#fff;padding:18px 36px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;border-radius:6px;width:100%;max-width:480px}
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--forest);color:#fff;padding:18px 36px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .25s;border-radius:8px;width:100%;max-width:480px}
 .btn-primary::after{content:"→";font-size:16px;transition:transform .25s}
 .btn-primary:hover{background:#1a4a0a;transform:translateY(-1px);box-shadow:0 8px 32px rgba(5,75,3,0.25)}
 .btn-primary:hover::after{transform:translateX(5px)}
@@ -141,7 +168,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .stat-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:6px}
 
 /* ── SECTIONS ── */
-section{padding:88px 40px}
+section{padding:108px 40px}
 .section-bg-off{background:var(--off-white)}
 .section-bg-green{background:var(--green-lt)}
 
@@ -180,9 +207,9 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 /* tree visual */
 .tree-visual{display:flex;flex-direction:column;align-items:stretch}
 .tree-part{padding:22px 28px;width:100%;text-align:center}
-.tree-fruits{background:var(--green-lt);border:1px solid var(--green-md);border-bottom:none}
-.tree-trunk{background:var(--off-white);border:1px solid var(--border);border-bottom:none;border-top:none}
-.tree-roots{background:var(--forest);border:1px solid var(--forest)}
+.tree-fruits{background:var(--green-lt);border:1px solid var(--border-lt);border-bottom:none;border-left:3px solid var(--green)}
+.tree-trunk{background:var(--off-white);border:1px solid var(--border-lt);border-bottom:none;border-top:none;border-left:3px solid var(--border)}
+.tree-roots{background:var(--forest);border:1px solid var(--forest);border-left:3px solid var(--gold)}
 .tree-label{font-family:"Cinzel",serif;font-size:18px;font-weight:600;margin-bottom:4px}
 .tree-fruits .tree-label{color:var(--forest)}.tree-trunk .tree-label{color:var(--muted)}.tree-roots .tree-label{color:var(--gold-lt)}
 .tree-fruits .tree-desc{color:var(--muted)}.tree-trunk .tree-desc{color:var(--muted)}.tree-roots .tree-desc{color:rgba(255,255,255,0.65)}
@@ -192,7 +219,7 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 
 /* ── HOW IT WORKS ── */
 .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.how-card{background:var(--white);border:1px solid var(--border-lt);padding:32px 28px;position:relative;box-shadow:var(--shadow)}
+.how-card{background:var(--white);border:1px solid var(--border-lt);padding:40px 32px;position:relative;box-shadow:var(--shadow)}
 .how-step-num{position:absolute;top:20px;right:24px;font-family:"Cinzel",serif;font-size:48px;font-weight:700;color:var(--green-lt);line-height:1}
 .how-icon{font-size:26px;margin-bottom:16px;display:block}
 .how-title{font-family:"Montserrat",sans-serif;font-size:15px;font-weight:700;color:var(--forest);margin-bottom:10px}
@@ -371,6 +398,58 @@ footer a:hover{color:var(--gold-lt)}
 <!-- GTM noscript -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T79PHNK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+<!-- SVG Icon System — outline, 1.5px stroke, consistent weight -->
+<svg id="icon-defs" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <ellipse cx="10" cy="10" rx="3.5" ry="8"/>
+    <line x1="2.5" y1="10" x2="17.5" y2="10"/>
+    <line x1="4.5" y1="6.5" x2="15.5" y2="6.5"/>
+    <line x1="4.5" y1="13.5" x2="15.5" y2="13.5"/>
+  </symbol>
+  <symbol id="i-lock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="9" width="12" height="9" rx="2"/>
+    <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="14" height="13" rx="2"/>
+    <line x1="3" y1="9" x2="17" y2="9"/>
+    <line x1="7" y1="2" x2="7" y2="6"/>
+    <line x1="13" y1="2" x2="13" y2="6"/>
+  </symbol>
+  <symbol id="i-briefcase" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="16" height="11" rx="2"/>
+    <path d="M7 7V5a3 3 0 0 1 6 0v2"/>
+    <line x1="2" y1="12" x2="18" y2="12"/>
+  </symbol>
+  <symbol id="i-trending" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="2,15 7,9 11,12 18,4"/>
+    <polyline points="13,4 18,4 18,9"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="10,2 18,7 10,12 2,7"/>
+    <polyline points="2,12 10,17 18,12"/>
+    <polyline points="2,9.5 10,14.5 18,9.5"/>
+  </symbol>
+  <symbol id="i-target" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <circle cx="10" cy="10" r="4"/>
+    <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <polyline points="10,5 10,10 13.5,12.5"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <polyline points="6.5,10.5 9,13 14.5,7.5"/>
+  </symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="10" x2="17" y2="10"/>
+    <polyline points="12,5 17,10 12,15"/>
+  </symbol>
+</svg>
+
 <!-- LOADER -->
 <div class="geo-loader" id="geoLoader"><div><div class="loader-ring"></div><p class="loader-txt">Finding your nearest event</p></div></div>
 
@@ -385,7 +464,7 @@ footer a:hover{color:var(--gold-lt)}
     <div class="modal-body">
       <!-- Online pass -->
       <div class="modal-tier-box highlight">
-        <div class="modal-tier-name">&#127760; Online Pass — Live &amp; Interactive</div>
+        <div class="modal-tier-name" style="display:flex;align-items:center;gap:8px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg> Online Pass &mdash; Live &amp; Interactive</div>
         <div class="modal-tier-sub">Attend from anywhere &middot; Zoom &middot; Any device</div>
         <div class="modal-tier-pricing">
           <span class="modal-tier-was">$199</span>
@@ -396,7 +475,7 @@ footer a:hover{color:var(--gold-lt)}
       </div>
       <!-- In-person VIP -->
       <div class="modal-tier-box">
-        <div class="modal-tier-name">&#127963; In-Person VIP Pass</div>
+        <div class="modal-tier-name" style="display:flex;align-items:center;gap:8px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-layers"/></svg> In-Person VIP Pass</div>
         <div class="modal-tier-sub" id="mLiveSubtitle">Attend live at the venue</div>
         <div class="modal-tier-pricing">
           <span class="modal-tier-was" id="mLiveWas"></span>
@@ -419,7 +498,7 @@ footer a:hover{color:var(--gold-lt)}
     <div class="nav-divider"></div>
     <div class="nav-programme">Intensive Online</div>
   </a>
-  <button class="btn-nav" onclick="openFeatured()">&#128274;&nbsp; Secure Seat</button>
+  <button class="btn-nav" onclick="openFeatured()"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-lock"/></svg> Secure Seat</button>
 </nav>
 
 <!-- ╔══════════════════════════════════════╗ -->
@@ -450,7 +529,7 @@ footer a:hover{color:var(--gold-lt)}
         <span class="price-badge">Early Bird</span>
       </div>
       <button class="btn-primary" onclick="openFeatured()">Secure My Seat</button>
-      <div class="hero-trust">&#9203; Takes less than 60 seconds</div>
+      <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds</div>
     </div>
     <div class="hero-right" id="heroTag">
       <div class="hr-label">Live Online Event</div>
@@ -489,9 +568,9 @@ footer a:hover{color:var(--gold-lt)}
     <h2 class="stitle">You&rsquo;ve Already Tried <strong>The Strategies</strong></h2>
     <p style="font-size:15px;color:var(--muted);max-width:620px;line-height:1.75">Every year, thousands of business owners and professionals attend MMI. They share one thing in common: they already know <em>what</em> to do &mdash; they just can&rsquo;t explain why it&rsquo;s not working.</p>
     <div class="who-grid">
-      <div class="who-card"><span class="who-icon">&#128188;</span><div class="who-type">Business Owners &amp; Entrepreneurs</div><div class="who-desc">You&rsquo;ve built something real, but <strong>revenue has hit a ceiling</strong>. You work harder than anyone you know &mdash; yet the income isn&rsquo;t following. This changes the internal wiring that&rsquo;s capping your growth.</div><div class="who-q">&ldquo;I was running a &pound;1M business and couldn&rsquo;t understand why I kept self-sabotaging every time we got close to the next level.&rdquo; &mdash; Ryan R.</div></div>
-      <div class="who-card"><span class="who-icon">&#128200;</span><div class="who-type">Senior Professionals &amp; Executives</div><div class="who-desc">High income, but <strong>wealth isn&rsquo;t accumulating</strong> the way it should. You earn well, but lifestyle inflation, bad investments, the feeling there&rsquo;s never enough. This addresses the root.</div><div class="who-q">&ldquo;I was earning six figures and still living like I was broke. The mindset shift at MMI explained everything.&rdquo; &mdash; MMI Graduate</div></div>
-      <div class="who-card"><span class="who-icon">&#128640;</span><div class="who-type">Investors &amp; Freelancers</div><div class="who-desc">You have the knowledge. You understand the vehicles. But <strong>inconsistency and fear keep pulling you back</strong>. MMI identifies the emotional and psychological patterns behind your financial results.</div><div class="who-q">&ldquo;I knew all the theory. What I didn&rsquo;t know was why I kept undoing my own progress.&rdquo; &mdash; MMI Graduate</div></div>
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div class="who-type">Business Owners &amp; Entrepreneurs</div><div class="who-desc">You&rsquo;ve built something real, but <strong>revenue has hit a ceiling</strong>. You work harder than anyone you know &mdash; yet the income isn&rsquo;t following. This changes the internal wiring that&rsquo;s capping your growth.</div><div class="who-q">&ldquo;I was running a &pound;1M business and couldn&rsquo;t understand why I kept self-sabotaging every time we got close to the next level.&rdquo; &mdash; Ryan R.</div></div>
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-trending"/></svg></span><div class="who-type">Senior Professionals &amp; Executives</div><div class="who-desc">High income, but <strong>wealth isn&rsquo;t accumulating</strong> the way it should. You earn well, but lifestyle inflation, bad investments, the feeling there&rsquo;s never enough. This addresses the root.</div><div class="who-q">&ldquo;I was earning six figures and still living like I was broke. The mindset shift at MMI explained everything.&rdquo; &mdash; MMI Graduate</div></div>
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-layers"/></svg></span><div class="who-type">Investors &amp; Freelancers</div><div class="who-desc">You have the knowledge. You understand the vehicles. But <strong>inconsistency and fear keep pulling you back</strong>. MMI identifies the emotional and psychological patterns behind your financial results.</div><div class="who-q">&ldquo;I knew all the theory. What I didn&rsquo;t know was why I kept undoing my own progress.&rdquo; &mdash; MMI Graduate</div></div>
     </div>
   </div>
 </section>
@@ -526,11 +605,11 @@ footer a:hover{color:var(--gold-lt)}
       </div>
       <div>
         <div class="tree-visual">
-          <div class="tree-part tree-fruits"><div class="tree-label">&#127822; Fruits</div><div class="tree-desc">Your results: income, wealth, relationships, success</div></div>
+          <div class="tree-part tree-fruits"><div class="tree-label">Fruits</div><div class="tree-desc">Your results: income, wealth, relationships, success</div></div>
           <div class="tree-conn"></div>
-          <div class="tree-part tree-trunk"><div class="tree-label">&#127807; Branches</div><div class="tree-desc">Your actions and daily behaviours</div></div>
+          <div class="tree-part tree-trunk"><div class="tree-label">Branches</div><div class="tree-desc">Your actions and daily behaviours</div></div>
           <div class="tree-conn"></div>
-          <div class="tree-part tree-roots"><div class="tree-label">&#127809; Roots</div><div class="tree-desc">Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)">this is where everything starts</strong></div></div>
+          <div class="tree-part tree-roots"><div class="tree-label">Roots</div><div class="tree-desc">Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)">this is where everything starts</strong></div></div>
         </div>
       </div>
     </div>
@@ -544,9 +623,9 @@ footer a:hover{color:var(--gold-lt)}
     <h2 class="stitle">Everything You&rsquo;d Get In-Person &mdash; <strong>Without Leaving Home</strong></h2>
     <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75">This isn&rsquo;t a passive video course. MMI Online is a fully live, interactive 3-day experience. Your trainer is on screen. The room is full. The breakthroughs are real.</p>
     <div class="how-grid">
-      <div class="how-card"><span class="how-step-num">01</span><span class="how-icon">&#128272;</span><div class="how-title">Register &amp; Receive Access</div><div class="how-desc">After registering you receive your unique Zoom login. One login per ticket &mdash; secure and personal. Works on any device.</div><div class="how-tip">Just a browser or the Zoom app &mdash; no setup required</div></div>
-      <div class="how-card"><span class="how-step-num">02</span><span class="how-icon">&#128197;</span><div class="how-title">Attend Live &mdash; 3 Full Days</div><div class="how-desc">Join the live room for all 3 days (9am&ndash;8pm event time). Participate in exercises, breakouts, and live Q&amp;A with your trainer. You can&rsquo;t press pause on a breakthrough.</div><div class="how-tip">All sessions run on the event city&rsquo;s local time</div></div>
-      <div class="how-card"><span class="how-step-num">03</span><span class="how-icon">&#128640;</span><div class="how-title">Leave With a 90-Day Plan</div><div class="how-desc">By Day 3 you leave with a personalised action plan, your money personality profile, and access to the post-event alumni community worldwide.</div><div class="how-tip">Optional: upgrade to in-person VIP at the host city</div></div>
+      <div class="how-card"><span class="how-step-num">01</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-lock"/></svg></span><div class="how-title">Register &amp; Receive Access</div><div class="how-desc">After registering you receive your unique Zoom login. One login per ticket &mdash; secure and personal. Works on any device.</div><div class="how-tip">Just a browser or the Zoom app &mdash; no setup required</div></div>
+      <div class="how-card"><span class="how-step-num">02</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-calendar"/></svg></span><div class="how-title">Attend Live &mdash; 3 Full Days</div><div class="how-desc">Join the live room for all 3 days (9am&ndash;8pm event time). Participate in exercises, breakouts, and live Q&amp;A with your trainer. You can&rsquo;t press pause on a breakthrough.</div><div class="how-tip">All sessions run on the event city&rsquo;s local time</div></div>
+      <div class="how-card"><span class="how-step-num">03</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-target"/></svg></span><div class="how-title">Leave With a 90-Day Plan</div><div class="how-desc">By Day 3 you leave with a personalised action plan, your money personality profile, and access to the post-event alumni community worldwide.</div><div class="how-tip">Optional: upgrade to in-person VIP at the host city</div></div>
     </div>
   </div>
 </section>
@@ -706,7 +785,7 @@ footer a:hover{color:var(--gold-lt)}
     <h2 class="final-title">What if your business grew<br>like <strong>Vishen&rsquo;s did</strong> after this weekend?</h2>
     <p class="final-sub">The business owners who changed their financial lives didn&rsquo;t do it with a better strategy. They did it by fixing what was running underneath. For the price of a business lunch &mdash; with no travel, no hotel, no time away from your business &mdash; that door is open right now.</p>
     <button class="btn-primary-light" onclick="openFeatured()">Secure My Online Seat</button>
-    <div class="final-note">&#127757; Join from anywhere &middot; Live &amp; interactive &middot; VIP in-person upgrade available</div>
+    <div class="final-note">Join from anywhere &middot; Live &amp; interactive &middot; VIP in-person upgrade available</div>
   </div>
 </section>
 
