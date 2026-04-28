@@ -230,6 +230,14 @@ var EVENTS = {
     timezone: 'https://www.worldtimebuddy.com/?qm=1&lid=1735161,2643743,2950159,5128581,3530597&h=1735161&date=2026-5-1&sln=9-20&hf=1',
     day3note: 'On Day 3 (3 May 2026), the session starts 1 hour earlier at 8AM GMT+8 — be ready!'
   },
+  kl2: {
+    name:     'Kuala Lumpur, Malaysia',
+    dates:    '30 Oct–1 Nov 2026',
+    tz:       'GMT+8',
+    calendar: 'https://calendar.google.com/calendar/u/0/r/eventedit?dates=20261030T010000Z/20261101T120000Z&details=Make+sure+you+download+and+print+your+event+workbook!+Download+here:+https://sr-event.com/mmh-workbook&location=Zoom&text=Millionaire+Mind+Intensive+KL+Oct+2026',
+    timezone: 'https://www.worldtimebuddy.com/?qm=1&lid=1735161,2643743,2950159,5128581,3530597&h=1735161&date=2026-10-30&sln=9-20&hf=1',
+    day3note: 'On Day 3 (1 Nov 2026), sessions run 9AM–8PM GMT+8.'
+  },
   mal: {
     name:     'Malaga, Spain',
     dates:    '22–24 May 2026',
@@ -314,7 +322,7 @@ var EVENTS = {
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  var event  = new URLSearchParams(window.location.search).get('event') || 'kl';
+  var event  = new URLSearchParams(window.location.search).get('event') || 'kl'; // kl = May, kl2 = October
   var config = EVENTS[event] || EVENTS['kl'];
 
   // Hero
