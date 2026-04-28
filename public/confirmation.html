@@ -52,8 +52,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .nav-pill-link:hover{color:var(--forest)}
 
 /* ═══════════════ HERO ═══════════════ */
-.hero{background:var(--cream);overflow:hidden;position:relative}
-.hero-inner{max-width:1280px;margin:0 auto;padding:60px 48px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;min-height:420px}
+.hero{background:var(--cream);position:relative}
+.hero-inner{max-width:1280px;margin:0 auto;padding:60px 48px 0;display:grid;grid-template-columns:55% 45%;gap:48px;align-items:start;min-height:460px;position:relative}
 .hero-left{padding-bottom:60px}
 .hero-script{font-family:"Dancing Script",cursive;font-size:36px;font-weight:700;color:var(--gold-lt);display:block;margin-bottom:8px}
 .hero-title{font-family:"Playfair Display",serif;font-size:clamp(52px,6vw,88px);font-weight:800;color:var(--forest);line-height:1.0;letter-spacing:-2px;margin-bottom:20px}
@@ -62,14 +62,14 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .hero-pill{display:flex;align-items:center;gap:8px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--ink-mid)}
 .hero-pill svg{width:16px;height:16px;stroke:var(--forest);fill:none;stroke-width:1.5}
 .hero-pill-sep{color:var(--border);font-size:20px}
-.hero-right{position:relative;display:flex;flex-direction:column;align-items:flex-end}
-.confirm-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 26px;display:flex;align-items:flex-start;gap:16px;box-shadow:var(--shadow-md);max-width:340px;width:100%;margin-bottom:24px}
+.hero-right{position:relative;display:flex;flex-direction:column;align-items:flex-start;overflow:hidden;padding-bottom:0}
+.confirm-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 26px;display:flex;align-items:flex-start;gap:16px;box-shadow:var(--shadow-md);width:100%;max-width:380px;margin-bottom:20px;position:relative;z-index:2}
 .confirm-check{width:44px;height:44px;border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .confirm-check svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:2.5}
 .confirm-card-title{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .confirm-card-body{font-size:13px;color:var(--muted);line-height:1.6}
-.hero-img-wrap{position:absolute;right:-48px;bottom:0;width:55%;max-width:580px}
-.hero-img-wrap img{width:100%;display:block;object-fit:cover}
+.hero-img-wrap{width:calc(100% + 48px);margin-right:-48px;position:relative;z-index:1}
+.hero-img-wrap img{width:100%;display:block;object-fit:cover;border-radius:12px 0 0 0}
 
 /* ═══════════════ JOURNEY ═══════════════ */
 .journey{background:var(--white);padding:64px 48px}
