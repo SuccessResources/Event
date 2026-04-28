@@ -513,26 +513,38 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 
-document.addEventListener('DOMContentLoaded',function(){
-  var ev  = new URLSearchParams(window.location.search).get('event')||'kl';
-  var cfg = EVENTS[ev]||EVENTS['kl'];
-  document.title = "You're In — MMI "+cfg.name.split(',')[0]+" 2026";
+document.addEventListener('DOMContentLoaded', function(){
+  var ev  = new URLSearchParams(window.location.search).get('event') || 'kl';
+  var cfg = EVENTS[ev] || EVENTS['kl'];
 
-  // Top bar dates
-  var td = document.getElementById('topDates');
-  if(td) td.textContent = cfg.dates.toUpperCase();
+  // Page title
+  document.title = "You're In - MMI " + cfg.city + " 2026";
 
-  // Day 3 note
+  // Nav dates (top bar)
+  var navD = document.getElementById('navDates');
+  if(navD) navD.textContent = cfg.dates.toUpperCase();
+
+  // Hero dates (inside hero section)
+  var heroD = document.getElementById('heroDates');
+  if(heroD) heroD.textContent = cfg.dates.toUpperCase();
+
+  // Day 3 note — show only if present
   var dn = document.getElementById('day3Note');
-  if(dn) dn.textContent = cfg.day3note;
+  if(dn){
+    dn.textContent = cfg.day3note;
+    dn.style.display = cfg.day3note ? 'inline-block' : 'none';
+  }
 
-  // Calendar links (row + button)
+  // Calendar links
   ['calendarLink','calendarLinkBtn'].forEach(function(id){
-    var el=document.getElementById(id); if(el) el.href=cfg.calendar;
+    var el = document.getElementById(id);
+    if(el) el.href = cfg.calendar;
   });
-  // Timezone links (row + button)
+
+  // Timezone links
   ['timezoneLink','timezoneLinkBtn'].forEach(function(id){
-    var el=document.getElementById(id); if(el) el.href=cfg.timezone;
+    var el = document.getElementById(id);
+    if(el) el.href = cfg.timezone;
   });
 });
 </script>
