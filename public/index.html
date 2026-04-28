@@ -62,25 +62,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .corner-sticker{
   position:fixed;
   top:0;left:0;
-  z-index:98;
-  width:168px;
-  padding:14px 22px 36px 14px;
+  z-index:101;
+  width:172px;
+  padding:12px 24px 38px 14px;
   background:#fff;
-  clip-path:polygon(0 0,100% 0,100% 62%,62% 100%,0 100%);
-  filter:drop-shadow(2px 3px 10px rgba(5,75,3,0.13));
-  pointer-events:none;
-  transition:opacity .3s
+  clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);
+  filter:drop-shadow(2px 4px 12px rgba(5,75,3,0.14));
+  pointer-events:none
 }
 .cs-sig{
   font-family:"Montserrat",sans-serif;
   font-size:7px;font-weight:700;
   letter-spacing:2px;text-transform:uppercase;
   color:var(--muted-lt);
-  margin-bottom:6px;line-height:1.4
+  margin-bottom:7px;line-height:1.4
 }
 .cs-brand{
   font-family:"Cinzel",serif;
-  font-size:20px;font-weight:700;
+  font-size:21px;font-weight:700;
   line-height:1.05;letter-spacing:1px;
   background:linear-gradient(160deg,var(--gold-lt) 0%,var(--gold) 55%,var(--gold-lt) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
@@ -434,10 +433,7 @@ footer a:hover{color:var(--gold-lt)}
 </div>
 
 <!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#">
-    <span class="nav-logo-text">Millionaire Mind&#174;</span>
-  </a>
+<nav style="justify-content:flex-end">
   <button class="btn-nav" onclick="openFeatured()">Register Now</button>
 </nav>
 
@@ -448,12 +444,6 @@ footer a:hover{color:var(--gold-lt)}
 
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
-      <div class="hero-brand">
-        <span class="hero-brand-main">Millionaire Mind&reg;</span>
-        <span class="hero-brand-sub">Intensive Online</span>
-        <div class="hero-rule"></div>
-      </div>
       <div class="live-pill"><span class="dot"></span>Live Online &middot; Join from Anywhere in the World</div>
       <div class="hero-loc-row" id="heroLoc" style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:16px"></div>
       <h1 class="hero-title">Why Most Business Owners Will<br><strong>Never Be Financially Free</strong></h1>
