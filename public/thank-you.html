@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>You're In — Millionaire Mind Intensive</title>
+<!-- Vimeo preconnect — open TCP connections before user clicks play -->
+<link rel="preconnect" href="https://player.vimeo.com">
+<link rel="preconnect" href="https://f.vimeocdn.com" crossorigin>
+<link rel="preconnect" href="https://i.vimeocdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://player.vimeo.com">
+<link rel="dns-prefetch" href="https://f.vimeocdn.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
 <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 <style>
@@ -350,8 +356,8 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
     <div class="video-label" style="margin-top:12px">A message from your trainer</div>
     <h3 class="video-title">Most People Attend.<br>A Few Will Transform.</h3>
     <div class="video-container" id="videoContainer">
-      <div class="video-facade" id="videoFacade" onclick="playVideo()">
-        <img src="/assets/video-poster.webp" alt="Play video" class="video-poster" onerror="this.parentElement.style.background='#1E3932'">
+      <div class="video-facade" id="videoFacade" onclick="playVideo()" onmouseenter="preloadVideo()" onfocus="preloadVideo()">
+        <img src="/assets/video-poster.webp" alt="Play video" class="video-poster" loading="lazy" onerror="this.parentElement.style.background='#1E3932'">
         <div class="play-btn">
           <div class="play-circle">
             <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -591,11 +597,30 @@ function setText(id, val) {
   if (el) el.textContent = val;
 }
 
+var _vimeoPreloaded = false;
+
+function preloadVideo() {
+  if (_vimeoPreloaded) return;
+  _vimeoPreloaded = true;
+  var iframe = document.getElementById('vimeoFrame');
+  if (iframe && !iframe.getAttribute('src')) {
+    // Load with autoplay=0 so it buffers silently without playing
+    iframe.setAttribute('src', 'https://player.vimeo.com/video/1087641142?autoplay=0&badge=0&autopause=0&background=0');
+  }
+}
+
 function playVideo() {
   var facade = document.getElementById('videoFacade');
   var iframe = document.getElementById('vimeoFrame');
   if (!iframe) return;
-  iframe.setAttribute('src', 'https://player.vimeo.com/video/1087641142?autoplay=1&badge=0&autopause=0');
+  // If preloaded, use Vimeo Player API to play; otherwise load with autoplay
+  var currentSrc = iframe.getAttribute('src') || '';
+  if (currentSrc.indexOf('autoplay=0') >= 0) {
+    // Already preloaded — swap to autoplay=1 to trigger play
+    iframe.setAttribute('src', currentSrc.replace('autoplay=0', 'autoplay=1'));
+  } else {
+    iframe.setAttribute('src', 'https://player.vimeo.com/video/1087641142?autoplay=1&badge=0&autopause=0');
+  }
   iframe.style.display = 'block';
   if (facade) facade.style.display = 'none';
 }
@@ -619,7 +644,19 @@ document.addEventListener('DOMContentLoaded', function() {
   document.title = "You're In - MMI " + short + " 2026";
 
   var bg = document.getElementById('heroBg');
-  if (bg) bg.style.backgroundImage = "url('/assets/cities/" + city + ".webp')";
+  if (bg) {
+    if ('IntersectionObserver' in window) {
+      var imgObs = new IntersectionObserver(function(entries, obs) {
+        if (entries[0].isIntersecting) {
+          bg.style.backgroundImage = "url('/assets/cities/" + city + ".webp')";
+          obs.disconnect();
+        }
+      }, {rootMargin: '200px'});
+      imgObs.observe(bg);
+    } else {
+      bg.style.backgroundImage = "url('/assets/cities/" + city + ".webp')";
+    }
+  }
 });
 </script>
 </body>
