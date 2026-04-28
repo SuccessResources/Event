@@ -415,6 +415,76 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
   .prob2-grid{grid-template-columns:1fr;gap:40px}
   .offer-inner{grid-template-columns:1fr;gap:40px}
 }
+
+/* ══ WORLD TOUR SECTION ══════════════════════════════════════════════════ */
+.tour-section{background:var(--off-white);padding:0}
+/* Header: heading + world map */
+.tour-header-row{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding:96px 0 40px}
+.tour-header-tag{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.tour-header-h2{font-family:"Playfair Display",serif;font-size:clamp(38px,5.5vw,68px);font-weight:700;line-height:1.05;color:var(--forest);margin-bottom:14px}
+.tour-header-rule{width:40px;height:2px;background:linear-gradient(90deg,var(--gold-lt),var(--gold));margin-bottom:18px}
+.tour-header-sub{font-size:15px;color:var(--ink-mid);line-height:1.8;margin-bottom:12px;max-width:380px}
+.tour-header-accent{font-size:15px;color:var(--gold);font-weight:600;font-style:italic;line-height:1.7;margin-bottom:10px}
+.tour-header-cta-text{font-size:15px;font-weight:700;color:var(--forest)}
+/* World map */
+.tour-map-svg{width:100%;height:auto;display:block}
+/* Featured card */
+.tour-featured-card{background:#fff;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:52px;box-shadow:0 4px 32px rgba(5,75,3,0.07);border:1px solid var(--border-lt)}
+.tour-feat-left{padding:40px 40px 36px}
+.tour-feat-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:3px;margin-bottom:20px}
+.tour-feat-city{font-family:"Playfair Display",serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--forest);line-height:1.15;margin-bottom:20px}
+.tour-feat-meta{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.tour-feat-row{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid)}
+.tour-feat-row svg{color:var(--forest);flex-shrink:0}
+.tour-feat-btn{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;padding:14px 28px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:6px;transition:all .25s;margin-bottom:16px}
+.tour-feat-btn:hover{background:#1a4a0a;transform:translateY(-1px)}
+.tour-feat-scarcity{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gold);font-weight:600}
+.tour-feat-right{position:relative;min-height:320px;background:linear-gradient(135deg,#e8ede5 0%,#c8c4b0 100%)}
+.tour-feat-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.tour-feat-right::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,0) 40%);z-index:1;pointer-events:none}
+/* Next stops */
+.tour-next-header{display:flex;align-items:center;gap:16px;margin-bottom:4px;padding:0 0 20px}
+.tour-next-line{flex:1;height:1px;background:var(--gold);opacity:.35}
+.tour-next-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);white-space:nowrap;flex-shrink:0}
+.tour-list{border:1px solid var(--border-lt);border-radius:8px;overflow:hidden;background:#fff;margin-bottom:0}
+.tour-row{display:grid;grid-template-columns:68px 1fr 180px 120px;align-items:center;padding:18px 20px;border-bottom:1px solid var(--border-lt);transition:background .15s}
+.tour-row:last-child{border-bottom:none}
+.tour-row:hover{background:var(--off-white)}
+.tour-row.t-hidden{display:none}
+.tour-row-sketch{display:flex;align-items:center;justify-content:center;opacity:.55}
+.tour-row-sketch svg{width:42px;height:54px}
+.tour-row-city-name{font-size:15px;font-weight:600;color:var(--forest);display:flex;align-items:center;gap:8px}
+.tour-row-country{font-size:12px;color:var(--muted);margin-top:2px}
+.tour-row-date{font-size:14px;font-weight:700;color:var(--ink);display:block}
+.tour-row-time{font-size:12px;color:var(--muted)}
+.tour-row-btn{border:1px solid var(--border);background:#fff;color:var(--forest);padding:8px 16px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;cursor:pointer;border-radius:4px;transition:all .2s;white-space:nowrap}
+.tour-row-btn:hover{border-color:var(--forest);background:var(--forest);color:#fff}
+.tour-view-all{display:block;margin:20px auto 0;background:none;border:none;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;transition:color .2s;letter-spacing:1px;padding:8px 0}
+.tour-view-all:hover{color:var(--forest)}
+/* Stats strip */
+.tour-stats-strip{background:var(--off-white);border-top:1px solid var(--border-lt);padding:48px 40px 0;margin-top:40px}
+.tour-stats-inner{display:grid;grid-template-columns:repeat(4,1fr) 1.4fr;gap:0;border-radius:8px;overflow:hidden;border:1px solid var(--border-lt)}
+.tsb-item{background:#fff;padding:32px 20px;text-align:center;border-right:1px solid var(--border-lt);display:flex;flex-direction:column;align-items:center;gap:10px}
+.tsb-item:last-of-type{border-right:1px solid var(--border-lt)}
+.tsb-num{font-family:"Cinzel",serif;font-size:32px;font-weight:700;color:var(--forest);line-height:1}
+.tsb-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.tsb-cta{background:var(--forest);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
+.tsb-cta-text{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);line-height:1.5}
+/* Responsive */
+@media(max-width:900px){
+  .tour-header-row{grid-template-columns:1fr;gap:24px;padding:64px 0 32px}
+  .tour-featured-card{grid-template-columns:1fr}
+  .tour-feat-right{min-height:220px}
+  .tour-row{grid-template-columns:52px 1fr 120px;gap:8px}
+  .tour-row-btn{display:none}
+  .tour-stats-inner{grid-template-columns:1fr 1fr}
+  .tsb-cta{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.1)}
+}
+@media(max-width:600px){
+  .tour-row{grid-template-columns:44px 1fr;padding:14px 12px}
+  .tour-row-date-col{display:none}
+  .tour-stats-inner{grid-template-columns:1fr 1fr}
+}
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:36px 40px;border-top:3px solid var(--gold)}
 footer p{font-family:"Montserrat",sans-serif;font-size:11px;color:rgba(255,255,255,0.45);line-height:2;text-align:center}
@@ -510,6 +580,26 @@ footer a:hover{color:var(--gold-lt)}
   <symbol id="i-arrow-r" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <line x1="3" y1="10" x2="17" y2="10"/>
     <polyline points="12,5 17,10 12,15"/>
+  </symbol>
+  <symbol id="i-people" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="7" cy="7" r="3"/>
+    <path d="M1 17c0-3 2.5-5 6-5s6 2 6 5"/>
+    <circle cx="14" cy="7" r="2.5"/>
+    <path d="M14 12c2.5.6 4 2.5 4 5"/>
+  </symbol>
+  <symbol id="i-plane" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 3L9 11M7 9L3 8l-1 2 4 2.5L7.5 17l2-1L9 12l8-9z"/>
+  </symbol>
+  <symbol id="i-screen" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="16" height="11" rx="2"/>
+    <line x1="7" y1="17" x2="13" y2="17"/>
+    <line x1="10" y1="14" x2="10" y2="17"/>
+  </symbol>
+  <symbol id="i-users-small" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="6" r="3"/>
+    <path d="M2 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+    <circle cx="15" cy="7" r="2"/>
+    <path d="M15 11c2 .5 3.5 2 3.5 4.5"/>
   </symbol>
 </svg>
 
@@ -853,17 +943,102 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
-<!-- EVENTS -->
-<section class="section-bg-off" id="register">
+<!-- WORLD TOUR SECTION -->
+<section class="tour-section" id="register">
   <div class="si">
-    <!-- World Tour FOMO header -->
-    <div class="stag-line"><span>Millionaire Mind&reg; Intensive &mdash; 2026 Global World Tour</span></div>
-    <h2 class="stitle">Now Live in <strong id="tourCity">Your City</strong></h2>
-    <p style="font-size:16px;color:var(--ink-mid);max-width:680px;line-height:1.85;margin-bottom:10px">From London to Berlin. From Madrid to Kuala Lumpur. This isn&rsquo;t just an event &mdash; it&rsquo;s a global movement happening across cities, right now.</p>
-    <p style="font-size:15px;color:var(--muted);max-width:680px;line-height:1.8;margin-bottom:10px">Thousands of business owners, professionals, and investors are stepping into this room &mdash; reprogramming the patterns that have been silently limiting their income for years.</p>
-    <p style="font-size:15px;color:var(--forest);max-width:680px;line-height:1.8;font-weight:600;margin-bottom:32px">And right now &mdash; it&rsquo;s your city&rsquo;s turn.<br><span style="font-weight:400;color:var(--muted)">Miss this stop, and the tour moves on.</span></p>
-    <!-- City grid -->
-    <div class="ev-grid" id="evGrid"></div>
+    <!-- ── HEADER ROW: heading + world map ─────────────────────────────── -->
+    <div class="tour-header-row">
+      <div>
+        <div class="tour-header-tag">2026 World Tour</div>
+        <h2 class="tour-header-h2">The Movement<br>Is Global</h2>
+        <div class="tour-header-rule"></div>
+        <p class="tour-header-sub">From Europe to Asia, this experience is moving city to city &mdash; with thousands stepping in at each stop.</p>
+        <p class="tour-header-accent">You don&rsquo;t join everywhere.<br>You join where the tour meets you.</p>
+        <p class="tour-header-cta-text">Find your city. Step into the room.</p>
+      </div>
+      <div>
+        <svg viewBox="0 0 540 230" class="tour-map-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <pattern id="dp" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.9" fill="#888" opacity="0.22"/>
+    </pattern>
+  </defs>
+  <!-- Europe -->
+  <path d="M248,58 L258,48 L268,34 L280,30 L295,30 L308,34 L316,44 L312,56 L305,64 L295,70 L286,76 L275,80 L264,78 L257,72 L250,65 Z" fill="url(#dp)"/>
+  <path d="M280,30 L282,20 L292,16 L305,18 L310,26 L308,34 Z" fill="url(#dp)"/>
+  <!-- Mediterranean Africa (just northern strip) -->
+  <path d="M230,88 L260,86 L280,88 L298,90 L312,96 L310,108 L290,112 L265,110 L242,106 L228,98 Z" fill="url(#dp)" opacity="0.55"/>
+  <!-- Middle East + West Asia -->
+  <path d="M316,44 L332,48 L344,56 L350,68 L342,82 L324,86 L310,78 L308,64 L312,56 Z" fill="url(#dp)"/>
+  <!-- Central/South Asia -->
+  <path d="M344,56 L368,50 L392,56 L404,66 L408,82 L398,100 L382,112 L360,116 L344,106 L334,90 L336,76 L342,82 Z" fill="url(#dp)"/>
+  <!-- SE Asia peninsula -->
+  <path d="M398,82 L418,76 L438,80 L452,90 L454,108 L442,120 L422,122 L406,112 L398,100 Z" fill="url(#dp)"/>
+  <!-- Malay Peninsula -->
+  <path d="M420,120 L428,116 L436,122 L438,134 L430,142 L420,140 L414,130 Z" fill="url(#dp)"/>
+  <!-- Borneo/Sumatra hint -->
+  <path d="M432,134 L452,130 L466,136 L470,148 L454,152 L436,148 L432,138 Z" fill="url(#dp)"/>
+  <!-- East Asia -->
+  <path d="M440,80 L468,70 L498,68 L522,74 L528,88 L514,98 L492,100 L468,96 L452,88 L452,90 Z" fill="url(#dp)"/>
+  <!-- Arc: Europe → KL (primary) -->
+  <path d="M272,60 Q400,10 424,130" stroke="#c8a96a" stroke-width="1.8" fill="none" stroke-dasharray="5,3" opacity="0.85"/>
+  <!-- Arc: Europe → KL (secondary, slight offset) -->
+  <path d="M268,68 Q395,25 422,134" stroke="#c8a96a" stroke-width="1" fill="none" stroke-dasharray="3,5" opacity="0.45"/>
+  <!-- European city dots -->
+  <circle cx="270" cy="60" r="5" fill="#c8a96a"/>
+  <circle cx="267" cy="57" r="3.5" fill="#c8a96a"/>
+  <circle cx="277" cy="58" r="3.5" fill="#c8a96a"/>
+  <circle cx="279" cy="67" r="3.5" fill="#c8a96a"/>
+  <circle cx="264" cy="76" r="4" fill="#c8a96a"/>
+  <circle cx="290" cy="57" r="3.5" fill="#c8a96a"/>
+  <circle cx="301" cy="58" r="3.5" fill="#c8a96a"/>
+  <!-- KL / JB dots -->
+  <circle cx="423" cy="128" r="6" fill="#c8a96a"/>
+  <circle cx="426" cy="133" r="3.5" fill="#c8a96a"/>
+</svg>
+      </div>
+    </div>
+
+    <!-- ── FEATURED CITY CARD (filled by JS) ──────────────────────────── -->
+    <div id="tourFeatured"></div>
+
+    <!-- ── NEXT STOPS LIST ─────────────────────────────────────────────── -->
+    <div class="tour-next-header">
+      <div class="tour-next-line"></div>
+      <span class="tour-next-label">Next Stops on the Tour</span>
+      <div class="tour-next-line"></div>
+    </div>
+    <div id="tourList" class="tour-list"></div>
+    <button id="tourViewAll" class="tour-view-all" onclick="toggleAllCities(this)">View all cities &darr;</button>
+  </div>
+
+  <!-- ── STATS STRIP (full width) ────────────────────────────────────── -->
+  <div class="tour-stats-strip">
+    <div class="si">
+      <div class="tour-stats-inner">
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+          <div class="tsb-num">12+</div>
+          <div class="tsb-label">Cities</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-people"/></svg>
+          <div class="tsb-label">Thousands of Participants</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="tsb-label">One Movement Around the World</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+          <div class="tsb-label">Each City. Limited Seats.</div>
+        </div>
+        <div class="tsb-cta">
+          <svg class="icon" aria-hidden="true" style="color:var(--gold)"><use href="#i-globe"/></svg>
+          <div class="tsb-cta-text">The tour moves on.<br>Don&rsquo;t miss your city.</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1009,18 +1184,18 @@ const TRAINERS = {
 // liveBtnId = Live Event Stripe Button ID     (local currency per event)
 // price/cur = Live event pass price & currency
 const EVENTS = [
-  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur',dates:'1–3 May 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-05-01T09:00:00+08:00'),btnId:'buy_btn_1TPf03IMbI04nnt8ezfDNzTf',liveBtnId:'buy_btn_1TPiA0GY6RiRFzHXJp4S4uUT',cur:'USD',price:29,trainer:'Alan',geo:['MY','SG','BN','ID','PH','TH','VN','MM','KH','LA','TL','CN','HK','MO','TW','JP','KR','MN','AU','NZ','FJ','PG','IN','LK','BD','PK','NP','BT','MV','AF']},
-  {city:'Malaga',country:'Spain',flag:'🇪🇸',display:'Malaga',dates:'22–24 May 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-05-22T09:00:00+02:00'),btnId:'buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ',liveBtnId:'buy_btn_1TPidGGY6RiRFzHXxDavnL0k',cur:'EUR',price:29,trainer:'Mac',geo:['ES','PT','MA','DZ','TN','LY','IT','MT','GR','CY','AL','BA','ME','MK','RS','SI','HR','AD','SM','VA']},
-  {city:'Warsaw',country:'Poland',flag:'🇵🇱',display:'Warsaw',dates:'12–14 June 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-06-12T09:00:00+02:00'),btnId:'buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh',liveBtnId:'buy_btn_1TPifiGY6RiRFzHXa9sf6SZq',cur:'EUR',price:29,trainer:'Mac',geo:['PL','CZ','SK','HU','UA','BY','LT','LV','EE','MD']},
-  {city:'London',country:'United Kingdom',flag:'🇬🇧',display:'London',dates:'3–5 July 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-07-03T09:00:00+01:00'),btnId:'buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY',liveBtnId:'buy_btn_1TPigsGY6RiRFzHXP19aoxC1',cur:'GBP',price:29,trainer:'Arnon',geo:['GB','IE']},
-  {city:'Berlin',country:'Germany',flag:'🇩🇪',display:'Berlin',dates:'10–12 July 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-07-10T09:00:00+02:00'),btnId:'buy_btn_1TPg3zGY6RiRFzHX0gvy1rME',liveBtnId:'buy_btn_1TPiidGY6RiRFzHXkEBBOhRq',cur:'EUR',price:29,trainer:'Mac',geo:['DE','AT','CH','LI','LU']},
-  {city:'Johor Bahru',country:'Malaysia',flag:'🇲🇾',display:'Johor Bahru',dates:'31 Jul–2 Aug 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-07-31T09:00:00+08:00'),btnId:'buy_btn_1TPfYcIMbI04nnt8A0I6vlBn',liveBtnId:'buy_btn_1TPik6GY6RiRFzHXONPpVmIP',cur:'USD',price:29,trainer:'Mac',geo:[]},
-  {city:'Geneva',country:'Switzerland',flag:'🇨🇭',display:'Geneva',dates:'11–13 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-11T09:00:00+02:00'),btnId:'buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj',liveBtnId:'buy_btn_1TPilKGY6RiRFzHXuortjd9R',cur:'EUR',price:29,trainer:'Arnon',geo:[]},
-  {city:'Madrid',country:'Spain',flag:'🇪🇸',display:'Madrid',dates:'25–27 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-25T09:00:00+02:00'),btnId:'buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg',liveBtnId:'buy_btn_1TPimRGY6RiRFzHXZGLag6XS',cur:'EUR',price:29,trainer:'Arnon',geo:[]},
-  {city:'Rotterdam',country:'Netherlands',flag:'🇳🇱',display:'Rotterdam',dates:'15–17 Oct 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-10-15T09:00:00+02:00'),btnId:'buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv',liveBtnId:'buy_btn_1TPiooGY6RiRFzHXzgyOL3Mp',cur:'EUR',price:29,trainer:'Mac',geo:['NL','BE','DK','SE','NO','FI','IS']},
-  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur (Oct)',dates:'30 Oct–1 Nov 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-10-30T09:00:00+08:00'),btnId:'buy_btn_1TPfbSIMbI04nnt8RtV6MNBj',liveBtnId:'buy_btn_1TPipzGY6RiRFzHX13MKdfjP',cur:'USD',price:29,trainer:'Mac',geo:[]},
-  {city:'Birmingham',country:'United Kingdom',flag:'🇬🇧',display:'Birmingham',dates:'6–8 Nov 2026',time:'9am–8pm GMT+0',eventDate:new Date('2026-11-06T09:00:00+00:00'),btnId:'buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe',liveBtnId:'buy_btn_1TPir9GY6RiRFzHXttsdQVRy',cur:'GBP',price:29,trainer:'Arnon',geo:[]},
-  {city:'Brussels',country:'Belgium',flag:'🇧🇪',display:'Brussels',dates:'20–22 Nov 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-11-20T09:00:00+01:00'),btnId:'buy_btn_1TPg9lGY6RiRFzHX2buGBRix',liveBtnId:'buy_btn_1TPisKGY6RiRFzHXGoW0UU9e',cur:'EUR',price:29,trainer:'Arnon',geo:['BE','FR','MC','LU','BG','RO','BH','KW','QA','OM','SA','AE','JO','IL','EG','LB','IQ','IR','SY','TR','AZ','GE','AM','KZ','UZ','TM','TJ','KG']}
+  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur',dates:'1–3 May 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-05-01T09:00:00+08:00'),btnId:'buy_btn_1TPf03IMbI04nnt8ezfDNzTf',liveBtnId:'buy_btn_1TPiA0GY6RiRFzHXJp4S4uUT',cur:'USD',price:29,trainer:'Alan',geo:['MY','SG','BN','ID','PH','TH','VN','MM','KH','LA','TL','CN','HK','MO','TW','JP','KR','MN','AU','NZ','FJ','PG','IN','LK','BD','PK','NP','BT','MV','AF'],citySlug:'city'},
+  {city:'Malaga',country:'Spain',flag:'🇪🇸',display:'Malaga',dates:'22–24 May 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-05-22T09:00:00+02:00'),btnId:'buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ',liveBtnId:'buy_btn_1TPidGGY6RiRFzHXxDavnL0k',cur:'EUR',price:29,trainer:'Mac',geo:['ES','PT','MA','DZ','TN','LY','IT','MT','GR','CY','AL','BA','ME','MK','RS','SI','HR','AD','SM','VA'],citySlug:'city'},
+  {city:'Warsaw',country:'Poland',flag:'🇵🇱',display:'Warsaw',dates:'12–14 June 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-06-12T09:00:00+02:00'),btnId:'buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh',liveBtnId:'buy_btn_1TPifiGY6RiRFzHXa9sf6SZq',cur:'EUR',price:29,trainer:'Mac',geo:['PL','CZ','SK','HU','UA','BY','LT','LV','EE','MD'],citySlug:'city'},
+  {city:'London',country:'United Kingdom',flag:'🇬🇧',display:'London',dates:'3–5 July 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-07-03T09:00:00+01:00'),btnId:'buy_btn_1TPg1wGY6RiRFzHXgR3Q6DjY',liveBtnId:'buy_btn_1TPigsGY6RiRFzHXP19aoxC1',cur:'GBP',price:29,trainer:'Arnon',geo:['GB','IE'],citySlug:'city'},
+  {city:'Berlin',country:'Germany',flag:'🇩🇪',display:'Berlin',dates:'10–12 July 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-07-10T09:00:00+02:00'),btnId:'buy_btn_1TPg3zGY6RiRFzHX0gvy1rME',liveBtnId:'buy_btn_1TPiidGY6RiRFzHXkEBBOhRq',cur:'EUR',price:29,trainer:'Mac',geo:['DE','AT','CH','LI','LU'],citySlug:'city'},
+  {city:'Johor Bahru',country:'Malaysia',flag:'🇲🇾',display:'Johor Bahru',dates:'31 Jul–2 Aug 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-07-31T09:00:00+08:00'),btnId:'buy_btn_1TPfYcIMbI04nnt8A0I6vlBn',liveBtnId:'buy_btn_1TPik6GY6RiRFzHXONPpVmIP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'city'},
+  {city:'Geneva',country:'Switzerland',flag:'🇨🇭',display:'Geneva',dates:'11–13 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-11T09:00:00+02:00'),btnId:'buy_btn_1TPg5fGY6RiRFzHXOMfYTUrj',liveBtnId:'buy_btn_1TPilKGY6RiRFzHXuortjd9R',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'city'},
+  {city:'Madrid',country:'Spain',flag:'🇪🇸',display:'Madrid',dates:'25–27 Sep 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-09-25T09:00:00+02:00'),btnId:'buy_btn_1TPg6YGY6RiRFzHXu0QHzUyg',liveBtnId:'buy_btn_1TPimRGY6RiRFzHXZGLag6XS',cur:'EUR',price:29,trainer:'Arnon',geo:[],citySlug:'city'},
+  {city:'Rotterdam',country:'Netherlands',flag:'🇳🇱',display:'Rotterdam',dates:'15–17 Oct 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-10-15T09:00:00+02:00'),btnId:'buy_btn_1TPg7TGY6RiRFzHX0u7ZIUEv',liveBtnId:'buy_btn_1TPiooGY6RiRFzHXzgyOL3Mp',cur:'EUR',price:29,trainer:'Mac',geo:['NL','BE','DK','SE','NO','FI','IS'],citySlug:'city'},
+  {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur (Oct)',dates:'30 Oct–1 Nov 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-10-30T09:00:00+08:00'),btnId:'buy_btn_1TPfbSIMbI04nnt8RtV6MNBj',liveBtnId:'buy_btn_1TPipzGY6RiRFzHX13MKdfjP',cur:'USD',price:29,trainer:'Mac',geo:[],citySlug:'city'},
+  {city:'Birmingham',country:'United Kingdom',flag:'🇬🇧',display:'Birmingham',dates:'6–8 Nov 2026',time:'9am–8pm GMT+0',eventDate:new Date('2026-11-06T09:00:00+00:00'),btnId:'buy_btn_1TPg8uGY6RiRFzHXTrN2kpQe',liveBtnId:'buy_btn_1TPir9GY6RiRFzHXttsdQVRy',cur:'GBP',price:29,trainer:'Arnon',geo:[],citySlug:'city'},
+  {city:'Brussels',country:'Belgium',flag:'🇧🇪',display:'Brussels',dates:'20–22 Nov 2026',time:'9am–8pm GMT+1',eventDate:new Date('2026-11-20T09:00:00+01:00'),btnId:'buy_btn_1TPg9lGY6RiRFzHX2buGBRix',liveBtnId:'buy_btn_1TPisKGY6RiRFzHXGoW0UU9e',cur:'EUR',price:29,trainer:'Arnon',geo:['BE','FR','MC','LU','BG','RO','BH','KW','QA','OM','SA','AE','JO','IL','EG','LB','IQ','IR','SY','TR','AZ','GE','AM','KZ','UZ','TM','TJ','KG'],citySlug:'city'}
 ];
 
 // ── GEO FIND ────────────────────────────────────────────────────────
@@ -1071,7 +1246,7 @@ function initPage(ev){
   startCountdown(ev.eventDate);
   updateHeroPrice(ev);
   renderTrainer(ev.trainer);
-  buildGrid();
+  buildTourSection(ev);
   // Update hero city (world tour)
   const hc=document.getElementById('heroCity');
   if(hc) hc.textContent=ev.city;
@@ -1104,33 +1279,73 @@ function startCountdown(t){
 }
 
 // ── EVENTS GRID ─────────────────────────────────────────────────────
-function buildGrid(){
-  const now=new Date();
-  const up=EVENTS.filter(e=>e.eventDate>now).sort((a,b)=>a.eventDate-b.eventDate);
-  document.getElementById('evGrid').innerHTML=up.map(ev=>{
-    const f=ev===FEATURED, cs=s(ev.cur);
-    return '<div class="ev-card'+(f?' featured':'')+'">'+
-      '<span class="ev-badge '+(f?'badge-f':'badge-u')+'">'+(f?'\u2605 Your City':'Upcoming')+'</span>'+
-      '<div class="ev-city">'+ev.flag+' '+ev.display+'</div>'+
-      '<div class="ev-country">'+ev.country+'</div>'+
-      '<div class="ev-date">'+ev.dates+'</div>'+
-      '<div class="ev-time">'+ev.time+'</div>'+
-      '<div class="ev-tiers">'+
-        '<div class="ev-tier ev-tier-online">'+
-          '<div class="ev-tier-label">Online</div>'+
-          '<div class="ev-tier-was">$199</div>'+
-          '<div class="ev-tier-price">$19</div>'+
-        '</div>'+
-        '<div class="ev-tier">'+
-          '<div class="ev-tier-label">In-Person</div>'+
-          '<div class="ev-tier-was">'+cs+'199</div>'+
-          '<div class="ev-tier-price">'+cs+ev.price+'</div>'+
-        '</div>'+
-      '</div>'+
-      '<button class="ev-btn" onclick="openModal(\''+ev.btnId+'\')">Select City \u2192</button>'+
+const LANDMARKS={
+  'kuala-lumpur':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="6" y="12" width="14" height="48"/><polygon points="6,12 13,5 20,12"/><rect x="32" y="12" width="14" height="48"/><polygon points="32,12 39,5 46,12"/><rect x="20" y="24" width="12" height="5"/><line x1="6" y1="26" x2="20" y2="26"/><line x1="32" y1="26" x2="46" y2="26"/></svg>',
+  'malaga':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="4" y="32" width="44" height="28"/><rect x="4" y="20" width="14" height="12"/><rect x="34" y="20" width="14" height="12"/><polyline points="4,20 7,13 11,20 15,13 18,20"/><polyline points="34,20 37,13 41,20 45,13 48,20"/><path d="M22,60 L22,46 Q26,40 30,46 L30,60"/></svg>',
+  'warsaw':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="24,16 26,4 28,16"/><rect x="20" y="16" width="12" height="20"/><rect x="11" y="22" width="9" height="14"/><rect x="32" y="22" width="9" height="14"/><rect x="5" y="32" width="10" height="28"/><rect x="37" y="32" width="10" height="28"/><rect x="13" y="36" width="26" height="24"/><rect x="4" y="60" width="44" height="8"/></svg>',
+  'london':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="26,2 22,14 30,14"/><rect x="20" y="14" width="12" height="14"/><circle cx="26" cy="21" r="5"/><line x1="26" y1="21" x2="26" y2="18"/><line x1="26" y1="21" x2="29" y2="23"/><rect x="18" y="28" width="16" height="34"/><rect x="23" y="33" width="6" height="9" rx="3"/><rect x="23" y="46" width="6" height="6"/><rect x="14" y="62" width="24" height="6"/></svg>',
+  'berlin':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="12" y="8" width="28" height="8"/><polygon points="24,5 26,1 28,5"/><rect x="8" y="16" width="36" height="6"/><line x1="11" y1="22" x2="11" y2="54"/><line x1="19" y1="22" x2="19" y2="54"/><line x1="27" y1="22" x2="27" y2="54"/><line x1="35" y1="22" x2="35" y2="54"/><line x1="43" y1="22" x2="43" y2="54"/><rect x="8" y="54" width="36" height="6"/><rect x="4" y="60" width="44" height="6"/></svg>',
+  'johor-bahru':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="18" y="14" width="16" height="44"/><path d="M18,14 Q26,7 34,14"/><line x1="26" y1="3" x2="26" y2="11"/><rect x="8" y="24" width="10" height="34"/><rect x="34" y="24" width="10" height="34"/><line x1="20" y1="30" x2="32" y2="30"/><line x1="20" y1="40" x2="32" y2="40"/><rect x="4" y="58" width="44" height="6"/></svg>',
+  'geneva':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M26,4 Q24,18 22,38 Q24,48 26,54"/><path d="M26,4 Q28,18 30,38 Q28,48 26,54"/><path d="M26,4 Q21,12 20,20"/><path d="M26,4 Q31,12 32,20"/><rect x="18" y="54" width="16" height="4" rx="2"/><rect x="12" y="58" width="28" height="4" rx="2"/><path d="M4,66 Q14,63 26,66 Q38,69 48,66"/></svg>',
+  'madrid':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="6" y="20" width="40" height="32"/><rect x="4" y="16" width="44" height="4"/><rect x="6" y="8" width="10" height="12"/><rect x="36" y="8" width="10" height="12"/><polygon points="6,8 11,4 16,8"/><polygon points="36,8 41,4 46,8"/><rect x="12" y="24" width="5" height="8" rx="2"/><rect x="24" y="24" width="5" height="8" rx="2"/><rect x="36" y="24" width="5" height="8" rx="2"/><rect x="22" y="36" width="8" height="16" rx="4"/></svg>',
+  'rotterdam':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="12,8 16,4 20,10"/><line x1="16" y1="8" x2="20" y2="48"/><line x1="4" y1="48" x2="48" y2="48"/><line x1="16" y1="12" x2="26" y2="48"/><line x1="16" y1="17" x2="34" y2="48"/><line x1="16" y1="22" x2="42" y2="48"/><line x1="16" y1="27" x2="48" y2="48"/><line x1="16" y1="12" x2="8" y2="48"/><rect x="12" y="48" width="8" height="7"/><path d="M2,58 Q14,55 26,58 Q38,61 50,58"/></svg>',
+  'birmingham':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="18" y="8" width="16" height="52"/><line x1="24" y1="2" x2="24" y2="8"/><line x1="28" y1="4" x2="28" y2="8"/><rect x="6" y="22" width="12" height="38"/><rect x="34" y="18" width="12" height="42"/><line x1="10" y1="28" x2="14" y2="28"/><line x1="10" y1="36" x2="14" y2="36"/><line x1="22" y1="16" x2="30" y2="16"/><line x1="22" y1="26" x2="30" y2="26"/><rect x="2" y="60" width="48" height="4"/></svg>',
+  'brussels':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="26" cy="20" r="8"/><circle cx="26" cy="6" r="5"/><line x1="26" y1="11" x2="26" y2="12"/><circle cx="12" cy="20" r="5"/><line x1="17" y1="20" x2="18" y2="20"/><circle cx="40" cy="20" r="5"/><line x1="34" y1="20" x2="35" y2="20"/><circle cx="26" cy="34" r="5"/><line x1="26" y1="28" x2="26" y2="29"/><circle cx="14" cy="32" r="3.5"/><line x1="16" y1="27" x2="17" y2="28"/><circle cx="38" cy="32" r="3.5"/><line x1="36" y1="27" x2="35" y2="28"/><line x1="26" y1="39" x2="26" y2="54"/><rect x="20" y="54" width="12" height="4"/></svg>'
+};
+
+function buildTourSection(featuredEv){
+  var now=new Date();
+  var upcoming=EVENTS.filter(function(e){return e.eventDate>now;}).sort(function(a,b){return a.eventDate-b.eventDate;});
+  var others=upcoming.filter(function(e){return e!==featuredEv;});
+  var slug=featuredEv.citySlug||'london';
+  var featHTML=
+    '<div class="tour-featured-card">'+
+    '<div class="tour-feat-left">'+
+    '<div class="tour-feat-badge">&#9733; Your City</div>'+
+    '<div class="tour-feat-city">'+featuredEv.city+',<br>'+featuredEv.country+'</div>'+
+    '<div class="tour-feat-meta">'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-calendar"/></svg>'+featuredEv.dates+'</div>'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg>'+featuredEv.time+'</div>'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-screen"/></svg>Live Online &middot; Optional In-Person</div>'+
+    '</div>'+
+    '<button class="tour-feat-btn" onclick="openModal(''+featuredEv.btnId+'')">Join '+featuredEv.city+' &rarr;</button>'+
+    '<div class="tour-feat-scarcity"><svg class="icon icon-sm" aria-hidden="true" style="color:var(--gold)"><use href="#i-users-small"/></svg>&nbsp;Limited seats. This stop is filling.</div>'+
+    '</div>'+
+    '<div class="tour-feat-right">'+
+    '<img src="/assets/cities/'+slug+'.webp" alt="'+featuredEv.city+'" loading="lazy" onerror="this.style.display='none'">'+
+    '</div>'+
+    '</div>';
+  var featEl=document.getElementById('tourFeatured');
+  if(featEl) featEl.innerHTML=featHTML;
+  var rows=others.map(function(ev,i){
+    var lm=LANDMARKS[ev.citySlug]||LANDMARKS['london'];
+    var hidden=i>=6?' t-hidden':'';
+    return '<div class="tour-row'+hidden+'">'+
+      '<div class="tour-row-sketch">'+lm+'</div>'+
+      '<div><div class="tour-row-city-name">'+ev.flag+' '+ev.city+'</div>'+
+      '<div class="tour-row-country">'+ev.country+'</div></div>'+
+      '<div class="tour-row-date-col"><span class="tour-row-date">'+ev.dates+'</span>'+
+      '<span class="tour-row-time">'+ev.time+'</span></div>'+
+      '<button class="tour-row-btn" onclick="openModal(''+ev.btnId+'')">View City &rarr;</button>'+
       '</div>';
   }).join('');
+  var listEl=document.getElementById('tourList');
+  if(listEl) listEl.innerHTML=rows;
+  var btn=document.getElementById('tourViewAll');
+  if(btn) btn.style.display=others.length>6?'block':'none';
 }
+function toggleAllCities(btn){
+  var hidden=document.querySelectorAll('.tour-row.t-hidden');
+  var rows=document.querySelectorAll('.tour-row');
+  if(hidden.length>0){
+    hidden.forEach(function(r){r.classList.remove('t-hidden');});
+    btn.textContent='View less ↑';
+  } else {
+    rows.forEach(function(r,i){if(i>=6)r.classList.add('t-hidden');});
+    btn.textContent='View all cities ↓';
+  }
+}
+
 
 // ── MODAL ───────────────────────────────────────────────────────────
 function injectStripe(containerId, btnId){
