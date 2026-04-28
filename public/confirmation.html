@@ -52,8 +52,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .nav-pill-link:hover{color:var(--forest)}
 
 /* ═══════════════ HERO ═══════════════ */
-.hero{background:var(--cream);position:relative}
-.hero-inner{max-width:1280px;margin:0 auto;padding:48px 48px 0;display:grid;grid-template-columns:55% 45%;gap:32px;align-items:start;min-height:400px;position:relative}
+.hero{background:var(--cream);position:relative;overflow:clip}
+.hero-inner{max-width:100%;margin:0 auto;padding:48px 48px 0;display:grid;grid-template-columns:55% 45%;gap:32px;align-items:start;min-height:480px;position:relative}
 .hero-left{padding-bottom:60px}
 .hero-script{font-family:"Dancing Script",cursive;font-size:36px;font-weight:700;color:var(--gold-lt);display:block;margin-bottom:8px}
 .hero-title{font-family:"Playfair Display",serif;font-size:clamp(52px,6vw,88px);font-weight:800;color:var(--forest);line-height:1.0;letter-spacing:-2px;margin-bottom:20px}
@@ -72,7 +72,7 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
   position:absolute;
   top:0;right:0;bottom:0;
   width:52%;
-  background-image:url('/assets/confirmation/hero-laptop-desktop.webp');
+  background-image:url('https://event.millionairemind.online/assets/confirmation/hero-laptop-desktop.webp');
   background-size:cover;
   background-position:center center;
   background-repeat:no-repeat;
@@ -82,7 +82,7 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(to right, var(--cream) 0%, transparent 30%);
+  background:linear-gradient(to right, var(--cream) 0%, rgba(247,244,239,0) 35%);
   z-index:1;
 }
 
