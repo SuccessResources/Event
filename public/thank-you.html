@@ -583,7 +583,8 @@ const STRIPE_KEYS = {
   document.getElementById('navCity').textContent = short;
   // Hero left
   document.getElementById('confirmCity').textContent = cityName;
-  document.getElementById('confirmCityShort').textContent = short;
+  var cs = document.getElementById('confirmCityShort');
+  if(cs) cs.textContent = short;
   var cs2 = document.getElementById('confirmCityShort2');
   if(cs2) cs2.textContent = short;
   document.getElementById('confirmDates').textContent = dates;
