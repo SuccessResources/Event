@@ -54,10 +54,11 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 .nav-pill-link:hover{color:var(--gold)}
 
 /* ═══════════════ HERO ═══════════════ */
-.hero{background:var(--white);position:relative;overflow:hidden;min-height:560px;display:grid;grid-template-columns:52% 48%}
+.hero{background:var(--white);position:relative;overflow:hidden;min-height:520px}
+.hero-inner-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:50% 50%;min-height:520px;position:relative;z-index:2}
 
 /* Left panel */
-.hero-left{padding:52px 48px 0 96px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start}
+.hero-left{padding:48px 40px 0 48px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-start}
 .hero-script{font-family:"Dancing Script",cursive;font-size:38px;font-weight:700;color:var(--gold);display:block;margin-bottom:4px}
 .hero-title{font-family:"Montserrat",sans-serif;font-size:clamp(56px,6.5vw,96px);font-weight:900;color:var(--navy);line-height:.95;letter-spacing:-2px;text-transform:uppercase;margin-bottom:18px}
 .hero-sub{font-size:17px;color:var(--ink-mid);line-height:1.65;margin-bottom:24px;max-width:480px}
@@ -91,7 +92,7 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 .pause-text strong{font-weight:700}
 
 /* Right panel — city image */
-.hero-right{position:relative;overflow:hidden}
+.hero-right{position:relative;overflow:hidden;border-radius:0 0 0 20px}
 .hero-right::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,var(--white) 0%,rgba(255,255,255,0.3) 20%,transparent 45%);z-index:1}
 .hero-city-img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
 
@@ -101,8 +102,8 @@ body{font-family:"Open Sans",sans-serif;background:var(--white);color:var(--ink)
 
 /* Confetti dots */
 .confetti{position:absolute;z-index:2;pointer-events:none}
-.confetti-1{top:60px;left:82px;width:12px;height:12px;background:var(--gold);transform:rotate(45deg);opacity:.7}
-.confetti-2{top:40px;left:200px;width:8px;height:8px;background:var(--gold);transform:rotate(20deg);opacity:.5}
+.confetti-1{top:60px;left:40px;width:12px;height:12px;background:var(--gold);transform:rotate(45deg);opacity:.7}
+.confetti-2{top:40px;left:160px;width:8px;height:8px;background:var(--gold);transform:rotate(20deg);opacity:.5}
 .confetti-3{top:80px;left:320px;width:10px;height:10px;background:var(--gold);transform:rotate(-15deg);opacity:.6}
 
 /* ═══════════════ BRIDGE TRANSITION ═══════════════ */
@@ -216,7 +217,8 @@ footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;
   .nav-mmi{font-size:22px}
   .nav-pill:nth-child(3){display:none}
   .nav-pill{padding:0 10px;font-size:9px}
-  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero{min-height:auto}
+  .hero-inner-grid{grid-template-columns:1fr;min-height:auto}
   .hero-left{padding:32px 20px 0}
   .hero-script{font-size:28px}
   .hero-title{font-size:52px}
@@ -274,6 +276,7 @@ footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;
 <!-- HERO -->
 <section class="hero">
 
+  <div class="hero-inner-grid">
   <!-- Confetti -->
   <div class="confetti confetti-1"></div>
   <div class="confetti confetti-2"></div>
@@ -337,6 +340,8 @@ footer{background:var(--navy);padding:24px 48px;display:flex;align-items:center;
          alt="Your financial future"
          onerror="this.style.opacity='0'">
   </div>
+
+  </div><!-- /hero-inner-grid -->
 
   <!-- Gold wave -->
   <div class="hero-wave">
