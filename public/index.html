@@ -58,43 +58,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;paddi
 .btn-nav{background:rgba(255,255,255,0.92);color:var(--gold);padding:9px 22px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--gold);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:7px;border-radius:4px}
 .btn-nav:hover{background:var(--gold);color:#fff}
 
-/* ── CORNER STICKER ── */
+/* ── CORNER STICKER SVG ── */
 .corner-sticker{
   position:fixed;
   top:0;left:0;
   z-index:101;
-  width:172px;
-  padding:12px 24px 38px 14px;
-  background:#fff;
-  clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);
-  filter:drop-shadow(2px 4px 12px rgba(5,75,3,0.14));
-  pointer-events:none
+  width:clamp(300px,52vw,580px);
+  pointer-events:none;
+  display:block;
+  line-height:0
 }
-.cs-sig{
-  font-family:"Montserrat",sans-serif;
-  font-size:7px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted-lt);
-  margin-bottom:7px;line-height:1.4
-}
-.cs-brand{
-  font-family:"Cinzel",serif;
-  font-size:21px;font-weight:700;
-  line-height:1.05;letter-spacing:1px;
-  background:linear-gradient(160deg,var(--gold-lt) 0%,var(--gold) 55%,var(--gold-lt) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  margin-bottom:5px
-}
-.cs-sub{
-  font-family:"Montserrat",sans-serif;
-  font-size:7.5px;font-weight:700;
-  letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--forest)
-}
-.cs-rule{
-  width:28px;height:1px;
-  background:linear-gradient(90deg,var(--gold-lt),var(--gold));
-  margin:6px 0
+.corner-sticker svg{display:block;width:100%;height:auto}
+.cs-sig,.cs-brand,.cs-sub,.cs-rule{display:none}
+@media(max-width:600px){
+  .corner-sticker{width:clamp(240px,80vw,360px)}
 }
 
 /* ── LOADER ── */
@@ -436,12 +413,49 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </div>
 
-<!-- CORNER STICKER — fixed top-left brand badge -->
+<!-- CORNER STICKER — inline SVG brand badge, fixed top-left -->
 <div class="corner-sticker">
-  <div class="cs-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
-  <div class="cs-brand">MILLIONAIRE<br>MIND&reg;</div>
-  <div class="cs-rule"></div>
-  <div class="cs-sub">Intensive Online</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" width="100%" height="auto" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Millionaire Mind Intensive Online corner sticker">
+  <defs>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#063B24"/>
+      <stop offset="1" stop-color="#01401F"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4D47E"/>
+      <stop offset="0.52" stop-color="#C99C39"/>
+      <stop offset="1" stop-color="#FFE7A3"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="8" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+
+  <!-- Top-left corner sticker: no top or left border, only right/bottom gold edge -->
+  <path d="M0 0 H900 Q930 0 930 30 V145 Q930 188 887 188 H0 Z" fill="url(#green)" filter="url(#shadow)"/>
+  <path d="M930 0 V145 Q930 188 887 188 H0" fill="none" stroke="#D7A83F" stroke-width="5"/>
+  <path d="M925 0 V143 Q925 183 885 183 H0" fill="none" stroke="#F0D07A" stroke-width="1.5" opacity="0.85"/>
+
+  <!-- Left text -->
+  <g fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-weight="700" letter-spacing="5">
+    <text x="62" y="72" font-size="21">T. HARV EKER</text>
+    <text x="62" y="111" font-size="21">SIGNATURE</text>
+    <text x="62" y="150" font-size="21">PROGRAMME®</text>
+  </g>
+
+  <!-- Dividers -->
+  <line x1="255" y1="48" x2="255" y2="159" stroke="#D7A83F" stroke-width="3"/>
+  <line x1="648" y1="48" x2="648" y2="159" stroke="#D7A83F" stroke-width="3"/>
+
+  <!-- Main brand -->
+  <g fill="url(#gold)" font-family="Cinzel, Georgia, 'Times New Roman', serif" font-weight="700" letter-spacing="2">
+    <text x="304" y="96" font-size="52">MILLIONAIRE</text>
+    <text x="304" y="160" font-size="52">MIND®</text>
+  </g>
+
+  <!-- Right text -->
+  <text x="695" y="116" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="6">INTENSIVE ONLINE</text>
+</svg>
 </div>
 
 <!-- NAV -->
