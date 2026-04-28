@@ -102,7 +102,15 @@ body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--ink)
 .video-sub{font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px}
 .video-container{position:relative;width:100%;padding-top:56.25%;border-radius:10px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
 .video-facade{position:absolute;inset:0;cursor:pointer;background:var(--forest);display:flex;align-items:center;justify-content:center}
-.video-facade-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1E3932,#2d5244)}
+.video-facade-bg{
+  position:absolute;inset:0;
+  background:url('https://event.millionairemind.online/assets/confirmation/video-poster.webp') center center / cover no-repeat;
+}
+.video-facade::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(0,0,0,0.25);
+  z-index:1
+}
 .play-btn{position:relative;z-index:2;transition:transform .2s}
 .video-facade:hover .play-btn{transform:scale(1.1)}
 .play-circle{width:72px;height:72px}
