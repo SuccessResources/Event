@@ -361,6 +361,13 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
           </div>
         </div>
       </div>
+      <iframe id="vimeoFrame"
+        src=""
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none"
+        title="MMI VIP Experience">
+      </iframe>
     </div>
     <div class="video-below">
       <p>Most people will attend this event.</p>
@@ -630,19 +637,13 @@ const STRIPE_KEYS = {
 
 // ── VIDEO FACADE (global) ────────────────────────────────────────────────────
 function playVideo(){
-  var facade    = document.getElementById('videoFacade');
-  var container = document.getElementById('videoContainer');
-  if(!facade || !container) return;
-  facade.style.opacity = '0';
-  facade.style.pointerEvents = 'none';
-  var iframe = document.createElement('iframe');
-  iframe.src = 'https://player.vimeo.com/video/1087641142?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479';
-  iframe.setAttribute('allow','autoplay; fullscreen; picture-in-picture');
-  iframe.setAttribute('allowfullscreen','');
-  iframe.setAttribute('title','MMI VIP Experience');
-  iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none';
-  container.appendChild(iframe);
-  setTimeout(function(){ if(facade.parentNode) facade.parentNode.removeChild(facade); }, 350);
+  var facade = document.getElementById('videoFacade');
+  var iframe = document.getElementById('vimeoFrame');
+  if(!facade || !iframe) return;
+  // Set src first, then show iframe, then hide facade
+  iframe.src = 'https://player.vimeo.com/video/1087641142?autoplay=1&badge=0&autopause=0';
+  iframe.style.display = 'block';
+  facade.style.display = 'none';
 }
 
 
