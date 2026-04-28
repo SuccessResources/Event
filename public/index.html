@@ -331,52 +331,61 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .btn-primary-light:hover::after{transform:translateX(4px)}
 .final-note{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:14px;text-transform:uppercase;position:relative;z-index:1}
 
-/* ── MODAL — premium two-panel ── */
-.modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(4,16,10,0.8);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
+/* ── MODAL — Starbucks × Apple ── */
+.modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,18,14,0.55);backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px}
 .modal-ov.open{display:flex}
-.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:860px;width:100%;max-height:92vh;overflow-y:auto;border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5)}
-.mpanel-online{background:#0d1f14;padding:36px 32px;display:flex;flex-direction:column;position:relative}
-.mpanel-live{background:#111f17;padding:36px 32px;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.06);position:relative}
-.modal-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;font-family:inherit;transition:all .2s}
-.modal-close:hover{background:rgba(255,255,255,0.18);color:#fff}
-.mpanel-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,169,106,0.35);border-radius:4px;padding:6px 14px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;width:fit-content}
-.mpanel-sig{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
-.mpanel-city{font-family:"Cinzel",serif;font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px}
-.mpanel-dates{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--gold);margin-bottom:3px}
-.mpanel-time{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:18px}
-.mpanel-divider{height:1px;background:rgba(255,255,255,0.07);margin:14px 0}
-.mpanel-list-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}
+.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:840px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06)}
+/* Left panel — online (white) */
+.mpanel-online{background:#fff;padding:40px 36px;display:flex;flex-direction:column;position:relative}
+/* Right panel — in-person (very light green) */
+.mpanel-live{background:#EDF5F0;padding:40px 36px;display:flex;flex-direction:column;border-left:1px solid rgba(0,0,0,0.06);position:relative}
+.modal-close{position:absolute;top:16px;right:16px;background:rgba(0,0,0,0.05);border:none;color:var(--muted);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;font-family:inherit;transition:all .2s}
+.modal-close:hover{background:rgba(0,0,0,0.10);color:var(--ink)}
+/* Tag (online label) */
+.mpanel-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:100px;padding:5px 14px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:20px;width:fit-content;background:var(--green-lt)}
+/* Sig line */
+.mpanel-sig{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted-lt);margin-bottom:8px}
+/* City name */
+.mpanel-city{font-family:"Playfair Display",serif;font-size:clamp(20px,2.2vw,27px);font-weight:700;color:var(--forest);line-height:1.1;margin-bottom:6px}
+/* Dates + time */
+.mpanel-dates{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--forest);margin-bottom:3px}
+.mpanel-time{font-size:12px;color:var(--muted);margin-bottom:16px}
+/* Divider */
+.mpanel-divider{height:1px;background:var(--border);margin:14px 0}
+/* Included list */
+.mpanel-list-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted-lt);margin-bottom:10px}
 .mpanel-list{list-style:none;padding:0;margin-bottom:18px}
-.mpanel-list li{font-size:13px;color:rgba(255,255,255,0.7);padding:5px 0 5px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.4}
+.mpanel-list li{font-size:13px;color:var(--ink-mid);padding:6px 0 6px 18px;position:relative;border-bottom:1px solid var(--border);line-height:1.45}
 .mpanel-list li:last-child{border-bottom:none}
-.mpanel-list li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:11px;font-weight:700;top:6px}
+.mpanel-list li::before{content:"→";position:absolute;left:0;color:var(--green);font-size:11px;top:7px}
+/* Price */
 .mpanel-price-row{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.mpanel-was{font-size:14px;text-decoration:line-through;color:rgba(255,255,255,0.25)}
-.mpanel-now{font-family:"Cinzel",serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
-.mpanel-badge{background:var(--gold);color:#0d1f14;padding:4px 12px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;border-radius:3px}
-.mpanel-guarantee{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;margin-bottom:18px}
-.mpanel-cta-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px}
+.mpanel-was{font-size:14px;text-decoration:line-through;color:var(--muted-lt)}
+.mpanel-now{font-family:"Playfair Display",serif;font-size:52px;font-weight:700;color:var(--forest);line-height:1}
+.mpanel-badge{background:var(--green-lt);color:var(--green);padding:4px 12px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;border-radius:100px;border:1px solid var(--green-md)}
+.mpanel-guarantee{font-size:11px;color:var(--muted-lt);line-height:1.6;margin-bottom:18px}
+.mpanel-cta-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted-lt);margin-bottom:8px}
 .stripe-wrap{min-height:50px}
-.stripe-placeholder{background:var(--gold);color:#0d1f14;padding:14px 20px;text-align:center;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:6px;cursor:pointer}
-.mpanel-add-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(200,169,106,0.55);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.mpanel-add-label::before{content:"";width:20px;height:1px;background:var(--gold);opacity:.4}
-.mpanel-live-title{font-family:"Playfair Display",serif;font-size:clamp(19px,2vw,24px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:12px}
+.stripe-placeholder{background:var(--forest);color:#fff;padding:15px 20px;text-align:center;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:100px;cursor:pointer;transition:all .2s}
+.stripe-placeholder:hover{background:#2a4a3e}
+/* Right panel — in-person labels */
+.mpanel-add-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.mpanel-add-label::before{content:"";width:20px;height:1px;background:var(--gold);opacity:.6}
+.mpanel-live-title{font-family:"Playfair Display",serif;font-size:clamp(19px,2vw,24px);font-weight:700;color:var(--forest);line-height:1.25;margin-bottom:12px}
 .mpanel-live-title em{color:var(--gold);font-style:italic}
-.mpanel-live-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:18px}
-.mpanel-benefits-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px}
+.mpanel-live-desc{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px}
+.mpanel-benefits-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted-lt);margin-bottom:10px}
 .mpanel-benefits{list-style:none;padding:0;margin-bottom:18px}
-.mpanel-benefits li{font-size:13px;color:rgba(255,255,255,0.65);padding:6px 0 6px 20px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.4}
+.mpanel-benefits li{font-size:13px;color:var(--ink-mid);padding:7px 0 7px 20px;position:relative;border-bottom:1px solid rgba(0,0,0,0.05);line-height:1.45}
 .mpanel-benefits li:last-child{border-bottom:none}
-.mpanel-benefits li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:12px;top:7px}
-.mpanel-live-price{font-family:"Cinzel",serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px}
-.mpanel-live-price-note{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:14px}
-.btn-modal-live{display:block;width:100%;padding:13px 20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:6px;cursor:pointer;transition:all .2s;text-align:center;margin-bottom:10px}
-.btn-modal-live:hover{background:rgba(255,255,255,0.14);color:#fff}
-.mpanel-skip{display:block;text-align:center;font-size:12px;color:rgba(255,255,255,0.25);cursor:pointer;transition:color .2s;background:none;border:none;width:100%;font-family:inherit;padding:4px 0}
-.mpanel-skip:hover{color:rgba(255,255,255,0.55)}
-@media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid rgba(255,255,255,0.06)}}
-
-
+.mpanel-benefits li::before{content:"✓";position:absolute;left:0;color:var(--green);font-size:12px;top:8px;font-weight:600}
+.mpanel-live-price{font-family:"Playfair Display",serif;font-size:42px;font-weight:700;color:var(--forest);line-height:1;margin-bottom:4px}
+.mpanel-live-price-note{font-size:12px;color:var(--muted-lt);margin-bottom:16px}
+.btn-modal-live{display:block;width:100%;padding:14px 20px;background:var(--forest);border:none;color:#fff;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;border-radius:100px;cursor:pointer;transition:all .25s;text-align:center;margin-bottom:10px}
+.btn-modal-live:hover{background:#2a4a3e;transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.14)}
+.mpanel-skip{display:block;text-align:center;font-size:12px;color:var(--muted-lt);cursor:pointer;transition:color .2s;background:none;border:none;width:100%;font-family:inherit;padding:4px 0}
+.mpanel-skip:hover{color:var(--forest)}
+@media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid var(--border)}}
 
 /* ── NEW FUNNEL SECTIONS ── */
 /* Problem section */
