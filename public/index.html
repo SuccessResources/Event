@@ -413,49 +413,9 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </div>
 
-<!-- CORNER STICKER — inline SVG brand badge, fixed top-left -->
+<!-- CORNER STICKER — webp image, fixed top-left -->
 <div class="corner-sticker">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 220" width="100%" height="auto" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Millionaire Mind Intensive Online corner sticker">
-  <defs>
-    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#063B24"/>
-      <stop offset="1" stop-color="#01401F"/>
-    </linearGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F4D47E"/>
-      <stop offset="0.52" stop-color="#C99C39"/>
-      <stop offset="1" stop-color="#FFE7A3"/>
-    </linearGradient>
-    <filter id="shadow" x="-5%" y="-10%" width="120%" height="140%">
-      <feDropShadow dx="8" dy="10" stdDeviation="8" flood-color="#000000" flood-opacity="0.24"/>
-    </filter>
-  </defs>
-
-  <!-- Top-left corner sticker: no top or left border, only right/bottom gold edge -->
-  <path d="M0 0 H900 Q930 0 930 30 V145 Q930 188 887 188 H0 Z" fill="url(#green)" filter="url(#shadow)"/>
-  <path d="M930 0 V145 Q930 188 887 188 H0" fill="none" stroke="#D7A83F" stroke-width="5"/>
-  <path d="M925 0 V143 Q925 183 885 183 H0" fill="none" stroke="#F0D07A" stroke-width="1.5" opacity="0.85"/>
-
-  <!-- Left text -->
-  <g fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-weight="700" letter-spacing="5">
-    <text x="62" y="72" font-size="21">T. HARV EKER</text>
-    <text x="62" y="111" font-size="21">SIGNATURE</text>
-    <text x="62" y="150" font-size="21">PROGRAMME®</text>
-  </g>
-
-  <!-- Dividers -->
-  <line x1="255" y1="48" x2="255" y2="159" stroke="#D7A83F" stroke-width="3"/>
-  <line x1="648" y1="48" x2="648" y2="159" stroke="#D7A83F" stroke-width="3"/>
-
-  <!-- Main brand -->
-  <g fill="url(#gold)" font-family="Cinzel, Georgia, 'Times New Roman', serif" font-weight="700" letter-spacing="2">
-    <text x="304" y="96" font-size="52">MILLIONAIRE</text>
-    <text x="304" y="160" font-size="52">MIND®</text>
-  </g>
-
-  <!-- Right text -->
-  <text x="695" y="116" fill="#FFFFFF" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="6">INTENSIVE ONLINE</text>
-</svg>
+  <img src="/assets/hero/millionaire_mind_corner_sticker.webp" alt="Millionaire Mind Intensive Online" width="960" height="220">
 </div>
 
 <!-- NAV -->
@@ -487,7 +447,7 @@ footer a:hover{color:var(--gold-lt)}
       </div>
       <p class="hero-tagline">Identify and break the patterns limiting your income.</p>
       <div class="price-row">
-        <span class="price-now" id="heroPriceNow">$29</span>
+        <span class="price-now" id="heroPriceNow">$19</span>
         <span class="price-badge">Early Bird</span>
       </div>
       <button class="btn-primary" onclick="openFeatured()">Secure My Seat</button>
@@ -994,8 +954,9 @@ window.addEventListener('scroll',()=>{
 
 // ── HERO PRICE UPDATE ──────────────────────────────────────────────────────
 function updateHeroPrice(ev){
+  // Online ticket is always $19 USD regardless of event currency
   const el=document.getElementById('heroPriceNow');
-  if(el&&ev){const cs=SYM[ev.cur]||'$';el.textContent=cs+ev.price;}
+  if(el) el.textContent='$19';
 }
 
 // ── BOOT ────────────────────────────────────────────────────────────
