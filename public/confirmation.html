@@ -52,8 +52,9 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .nav-pill-link:hover{color:var(--forest)}
 
 /* ═══════════════ HERO ═══════════════ */
-.hero{background:var(--cream);position:relative;overflow:clip}
-.hero-inner{max-width:100%;margin:0 auto;padding:48px 48px 0;display:grid;grid-template-columns:55% 45%;gap:32px;align-items:start;min-height:480px;position:relative}
+.hero{background-color:var(--cream);background-image:url('https://event.millionairemind.online/assets/confirmation/hero-laptop-desktop.webp');background-size:50%;background-position:right center;background-repeat:no-repeat;position:relative;overflow:clip}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to right, var(--cream) 40%, rgba(247,244,239,0.2) 70%, transparent 100%);z-index:0;pointer-events:none}
+.hero-inner{max-width:100%;margin:0 auto;padding:48px 48px 0;display:grid;grid-template-columns:55% 45%;gap:32px;align-items:start;min-height:480px;position:relative;z-index:1}
 .hero-left{padding-bottom:60px}
 .hero-script{font-family:"Dancing Script",cursive;font-size:36px;font-weight:700;color:var(--gold-lt);display:block;margin-bottom:8px}
 .hero-title{font-family:"Playfair Display",serif;font-size:clamp(52px,6vw,88px);font-weight:800;color:var(--forest);line-height:1.0;letter-spacing:-2px;margin-bottom:20px}
@@ -68,23 +69,7 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .confirm-check svg{width:20px;height:20px;stroke:var(--green);fill:none;stroke-width:2.5}
 .confirm-card-title{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
 .confirm-card-body{font-size:13px;color:var(--muted);line-height:1.6}
-.hero-img-wrap{
-  position:absolute;
-  top:0;right:0;bottom:0;
-  width:100%;
-  background-image:url('https://event.millionairemind.online/assets/confirmation/hero-laptop-desktop.webp');
-  background-size:300%;
-  background-position:right center;
-  background-repeat:no-repeat;
-  z-index:0;
-}
-.hero-img-wrap::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to right, var(--cream) 0%, rgba(247,244,239,0) 35%);
-  z-index:1;
-}
+/* hero-img-wrap removed — bg now on .hero */
 
 /* ═══════════════ JOURNEY ═══════════════ */
 .journey{background:var(--white);padding:64px 48px}
@@ -173,6 +158,8 @@ footer{background:var(--forest);padding:24px 48px;display:flex;align-items:cente
 
 /* ═══════════════ MOBILE ═══════════════ */
 @media(max-width:768px){
+  .hero{background-image:url('https://event.millionairemind.online/assets/confirmation/hero-laptop-mobile.webp');background-size:50%;background-position:right bottom;}
+
   /* Nav */
   .nav{padding:0 20px;height:60px}
   .nav-mmi{font-size:24px}
@@ -280,7 +267,7 @@ footer{background:var(--forest);padding:24px 48px;display:flex;align-items:cente
           <div class="confirm-card-body">You will receive a confirmation email with important details and next steps.</div>
         </div>
       </div>
-      <div class="hero-img-wrap" id="heroBgImg"></div>
+      
     </div>
   </div>
 </section>
