@@ -137,7 +137,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .live-pill{display:none}.live-pill .dot{display:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 /* hero meta */
-.hero-meta{display:none}
+.hero-meta{display:none}/* shown via JS once geo loads */
 .hm{display:flex;flex-direction:column;gap:3px}
 .hm-l{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted-lt)}
 .hm-v{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;color:var(--forest)}
@@ -375,6 +375,46 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 @media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid rgba(255,255,255,0.06)}}
 
 
+
+/* ── NEW FUNNEL SECTIONS ── */
+/* Problem section */
+.prob2-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.prob2-copy{font-family:"Playfair Display",serif}
+.prob2-copy p{font-size:clamp(17px,1.8vw,22px);color:var(--forest);line-height:1.7;margin-bottom:8px;font-weight:400}
+.prob2-copy p.muted{font-size:16px;color:var(--muted);font-family:"Open Sans",sans-serif;line-height:1.9;font-style:italic}
+.prob2-divider{height:1px;background:var(--border);margin:28px 0}
+.prob2-kicker{font-family:"Montserrat",sans-serif;font-size:14px;font-weight:600;color:var(--forest);line-height:1.75}
+.prob2-kicker em{color:var(--muted);font-style:italic;font-weight:400}
+.prob2-stat{background:var(--off-white);border-left:3px solid var(--gold);padding:24px 28px;margin-bottom:20px}
+.prob2-stat-num{font-family:"Cinzel",serif;font-size:44px;font-weight:700;color:var(--forest);line-height:1;margin-bottom:6px}
+.prob2-stat-label{font-size:13px;color:var(--muted);line-height:1.5}
+/* Offer section */
+.offer-section{background:var(--forest);color:#fff;position:relative;overflow:hidden}
+.offer-section::before{content:"";position:absolute;top:-120px;right:-120px;width:400px;height:400px;border:1px solid rgba(200,169,106,0.1);border-radius:50%}
+.offer-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.offer-left{}
+.offer-tag{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(200,169,106,0.7);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.offer-tag::before{content:"";width:20px;height:1px;background:var(--gold);opacity:.6}
+.offer-title{font-family:"Playfair Display",serif;font-size:clamp(26px,3vw,40px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:20px}
+.offer-title em{color:var(--gold);font-style:italic}
+.offer-desc{font-size:16px;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:24px}
+.offer-bullets{list-style:none;padding:0;margin-bottom:28px}
+.offer-bullets li{font-size:15px;color:rgba(255,255,255,0.8);padding:10px 0 10px 24px;position:relative;border-bottom:1px solid rgba(255,255,255,0.06);line-height:1.5}
+.offer-bullets li:last-child{border-bottom:none}
+.offer-bullets li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:700;top:11px}
+.offer-right{background:rgba(255,255,255,0.04);border:1px solid rgba(200,169,106,0.15);padding:40px 36px;border-radius:8px}
+.offer-price-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:6px}
+.offer-price-regular{font-size:14px;text-decoration:line-through;color:rgba(255,255,255,0.25);margin-bottom:8px}
+.offer-price-now{font-family:"Cinzel",serif;font-size:64px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px}
+.offer-price-note{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:24px}
+.offer-scarcity{background:rgba(200,169,106,0.1);border:1px solid rgba(200,169,106,0.2);padding:12px 16px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;color:var(--gold);margin-bottom:22px;border-radius:4px}
+.offer-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#0d1f14;padding:18px 28px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:6px;width:100%;transition:all .25s;margin-bottom:10px}
+.offer-btn:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.offer-trust{font-size:12px;color:rgba(255,255,255,0.3);text-align:center}
+@media(max-width:900px){
+  .prob2-grid{grid-template-columns:1fr;gap:40px}
+  .offer-inner{grid-template-columns:1fr;gap:40px}
+}
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:36px 40px;border-top:3px solid var(--gold)}
 footer p{font-family:"Montserrat",sans-serif;font-size:11px;color:rgba(255,255,255,0.45);line-height:2;text-align:center}
@@ -547,28 +587,34 @@ footer a:hover{color:var(--gold-lt)}
 
   <div class="hero-inner">
     <div class="hero-left">
-      <!-- Hidden JS targets for geo/countdown — kept for JS compatibility -->
+      <!-- Hidden JS targets kept for compatibility -->
       <div id="heroTag" style="display:none"></div>
       <div id="heroLoc" style="display:none"></div>
-      <div style="display:none">
-        <span id="heroDates"></span><span id="heroTime"></span>
-        <div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div>
-      </div>
-      <!-- Visible hero content -->
-      <div class="live-tag">Live Online &middot; Join from Anywhere</div>
-      <h1 class="hero-title">Why Most Business Owners Will Never Be <strong>Financially Free</strong></h1>
+      <div style="display:none"><div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div></div>
+
+      <!-- World Tour FOMO Hero -->
+      <div class="live-tag">Millionaire Mind&reg; Intensive &mdash; 2026 Global World Tour</div>
+      <h1 class="hero-title">Now Live in <strong id="heroCity">Your City</strong></h1>
       <div class="hero-rule-line"></div>
-      <div class="hero-impact">
-        <p>It&rsquo;s not about money.</p>
-        <p>It&rsquo;s about what&rsquo;s running underneath.</p>
+      <p class="hero-sub" style="display:block;font-size:16px;color:var(--ink-mid);line-height:1.8;max-width:520px;margin-bottom:14px">From London to Madrid. From Berlin to Kuala Lumpur.<br>This is not a local event &mdash; it&rsquo;s a global movement happening across cities right now.</p>
+      <p class="hero-sub" style="display:block;font-size:15px;color:var(--muted);line-height:1.8;max-width:520px;margin-bottom:18px">Thousands of business owners, professionals and investors are stepping into this room &mdash; not to learn more strategies, but to fix what&rsquo;s been silently limiting their income.</p>
+      <div class="hero-impact" style="margin-bottom:20px">
+        <p style="font-size:clamp(17px,1.8vw,22px);font-weight:600;color:var(--forest)">And right now &mdash; it&rsquo;s your city&rsquo;s turn.</p>
+        <p style="font-size:15px;color:var(--muted);font-weight:400">Miss this stop, and the tour moves on.</p>
       </div>
-      <p class="hero-tagline">Identify and break the patterns limiting your income.</p>
-      <div class="price-row">
-        <span class="price-now" id="heroPriceNow">$19</span>
-        <span class="price-badge">Early Bird</span>
+      <!-- Event meta — dynamically filled -->
+      <div class="hero-meta" style="display:flex;margin-bottom:22px">
+        <div class="hm"><div class="hm-l">Dates</div><div class="hm-v grn" id="heroDates">&mdash;</div></div>
+        <div class="hm"><div class="hm-l">Time</div><div class="hm-v" id="heroTime">&mdash;</div></div>
+        <div class="hm"><div class="hm-l">Format</div><div class="hm-v">Live Online</div></div>
+      </div>
+      <!-- Urgency badge -->
+      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--green-lt);border:1px solid var(--green-md);padding:7px 16px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:20px">
+        <span style="width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.2s infinite"></span>
+        Early Access Closing
       </div>
       <button class="btn-primary" onclick="openFeatured()">Secure My Seat</button>
-      <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds</div>
+      <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds &middot; Limited seats per city</div>
     </div>
     <div class="hero-right" id="heroTag">
       <div class="hr-label">Live Online Event</div>
@@ -599,6 +645,75 @@ footer a:hover{color:var(--gold-lt)}
     <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Years of Impact</div></div>
   </div>
 </div>
+
+<!-- ── NEW SECTION 2: PROBLEM (deep pain + self-recognition) ── -->
+<section>
+  <div class="si">
+    <div class="prob2-grid">
+      <div>
+        <div class="stag-line"><span>Why Most People Stay Stuck</span></div>
+        <h2 class="stitle">Why Smart, Hardworking People Still Don&rsquo;t Become <strong>Financially Free</strong></h2>
+        <div class="prob2-copy">
+          <p>You already know what to do.</p>
+          <p class="muted">You&rsquo;ve read the books.<br>Tried the strategies.<br>Worked harder than most people around you.</p>
+          <p>And yet &mdash; something doesn&rsquo;t add up.</p>
+        </div>
+        <div class="prob2-divider"></div>
+        <div class="prob2-copy" style="margin-bottom:20px">
+          <p class="muted" style="font-size:15px">Income goes up&hellip; but wealth doesn&rsquo;t stay.<br>Opportunities appear&hellip; but somehow slip away.<br>You get close to the next level&hellip; then stall.</p>
+        </div>
+        <div class="prob2-kicker">
+          It&rsquo;s not a strategy problem.<br>
+          It&rsquo;s what&rsquo;s running underneath.<br>
+          <em>And until that changes &mdash; no new tactic will fix the result.</em>
+        </div>
+      </div>
+      <div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">10M+</div>
+          <div class="prob2-stat-label">People have sat in this room and confronted exactly what you&rsquo;re describing. The pattern is identical across countries, industries, and income levels.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">30</div>
+          <div class="prob2-stat-label">Years of evidence showing that the gap between knowing and doing is never a knowledge problem. It&rsquo;s always an internal one.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">500</div>
+          <div class="prob2-stat-label">Events run every year because once someone fixes what&rsquo;s running underneath, they send the people they care about to do the same.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEW SECTION 3: OFFER (no-brainer decision) ── -->
+<section class="offer-section">
+  <div class="si">
+    <div class="offer-inner">
+      <div class="offer-left">
+        <div class="offer-tag">The Experience</div>
+        <h2 class="offer-title">A 3-Day Live Experience That Fixes <em>The Root</em> &mdash; Not The Symptoms</h2>
+        <p class="offer-desc">This is not a course you watch. It&rsquo;s a live, fully interactive experience where you work on what&rsquo;s actually in the way.</p>
+        <ul class="offer-bullets">
+          <li>Identify the patterns that have been limiting your income</li>
+          <li>Rewire the beliefs driving your financial decisions</li>
+          <li>Break through the emotional blocks that no strategy can touch</li>
+          <li>Walk away with a clear 90-day action plan</li>
+        </ul>
+        <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65">All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p>
+      </div>
+      <div class="offer-right">
+        <div class="offer-price-label">Full 3-Day Access &mdash; Live Online</div>
+        <div class="offer-price-regular">Regular price: $199</div>
+        <div class="offer-price-now">$19</div>
+        <div class="offer-price-note">Early Access &middot; Limited availability per city</div>
+        <div class="offer-scarcity">This is a global tour. Each city has limited capacity.</div>
+        <button class="offer-btn" onclick="openFeatured()">Secure My Seat &nbsp;&rarr;</button>
+        <div class="offer-trust">Join from anywhere &middot; One login per seat &middot; Less than 60 seconds</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WHO ATTENDS -->
 <section class="section-bg-off">
@@ -957,9 +1072,20 @@ function initPage(ev){
   updateHeroPrice(ev);
   renderTrainer(ev.trainer);
   buildGrid();
-  // Update world tour city heading
+  // Update hero city (world tour)
+  const hc=document.getElementById('heroCity');
+  if(hc) hc.textContent=ev.city;
+  // Update tourCity in events section
   const tc=document.getElementById('tourCity');
   if(tc) tc.textContent=ev.city;
+  // Show event dates and time in hero
+  const hd=document.getElementById('heroDates');
+  if(hd) hd.textContent=ev.dates;
+  const ht=document.getElementById('heroTime');
+  if(ht) ht.textContent=ev.time;
+  // Show hero-meta
+  const hm=document.querySelector('.hero-meta');
+  if(hm) hm.style.display='flex';
   document.getElementById('geoLoader').classList.add('hide');
   setTimeout(()=>document.getElementById('geoLoader').style.display='none',700);
 }
