@@ -1476,6 +1476,13 @@ function updateHeroPrice(ev){
 
 // ── BOOT ────────────────────────────────────────────────────────────
 (async()=>{
+  // ?city= param overrides geo detection
+  const cityParam = new URLSearchParams(window.location.search).get('city');
+  if(cityParam){
+    const match = EVENTS.find(e => e.citySlug === cityParam);
+    if(match){ initPage(match); return; }
+  }
+  // Normal geo detection
   try{
     const r=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY);
     const d=await r.json();
