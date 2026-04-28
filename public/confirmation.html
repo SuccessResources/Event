@@ -118,6 +118,11 @@ body{font-family:'Open Sans',sans-serif;background:var(--cream);color:var(--ink)
 .video-facade::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.1);z-index:1;transition:background .2s}
 .video-facade:hover::before{background:rgba(0,0,0,0)}
 .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-spinner{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;display:none}
+.video-spinner svg{width:48px;height:48px;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.video-loading .video-spinner{display:block}
+.video-loading .video-facade{opacity:.4;pointer-events:none}
 
 /* ── STEPS ── */
 .steps-section{background:var(--white);padding:64px 0}
@@ -279,9 +284,16 @@ footer{background:var(--forest);padding:28px 40px;display:flex;align-items:cente
           </div>
         </div>
       </div>
+      <div class="video-spinner">
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.2)" stroke-width="4"/>
+          <path d="M24 4 a20 20 0 0 1 20 20" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
       <iframe id="vimeoFrame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
         style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none"
-        title="Message from your trainer"></iframe>
+        title="Message from your trainer"
+        onload="this.style.display='block';document.getElementById('videoContainer').classList.remove('video-loading');"></iframe>
     </div>
   </div>
 </section>
@@ -463,20 +475,43 @@ var EVENTS = {
 };
 
 var _preloaded = false;
+var VIMEO_URL = 'https://player.vimeo.com/video/1085218735?badge=0&autopause=0&quality=auto';
+
 function preloadVideo(){
-  if(_preloaded) return; _preloaded=true;
-  var f=document.getElementById('vimeoFrame');
-  if(f&&!f.getAttribute('src')) f.setAttribute('src','https://player.vimeo.com/video/1085218735?autoplay=0&badge=0&autopause=0');
+  if(_preloaded) return;
+  _preloaded = true;
+  var f = document.getElementById('vimeoFrame');
+  if(f && !f.src) f.src = VIMEO_URL + '&autoplay=0';
 }
+
 function playVideo(){
-  var facade=document.getElementById('videoFacade');
-  var f=document.getElementById('vimeoFrame');
+  var facade    = document.getElementById('videoFacade');
+  var f         = document.getElementById('vimeoFrame');
+  var container = document.getElementById('videoContainer');
   if(!f) return;
-  var s=f.getAttribute('src')||'';
-  f.setAttribute('src',s.indexOf('autoplay=0')>=0?s.replace('autoplay=0','autoplay=1'):'https://player.vimeo.com/video/1085218735?autoplay=1&badge=0&autopause=0');
-  f.style.display='block';
-  if(facade) facade.style.display='none';
+  // Show loading spinner
+  if(container) container.classList.add('video-loading');
+  // If already preloaded just swap to autoplay, else load fresh
+  if(f.src && f.src.indexOf('autoplay=0') >= 0){
+    f.src = f.src.replace('autoplay=0','autoplay=1');
+  } else {
+    f.src = VIMEO_URL + '&autoplay=1';
+  }
+  if(facade) facade.style.display = 'none';
 }
+
+// IntersectionObserver — preload when video section scrolls into view
+document.addEventListener('DOMContentLoaded', function(){
+  var container = document.getElementById('videoContainer');
+  if(container && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ preloadVideo(); obs.disconnect(); }
+      });
+    }, {rootMargin:'200px'});
+    obs.observe(container);
+  }
+});
 
 document.addEventListener('DOMContentLoaded',function(){
   var ev  = new URLSearchParams(window.location.search).get('event')||'kl';
