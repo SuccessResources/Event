@@ -58,6 +58,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .btn-nav{background:var(--green);color:#fff;padding:10px 24px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:all .2s}
 .btn-nav:hover{background:var(--forest)}
 
+/* ── CORNER STICKER ── */
+.corner-sticker{
+  position:fixed;
+  top:0;left:0;
+  z-index:98;
+  width:168px;
+  padding:14px 22px 36px 14px;
+  background:#fff;
+  clip-path:polygon(0 0,100% 0,100% 62%,62% 100%,0 100%);
+  filter:drop-shadow(2px 3px 10px rgba(5,75,3,0.13));
+  pointer-events:none;
+  transition:opacity .3s
+}
+.cs-sig{
+  font-family:"Montserrat",sans-serif;
+  font-size:7px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted-lt);
+  margin-bottom:6px;line-height:1.4
+}
+.cs-brand{
+  font-family:"Cinzel",serif;
+  font-size:20px;font-weight:700;
+  line-height:1.05;letter-spacing:1px;
+  background:linear-gradient(160deg,var(--gold-lt) 0%,var(--gold) 55%,var(--gold-lt) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:5px
+}
+.cs-sub{
+  font-family:"Montserrat",sans-serif;
+  font-size:7.5px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--forest)
+}
+.cs-rule{
+  width:28px;height:1px;
+  background:linear-gradient(90deg,var(--gold-lt),var(--gold));
+  margin:6px 0
+}
+
 /* ── LOADER ── */
 .geo-loader{position:fixed;inset:0;background:var(--white);z-index:999;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
 .geo-loader.hide{opacity:0;pointer-events:none}
@@ -383,6 +423,14 @@ footer a:hover{color:var(--gold-lt)}
       </div>
     </div>
   </div>
+</div>
+
+<!-- CORNER STICKER — fixed top-left brand badge -->
+<div class="corner-sticker">
+  <div class="cs-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
+  <div class="cs-brand">MILLIONAIRE<br>MIND&reg;</div>
+  <div class="cs-rule"></div>
+  <div class="cs-sub">Intensive Online</div>
 </div>
 
 <!-- NAV -->
