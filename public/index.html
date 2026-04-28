@@ -66,12 +66,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 80px;position:relative;overflow:hidden;background:var(--white)}
-/* subtle diagonal green wash bottom-right */
-.hero::after{content:"";position:absolute;bottom:0;right:0;width:55%;height:100%;background:linear-gradient(135deg,transparent 40%,rgba(5,75,3,0.025) 100%);pointer-events:none}
-/* Zen Circle decorative SVG */
-.zen-deco{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:520px;height:520px;opacity:.04;pointer-events:none}
-.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
+.hero::after{display:none}
+.zen-deco{display:none}
+.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center}
 .hero-left{}
 .hero-sig{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .hero-brand{margin-bottom:32px}
@@ -110,14 +108,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .btn-primary:hover{background:var(--forest);transform:translateY(-1px);box-shadow:var(--shadow-lg)}
 .btn-primary:hover::after{transform:translateX(4px)}
 .hero-access{font-family:"Montserrat",sans-serif;font-size:11px;color:var(--muted);margin-top:10px;letter-spacing:.5px}
-/* hero right - stat panel */
-.hero-right{background:var(--forest);padding:40px 32px;position:relative;overflow:hidden}
-.hero-right::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;border:1px solid rgba(218,191,136,0.15);border-radius:50%}
-.hero-right::after{content:"";position:absolute;bottom:-80px;left:-40px;width:240px;height:240px;border:1px solid rgba(218,191,136,0.1);border-radius:50%}
-.hr-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px}
-.hr-value{font-family:"Cinzel",serif;font-size:18px;font-weight:600;color:#fff;margin-bottom:24px;position:relative;z-index:1}
-.hr-value.gold{background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:24px}
-.hr-divider{height:1px;background:rgba(255,255,255,0.1);margin:24px 0}
+/* hero right panel — hidden, image handles right side */
+.hero-right{display:none}
+.hr-label,.hr-value,.hr-divider{display:none}
 
 /* ── STATS BAR ── */
 .stats-bar{background:var(--forest);padding:36px 40px}
@@ -322,9 +315,8 @@ footer a:hover{color:var(--gold-lt)}
 @media(max-width:1040px){.trainer-grid{grid-template-columns:240px 1fr;gap:40px}}
 @media(max-width:900px){
   nav{padding:0 20px}
-  .hero{padding:90px 20px 60px}
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-right{display:none}
+  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:90px 20px 46vh;align-items:flex-start}
+  .hero-inner{grid-template-columns:1fr;gap:0}
   section{padding:64px 20px}
   .stats-bar{padding:28px 20px}.stats-bar .si{grid-template-columns:1fr 1fr}
   .who-grid,.how-grid{grid-template-columns:1fr 1fr}
@@ -406,10 +398,7 @@ footer a:hover{color:var(--gold-lt)}
 <!-- ║  HERO                                ║ -->
 <!-- ╚══════════════════════════════════════╝ -->
 <section class="hero" id="hero">
-  <svg class="zen-deco" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="250" cy="250" r="220" fill="none" stroke="#054b03" stroke-width="12" stroke-linecap="round" stroke-dasharray="400 100 300 50 200 80" transform="rotate(-30 250 250)"/>
-    <circle cx="250" cy="250" r="180" fill="none" stroke="#028f02" stroke-width="6" stroke-linecap="round" stroke-dasharray="300 60 200 80"/>
-  </svg>
+
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
