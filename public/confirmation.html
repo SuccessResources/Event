@@ -97,6 +97,48 @@ nav{background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1
 .step-warning{background:#FFF3F0;border:1px solid rgba(200,60,40,0.2);border-left:3px solid #C83C28;border-radius:4px;padding:12px 16px;font-size:13px;font-weight:600;color:#8B2010;margin:18px 0;line-height:1.5}
 .step-warning-soft{background:var(--green-lt);border:1px solid var(--green-md);border-radius:6px;padding:16px 18px;font-size:13px;color:var(--forest);line-height:1.75;margin:18px 0}
 
+/* ── REFRAME BANNER ── */
+.reframe-banner{background:var(--forest);border-radius:10px;padding:28px 32px;display:flex;gap:20px;align-items:flex-start;margin-bottom:16px}
+.reframe-icon{width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.reframe-icon svg{width:20px;height:20px;stroke:var(--gold-lt);stroke-width:1.5}
+.reframe-title{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:8px}
+.reframe-body{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.75}
+.reframe-body strong{color:#fff}
+
+/* ── COMMITMENT BAR ── */
+.commitment-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:32px}
+.commitment-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px 16px;display:flex;align-items:center;gap:10px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;color:var(--forest);letter-spacing:.5px}
+.commitment-item svg{width:18px;height:18px;stroke:var(--green);flex-shrink:0}
+
+/* ── PHASE LABELS ── */
+.phase-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted-lt);margin:32px 0 12px;display:flex;align-items:center;gap:12px}
+.phase-label::after{content:"";flex:1;height:1px;background:var(--border)}
+
+/* ── FINAL ANCHOR ── */
+.final-anchor{background:var(--forest);border-radius:10px;padding:48px 40px;text-align:center;margin:12px 0 32px}
+.final-anchor-title{font-family:"Playfair Display",serif;font-size:clamp(22px,3vw,32px);font-weight:800;color:#fff;letter-spacing:-0.5px;margin-bottom:14px;font-style:italic}
+.final-anchor-body{font-size:15px;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:28px}
+.final-anchor-commitment{display:flex;justify-content:center;gap:32px;margin-bottom:20px;flex-wrap:wrap}
+.final-anchor-commitment span{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:700;color:var(--gold-lt);letter-spacing:1px}
+.final-anchor-close{font-family:"Playfair Display",serif;font-size:20px;color:rgba(255,255,255,0.5);font-style:italic}
+
+/* ── CHECKLIST ── */
+.step-checklist{list-style:none;padding:0;margin:16px 0}
+.step-checklist li{font-size:14px;color:var(--ink-mid);padding:9px 0 9px 26px;position:relative;border-bottom:1px solid var(--border-lt);line-height:1.6}
+.step-checklist li:last-child{border-bottom:none}
+.step-checklist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700;font-size:13px;top:10px}
+.step-warning{background:#FFF3F0;border:1px solid rgba(200,60,40,0.2);border-left:3px solid #C83C28;border-radius:4px;padding:12px 16px;font-size:13px;font-weight:600;color:#8B2010;margin:18px 0;line-height:1.5}
+.step-warning-soft{background:var(--green-lt);border:1px solid var(--green-md);border-radius:6px;padding:16px 18px;font-size:13px;color:var(--forest);line-height:1.75;margin:18px 0}
+
+@media(max-width:700px){
+  .commitment-bar{grid-template-columns:1fr 1fr}
+  .reframe-banner{padding:22px 20px}
+  .final-anchor{padding:36px 24px}
+}
+@media(max-width:480px){
+  .commitment-bar{grid-template-columns:1fr}
+}
+
 /* ── VIDEO ── */
 .video-container{position:relative;width:100%;padding-top:56.25%;border-radius:8px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--border);margin-top:8px}
 .video-facade{position:absolute;inset:0;cursor:pointer;background:var(--forest);display:flex;align-items:center;justify-content:center;transition:opacity .35s ease}
@@ -138,9 +180,9 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
   <div class="hero-check">
     <svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 7"/></svg>
   </div>
-  <div class="hero-eyebrow">Registration Confirmed</div>
-  <h1 class="hero-title">You&rsquo;re In. Now<br><em>Prepare to Win.</em></h1>
-  <p class="hero-sub">Welcome to Millionaire Mind Intensive Online. This is not something you &ldquo;watch.&rdquo; This is something you <strong style="color:#fff">participate in</strong> &mdash; live, interactive, and transformational.</p>
+  <div class="hero-eyebrow">You Made a Powerful Decision</div>
+  <h1 class="hero-title">You&rsquo;re In. Now<br><em>This Is Where It Begins.</em></h1>
+  <p class="hero-sub">You didn&rsquo;t just sign up for an event. You made a decision to <strong style="color:#fff">change your financial blueprint.</strong><br>Most people hesitate. Most people stay stuck. You didn&rsquo;t.</p>
   <div class="hero-event-pill">
     <svg style="width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="9" x2="17" y2="9"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="13" y1="2" x2="13" y2="6"/></svg>
     Millionaire Mind Intensive &mdash; <span id="heroEventName">Your City</span>
@@ -150,27 +192,60 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
 <!-- PAGE BODY -->
 <div class="page-body">
 
+  <!-- REFRAME BANNER -->
+  <div class="reframe-banner">
+    <div class="reframe-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+    </div>
+    <div>
+      <div class="reframe-title">This Is Not Something You &ldquo;Watch&rdquo;</div>
+      <div class="reframe-body">Millionaire Mind Intensive Online is a <strong>live, interactive transformation experience.</strong> The results you get will depend entirely on how you show up.</div>
+    </div>
+  </div>
+
+  <!-- COMMITMENT STANDARD -->
+  <div class="commitment-bar">
+    <div class="commitment-item">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg>
+      <span>Not passive</span>
+    </div>
+    <div class="commitment-item">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg>
+      <span>Not optional</span>
+    </div>
+    <div class="commitment-item">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg>
+      <span>Not a replay mindset</span>
+    </div>
+    <div class="commitment-item">
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><polyline points="7,10 9,12 13,8"/></svg>
+      <span>Full participation required</span>
+    </div>
+  </div>
+
+  <!-- PHASE 1: COMMIT -->
+  <div class="phase-label">Phase 1 &mdash; Commit</div>
+
   <!-- STEP 1: CALENDAR -->
   <div class="step">
     <div class="step-num-row">
       <div class="step-badge">1</div>
-      <div class="step-label">Step One &mdash; Non-Negotiable</div>
+      <div class="step-label">Non-Negotiable</div>
     </div>
-    <h2 class="step-title">Lock In Your Time</h2>
-    <p class="step-body">This is not background content. This is <strong>live, interactive, and layered training</strong> &mdash; every session builds on the last.<br><br>
-    Right now, before you do anything else:</p>
+    <h2 class="step-title">Lock In Your Commitment</h2>
+    <p class="step-body">Block all 3 days now. Treat this like a non-negotiable appointment with your future &mdash; because that is exactly what it is.<br><br>
+    <strong>What separates those who get results from those who don&rsquo;t has nothing to do with intelligence. It&rsquo;s about decision.</strong> You&rsquo;ve made yours. Now protect it.</p>
     <ul class="step-checklist">
-      <li>Block all 3 days in your calendar</li>
+      <li>Block all 3 days in your calendar right now</li>
       <li>Inform family or colleagues in advance</li>
-      <li>Treat this like a serious, paid commitment</li>
+      <li>Remove all conflicting commitments</li>
+      <li>No distractions &nbsp;&middot;&nbsp; No multitasking &nbsp;&middot;&nbsp; No rescheduling mindset</li>
     </ul>
-    <div class="step-warning">If you&rsquo;re distracted, you will miss the breakthroughs.</div>
-
-    <div class="email-reminder">
+    <div class="step-warning">If you&rsquo;re distracted, you will miss the breakthroughs. No exceptions.</div>
+    <div class="email-reminder" style="margin-top:20px">
       <svg viewBox="0 0 20 20"><rect x="2" y="4" width="16" height="13" rx="2"/><polyline points="2,4 10,12 18,4"/></svg>
-      <div class="email-reminder-text"><strong>Check your inbox.</strong> We&rsquo;ll send access details and updates before each day. Add us to your contacts and check your spam folder to make sure you receive them.</div>
+      <div class="email-reminder-text"><strong>Watch your inbox.</strong> Access details, updates, and Day 1 prep will arrive by email. Check spam &amp; add us to your contacts now.</div>
     </div>
-
     <div style="margin-top:24px">
       <a id="calendarLink" href="#" class="btn-primary-cta" target="_blank" rel="noopener">
         <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="9" x2="17" y2="9"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="13" y1="2" x2="13" y2="6"/></svg>
@@ -179,14 +254,17 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
     </div>
   </div>
 
+  <!-- PHASE 2: PREPARE -->
+  <div class="phase-label">Phase 2 &mdash; Prepare</div>
+
   <!-- VIDEO -->
   <div class="step">
     <div class="step-num-row">
-      <div class="step-badge" style="background:var(--cream);border-color:rgba(184,147,90,0.3);color:var(--gold)">▶</div>
+      <div class="step-badge" style="background:var(--cream);border-color:rgba(184,147,90,0.3);color:var(--gold)">&#9654;</div>
       <div class="step-label" style="color:var(--gold)">Watch Before Day 1</div>
     </div>
     <h2 class="step-title">A Message From Your Trainer</h2>
-    <p class="step-body">Before the event begins, take a few minutes to watch this. It will set the right frame of mind and tell you exactly how to get the most out of your 3 days.</p>
+    <p class="step-body">Before the event begins, take a few minutes to watch this. It will set the right frame of mind and show you exactly how to get the most out of your 3 days.</p>
     <div class="video-container" id="videoContainer">
       <div class="video-facade" id="videoFacade" onclick="playVideo()" onmouseenter="preloadVideo()">
         <div class="video-poster-bg"></div>
@@ -215,32 +293,33 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
       <div class="step-badge">2</div>
       <div class="step-label">Step Two</div>
     </div>
-    <h2 class="step-title">Set Up Your Environment for Focus</h2>
-    <p class="step-body"><strong>Your results will depend on your environment.</strong> An online event only works when you treat it like a live, in-person commitment. Before Day 1, make sure you have:</p>
+    <h2 class="step-title">Set Up Your Environment to Win</h2>
+    <p class="step-body"><strong>Your environment determines your results.</strong> This is an online event &mdash; which means your physical space is your arena. Set it up before Day 1 or the distractions will set it up for you.</p>
     <ul class="step-checklist">
-      <li>A quiet, distraction-free space</li>
+      <li>Quiet, distraction-free space for all 3 days</li>
       <li>Laptop or desktop &mdash; not just your phone</li>
-      <li>Stable internet connection</li>
-      <li>Camera on when required</li>
+      <li>Stable internet connection tested in advance</li>
+      <li>Camera on when required &mdash; presence creates results</li>
     </ul>
     <div class="step-warning-soft">
-      <span>&#128683;</span> No multitasking &nbsp;&nbsp; <span>&#128683;</span> No &ldquo;watching while working&rdquo;<br>
-      <strong>This is your time to focus on you.</strong>
+      <strong>This is your time. Protect it.</strong><br>
+      No multitasking. No &ldquo;watching while working.&rdquo; No background participation.<br>
+      People who half-attend get half the results. You deserve the full transformation.
     </div>
   </div>
 
-  <!-- STEP 2B: TIMEZONE -->
+  <!-- STEP 3: SHOW UP -->
   <div class="step">
     <div class="step-num-row">
       <div class="step-badge">3</div>
       <div class="step-label">Step Three</div>
     </div>
     <h2 class="step-title">Log In Early. Stay Fully Engaged.</h2>
-    <p class="step-body">Success in this programme is not passive. The content builds layer by layer &mdash; if you miss Day 1 and jump into Day 2, it&rsquo;s like skipping Chapter 1 and trying to make sense of Chapter 3.</p>
+    <p class="step-body">This programme builds layer by layer. Each session is designed to unlock the next. Missing even one session means missing part of the transformation &mdash; and the sessions build on each other in ways that can&rsquo;t be replayed in context.</p>
     <ul class="step-checklist">
-      <li>Log in 15 minutes early each day</li>
-      <li>Participate actively in all exercises</li>
-      <li>Stay until the end of every session</li>
+      <li>Log in 15 minutes before each session</li>
+      <li>Participate actively in all exercises &mdash; not just listen</li>
+      <li>Stay until the end of every session, every day</li>
     </ul>
     <div class="step-note" id="day3Note"></div>
     <a id="timezoneLink" href="#" class="btn-secondary-cta" target="_blank" rel="noopener" style="margin-top:20px">
@@ -255,23 +334,25 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
       <div class="step-badge">4</div>
       <div class="step-label">Step Four</div>
     </div>
-    <h2 class="step-title">Download &amp; Print Your Workbook</h2>
-    <p class="step-body">Your workbook is your <strong>execution tool</strong>, not just a notepad. You&rsquo;ll be using it throughout all 3 days to capture insights, complete exercises, and lock in your shifts.<br><br>
-    <strong>Writing = deeper learning + higher retention.</strong> Print it if you can &mdash; what&rsquo;s physical becomes memorable.</p>
-
+    <h2 class="step-title">Prepare Your Execution Tools</h2>
+    <p class="step-body">Download your workbook now. This is not just a notepad &mdash; <strong>this is where your breakthroughs will happen.</strong> You&rsquo;ll be using it throughout all 3 days to capture insights, complete exercises, and lock in your shifts.<br><br>
+    Writing = deeper learning + higher retention. Print it if you can. What&rsquo;s physical becomes permanent.</p>
     <div class="workbook-grid">
       <a href="https://sr-event.com/mmh-workbook" class="workbook-card" target="_blank" rel="noopener">
-        <span class="workbook-card-icon">📖</span>
+        <span class="workbook-card-icon">&#128216;</span>
         <div class="workbook-card-label">Workbook</div>
         <div class="workbook-card-sub">Download &amp; print</div>
       </a>
       <a href="http://sr-event.com/mmh-declaration" class="workbook-card" target="_blank" rel="noopener">
-        <span class="workbook-card-icon">✍️</span>
+        <span class="workbook-card-icon">&#9997;&#65039;</span>
         <div class="workbook-card-label">Declaration Sheet</div>
         <div class="workbook-card-sub">Download &amp; print</div>
       </a>
     </div>
   </div>
+
+  <!-- PHASE 3: ACTIVATE -->
+  <div class="phase-label">Phase 3 &mdash; Activate</div>
 
   <!-- STEP 5: INTENTION -->
   <div class="step">
@@ -279,18 +360,31 @@ footer{background:var(--forest);padding:36px 24px;text-align:center}
       <div class="step-badge">5</div>
       <div class="step-label">Step Five &mdash; This Changes Everything</div>
     </div>
-    <h2 class="step-title">Enter With Intention</h2>
-    <p class="step-body">Don&rsquo;t log in casually. The people who get the most out of this event are the ones who arrive having already decided what they want.<br><br>
-    Before Day 1, take 5 minutes and write down your answers to these three questions:</p>
+    <h2 class="step-title">Set Your Intention Before Day 1</h2>
+    <p class="step-body">Don&rsquo;t log in casually. The people who get the most out of this event are the ones who arrived having already decided what they wanted.<br><br>
+    Before Day 1, take 5 minutes. Write down your answers to these three questions:</p>
     <ul class="step-checklist">
-      <li>What do I want to fix in my financial life?</li>
-      <li>What patterns must I break?</li>
-      <li>What result must I walk away with?</li>
+      <li>What must change in my financial life?</li>
+      <li>What patterns am I ready to break?</li>
+      <li>What result will make this worth it?</li>
     </ul>
-    <div class="step-warning-soft" style="margin-top:18px">
-      <strong>Clear intention = powerful results.</strong><br>
-      You didn&rsquo;t sign up to watch another webinar. You signed up to change your financial future.<br><br>
-      Show up <strong>focused</strong>, <strong>present</strong>, and <strong>all in</strong>. We&rsquo;ll see you live.
+    <div class="step-warning-soft">
+      <strong>People who enter with intention get exponentially better results.</strong><br>
+      Write it down. Keep it visible. Bring it with you on Day 1.
+    </div>
+  </div>
+
+  <!-- FINAL ANCHOR -->
+  <div class="final-anchor">
+    <div class="final-anchor-inner">
+      <div class="final-anchor-title">You didn&rsquo;t come this far to stay the same.</div>
+      <div class="final-anchor-body">You didn&rsquo;t sign up to watch another webinar.<br>You signed up to change your financial future.</div>
+      <div class="final-anchor-commitment">
+        <span>&#10003; Focused</span>
+        <span>&#10003; Present</span>
+        <span>&#10003; All in</span>
+      </div>
+      <div class="final-anchor-close">We&rsquo;ll see you live.</div>
     </div>
   </div>
 
