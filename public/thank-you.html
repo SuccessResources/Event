@@ -271,7 +271,7 @@ footer{background:var(--forest);padding:40px 48px;border-top:none}
           </div>
         </div>
       </div>
-      <a href="https://event.millionairemind.online" class="btn-event-details">Go to Event Details <span>→</span></a>
+      <a href="#" id="btnEventDetails" class="btn-event-details">Go to Event Details <span>→</span></a>
     </div>
   </div>
 
@@ -684,10 +684,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if(btnTop)   btnTop.href   = vipUrl;
   if(btnFinal) btnFinal.href = vipUrl;
 
-  // Confirmation page link (skip VIP / already registered)
+  // Confirmation page links
   var confirmUrl = CONFIRM_URLS[city] || 'https://event.millionairemind.online/confirmation.html?event=kl';
-  var btnSkip  = document.getElementById('btnSkipVip');
-  if(btnSkip) btnSkip.href = confirmUrl;
+  var btnSkip    = document.getElementById('btnSkipVip');
+  var btnDetails = document.getElementById('btnEventDetails');
+  if(btnSkip)    btnSkip.href    = confirmUrl;
+  if(btnDetails) btnDetails.href = confirmUrl;
 
   var bg = document.getElementById('heroBg');
   if (bg) {
