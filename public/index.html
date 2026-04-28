@@ -329,28 +329,51 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .btn-primary-light:hover::after{transform:translateX(4px)}
 .final-note{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:14px;text-transform:uppercase;position:relative;z-index:1}
 
-/* ── MODAL ── */
-.modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(5,75,3,0.6);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+/* ── MODAL — premium two-panel ── */
+.modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(4,16,10,0.8);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
 .modal-ov.open{display:flex}
-.modal-box{background:var(--white);border:1px solid var(--border);max-width:580px;width:100%;padding:0;position:relative;max-height:92vh;overflow-y:auto;box-shadow:0 24px 64px rgba(5,75,3,0.2)}
-.modal-header{background:var(--forest);padding:28px 32px 24px;position:relative}
-.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(255,255,255,0.6);font-size:24px;cursor:pointer;line-height:1}
-.modal-close:hover{color:#fff}
-.modal-ev{font-family:"Cinzel",serif;font-size:22px;font-weight:700;color:#fff}
-.modal-dates{font-family:"Montserrat",sans-serif;font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:1px;margin-top:4px}
-.modal-body{padding:28px 32px}
-.modal-tier-title{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.modal-tier-box{background:var(--off-white);border:1px solid var(--border-lt);padding:20px;margin-bottom:18px}
-.modal-tier-box.highlight{background:var(--green-lt);border-color:var(--green-md)}
-.modal-tier-name{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:700;color:var(--forest);margin-bottom:4px}
-.modal-tier-sub{font-size:12px;color:var(--muted);margin-bottom:14px}
-.modal-tier-pricing{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
-.modal-tier-was{font-size:13px;text-decoration:line-through;color:var(--muted-lt)}
-.modal-tier-now{font-family:"Cinzel",serif;font-size:30px;font-weight:700;color:var(--green)}
-.stripe-wrap{min-height:60px}
-.stripe-placeholder{background:var(--green-lt);border:1px dashed var(--green-md);padding:14px;text-align:center;font-family:"Montserrat",sans-serif;font-size:11px;color:var(--green)}
-.modal-vip-note{font-size:12px;color:var(--muted);text-align:center;line-height:1.6;margin-top:6px}
-.modal-vip-note a{color:var(--green);font-weight:600}
+.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:860px;width:100%;max-height:92vh;overflow-y:auto;border-radius:12px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5)}
+.mpanel-online{background:#0d1f14;padding:36px 32px;display:flex;flex-direction:column;position:relative}
+.mpanel-live{background:#111f17;padding:36px 32px;display:flex;flex-direction:column;border-left:1px solid rgba(255,255,255,0.06);position:relative}
+.modal-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,0.08);border:none;color:rgba(255,255,255,0.5);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;z-index:10;font-family:inherit;transition:all .2s}
+.modal-close:hover{background:rgba(255,255,255,0.18);color:#fff}
+.mpanel-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(200,169,106,0.35);border-radius:4px;padding:6px 14px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;width:fit-content}
+.mpanel-sig{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.mpanel-city{font-family:"Cinzel",serif;font-size:clamp(20px,2.2vw,28px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px}
+.mpanel-dates{font-family:"Montserrat",sans-serif;font-size:12px;font-weight:600;color:var(--gold);margin-bottom:3px}
+.mpanel-time{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:18px}
+.mpanel-divider{height:1px;background:rgba(255,255,255,0.07);margin:14px 0}
+.mpanel-list-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px}
+.mpanel-list{list-style:none;padding:0;margin-bottom:18px}
+.mpanel-list li{font-size:13px;color:rgba(255,255,255,0.7);padding:5px 0 5px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.4}
+.mpanel-list li:last-child{border-bottom:none}
+.mpanel-list li::before{content:"→";position:absolute;left:0;color:var(--gold);font-size:11px;font-weight:700;top:6px}
+.mpanel-price-row{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.mpanel-was{font-size:14px;text-decoration:line-through;color:rgba(255,255,255,0.25)}
+.mpanel-now{font-family:"Cinzel",serif;font-size:48px;font-weight:700;color:var(--gold);line-height:1}
+.mpanel-badge{background:var(--gold);color:#0d1f14;padding:4px 12px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;border-radius:3px}
+.mpanel-guarantee{font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;margin-bottom:18px}
+.mpanel-cta-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:8px}
+.stripe-wrap{min-height:50px}
+.stripe-placeholder{background:var(--gold);color:#0d1f14;padding:14px 20px;text-align:center;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:6px;cursor:pointer}
+.mpanel-add-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(200,169,106,0.55);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.mpanel-add-label::before{content:"";width:20px;height:1px;background:var(--gold);opacity:.4}
+.mpanel-live-title{font-family:"Playfair Display",serif;font-size:clamp(19px,2vw,24px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:12px}
+.mpanel-live-title em{color:var(--gold);font-style:italic}
+.mpanel-live-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:18px}
+.mpanel-benefits-label{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:10px}
+.mpanel-benefits{list-style:none;padding:0;margin-bottom:18px}
+.mpanel-benefits li{font-size:13px;color:rgba(255,255,255,0.65);padding:6px 0 6px 20px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.4}
+.mpanel-benefits li:last-child{border-bottom:none}
+.mpanel-benefits li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-size:12px;top:7px}
+.mpanel-live-price{font-family:"Cinzel",serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px}
+.mpanel-live-price-note{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:14px}
+.btn-modal-live{display:block;width:100%;padding:13px 20px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:6px;cursor:pointer;transition:all .2s;text-align:center;margin-bottom:10px}
+.btn-modal-live:hover{background:rgba(255,255,255,0.14);color:#fff}
+.mpanel-skip{display:block;text-align:center;font-size:12px;color:rgba(255,255,255,0.25);cursor:pointer;transition:color .2s;background:none;border:none;width:100%;font-family:inherit;padding:4px 0}
+.mpanel-skip:hover{color:rgba(255,255,255,0.55)}
+@media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid rgba(255,255,255,0.06)}}
+
 
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:36px 40px;border-top:3px solid var(--gold)}
@@ -453,37 +476,53 @@ footer a:hover{color:var(--gold-lt)}
 <!-- LOADER -->
 <div class="geo-loader" id="geoLoader"><div><div class="loader-ring"></div><p class="loader-txt">Finding your nearest event</p></div></div>
 
-<!-- MODAL -->
+<!-- MODAL — two-panel premium ticket selector -->
 <div class="modal-ov" id="modal">
   <div class="modal-box">
-    <div class="modal-header">
-      <button class="modal-close" onclick="closeModal()">&#215;</button>
-      <div class="modal-ev" id="mEvName"></div>
-      <div class="modal-dates" id="mEvDates"></div>
+    <!-- LEFT: Online ticket -->
+    <div class="mpanel-online">
+      <div class="mpanel-tag"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg> Online Ticket</div>
+      <div class="mpanel-sig">Millionaire Mind Intensive</div>
+      <div class="mpanel-city" id="mEvName"></div>
+      <div class="mpanel-dates" id="mEvDates"></div>
+      <div class="mpanel-time" id="mEvTime"></div>
+      <div class="mpanel-divider"></div>
+      <div class="mpanel-list-label">What&rsquo;s included online:</div>
+      <ul class="mpanel-list">
+        <li>Full 3-day live stream &mdash; watch from anywhere</li>
+        <li>Millionaire Mind Digital Workbook</li>
+        <li>Pre-Training Intention Sheet</li>
+        <li>Alumni Peer Network &mdash; 200+ Entrepreneurs</li>
+        <li>Weekly Review &amp; Relearn Sessions</li>
+      </ul>
+      <div class="mpanel-price-row">
+        <span class="mpanel-was">$199</span>
+        <span class="mpanel-now">$19</span>
+        <span class="mpanel-badge">Early Bird</span>
+      </div>
+      <div class="mpanel-guarantee">100% Money-Back &middot; If Day 1 doesn&rsquo;t blow your mind, we refund every cent</div>
+      <div class="mpanel-cta-label">Secure your online seat</div>
+      <div class="stripe-wrap" id="stripeOnline"></div>
     </div>
-    <div class="modal-body">
-      <!-- Online pass -->
-      <div class="modal-tier-box highlight">
-        <div class="modal-tier-name" style="display:flex;align-items:center;gap:8px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg> Online Pass &mdash; Live &amp; Interactive</div>
-        <div class="modal-tier-sub">Attend from anywhere &middot; Zoom &middot; Any device</div>
-        <div class="modal-tier-pricing">
-          <span class="modal-tier-was">$199</span>
-          <span class="modal-tier-now">$29</span>
-          <span style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;background:var(--green);color:#fff;padding:3px 8px">EARLY BIRD</span>
-        </div>
-        <div class="stripe-wrap" id="stripeOnline"></div>
-      </div>
-      <!-- In-person VIP -->
-      <div class="modal-tier-box">
-        <div class="modal-tier-name" style="display:flex;align-items:center;gap:8px"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-layers"/></svg> In-Person VIP Pass</div>
-        <div class="modal-tier-sub" id="mLiveSubtitle">Attend live at the venue</div>
-        <div class="modal-tier-pricing">
-          <span class="modal-tier-was" id="mLiveWas"></span>
-          <span class="modal-tier-now" style="color:var(--forest)" id="mLiveNow"></span>
-        </div>
-        <div class="stripe-wrap" id="stripeLive"></div>
-        <div class="modal-vip-note">Front-row seating &middot; Networking &middot; Meet your trainer &middot; <a href="https://www.millionairemindworld.com/sr" target="_blank">Enquire about VIP &rarr;</a></div>
-      </div>
+    <!-- RIGHT: In-person upgrade -->
+    <div class="mpanel-live">
+      <button class="modal-close" onclick="closeModal()">&#215;</button>
+      <div class="mpanel-add-label">Add to your online ticket</div>
+      <h3 class="mpanel-live-title">Be Physically <em>In the Room</em> in <span id="mLiveCity"></span></h3>
+      <p class="mpanel-live-desc">Your $19 online seat is confirmed on the left. Add this upgrade to also attend in person at the venue &mdash; same event, different experience.</p>
+      <div class="mpanel-divider"></div>
+      <div class="mpanel-benefits-label">Extra benefits in-person:</div>
+      <ul class="mpanel-benefits" id="mBenefits">
+        <li>Physical seat at the venue</li>
+        <li>Live energy in the room with 200+ entrepreneurs</li>
+        <li>Direct interaction with your trainer on stage</li>
+        <li>In-person networking and peer connections</li>
+        <li>Access to VIP evening social after Day 1</li>
+      </ul>
+      <div class="mpanel-live-price" id="mLiveNow"></div>
+      <div class="mpanel-live-price-note">live event ticket &middot; today only</div>
+      <div class="stripe-wrap" id="stripeLive"></div>
+      <button class="mpanel-skip" onclick="closeModal()">No thanks &mdash; online only &rarr;</button>
     </div>
   </div>
 </div>
@@ -702,9 +741,13 @@ footer a:hover{color:var(--gold-lt)}
 <!-- EVENTS -->
 <section class="section-bg-off" id="register">
   <div class="si">
-    <div class="stag-line"><span>2026 World Tour</span></div>
-    <h2 class="stitle">Choose <strong>Your Event</strong></h2>
-    <p style="font-size:15px;color:var(--muted);max-width:600px;line-height:1.75">Every event runs fully live online &mdash; attend from anywhere. In-person VIP seats are available at the host city for those who want the full room experience.</p>
+    <!-- World Tour FOMO header -->
+    <div class="stag-line"><span>Millionaire Mind&reg; Intensive &mdash; 2026 Global World Tour</span></div>
+    <h2 class="stitle">Now Live in <strong id="tourCity">Your City</strong></h2>
+    <p style="font-size:16px;color:var(--ink-mid);max-width:680px;line-height:1.85;margin-bottom:10px">From London to Berlin. From Madrid to Kuala Lumpur. This isn&rsquo;t just an event &mdash; it&rsquo;s a global movement happening across cities, right now.</p>
+    <p style="font-size:15px;color:var(--muted);max-width:680px;line-height:1.8;margin-bottom:10px">Thousands of business owners, professionals, and investors are stepping into this room &mdash; reprogramming the patterns that have been silently limiting their income for years.</p>
+    <p style="font-size:15px;color:var(--forest);max-width:680px;line-height:1.8;font-weight:600;margin-bottom:32px">And right now &mdash; it&rsquo;s your city&rsquo;s turn.<br><span style="font-weight:400;color:var(--muted)">Miss this stop, and the tour moves on.</span></p>
+    <!-- City grid -->
     <div class="ev-grid" id="evGrid"></div>
   </div>
 </section>
@@ -914,6 +957,9 @@ function initPage(ev){
   updateHeroPrice(ev);
   renderTrainer(ev.trainer);
   buildGrid();
+  // Update world tour city heading
+  const tc=document.getElementById('tourCity');
+  if(tc) tc.textContent=ev.city;
   document.getElementById('geoLoader').classList.add('hide');
   setTimeout(()=>document.getElementById('geoLoader').style.display='none',700);
 }
@@ -938,24 +984,24 @@ function buildGrid(){
   document.getElementById('evGrid').innerHTML=up.map(ev=>{
     const f=ev===FEATURED, cs=s(ev.cur);
     return '<div class="ev-card'+(f?' featured':'')+'">'+
-      '<span class="ev-badge '+(f?'badge-f':'badge-u')+'">'+(f?'\u2605 Nearest to You':'Upcoming')+'</span>'+
+      '<span class="ev-badge '+(f?'badge-f':'badge-u')+'">'+(f?'\u2605 Your City':'Upcoming')+'</span>'+
       '<div class="ev-city">'+ev.flag+' '+ev.display+'</div>'+
       '<div class="ev-country">'+ev.country+'</div>'+
       '<div class="ev-date">'+ev.dates+'</div>'+
       '<div class="ev-time">'+ev.time+'</div>'+
       '<div class="ev-tiers">'+
         '<div class="ev-tier ev-tier-online">'+
-          '<div class="ev-tier-label">\uD83C\uDF10 Online</div>'+
+          '<div class="ev-tier-label">Online</div>'+
           '<div class="ev-tier-was">$199</div>'+
-          '<div class="ev-tier-price">$'+ONLINE_PRICE+'</div>'+
+          '<div class="ev-tier-price">$19</div>'+
         '</div>'+
         '<div class="ev-tier">'+
-          '<div class="ev-tier-label">\uD83C\uDFDB In-Person</div>'+
+          '<div class="ev-tier-label">In-Person</div>'+
           '<div class="ev-tier-was">'+cs+'199</div>'+
           '<div class="ev-tier-price">'+cs+ev.price+'</div>'+
         '</div>'+
       '</div>'+
-      '<button class="ev-btn" onclick="openModal(\''+ev.btnId+'\')">Choose Pass \u2192</button>'+
+      '<button class="ev-btn" onclick="openModal(\''+ev.btnId+'\')">Select City \u2192</button>'+
       '</div>';
   }).join('');
 }
@@ -979,11 +1025,26 @@ function openModal(onlineBtnId){
   const ev=EVENTS.find(e=>e.btnId===onlineBtnId);
   if(!ev)return;
   const cs=s(ev.cur);
+  const trainer=TRAINERS[ev.trainer];
+  const trainerName=trainer?trainer.first+' '+trainer.last:'your trainer';
+  // Left panel — online
   document.getElementById('mEvName').textContent=ev.flag+' '+ev.display+', '+ev.country;
-  document.getElementById('mEvDates').textContent=ev.dates+' \u00b7 '+ev.time;
-  document.getElementById('mLiveSubtitle').textContent='Attend live at the venue in '+ev.city;
-  document.getElementById('mLiveWas').textContent=cs+'199';
-  document.getElementById('mLiveNow').textContent=cs+ev.price;
+  document.getElementById('mEvDates').textContent=ev.dates;
+  document.getElementById('mEvTime').textContent=ev.time+' \u00b7 Live Online';
+  // Right panel — in-person
+  document.getElementById('mLiveCity').textContent=ev.city;
+  document.getElementById('mLiveNow').textContent=cs+' '+ev.price;
+  // Dynamic trainer name in benefits
+  const bList=document.getElementById('mBenefits');
+  if(bList){
+    bList.innerHTML=[
+      'Physical seat at '+ev.city,
+      'Live energy in the room with 200+ entrepreneurs',
+      'Direct interaction with '+trainerName+' on stage',
+      'In-person networking and peer connections',
+      'Access to VIP evening social after Day 1'
+    ].map(t=>'<li>'+t+'</li>').join('');
+  }
   injectStripe('stripeOnline', ev.btnId);
   injectStripe('stripeLive',   ev.liveBtnId);
   document.getElementById('modal').classList.add('open');
