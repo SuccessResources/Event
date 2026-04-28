@@ -496,6 +496,26 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
   .tour-row-date-col{display:none}
   .tour-stats-inner{grid-template-columns:1fr 1fr}
 }
+
+/* ── IMMEDIATE CTA STRIP ─────────────────────────────────────────────── */
+.imm-cta-section{background:var(--forest);padding:44px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.imm-cta-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.imm-cta-tag{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.imm-cta-heading{font-family:"Playfair Display",serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px;letter-spacing:-0.5px}
+.imm-cta-heading strong{color:var(--gold);font-style:italic}
+.imm-cta-sub{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.5}
+.imm-cta-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px;flex-shrink:0}
+.imm-price-row{display:flex;align-items:center;gap:10px}
+.imm-was{font-size:14px;text-decoration:line-through;color:rgba(255,255,255,0.3)}
+.imm-now{font-family:"Playfair Display",serif;font-size:42px;font-weight:700;color:#fff;line-height:1}
+.imm-badge{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);padding:4px 12px;font-family:"Montserrat",sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;border-radius:100px;border:1px solid rgba(255,255,255,0.15)}
+.imm-btn{background:#fff;color:var(--forest);padding:14px 32px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;border-radius:100px;transition:all .25s;white-space:nowrap}
+.imm-btn:hover{background:var(--green-lt);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.2)}
+.imm-note{display:flex;align-items:center;gap:6px;font-family:"Montserrat",sans-serif;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:.5px}
+@media(max-width:900px){
+  .imm-cta-inner{grid-template-columns:1fr;gap:24px}
+  .imm-cta-right{align-items:flex-start}
+}
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:40px 48px;border-top:none}
 footer p{font-family:"Montserrat",sans-serif;font-size:11px;color:rgba(255,255,255,0.45);line-height:2;text-align:center}
@@ -737,6 +757,28 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
+<!-- IMMEDIATE CTA — impulse buy strip -->
+<section class="imm-cta-section">
+  <div class="si">
+    <div class="imm-cta-inner">
+      <div class="imm-cta-left">
+        <div class="imm-cta-tag">Join the Global Tour</div>
+        <h2 class="imm-cta-heading">Now Open in <strong id="immCtaCity">Your City</strong></h2>
+        <p class="imm-cta-sub">3-Day Live Experience &mdash; Online &middot; Join from Anywhere</p>
+      </div>
+      <div class="imm-cta-right">
+        <div class="imm-price-row">
+          <span class="imm-was">$199</span>
+          <span class="imm-now">$19</span>
+          <span class="imm-badge">Early Access</span>
+        </div>
+        <button class="imm-btn" onclick="openFeatured()">Secure My Seat</button>
+        <div class="imm-note"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-users-small"/></svg> Limited seats &middot; This stop is filling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <div class="stats-bar">
   <div class="si">
@@ -746,213 +788,6 @@ footer a:hover{color:var(--gold-lt)}
     <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Years of Impact</div></div>
   </div>
 </div>
-
-<!-- ── NEW SECTION 2: PROBLEM (deep pain + self-recognition) ── -->
-<section>
-  <div class="si">
-    <div class="prob2-grid">
-      <div>
-        <div class="stag-line"><span>Why Most People Stay Stuck</span></div>
-        <h2 class="stitle">Why Smart, Hardworking People Still Don&rsquo;t Become <strong>Financially Free</strong></h2>
-        <div class="prob2-copy">
-          <p>You already know what to do.</p>
-          <p class="muted">You&rsquo;ve read the books.<br>Tried the strategies.<br>Worked harder than most people around you.</p>
-          <p>And yet &mdash; something doesn&rsquo;t add up.</p>
-        </div>
-        <div class="prob2-divider"></div>
-        <div class="prob2-copy" style="margin-bottom:20px">
-          <p class="muted" style="font-size:15px">Income goes up&hellip; but wealth doesn&rsquo;t stay.<br>Opportunities appear&hellip; but somehow slip away.<br>You get close to the next level&hellip; then stall.</p>
-        </div>
-        <div class="prob2-kicker">
-          It&rsquo;s not a strategy problem.<br>
-          It&rsquo;s what&rsquo;s running underneath.<br>
-          <em>And until that changes &mdash; no new tactic will fix the result.</em>
-        </div>
-      </div>
-      <div>
-        <div class="prob2-stat">
-          <div class="prob2-stat-num">10M+</div>
-          <div class="prob2-stat-label">People have sat in this room and confronted exactly what you&rsquo;re describing. The pattern is identical across countries, industries, and income levels.</div>
-        </div>
-        <div class="prob2-stat">
-          <div class="prob2-stat-num">30</div>
-          <div class="prob2-stat-label">Years of evidence showing that the gap between knowing and doing is never a knowledge problem. It&rsquo;s always an internal one.</div>
-        </div>
-        <div class="prob2-stat">
-          <div class="prob2-stat-num">500</div>
-          <div class="prob2-stat-label">Events run every year because once someone fixes what&rsquo;s running underneath, they send the people they care about to do the same.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── NEW SECTION 3: OFFER (no-brainer decision) ── -->
-<section class="offer-section">
-  <div class="si">
-    <div class="offer-inner">
-      <div class="offer-left">
-        <div class="offer-tag">The Experience</div>
-        <h2 class="offer-title">A 3-Day Live Experience That Fixes <em>The Root</em> &mdash; Not The Symptoms</h2>
-        <p class="offer-desc">This is not a course you watch. It&rsquo;s a live, fully interactive experience where you work on what&rsquo;s actually in the way.</p>
-        <ul class="offer-bullets">
-          <li>Identify the patterns that have been limiting your income</li>
-          <li>Rewire the beliefs driving your financial decisions</li>
-          <li>Break through the emotional blocks that no strategy can touch</li>
-          <li>Walk away with a clear 90-day action plan</li>
-        </ul>
-        <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65">All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p>
-      </div>
-      <div class="offer-right">
-        <div class="offer-price-label">Full 3-Day Access &mdash; Live Online</div>
-        <div class="offer-price-regular">Regular price: $199</div>
-        <div class="offer-price-now">$19</div>
-        <div class="offer-price-note">Early Access &middot; Limited availability per city</div>
-        <div class="offer-scarcity">This is a global tour. Each city has limited capacity.</div>
-        <button class="offer-btn" onclick="openFeatured()">Secure My Seat &nbsp;&rarr;</button>
-        <div class="offer-trust">Join from anywhere &middot; One login per seat &middot; Less than 60 seconds</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHO ATTENDS -->
-<section class="section-bg-off">
-  <div class="si">
-    <div class="stag-line"><span>Who This Is For</span></div>
-    <h2 class="stitle">You&rsquo;ve Already Tried <strong>The Strategies</strong></h2>
-    <p style="font-size:15px;color:var(--muted);max-width:620px;line-height:1.75">Every year, thousands of business owners and professionals attend MMI. They share one thing in common: they already know <em>what</em> to do &mdash; they just can&rsquo;t explain why it&rsquo;s not working.</p>
-    <div class="who-grid">
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div class="who-type">Business Owners &amp; Entrepreneurs</div><div class="who-desc">You&rsquo;ve built something real, but <strong>revenue has hit a ceiling</strong>. You work harder than anyone you know &mdash; yet the income isn&rsquo;t following. This changes the internal wiring that&rsquo;s capping your growth.</div><div class="who-q">&ldquo;I was running a &pound;1M business and couldn&rsquo;t understand why I kept self-sabotaging every time we got close to the next level.&rdquo; &mdash; Ryan R.</div></div>
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-trending"/></svg></span><div class="who-type">Senior Professionals &amp; Executives</div><div class="who-desc">High income, but <strong>wealth isn&rsquo;t accumulating</strong> the way it should. You earn well, but lifestyle inflation, bad investments, the feeling there&rsquo;s never enough. This addresses the root.</div><div class="who-q">&ldquo;I was earning six figures and still living like I was broke. The mindset shift at MMI explained everything.&rdquo; &mdash; MMI Graduate</div></div>
-      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-layers"/></svg></span><div class="who-type">Investors &amp; Freelancers</div><div class="who-desc">You have the knowledge. You understand the vehicles. But <strong>inconsistency and fear keep pulling you back</strong>. MMI identifies the emotional and psychological patterns behind your financial results.</div><div class="who-q">&ldquo;I knew all the theory. What I didn&rsquo;t know was why I kept undoing my own progress.&rdquo; &mdash; MMI Graduate</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TRAINER -->
-<section>
-  <div class="si">
-    <div class="trainer-grid">
-      <div><div class="trainer-frame" id="tFrame"><div class="trainer-initials" id="tInit">MA</div><div class="trainer-caption"><div class="trainer-cap-name" id="tCapName"></div><div class="trainer-cap-role" id="tCapRole"></div><div class="trainer-cert">&#10022; T. Harv Eker Certified</div></div></div></div>
-      <div>
-        <div class="stag-line"><span>Your Trainer</span></div>
-        <h2 class="trainer-name" id="tName"></h2>
-        <div class="trainer-role" id="tRole"></div>
-        <div class="trainer-stats-row" id="tStats"></div>
-        <div class="trainer-bio" id="tBio"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEM / ROOTS -->
-<section class="section-bg-off">
-  <div class="si">
-    <div class="prob-grid">
-      <div class="prob-text">
-        <div class="stag-line"><span>The Root Cause</span></div>
-        <h2 class="stitle">Why Budgets and Strategies Have <strong>Never Worked</strong> For You</h2>
-        <p>Most financial programmes teach you to work on the <strong>fruits</strong> of your life &mdash; your income, savings, investment strategy. You read the books. You follow the system. Six months later, nothing has changed.</p>
-        <p>The reason is simple: if your <strong>roots are wrong</strong>, no amount of fruit-polishing will change your results. The roots are your beliefs, habits, and the unconscious money programming you&rsquo;ve been running since childhood.</p>
-        <p>T. Harv Eker spent 14 years struggling before discovering this. Once he stopped working on strategies and started working on roots &mdash; he went from zero to millionaire in under three years.</p>
-        <blockquote class="pull">It is the roots that create the fruits. If you want to change the fruits, you first have to change the roots.</blockquote>
-      </div>
-      <div>
-        <div class="tree-visual">
-          <div class="tree-part tree-fruits"><div class="tree-label">Fruits</div><div class="tree-desc">Your results: income, wealth, relationships, success</div></div>
-          <div class="tree-conn"></div>
-          <div class="tree-part tree-trunk"><div class="tree-label">Branches</div><div class="tree-desc">Your actions and daily behaviours</div></div>
-          <div class="tree-conn"></div>
-          <div class="tree-part tree-roots"><div class="tree-label">Roots</div><div class="tree-desc">Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)">this is where everything starts</strong></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section>
-  <div class="si">
-    <div class="stag-line"><span>The Online Experience</span></div>
-    <h2 class="stitle">Everything You&rsquo;d Get In-Person &mdash; <strong>Without Leaving Home</strong></h2>
-    <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75">This isn&rsquo;t a passive video course. MMI Online is a fully live, interactive 3-day experience. Your trainer is on screen. The room is full. The breakthroughs are real.</p>
-    <div class="how-grid">
-      <div class="how-card"><span class="how-step-num">01</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-lock"/></svg></span><div class="how-title">Register &amp; Receive Access</div><div class="how-desc">After registering you receive your unique Zoom login. One login per ticket &mdash; secure and personal. Works on any device.</div><div class="how-tip">Just a browser or the Zoom app &mdash; no setup required</div></div>
-      <div class="how-card"><span class="how-step-num">02</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-calendar"/></svg></span><div class="how-title">Attend Live &mdash; 3 Full Days</div><div class="how-desc">Join the live room for all 3 days (9am&ndash;8pm event time). Participate in exercises, breakouts, and live Q&amp;A with your trainer. You can&rsquo;t press pause on a breakthrough.</div><div class="how-tip">All sessions run on the event city&rsquo;s local time</div></div>
-      <div class="how-card"><span class="how-step-num">03</span><span class="how-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-target"/></svg></span><div class="how-title">Leave With a 90-Day Plan</div><div class="how-desc">By Day 3 you leave with a personalised action plan, your money personality profile, and access to the post-event alumni community worldwide.</div><div class="how-tip">Optional: upgrade to in-person VIP at the host city</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS (VIDEO) -->
-<section class="section-bg-off">
-  <div class="si">
-    <div class="stag-line"><span>What Graduates Say</span></div>
-    <h2 class="stitle">Real People. <strong>Real Results.</strong></h2>
-    <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75">Across countries, industries and backgrounds &mdash; people have come through this experience and seen what was holding them back.</p>
-    <div class="testi-grid">
-      <div class="vid-card">
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'851018349')">
-          <img src="https://vumbnail.com/851018349_large.jpg" alt="Iva Lenards" loading="lazy">
-          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-        </div>
-        <div class="vid-info">
-          <div class="vid-result">Mindset Shift</div>
-          <p class="vid-quote">&ldquo;I was repeating the same financial patterns without realising it. At MMI, I started to see I had been thinking and reacting the same way for years.&rdquo;</p>
-          <div class="vid-person"><div class="vid-av">IL</div><div><div class="vid-name">Iva Lenards</div><div class="vid-role">Antwerp, Belgium</div></div></div>
-        </div>
-      </div>
-      <div class="vid-card">
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1108440962')">
-          <img src="https://vumbnail.com/1108440962_large.jpg" alt="Eamen Al-Mandawi" loading="lazy">
-          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-        </div>
-        <div class="vid-info">
-          <div class="vid-result">Internal Breakthrough</div>
-          <p class="vid-quote">&ldquo;I was an engineer at BMW. On paper I was doing well. But inside I knew something was still off. MMI showed me success on the outside doesn&rsquo;t mean the limits are gone.&rdquo;</p>
-          <div class="vid-person"><div class="vid-av">EA</div><div><div class="vid-name">Eamen Al-Mandawi</div><div class="vid-role">Germany</div></div></div>
-        </div>
-      </div>
-      <div class="vid-card">
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'497262086')">
-          <img src="https://vumbnail.com/497262086_large.jpg" alt="Ryan Rieder" loading="lazy">
-          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
-        </div>
-        <div class="vid-info">
-          <div class="vid-result">&pound;1M &rarr; &pound;5M in 4 Years</div>
-          <p class="vid-quote">&ldquo;My family went through two bankruptcies. After MMI, my business grew from &pound;1M to &pound;5M a year. The shift was entirely in my mindset &mdash; not my strategy.&rdquo;</p>
-          <div class="vid-person"><div class="vid-av">RR</div><div><div class="vid-name">Ryan Rieder</div><div class="vid-role">Business Owner, United Kingdom</div></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CURRICULUM -->
-<section>
-  <div class="si">
-    <div class="stag-line"><span>3-Day Programme</span></div>
-    <h2 class="stitle">Three Days That Will <strong>Change Everything</strong></h2>
-    <div class="days-nav">
-      <button class="day-tab active" onclick="switchDay(0,this)">Day 1</button>
-      <button class="day-tab" onclick="switchDay(1,this)">Day 2</button>
-      <button class="day-tab" onclick="switchDay(2,this)">Day 3</button>
-    </div>
-    <div class="day-content active" id="day0">
-      <div class="session-card"><div class="sess-num">Session 01 &middot; Mindset Day</div><h3 class="sess-title">Winning the Money Game</h3><ul class="sess-pts"><li>Discover the #1 reason most business owners fail at the money game</li><li>Understand the two primary sources of passive income</li><li>Implement a proven money management system (JAW System)</li><li>The roots vs. fruits framework that explains your entire financial history</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 02 &middot; Mindset Day</div><h3 class="sess-title">Financial Freedom Blueprint</h3><ul class="sess-pts"><li>The three keys to financial freedom &mdash; most people only know one</li><li>How time and high ROI are the ultimate wealth-building tools</li><li>Top passive income vehicles: real estate, licensing, internet systems</li><li>Why knowing what to do and doing what you know are completely different skills</li></ul></div>
-    </div>
-    <div class="day-content" id="day1">
-      <div class="session-card"><div class="sess-num">Session 03 &middot; Reconditioning Day</div><h3 class="sess-title">Winning the Mind Game</h3><ul class="sess-pts"><li>Why some people achieve success while others with the same knowledge don&rsquo;t</li><li>The Coin Exercise &mdash; a live demonstration of your unconscious money patterns</li><li>How you do anything is how you do everything: your financial mirror</li><li>Shift your mindset with empowering declarations that actually work</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 04 &middot; Reconditioning Day</div><h3 class="sess-title">Unlock Your Money Personality</h3><ul class="sess-pts"><li>Identify your dominant personality: Saver, Spender, Avoider, or Money Monk</li><li>How your personality shapes your financial habits and decisions</li><li>Strategies to balance your type for long-term financial stability</li><li>Why your biggest financial enemy is often yourself</li></ul></div>
-    </div>
-    <div class="day-content" id="day2">
-      <div class="session-card"><div class="sess-num">Session 05 &middot; Transformation Day</div><h3 class="sess-title">Master Your Money Emotions</h3><ul class="sess-pts"><li>The emotional clearing session &mdash; the most powerful 2 hours of the weekend</li><li>How unresolved guilt, fear, shame and anger are sabotaging your finances right now</li><li>The guided process that permanently releases these blocks</li><li>Why this session is worth more than years of therapy for your financial life</li></ul></div>
-      <div class="session-card"><div class="sess-num">Session 06 &middot; Transformation Day</div><h3 class="sess-title">The Power of Action</h3><ul class="sess-pts"><li>Why action is the critical bridge between thoughts, feelings and results</li><li>How to break through your comfort zone &mdash; and why discomfort means you&rsquo;re growing</li><li>Successful people feel fear too &mdash; they just don&rsquo;t let it stop them</li><li>Your personalised action plan for the 90 days after the event</li></ul></div>
-    </div>
-  </div>
-</section>
 
 <!-- WORLD TOUR SECTION -->
 <section class="tour-section" id="register">
@@ -1047,6 +882,199 @@ footer a:hover{color:var(--gold-lt)}
         <div class="tsb-cta">
           <svg class="icon" aria-hidden="true" style="color:var(--gold)"><use href="#i-globe"/></svg>
           <div class="tsb-cta-text">The tour moves on.<br>Don&rsquo;t miss your city.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEW SECTION 2: PROBLEM (deep pain + self-recognition) ── -->
+<section>
+  <div class="si">
+    <div class="prob2-grid">
+      <div>
+        <div class="stag-line"><span>Why Most People Stay Stuck</span></div>
+        <h2 class="stitle">Why Smart, Hardworking People Still Don&rsquo;t Become <strong>Financially Free</strong></h2>
+        <div class="prob2-copy">
+          <p>You already know what to do.</p>
+          <p class="muted">You&rsquo;ve read the books.<br>Tried the strategies.<br>Worked harder than most people around you.</p>
+          <p>And yet &mdash; something doesn&rsquo;t add up.</p>
+        </div>
+        <div class="prob2-divider"></div>
+        <div class="prob2-copy" style="margin-bottom:20px">
+          <p class="muted" style="font-size:15px">Income goes up&hellip; but wealth doesn&rsquo;t stay.<br>Opportunities appear&hellip; but somehow slip away.<br>You get close to the next level&hellip; then stall.</p>
+        </div>
+        <div class="prob2-kicker">
+          It&rsquo;s not a strategy problem.<br>
+          It&rsquo;s what&rsquo;s running underneath.<br>
+          <em>And until that changes &mdash; no new tactic will fix the result.</em>
+        </div>
+      </div>
+      <div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">10M+</div>
+          <div class="prob2-stat-label">People have sat in this room and confronted exactly what you&rsquo;re describing. The pattern is identical across countries, industries, and income levels.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">30</div>
+          <div class="prob2-stat-label">Years of evidence showing that the gap between knowing and doing is never a knowledge problem. It&rsquo;s always an internal one.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">500</div>
+          <div class="prob2-stat-label">Events run every year because once someone fixes what&rsquo;s running underneath, they send the people they care about to do the same.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS (VIDEO) -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="stag-line"><span>What Graduates Say</span></div>
+    <h2 class="stitle">Real People. <strong>Real Results.</strong></h2>
+    <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75">Across countries, industries and backgrounds &mdash; people have come through this experience and seen what was holding them back.</p>
+    <div class="testi-grid">
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'851018349')">
+          <img src="https://vumbnail.com/851018349_large.jpg" alt="Iva Lenards" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">Mindset Shift</div>
+          <p class="vid-quote">&ldquo;I was repeating the same financial patterns without realising it. At MMI, I started to see I had been thinking and reacting the same way for years.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">IL</div><div><div class="vid-name">Iva Lenards</div><div class="vid-role">Antwerp, Belgium</div></div></div>
+        </div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1108440962')">
+          <img src="https://vumbnail.com/1108440962_large.jpg" alt="Eamen Al-Mandawi" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">Internal Breakthrough</div>
+          <p class="vid-quote">&ldquo;I was an engineer at BMW. On paper I was doing well. But inside I knew something was still off. MMI showed me success on the outside doesn&rsquo;t mean the limits are gone.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">EA</div><div><div class="vid-name">Eamen Al-Mandawi</div><div class="vid-role">Germany</div></div></div>
+        </div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'497262086')">
+          <img src="https://vumbnail.com/497262086_large.jpg" alt="Ryan Rieder" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">&pound;1M &rarr; &pound;5M in 4 Years</div>
+          <p class="vid-quote">&ldquo;My family went through two bankruptcies. After MMI, my business grew from &pound;1M to &pound;5M a year. The shift was entirely in my mindset &mdash; not my strategy.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">RR</div><div><div class="vid-name">Ryan Rieder</div><div class="vid-role">Business Owner, United Kingdom</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINER -->
+<section>
+  <div class="si">
+    <div class="trainer-grid">
+      <div><div class="trainer-frame" id="tFrame"><div class="trainer-initials" id="tInit">MA</div><div class="trainer-caption"><div class="trainer-cap-name" id="tCapName"></div><div class="trainer-cap-role" id="tCapRole"></div><div class="trainer-cert">&#10022; T. Harv Eker Certified</div></div></div></div>
+      <div>
+        <div class="stag-line"><span>Your Trainer</span></div>
+        <h2 class="trainer-name" id="tName"></h2>
+        <div class="trainer-role" id="tRole"></div>
+        <div class="trainer-stats-row" id="tStats"></div>
+        <div class="trainer-bio" id="tBio"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEW SECTION 3: OFFER (no-brainer decision) ── -->
+<section class="offer-section">
+  <div class="si">
+    <div class="offer-inner">
+      <div class="offer-left">
+        <div class="offer-tag">The Experience</div>
+        <h2 class="offer-title">A 3-Day Live Experience That Fixes <em>The Root</em> &mdash; Not The Symptoms</h2>
+        <p class="offer-desc">This is not a course you watch. It&rsquo;s a live, fully interactive experience where you work on what&rsquo;s actually in the way.</p>
+        <ul class="offer-bullets">
+          <li>Identify the patterns that have been limiting your income</li>
+          <li>Rewire the beliefs driving your financial decisions</li>
+          <li>Break through the emotional blocks that no strategy can touch</li>
+          <li>Walk away with a clear 90-day action plan</li>
+        </ul>
+        <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65">All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p>
+      </div>
+      <div class="offer-right">
+        <div class="offer-price-label">Full 3-Day Access &mdash; Live Online</div>
+        <div class="offer-price-regular">Regular price: $199</div>
+        <div class="offer-price-now">$19</div>
+        <div class="offer-price-note">Early Access &middot; Limited availability per city</div>
+        <div class="offer-scarcity">This is a global tour. Each city has limited capacity.</div>
+        <button class="offer-btn" onclick="openFeatured()">Secure My Seat &nbsp;&rarr;</button>
+        <div class="offer-trust">Join from anywhere &middot; One login per seat &middot; Less than 60 seconds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section>
+  <div class="si">
+    <div class="stag-line"><span>3-Day Programme</span></div>
+    <h2 class="stitle">Three Days That Will <strong>Change Everything</strong></h2>
+    <div class="days-nav">
+      <button class="day-tab active" onclick="switchDay(0,this)">Day 1</button>
+      <button class="day-tab" onclick="switchDay(1,this)">Day 2</button>
+      <button class="day-tab" onclick="switchDay(2,this)">Day 3</button>
+    </div>
+    <div class="day-content active" id="day0">
+      <div class="session-card"><div class="sess-num">Session 01 &middot; Mindset Day</div><h3 class="sess-title">Winning the Money Game</h3><ul class="sess-pts"><li>Discover the #1 reason most business owners fail at the money game</li><li>Understand the two primary sources of passive income</li><li>Implement a proven money management system (JAW System)</li><li>The roots vs. fruits framework that explains your entire financial history</li></ul></div>
+      <div class="session-card"><div class="sess-num">Session 02 &middot; Mindset Day</div><h3 class="sess-title">Financial Freedom Blueprint</h3><ul class="sess-pts"><li>The three keys to financial freedom &mdash; most people only know one</li><li>How time and high ROI are the ultimate wealth-building tools</li><li>Top passive income vehicles: real estate, licensing, internet systems</li><li>Why knowing what to do and doing what you know are completely different skills</li></ul></div>
+    </div>
+    <div class="day-content" id="day1">
+      <div class="session-card"><div class="sess-num">Session 03 &middot; Reconditioning Day</div><h3 class="sess-title">Winning the Mind Game</h3><ul class="sess-pts"><li>Why some people achieve success while others with the same knowledge don&rsquo;t</li><li>The Coin Exercise &mdash; a live demonstration of your unconscious money patterns</li><li>How you do anything is how you do everything: your financial mirror</li><li>Shift your mindset with empowering declarations that actually work</li></ul></div>
+      <div class="session-card"><div class="sess-num">Session 04 &middot; Reconditioning Day</div><h3 class="sess-title">Unlock Your Money Personality</h3><ul class="sess-pts"><li>Identify your dominant personality: Saver, Spender, Avoider, or Money Monk</li><li>How your personality shapes your financial habits and decisions</li><li>Strategies to balance your type for long-term financial stability</li><li>Why your biggest financial enemy is often yourself</li></ul></div>
+    </div>
+    <div class="day-content" id="day2">
+      <div class="session-card"><div class="sess-num">Session 05 &middot; Transformation Day</div><h3 class="sess-title">Master Your Money Emotions</h3><ul class="sess-pts"><li>The emotional clearing session &mdash; the most powerful 2 hours of the weekend</li><li>How unresolved guilt, fear, shame and anger are sabotaging your finances right now</li><li>The guided process that permanently releases these blocks</li><li>Why this session is worth more than years of therapy for your financial life</li></ul></div>
+      <div class="session-card"><div class="sess-num">Session 06 &middot; Transformation Day</div><h3 class="sess-title">The Power of Action</h3><ul class="sess-pts"><li>Why action is the critical bridge between thoughts, feelings and results</li><li>How to break through your comfort zone &mdash; and why discomfort means you&rsquo;re growing</li><li>Successful people feel fear too &mdash; they just don&rsquo;t let it stop them</li><li>Your personalised action plan for the 90 days after the event</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO ATTENDS -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="stag-line"><span>Who This Is For</span></div>
+    <h2 class="stitle">You&rsquo;ve Already Tried <strong>The Strategies</strong></h2>
+    <p style="font-size:15px;color:var(--muted);max-width:620px;line-height:1.75">Every year, thousands of business owners and professionals attend MMI. They share one thing in common: they already know <em>what</em> to do &mdash; they just can&rsquo;t explain why it&rsquo;s not working.</p>
+    <div class="who-grid">
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-briefcase"/></svg></span><div class="who-type">Business Owners &amp; Entrepreneurs</div><div class="who-desc">You&rsquo;ve built something real, but <strong>revenue has hit a ceiling</strong>. You work harder than anyone you know &mdash; yet the income isn&rsquo;t following. This changes the internal wiring that&rsquo;s capping your growth.</div><div class="who-q">&ldquo;I was running a &pound;1M business and couldn&rsquo;t understand why I kept self-sabotaging every time we got close to the next level.&rdquo; &mdash; Ryan R.</div></div>
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-trending"/></svg></span><div class="who-type">Senior Professionals &amp; Executives</div><div class="who-desc">High income, but <strong>wealth isn&rsquo;t accumulating</strong> the way it should. You earn well, but lifestyle inflation, bad investments, the feeling there&rsquo;s never enough. This addresses the root.</div><div class="who-q">&ldquo;I was earning six figures and still living like I was broke. The mindset shift at MMI explained everything.&rdquo; &mdash; MMI Graduate</div></div>
+      <div class="who-card"><span class="who-icon"><svg class="icon icon-lg" aria-hidden="true"><use href="#i-layers"/></svg></span><div class="who-type">Investors &amp; Freelancers</div><div class="who-desc">You have the knowledge. You understand the vehicles. But <strong>inconsistency and fear keep pulling you back</strong>. MMI identifies the emotional and psychological patterns behind your financial results.</div><div class="who-q">&ldquo;I knew all the theory. What I didn&rsquo;t know was why I kept undoing my own progress.&rdquo; &mdash; MMI Graduate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / ROOTS -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="prob-grid">
+      <div class="prob-text">
+        <div class="stag-line"><span>The Root Cause</span></div>
+        <h2 class="stitle">Why Budgets and Strategies Have <strong>Never Worked</strong> For You</h2>
+        <p>Most financial programmes teach you to work on the <strong>fruits</strong> of your life &mdash; your income, savings, investment strategy. You read the books. You follow the system. Six months later, nothing has changed.</p>
+        <p>The reason is simple: if your <strong>roots are wrong</strong>, no amount of fruit-polishing will change your results. The roots are your beliefs, habits, and the unconscious money programming you&rsquo;ve been running since childhood.</p>
+        <p>T. Harv Eker spent 14 years struggling before discovering this. Once he stopped working on strategies and started working on roots &mdash; he went from zero to millionaire in under three years.</p>
+        <blockquote class="pull">It is the roots that create the fruits. If you want to change the fruits, you first have to change the roots.</blockquote>
+      </div>
+      <div>
+        <div class="tree-visual">
+          <div class="tree-part tree-fruits"><div class="tree-label">Fruits</div><div class="tree-desc">Your results: income, wealth, relationships, success</div></div>
+          <div class="tree-conn"></div>
+          <div class="tree-part tree-trunk"><div class="tree-label">Branches</div><div class="tree-desc">Your actions and daily behaviours</div></div>
+          <div class="tree-conn"></div>
+          <div class="tree-part tree-roots"><div class="tree-label">Roots</div><div class="tree-desc">Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)">this is where everything starts</strong></div></div>
         </div>
       </div>
     </div>
@@ -1258,9 +1286,13 @@ function initPage(ev){
   updateHeroPrice(ev);
   renderTrainer(ev.trainer);
   buildTourSection(ev);
-  // Update hero city (world tour)
+  // Update hero + immediate CTA city
   const hc=document.getElementById('heroCity');
   if(hc) hc.textContent=ev.city;
+  const ic=document.getElementById('immCtaCity');
+  if(ic) ic.textContent=ev.city;
+  const fc=document.getElementById('finalCtaCity');
+  if(fc) fc.textContent=ev.city+' Is Open';
   // Update tourCity in events section
   const tc=document.getElementById('tourCity');
   if(tc) tc.textContent=ev.city;
