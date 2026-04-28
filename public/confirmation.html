@@ -71,6 +71,32 @@ body{font-family:"Open Sans",sans-serif;background:var(--cream);color:var(--ink)
 .confirm-card-body{font-size:13px;color:var(--muted);line-height:1.6}
 /* hero-img-wrap removed — bg now on .hero */
 
+
+/* ═══════════════ BRIDGE TRANSITION ═══════════════ */
+.bridge-wave{background:var(--cream);line-height:0;margin-bottom:-1px}
+.bridge-wave svg{width:100%;display:block;height:60px}
+.bridge-wave-bottom{background:var(--cream);line-height:0;margin-top:-1px}
+.bridge-wave-bottom svg{width:100%;display:block;height:60px}
+.bridge-section{background:#fff;padding:52px 48px}
+.bridge-inner{max-width:780px;margin:0 auto;text-align:center}
+.bridge-eyebrow{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.bridge-title{font-family:"Playfair Display",serif;font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--forest);line-height:1.25;letter-spacing:-0.5px;margin-bottom:18px}
+.bridge-body{font-size:15px;color:var(--ink-mid);line-height:1.85;max-width:640px;margin:0 auto 36px}
+.bridge-pillars{display:flex;justify-content:center;gap:48px;margin-bottom:36px;flex-wrap:wrap}
+.bridge-pillar{display:flex;flex-direction:column;align-items:center;gap:10px}
+.bridge-pillar-icon{width:44px;height:44px;background:var(--green-lt);border:1px solid var(--green-md);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.bridge-pillar-icon svg{width:20px;height:20px;stroke:var(--forest)}
+.bridge-pillar-text{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;color:var(--forest);letter-spacing:.5px}
+.bridge-close{display:flex;flex-direction:column;gap:4px}
+.bridge-breath{font-family:"Playfair Display",serif;font-size:18px;font-style:italic;color:var(--muted);line-height:1.6}
+.bridge-new-chapter{font-family:"Dancing Script",cursive;font-size:28px;font-weight:700;color:var(--gold-lt);line-height:1.4}
+.journey-pre-title{font-family:"Playfair Display",serif;font-size:clamp(14px,1.5vw,18px);font-style:italic;color:var(--muted);text-align:center;margin-bottom:8px}
+@media(max-width:768px){
+  .bridge-section{padding:40px 20px}
+  .bridge-pillars{gap:28px}
+  .bridge-wave svg,.bridge-wave-bottom svg{height:40px}
+}
+
 /* ═══════════════ JOURNEY ═══════════════ */
 .journey{background:var(--white);padding:64px 48px}
 .journey-inner{max-width:1080px;margin:0 auto}
@@ -271,9 +297,55 @@ footer{background:var(--forest);padding:24px 48px;display:flex;align-items:cente
   </div>
 </section>
 
+<!-- TRANSITION BRIDGE -->
+<div class="bridge-wave">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<section class="bridge-section">
+  <div class="bridge-inner">
+    <div class="bridge-eyebrow">Your Reset Moment</div>
+    <h2 class="bridge-title">This isn&rsquo;t just another online session.</h2>
+    <p class="bridge-body">For the next 3 days, you get to pause everything and focus on building the financial life you truly want. This is your opportunity to reset your direction, break old patterns, and start fresh with real clarity.</p>
+    <div class="bridge-pillars">
+      <div class="bridge-pillar">
+        <div class="bridge-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="bridge-pillar-text">Reset your direction</div>
+      </div>
+      <div class="bridge-pillar">
+        <div class="bridge-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+        <div class="bridge-pillar-text">Break old patterns</div>
+      </div>
+      <div class="bridge-pillar">
+        <div class="bridge-pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12m0-10v3M4.93 4.93l2.12 2.12M2 12h3m14 0h3M4.93 19.07l2.12-2.12M17.66 6.34l-2.12 2.12"/></svg>
+        </div>
+        <div class="bridge-pillar-text">Start fresh with clarity</div>
+      </div>
+    </div>
+    <div class="bridge-close">
+      <span class="bridge-breath">Take a breath.</span>
+      <span class="bridge-new-chapter">This is where your new chapter begins.</span>
+    </div>
+  </div>
+</section>
+
+<div class="bridge-wave-bottom">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,0 L0,0 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
 <!-- JOURNEY -->
 <section class="journey">
   <div class="journey-inner">
+    <div class="journey-pre-title">Your Next Step Starts Here</div>
     <div class="section-heading">
       <div class="sh-line"></div>
       <div class="sh-text">YOUR <em>3-STEP</em> BREAKTHROUGH JOURNEY</div>
