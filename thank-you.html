@@ -3,340 +3,468 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're In — Millionaire Mind Intensive 2026</title>
-<meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>You're In — Millionaire Mind Intensive</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 <style>
-  :root{
-    --navy:#0a1628;--navy-mid:#132240;--navy-light:#1e3358;
-    --gold:#c9a84c;--gold-light:#e8c96a;--gold-pale:#f5e9c8;
-    --white:#ffffff;
-    --text-dim:rgba(255,255,255,0.65);--text-muted:rgba(255,255,255,0.4);
-    --green:#2ecc71;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden}
+:root{
+  --forest:#1E3932;
+  --green:#006241;
+  --green-lt:#EDF5F0;
+  --gold:#B8935A;
+  --gold-lt:#D4B48A;
+  --cream:#F5F0E8;
+  --off-white:#F7F5F2;
+  --white:#ffffff;
+  --ink:#1A1A1A;
+  --ink-mid:#4A4A4A;
+  --muted:#717171;
+  --muted-lt:#9E9E9E;
+  --border:rgba(0,0,0,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-  /* ── NAV ── */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,22,40,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.15)}
-  .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--gold);letter-spacing:1px;text-decoration:none}
-  .nav-logo span{color:var(--white);font-weight:300}
+/* ── NAV ── */
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav-left{display:flex;align-items:center;gap:14px}
+.nav-monogram{width:44px;height:44px;flex-shrink:0}
+.nav-brand-text{}
+.nav-brand-name{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);line-height:1.1;display:block}
+.nav-brand-sub{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--muted-lt);display:block;margin-top:2px}
+.nav-right{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
+.nav-right strong{color:var(--forest)}
+.nav-sep{color:var(--muted-lt)}
 
-  /* ── CONFIRMATION HERO ── */
-  .confirm{padding:120px 40px 80px;position:relative;overflow:hidden;text-align:center}
-  .confirm-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(46,204,113,0.06) 0%,transparent 55%),radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,0.05) 0%,transparent 60%),linear-gradient(135deg,#0a1628 0%,#132240 50%,#0a1628 100%)}
-  .confirm-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.03) 1px,transparent 1px);background-size:60px 60px}
-  .confirm-inner{position:relative;z-index:2;max-width:700px;margin:0 auto}
+/* ── HERO GRID ── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:620px;position:relative}
 
-  /* tick animation */
-  .confirm-tick{width:72px;height:72px;background:rgba(46,204,113,0.12);border:2px solid rgba(46,204,113,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;font-size:32px;animation:popIn .5s cubic-bezier(.175,.885,.32,1.275) forwards}
-  @keyframes popIn{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+/* left — confirmation with city photo */
+.hero-left{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:60px 52px}
+.hero-left-bg{position:absolute;inset:0;background-size:cover;background-position:center right;background-color:#c8c4b0}
+.hero-left-fade{position:absolute;inset:0;background:linear-gradient(to right,rgba(247,245,242,0.97) 0%,rgba(247,245,242,0.85) 50%,rgba(247,245,242,0.2) 100%)}
+.hero-left-content{position:relative;z-index:2;max-width:420px}
+.confirm-check{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.confirm-check svg{width:22px;height:22px;stroke:var(--gold);stroke-width:2;fill:none}
+.confirm-title{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,52px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-1px;margin-bottom:14px}
+.confirm-subtitle{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.confirm-body{font-size:15px;color:var(--ink-mid);line-height:1.8;margin-bottom:28px}
+.confirm-body p{margin-bottom:4px}
+.confirm-info-box{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px 22px;margin-bottom:28px;display:flex;flex-direction:column;gap:12px}
+.confirm-info-row{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink-mid)}
+.confirm-info-row svg{width:18px;height:18px;stroke:var(--forest);fill:none;flex-shrink:0;opacity:.7}
+.confirm-info-label{font-weight:600;color:var(--forest)}
+.confirm-info-sub{font-size:12px;color:var(--muted)}
+.btn-event-details{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;padding:14px 28px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-event-details:hover{background:#2a4a3e;transform:translateY(-1px)}
+.btn-event-details span{font-size:14px}
 
-  .confirm-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(46,204,113,0.1);border:1px solid rgba(46,204,113,0.3);padding:6px 16px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:24px}
-  .confirm-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,6vw,72px);font-weight:300;line-height:1.0;margin-bottom:16px;letter-spacing:-1px}
-  .confirm-title strong{font-weight:700;color:var(--gold-light)}
-  .confirm-sub{font-size:17px;color:var(--text-dim);line-height:1.7;margin-bottom:36px}
+/* right — VIP upgrade card */
+.hero-right{background:var(--cream);border-left:1px solid var(--border);padding:52px 52px;display:flex;align-items:center;justify-content:center}
+.vip-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:40px 36px;max-width:420px;width:100%;box-shadow:0 4px 32px rgba(0,0,0,0.06)}
+.vip-badge{display:inline-block;background:var(--cream);color:var(--gold);padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;border-radius:4px;margin-bottom:22px;border:1px solid rgba(184,147,90,0.25)}
+.vip-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--forest);line-height:1.1;letter-spacing:-0.5px;margin-bottom:14px}
+.vip-rule{width:36px;height:1.5px;background:var(--gold);margin-bottom:14px;opacity:.7}
+.vip-desc{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px;text-align:center}
+.vip-benefits{list-style:none;padding:0;margin-bottom:24px;border-top:1px solid var(--border)}
+.vip-benefit{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.vip-benefit-icon{width:36px;height:36px;background:var(--cream);border:1px solid rgba(184,147,90,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vip-benefit-icon svg{width:16px;height:16px;stroke:var(--gold);stroke-width:1.5;fill:none}
+.vip-benefit-title{font-size:13px;font-weight:700;color:var(--forest);margin-bottom:2px}
+.vip-benefit-sub{font-size:12px;color:var(--muted)}
+.vip-today{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:8px}
+.vip-price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:20px}
+.vip-price-now{font-family:'Playfair Display',serif;font-size:56px;font-weight:700;color:var(--forest);line-height:1}
+.vip-price-was{font-size:20px;text-decoration:line-through;color:var(--muted-lt);font-weight:400}
+.btn-vip{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:var(--forest);color:#fff;padding:16px 24px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;transition:all .25s;margin-bottom:10px;text-decoration:none}
+.btn-vip:hover{background:#2a4a3e;transform:translateY(-1px)}
+.vip-lock{font-size:12px;color:var(--muted-lt);text-align:center;display:flex;align-items:center;justify-content:center;gap:6px}
+.vip-lock svg{width:13px;height:13px;stroke:var(--muted-lt);fill:none}
+.stripe-wrap{margin-bottom:10px}
 
-  /* event summary pill */
-  .confirm-event{display:inline-flex;align-items:center;gap:16px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);padding:14px 28px;flex-wrap:wrap;justify-content:center}
-  .confirm-event-city{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--white)}
-  .confirm-event-sep{color:rgba(201,168,76,0.4);font-size:18px}
-  .confirm-event-date{font-size:14px;font-weight:600;color:var(--gold)}
-  .confirm-event-check{font-size:14px;color:var(--text-muted)}
+/* ── VIDEO BRIDGE ── */
+.video-bridge{background:var(--white);padding:80px 48px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.video-bridge-inner{max-width:760px;margin:0 auto;text-align:center}
+.video-bridge-transition{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto}
+.video-bridge-transition strong{color:var(--forest);font-weight:600}
+.video-optional-label{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:16px;background:var(--green-lt);padding:6px 16px;border-radius:100px;border:1px solid rgba(0,98,65,0.15)}
+.video-optional-label::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%}
+.video-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted-lt);margin-bottom:12px}
+.video-title{font-family:'Playfair Display',serif;font-size:clamp(20px,2.5vw,28px);color:var(--forest);font-weight:600;margin-bottom:28px;letter-spacing:-0.3px}
+.video-container{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,0.1)}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.video-below{margin-top:28px;font-size:15px;color:var(--muted);line-height:1.8;max-width:520px;margin-left:auto;margin-right:auto}
+.video-below p{margin-bottom:6px}
 
-  /* ── UPSELL SECTION ── */
-  .upsell{background:var(--navy-mid);padding:80px 40px}
-  .upsell-inner{max-width:1100px;margin:0 auto}
-  .upsell-header{text-align:center;margin-bottom:52px}
-  .section-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,52px);font-weight:300;line-height:1.1;margin-bottom:16px}
-  .section-title strong{font-weight:700}
-  .section-sub{font-size:16px;color:var(--text-dim);max-width:560px;margin:0 auto;line-height:1.7}
+/* ── WHAT HAPPENS NEXT ── */
+.next-section{background:var(--off-white);padding:80px 48px;border-top:1px solid var(--border)}
+.next-inner{max-width:880px;margin:0 auto;text-align:center}
+.section-tag{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--green);display:block;margin-bottom:14px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--forest);letter-spacing:-0.5px;margin-bottom:48px}
+.section-title strong{font-style:italic}
+.next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--white)}
+.next-step{padding:40px 32px;text-align:center;border-right:1px solid var(--border)}
+.next-step:last-child{border-right:none}
+.next-step-top{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px}
+.next-num{width:32px;height:32px;background:var(--cream);border:1px solid rgba(184,147,90,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0}
+.next-icon{width:48px;height:48px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.next-icon svg{width:22px;height:22px;stroke:var(--forest);stroke-width:1.5;fill:none}
+.next-title{font-size:15px;font-weight:700;color:var(--forest);margin-bottom:10px}
+.next-desc{font-size:13px;color:var(--muted);line-height:1.7}
 
-  /* upsell grid */
-  .upsell-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+/* ── SOCIAL PROOF ── */
+.social-proof{background:var(--cream);padding:72px 48px;border-top:1px solid var(--border)}
+.social-proof-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.proof-left{}
+.proof-quote-mark{font-family:'Playfair Display',serif;font-size:72px;color:var(--gold);line-height:1;margin-bottom:8px;opacity:.6;display:block}
+.proof-heading{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--forest);line-height:1.25;margin-bottom:20px;letter-spacing:-0.5px}
+.proof-body p{font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:4px}
+.proof-map{}
 
-  .upsell-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);padding:32px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s}
-  .upsell-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-3px)}
-  .upsell-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .25s}
-  .upsell-card:hover::before{opacity:1}
+/* ── FINAL CTA ── */
+.final-cta{background:var(--white);padding:80px 48px;text-align:center;border-top:1px solid var(--border)}
+.final-cta-inner{max-width:520px;margin:0 auto}
+.final-cta-notice{font-family:'Playfair Display',serif;font-size:clamp(18px,2.2vw,24px);color:var(--forest);margin-bottom:36px;font-style:italic;line-height:1.4}
+.final-cta-actions{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.btn-final-vip{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#fff;padding:16px 36px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:100px;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-final-vip:hover{background:#2a4a3e;transform:translateY(-1px)}
+.final-or{font-size:13px;color:var(--muted-lt)}
+.btn-continue{background:none;border:none;font-family:'Open Sans',sans-serif;font-size:13px;color:var(--muted);cursor:pointer;text-decoration:underline;padding:0}
+.btn-continue:hover{color:var(--forest)}
 
-  /* featured card */
-  .upsell-card.featured{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.05)}
-  .upsell-card.featured::before{opacity:1}
+/* ── FOOTER ── */
+footer{background:var(--forest);padding:40px 48px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:center}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-movement{display:flex;align-items:center;gap:14px}
+.footer-movement svg{width:32px;height:32px;stroke:var(--gold);stroke-width:1.5;fill:none;opacity:.8;flex-shrink:0}
+.footer-movement-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);line-height:1.5}
+.footer-quote{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:rgba(255,255,255,0.7);line-height:1.6;text-align:center}
+.footer-attribution{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);text-align:center;margin-top:4px}
+.footer-social{text-align:right}
+.footer-social-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:14px}
+.footer-social-icons{display:flex;gap:12px;justify-content:flex-end}
+.social-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .2s;text-decoration:none}
+.social-icon:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.08)}
+.social-icon svg{width:16px;height:16px;fill:rgba(255,255,255,0.6)}
 
-  .upsell-badge{display:inline-block;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px}
-  .badge-hot{background:var(--gold);color:var(--navy)}
-  .badge-popular{background:rgba(201,168,76,0.15);color:var(--gold);border:1px solid rgba(201,168,76,0.3)}
-  .badge-premium{background:rgba(255,255,255,0.06);color:var(--text-dim);border:1px solid rgba(255,255,255,0.1)}
-
-  .upsell-icon{font-size:36px;margin-bottom:16px;display:block;line-height:1}
-  .upsell-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--white);margin-bottom:8px;line-height:1.1}
-  .upsell-desc{font-size:14px;color:var(--text-dim);line-height:1.65;margin-bottom:24px}
-
-  /* price row */
-  .upsell-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:24px}
-  .upsell-price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--gold-light);line-height:1}
-  .upsell-price-note{font-size:13px;color:var(--text-muted)}
-
-  /* points */
-  .upsell-points{list-style:none;padding:0;margin-bottom:28px}
-  .upsell-points li{font-size:13px;color:var(--text-dim);padding:6px 0;padding-left:18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.5}
-  .upsell-points li:last-child{border-bottom:none}
-  .upsell-points li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;top:8px}
-
-  /* stripe button wrapper */
-  .stripe-wrap{min-height:52px;display:flex;align-items:center;justify-content:center}
-  .btn-placeholder{display:block;width:100%;text-align:center;padding:14px;background:rgba(201,168,76,0.15);border:1px dashed rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:default}
-
-  /* ── SKIP / CONTINUE ── */
-  .skip-section{background:var(--navy);padding:48px 40px;text-align:center;border-top:1px solid rgba(255,255,255,0.05)}
-  .skip-inner{max-width:600px;margin:0 auto}
-  .skip-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--white);margin-bottom:8px}
-  .skip-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.6}
-  .btn-skip{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--text-dim);font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
-  .btn-skip:hover{border-color:rgba(255,255,255,0.3);color:var(--white)}
-
-  /* ── WHAT'S NEXT ── */
-  .next{background:var(--navy-mid);padding:64px 40px;border-top:1px solid rgba(255,255,255,0.05)}
-  .next-inner{max-width:900px;margin:0 auto}
-  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-  .next-step{padding:28px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06)}
-  .next-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:rgba(201,168,76,0.25);line-height:1;margin-bottom:12px}
-  .next-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px}
-  .next-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
-
-  /* ── FOOTER ── */
-  footer{background:var(--navy);padding:32px 40px;border-top:1px solid rgba(255,255,255,0.06);text-align:center}
-  footer p{font-size:12px;color:var(--text-muted);line-height:1.8}
-  footer a{color:var(--text-dim);text-decoration:none}
-  footer a:hover{color:var(--gold)}
-
-  /* ── UPSELL MODAL ── */
-  .modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
-  .modal.open{opacity:1;pointer-events:all}
-  .modal-backdrop{position:absolute;inset:0;background:rgba(5,11,20,0.88);backdrop-filter:blur(6px)}
-  .modal-panel{position:relative;z-index:1;background:var(--navy-mid);border:1px solid rgba(201,168,76,0.25);width:100%;max-width:480px;padding:40px;transform:translateY(20px);transition:transform .3s}
-  .modal.open .modal-panel{transform:translateY(0)}
-  .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
-  .modal-close:hover{background:rgba(255,255,255,0.12);color:var(--white)}
-  .modal-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--white);margin-bottom:8px}
-  .modal-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.6}
-
-  /* ── RESPONSIVE ── */
-  @media(max-width:800px){
-    nav{padding:16px 20px}
-    .confirm{padding:100px 20px 60px}
-    .upsell{padding:60px 20px}
-    .upsell-grid{grid-template-columns:1fr}
-    .next-grid{grid-template-columns:1fr}
-    .skip-section,.next{padding:48px 20px}
-    footer{padding:24px 20px}
-  }
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 20px;height:64px}
+  .hero{grid-template-columns:1fr}
+  .hero-left{min-height:460px;padding:40px 24px}
+  .hero-right{padding:40px 24px;border-left:none;border-top:1px solid var(--border)}
+  .vip-card{max-width:100%}
+  .video-bridge,.next-section,.social-proof,.final-cta{padding:60px 24px}
+  .next-grid{grid-template-columns:1fr}
+  .next-step{border-right:none;border-bottom:1px solid var(--border)}
+  .next-step:last-child{border-bottom:none}
+  .social-proof-inner{grid-template-columns:1fr;gap:40px}
+  .proof-map{display:none}
+  footer{padding:40px 24px}
+  .footer-inner{grid-template-columns:1fr;gap:28px}
+  .footer-social{text-align:left}
+  .footer-social-icons{justify-content:flex-start}
+  .final-cta-actions{flex-direction:column;gap:16px}
+}
+@media(max-width:600px){
+  .nav-right .nav-city{display:none}
+  .confirm-title{font-size:32px}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
-  <a href="/" class="nav-logo">Millionaire<span> Mind</span></a>
+  <div class="nav-left">
+    <svg class="nav-monogram" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.5" y="0.5" width="43" height="43" stroke="#1E3932" stroke-opacity="0.2"/>
+      <path d="M8 34V10l14 18 14-18v24" stroke="#1E3932" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Millionaire Mind<sup style="font-size:7px">®</sup></span>
+      <span class="nav-brand-sub">Intensive</span>
+    </div>
+  </div>
+  <div class="nav-right">
+    <span>2026 Global World Tour</span>
+    <span class="nav-sep">|</span>
+    <strong id="navCity">Your City</strong>
+  </div>
 </nav>
 
-<!-- CONFIRMATION HERO -->
-<section class="confirm">
-  <div class="confirm-bg"></div>
-  <div class="confirm-grid"></div>
-  <div class="confirm-inner">
-    <div class="confirm-tick">✓</div>
-    <div class="confirm-tag">Payment Confirmed</div>
-    <h1 class="confirm-title">
-      You're <em style="font-style:italic;font-weight:300">officially</em><br><strong>in the room.</strong>
-    </h1>
-    <p class="confirm-sub">Check your inbox — your confirmation and event details are on their way. While you wait, here's how to make this the most valuable weekend of your year.</p>
-    <div class="confirm-event">
-      <span class="confirm-event-city" id="confirmCity">Millionaire Mind Intensive</span>
-      <span class="confirm-event-sep">·</span>
-      <span class="confirm-event-date" id="confirmDates">2026</span>
-      <span class="confirm-event-sep">·</span>
-      <span class="confirm-event-check">✓ Registered</span>
+<!-- ── HERO ── -->
+<div class="hero">
+  <!-- LEFT: Confirmation -->
+  <div class="hero-left">
+    <div class="hero-left-bg" id="heroBg"></div>
+    <div class="hero-left-fade"></div>
+    <div class="hero-left-content">
+      <div class="confirm-check">
+        <svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 7"/></svg>
+      </div>
+      <h1 class="confirm-title">Your Seat<br>Is Confirmed</h1>
+      <div class="confirm-subtitle">Welcome to the Millionaire Mind<sup style="font-size:7px">®</sup> Global Tour</div>
+      <div class="confirm-body">
+        <p>You&rsquo;re now part of a movement happening across cities worldwide.</p>
+        <p><strong id="confirmCityShort">Your city</strong> is your stop.</p>
+        <p>Take a moment &mdash; this could be the turning point.</p>
+      </div>
+      <div class="confirm-info-box">
+        <div class="confirm-info-row">
+          <svg viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="13" rx="2"/><line x1="3" y1="9" x2="17" y2="9"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="13" y1="2" x2="13" y2="6"/></svg>
+          <div>
+            <div class="confirm-info-label" id="confirmDates">—</div>
+            <div class="confirm-info-sub" id="confirmTime">9am – 8pm</div>
+          </div>
+        </div>
+        <div class="confirm-info-row">
+          <svg viewBox="0 0 20 20"><path d="M10 2C7.24 2 5 4.24 5 7c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5z"/><circle cx="10" cy="7" r="1.5"/></svg>
+          <div>
+            <div class="confirm-info-label" id="confirmCity">Millionaire Mind Intensive</div>
+          </div>
+        </div>
+        <div class="confirm-info-row">
+          <svg viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="11" rx="2"/><line x1="7" y1="17" x2="13" y2="17"/><line x1="10" y1="14" x2="10" y2="17"/></svg>
+          <div>
+            <div class="confirm-info-label">Live Online Access Confirmed</div>
+          </div>
+        </div>
+      </div>
+      <a href="https://event.millionairemind.online" class="btn-event-details">Go to Event Details <span>→</span></a>
+    </div>
+  </div>
+
+  <!-- RIGHT: VIP Upgrade Card -->
+  <div class="hero-right">
+    <div class="vip-card">
+      <div style="text-align:center">
+        <span class="vip-badge">Limited Upgrade</span>
+      </div>
+      <h2 class="vip-title" style="text-align:center">Upgrade to VIP</h2>
+      <div class="vip-rule" style="margin:0 auto 14px"></div>
+      <p class="vip-desc">A different level of experience &mdash;<br>for those who want more than just attendance.</p>
+      <ul class="vip-benefits">
+        <li class="vip-benefit">
+          <div class="vip-benefit-icon">
+            <svg viewBox="0 0 20 20"><path d="M4 10.5C4 8 6.5 6 10 6s6 2 6 4.5"/><path d="M7 17h6M10 13v4"/><circle cx="10" cy="4" r="2"/></svg>
+          </div>
+          <div>
+            <div class="vip-benefit-title">Front row access to the room</div>
+            <div class="vip-benefit-sub">Best seats in the virtual room.</div>
+          </div>
+        </li>
+        <li class="vip-benefit">
+          <div class="vip-benefit-icon">
+            <svg viewBox="0 0 20 20"><circle cx="8" cy="7" r="3"/><path d="M2 17c0-3 2.7-5 6-5"/><circle cx="14" cy="7" r="2.5"/><path d="M14 12c2.5.6 4 2.5 4 5"/></svg>
+          </div>
+          <div>
+            <div class="vip-benefit-title">Private VIP session with the trainer</div>
+            <div class="vip-benefit-sub">Exclusive Q&amp;A and deeper interaction.</div>
+          </div>
+        </li>
+        <li class="vip-benefit">
+          <div class="vip-benefit-icon">
+            <svg viewBox="0 0 20 20"><circle cx="7" cy="7" r="2.5"/><circle cx="13" cy="7" r="2.5"/><path d="M1 17c0-2.8 2.7-5 6-5"/><path d="M13 12c3.3 0 6 2.2 6 5"/></svg>
+          </div>
+          <div>
+            <div class="vip-benefit-title">High-level networking environment</div>
+            <div class="vip-benefit-sub">Connect with ambitious entrepreneurs.</div>
+          </div>
+        </li>
+        <li class="vip-benefit">
+          <div class="vip-benefit-icon">
+            <svg viewBox="0 0 20 20"><path d="M10 2l1.5 5h5l-4 3 1.5 5L10 12l-4 3 1.5-5-4-3h5z"/></svg>
+          </div>
+          <div>
+            <div class="vip-benefit-title">Exclusive bonus materials</div>
+            <div class="vip-benefit-sub">VIP-only resources and frameworks.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="vip-today">Today Only</div>
+      <div class="vip-price-row">
+        <span class="vip-price-now">$97</span>
+        <span class="vip-price-was">$397</span>
+      </div>
+      <div class="stripe-wrap" id="stripeVip"></div>
+      <a href="#final-cta" class="btn-vip" id="btnVipTop">Upgrade My Experience →</a>
+      <div class="vip-lock">
+        <svg viewBox="0 0 20 20"><rect x="4" y="9" width="12" height="9" rx="2"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9"/></svg>
+        Only available on this page
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VIDEO BRIDGE ── -->
+<section class="video-bridge">
+  <div class="video-bridge-inner">
+    <p class="video-bridge-transition">You&rsquo;re already in.<br><strong>Now, here&rsquo;s how some people choose to experience this differently.</strong></p>
+    <div class="video-optional-label">Optional &mdash; 60 seconds</div>
+    <div class="video-label" style="margin-top:12px">A message about what happens next</div>
+    <h3 class="video-title">The Difference Is the Environment<br>You Place Yourself In</h3>
+    <div class="video-container">
+      <iframe id="vimeoFrame"
+        src="https://player.vimeo.com/video/1087641142?badge=0&autopause=0&player_id=0&app_id=58479"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="MMI VIP Experience">
+      </iframe>
+    </div>
+    <div class="video-below">
+      <p>Some will attend.</p>
+      <p>Others will fully step into the room.</p>
+      <p>The difference is the environment you place yourself in.</p>
     </div>
   </div>
 </section>
 
-<!-- UPSELL SECTION -->
-<section class="upsell">
-  <div class="upsell-inner">
-    <div class="upsell-header">
-      <span class="section-tag">Upgrade Your Experience</span>
-      <h2 class="section-title">One-Time Offers — <strong>Available Now Only</strong></h2>
-      <p class="section-sub">These upgrades are only available on this page. Once you leave, these prices are gone.</p>
-    </div>
-
-    <div class="upsell-grid">
-
-      <!-- 1. IN-PERSON VIP UPGRADE — $39 -->
-      <div class="upsell-card featured">
-        <span class="upsell-badge badge-hot">🔥 Most Popular</span>
-        <span class="upsell-icon">🏛</span>
-        <div class="upsell-title">In-Person VIP Upgrade</div>
-        <p class="upsell-desc">Join us physically in the room. Feel the energy, make the connections, and get the full immersive experience that online simply can't replicate.</p>
-        <div class="upsell-price-row">
-          <span class="upsell-price">$39</span>
-          <span class="upsell-price-note">one-time upgrade</span>
-        </div>
-        <ul class="upsell-points">
-          <li>Physical seat at the venue in <span id="upsellCity">your city</span></li>
-          <li>Front-row energy and live interaction with Arnon</li>
-          <li>In-person networking with 200+ entrepreneurs</li>
-          <li>Priority seating — first come, first served</li>
-        </ul>
-        <div class="stripe-wrap" id="stripe-inperson">
-          <div class="btn-placeholder">Stripe Buy Button — Add ID to activate</div>
-        </div>
-      </div>
-
-      <!-- 2. BRING A GUEST — $19 -->
-      <div class="upsell-card">
-        <span class="upsell-badge badge-popular">👥 Best Value</span>
-        <span class="upsell-icon">🤝</span>
-        <div class="upsell-title">Bring a Guest</div>
-        <p class="upsell-desc">Breakthroughs are more powerful when shared. Add a spouse, business partner, or friend for the same price you paid for your own seat.</p>
-        <div class="upsell-price-row">
-          <span class="upsell-price">$19</span>
-          <span class="upsell-price-note">one extra seat</span>
-        </div>
-        <ul class="upsell-points">
-          <li>Full 3-day access for one additional person</li>
-          <li>Separate login — they attend in their own time zone</li>
-          <li>Same workbook, same community, same experience</li>
-          <li>Ideal for couples or business partners</li>
-        </ul>
-        <div class="stripe-wrap" id="stripe-guest">
-          <div class="btn-placeholder">Stripe Buy Button — Add ID to activate</div>
-        </div>
-      </div>
-
-      <!-- 3. VIP HOT SEAT — $197 -->
-      <div class="upsell-card">
-        <span class="upsell-badge badge-premium">⭐ Premium</span>
-        <span class="upsell-icon">🎯</span>
-        <div class="upsell-title">VIP Hot Seat</div>
-        <p class="upsell-desc">Get 20 minutes on stage with Arnon. He'll work through your specific money blocks live in front of the room — the most accelerated breakthrough available.</p>
-        <div class="upsell-price-row">
-          <span class="upsell-price">$197</span>
-          <span class="upsell-price-note">limited spots</span>
-        </div>
-        <ul class="upsell-points">
-          <li>20-minute live coaching session with Arnon on stage</li>
-          <li>Your money blocks identified and cleared publicly</li>
-          <li>The audience holds the energy — it amplifies everything</li>
-          <li>Maximum 5 hot seats per event</li>
-        </ul>
-        <div class="stripe-wrap" id="stripe-hotseat">
-          <div class="btn-placeholder">Stripe Buy Button — Add ID to activate</div>
-        </div>
-      </div>
-
-      <!-- 4. PRE-EVENT 1:1 CALL — $47 -->
-      <div class="upsell-card">
-        <span class="upsell-badge badge-premium">📞 Prep Session</span>
-        <span class="upsell-icon">💬</span>
-        <div class="upsell-title">Pre-Event 1:1 Strategy Call</div>
-        <p class="upsell-desc">A 30-minute call with an MMI coach before the event. You'll identify your top 3 money blocks so you arrive knowing exactly what to work on — maximising every hour.</p>
-        <div class="upsell-price-row">
-          <span class="upsell-price">$47</span>
-          <span class="upsell-price-note">30-min call</span>
-        </div>
-        <ul class="upsell-points">
-          <li>30-minute 1:1 with a certified MMI coach</li>
-          <li>Identify your top 3 money blocks before the event</li>
-          <li>Custom focus areas so you get the most from 3 days</li>
-          <li>Scheduled within 7 days before the event</li>
-        </ul>
-        <div class="stripe-wrap" id="stripe-call">
-          <div class="btn-placeholder">Stripe Buy Button — Add ID to activate</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SKIP / CONTINUE WITHOUT UPGRADING -->
-<section class="skip-section">
-  <div class="skip-inner">
-    <div class="skip-title">No upgrades today — that's fine</div>
-    <p class="skip-sub">Your $19 registration is confirmed. You'll receive full access to the 3-day event, the digital workbook, and the alumni community. We'll see you there.</p>
-    <a href="https://event.millionairemind.online/" class="btn-skip">← Back to Events</a>
-  </div>
-</section>
-
-<!-- WHAT'S NEXT -->
-<section class="next">
+<!-- ── WHAT HAPPENS NEXT ── -->
+<section class="next-section">
   <div class="next-inner">
-    <span class="section-tag" style="text-align:center;display:block">What Happens Next</span>
-    <h2 class="section-title" style="text-align:center">Three Steps to <strong>Your Breakthrough</strong></h2>
+    <span class="section-tag">After Registration</span>
+    <h2 class="section-title">What Happens <strong>Next</strong></h2>
     <div class="next-grid">
       <div class="next-step">
-        <div class="next-num">01</div>
-        <div class="next-title">Check your inbox</div>
-        <div class="next-desc">Your confirmation email is on its way with your login details, the event schedule, and a preparation guide.</div>
+        <div class="next-step-top">
+          <div class="next-num">1</div>
+          <div class="next-icon">
+            <svg viewBox="0 0 22 22"><rect x="2" y="4" width="18" height="14" rx="2"/><polyline points="2,4 11,13 20,4"/></svg>
+          </div>
+        </div>
+        <div class="next-title">Check your email</div>
+        <div class="next-desc">You&rsquo;ll receive your access details and next steps.</div>
       </div>
       <div class="next-step">
-        <div class="next-num">02</div>
-        <div class="next-title">Complete the pre-work</div>
-        <div class="next-desc">Your Pre-Training Intention Sheet will be sent 7 days before the event. It takes 30 minutes and sets your intention for the weekend.</div>
+        <div class="next-step-top">
+          <div class="next-num">2</div>
+          <div class="next-icon">
+            <svg viewBox="0 0 22 22"><circle cx="9" cy="8" r="3.5"/><path d="M2 19c0-3.9 3.1-7 7-7"/><circle cx="16" cy="9" r="3"/><path d="M16 14c3.3.8 5.5 3.2 5.5 6.5"/></svg>
+          </div>
+        </div>
+        <div class="next-title">Join the community</div>
+        <div class="next-desc">Connect with other attendees and get updates.</div>
       </div>
       <div class="next-step">
-        <div class="next-num">03</div>
-        <div class="next-title">Show up ready</div>
-        <div class="next-desc">Block your calendar for all 3 days — 9am to 8pm your local time. The people who get the most out of MMI show up fully committed.</div>
+        <div class="next-step-top">
+          <div class="next-num">3</div>
+          <div class="next-icon">
+            <svg viewBox="0 0 22 22"><rect x="3" y="4" width="16" height="15" rx="2"/><line x1="3" y1="9" x2="19" y2="9"/><line x1="7" y1="2" x2="7" y2="6"/><line x1="15" y1="2" x2="15" y2="6"/><line x1="7" y1="13" x2="10" y2="13"/><line x1="7" y1="16" x2="14" y2="16"/></svg>
+          </div>
+        </div>
+        <div class="next-title">Prepare for Day 1</div>
+        <div class="next-desc">Come ready &mdash; this is not passive learning.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── SOCIAL PROOF ── -->
+<section class="social-proof">
+  <div class="social-proof-inner">
+    <div class="proof-left">
+      <span class="proof-quote-mark">&ldquo;</span>
+      <h3 class="proof-heading">Across the world, others are upgrading their experience.</h3>
+      <div class="proof-body">
+        <p>Some will watch from the screen.</p>
+        <p>Others will step into the room.</p>
+        <p>The difference is the environment you place yourself in.</p>
+      </div>
+    </div>
+    <div class="proof-map">
+      <svg viewBox="0 0 480 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;opacity:.7">
+        <defs>
+          <pattern id="dp2" width="6" height="6" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.85" fill="#B8935A" opacity="0.28"/>
+          </pattern>
+        </defs>
+        <!-- Europe -->
+        <path d="M220,50 L230,40 L242,26 L255,22 L268,22 L280,26 L288,36 L284,48 L278,56 L268,62 L258,68 L247,66 L240,60 L222,57 Z" fill="url(#dp2)"/>
+        <!-- North Africa -->
+        <path d="M202,78 L232,76 L250,78 L268,80 L282,86 L280,98 L260,102 L234,100 L212,96 L200,88 Z" fill="url(#dp2)" opacity="0.6"/>
+        <!-- Middle East / W Asia -->
+        <path d="M288,36 L304,40 L316,48 L322,60 L314,74 L296,78 L282,70 L280,56 L284,48 Z" fill="url(#dp2)"/>
+        <!-- Central/S Asia -->
+        <path d="M316,48 L340,42 L365,48 L377,58 L381,74 L371,92 L354,104 L332,108 L316,98 L306,82 L308,68 L314,74 Z" fill="url(#dp2)"/>
+        <!-- SE Asia -->
+        <path d="M371,72 L391,66 L411,70 L424,80 L426,98 L414,110 L394,112 L378,102 L371,92 Z" fill="url(#dp2)"/>
+        <!-- Malay Peninsula -->
+        <path d="M392,110 L400,106 L408,112 L410,124 L402,132 L392,130 L386,120 Z" fill="url(#dp2)"/>
+        <!-- East Asia -->
+        <path d="M412,70 L440,60 L468,58 L490,64 L496,78 L482,88 L460,90 L438,86 L422,80 Z" fill="url(#dp2)"/>
+        <!-- Arcs -->
+        <path d="M242,52 Q370,0 396,120" stroke="#B8935A" stroke-width="1.5" fill="none" stroke-dasharray="5,3" opacity="0.7"/>
+        <path d="M242,52 Q300,80 316,52" stroke="#B8935A" stroke-width="1" fill="none" stroke-dasharray="4,4" opacity="0.5"/>
+        <path d="M242,52 Q200,100 222,130" stroke="#B8935A" stroke-width="1" fill="none" stroke-dasharray="3,5" opacity="0.4"/>
+        <!-- City dots -->
+        <circle cx="242" cy="52" r="5" fill="#B8935A"/>
+        <circle cx="252" cy="48" r="3.5" fill="#B8935A" opacity=".8"/>
+        <circle cx="264" cy="50" r="3.5" fill="#B8935A" opacity=".8"/>
+        <circle cx="275" cy="52" r="3.5" fill="#B8935A" opacity=".8"/>
+        <circle cx="232" cy="56" r="3" fill="#B8935A" opacity=".7"/>
+        <circle cx="395" cy="118" r="6" fill="#B8935A"/>
+        <circle cx="398" cy="122" r="3.5" fill="#B8935A" opacity=".8"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta" id="final-cta">
+  <div class="final-cta-inner">
+    <p class="final-cta-notice">This option won&rsquo;t be shown again after you leave.</p>
+    <div class="final-cta-actions">
+      <a href="#" class="btn-final-vip" id="btnVipFinal">Upgrade to VIP →</a>
+      <span class="final-or">or</span>
+      <button class="btn-continue" onclick="window.location.href='https://event.millionairemind.online'">Continue with standard access</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <p>© 2026 Success Resources · All Rights Reserved</p>
-  <p style="margin-top:8px">
-    <a href="/privacy">Privacy Policy</a> ·
-    <a href="/terms">Terms & Conditions</a> ·
-    <a href="https://www.millionairemindworld.com/sr">Contact Us</a>
-  </p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-movement">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><ellipse cx="16" cy="16" rx="5.5" ry="13"/><line x1="3.5" y1="16" x2="28.5" y2="16"/><line x1="6" y1="10" x2="26" y2="10"/><line x1="6" y1="22" x2="26" y2="22"/></svg>
+        <div class="footer-movement-text">The movement is global.<br>You&rsquo;re in.</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-quote">&ldquo;Change your mindset.<br>Change your future.&rdquo;</div>
+      <div class="footer-attribution" id="footerTrainer">&mdash; Alan P. Hill</div>
+    </div>
+    <div class="footer-col footer-social">
+      <div class="footer-social-label">Follow the Journey</div>
+      <div class="footer-social-icons">
+        <a href="https://facebook.com" class="social-icon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" class="social-icon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://youtube.com" class="social-icon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+        <a href="https://linkedin.com" class="social-icon" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <script>
-// ─── STRIPE KEYS (same as main landing page) ───────────────────────────────
-const STRIPE_KEYS = {
-  my: 'pk_live_51H7bbGIMbI04nnt8o8Wws5ZRWJTOEybppaWlmOHjM8kIRHZCrFV0F7u5UAGgL5KKN4TQcnkoeOkz66dYwL8kdqSZ00B0fTMNIp',
-  eu: 'pk_live_eAEnXts7quS2xtcOY4RHBG8A'
-};
-
-// ─── UPSELL PRODUCTS ──────────────────────────────────────────────────────
-// Add Stripe buy-button-id for each upsell once created in Stripe Dashboard.
-// stripeAccount: 'my' for Malaysian entity, 'eu' for European entity
-const UPSELLS = {
-  inperson: { containerId:'stripe-inperson', buttonId:'',        stripeAccount:'eu', label:'In-Person VIP — $39'    },
-  guest:    { containerId:'stripe-guest',    buttonId:'',        stripeAccount:'eu', label:'Bring a Guest — $19'    },
-  hotseat:  { containerId:'stripe-hotseat', buttonId:'',        stripeAccount:'eu', label:'VIP Hot Seat — $197'    },
-  call:     { containerId:'stripe-call',    buttonId:'',        stripeAccount:'eu', label:'Pre-Event Call — $47'   }
-};
-
-// ─── READ CITY FROM URL PARAM ─────────────────────────────────────────────
-// Stripe success URL should be: yourdomain.com/thank-you?city=malaga
-const params  = new URLSearchParams(window.location.search);
-const city    = params.get('city') || '';
-const display = params.get('display') || ''; // optional: ?display=Malaga+22-24+May
-
+// ── CITY + EVENT DATA ────────────────────────────────────────────────────
 const CITY_NAMES = {
   'malaga':       'Malaga, Spain',
   'kuala-lumpur': 'Kuala Lumpur, Malaysia',
   'warsaw':       'Warsaw, Poland',
   'london':       'London, United Kingdom',
-  'cologne':      'Cologne, Germany',
+  'berlin':       'Berlin, Germany',
   'johor-bahru':  'Johor Bahru, Malaysia',
   'geneva':       'Geneva, Switzerland',
   'madrid':       'Madrid, Spain',
@@ -344,13 +472,12 @@ const CITY_NAMES = {
   'birmingham':   'Birmingham, United Kingdom',
   'brussels':     'Brussels, Belgium'
 };
-
 const EVENT_DATES = {
   'malaga':       '22–24 May 2026',
   'kuala-lumpur': '1–3 May 2026',
   'warsaw':       '12–14 June 2026',
   'london':       '3–5 July 2026',
-  'cologne':      '10–12 July 2026',
+  'berlin':       '10–12 July 2026',
   'johor-bahru':  '31 Jul–2 Aug 2026',
   'geneva':       '11–13 Sep 2026',
   'madrid':       '25–27 Sep 2026',
@@ -358,39 +485,83 @@ const EVENT_DATES = {
   'birmingham':   '6–8 Nov 2026',
   'brussels':     '20–22 Nov 2026'
 };
+const EVENT_TIMES = {
+  'kuala-lumpur': '9am – 8pm GMT+8',
+  'johor-bahru':  '9am – 8pm GMT+8',
+  'malaga':       '9am – 8pm GMT+2',
+  'warsaw':       '9am – 8pm GMT+2',
+  'london':       '9am – 8pm GMT+1',
+  'berlin':       '9am – 8pm GMT+2',
+  'geneva':       '9am – 8pm GMT+2',
+  'madrid':       '9am – 8pm GMT+2',
+  'rotterdam':    '9am – 8pm GMT+2',
+  'birmingham':   '9am – 8pm GMT+0',
+  'brussels':     '9am – 8pm GMT+1'
+};
+const TRAINERS = {
+  'kuala-lumpur': 'Alan P. Hill',
+  'johor-bahru':  'Mac Attram',
+  'malaga':       'Mac Attram',
+  'warsaw':       'Mac Attram',
+  'london':       'Arnon Barnes',
+  'berlin':       'Mac Attram',
+  'geneva':       'Arnon Barnes',
+  'madrid':       'Arnon Barnes',
+  'rotterdam':    'Mac Attram',
+  'birmingham':   'Arnon Barnes',
+  'brussels':     'Arnon Barnes'
+};
 
-// Populate city name and dates
-const cityName  = CITY_NAMES[city] || 'Millionaire Mind Intensive';
-const cityDates = EVENT_DATES[city] || '2026';
-const cityShort = cityName.split(',')[0];
+// ── STRIPE VIP BUTTON ────────────────────────────────────────────────────
+// Set this to the Stripe buy-button-id for the VIP upgrade product
+const VIP_BTN_ID = '';  // e.g. 'buy_btn_xxxxx'
 
-document.getElementById('confirmCity').textContent  = cityName;
-document.getElementById('confirmDates').textContent = cityDates;
-document.getElementById('upsellCity').textContent   = cityShort;
-document.title = `You're In — MMI ${cityShort} 2026`;
-
-// ─── RENDER STRIPE BUY BUTTONS ────────────────────────────────────────────
-// Determines which Stripe account to use per city
-// MY cities use 'my' account, EU cities use 'eu' account
 const MY_CITIES = ['kuala-lumpur','johor-bahru'];
-const acct = MY_CITIES.includes(city) ? 'my' : 'eu';
+const STRIPE_KEYS = {
+  my: 'pk_live_51H7bbGIMbI04nnt8o8Wws5ZRWJTOEybppaWlmOHjM8kIRHZCrFV0F7u5UAGgL5KKN4TQcnkoeOkz66dYwL8kdqSZ00B0fTMNIp',
+  eu: 'pk_live_eAEnXts7quS2xtcOY4RHBG8A'
+};
 
-Object.values(UPSELLS).forEach(function(upsell) {
-  const container = document.getElementById(upsell.containerId);
-  if (!container) return;
+// ── INIT ─────────────────────────────────────────────────────────────────
+(function(){
+  var params   = new URLSearchParams(window.location.search);
+  var city     = params.get('city') || 'kuala-lumpur';
+  var cityName = CITY_NAMES[city]  || 'Millionaire Mind Intensive';
+  var dates    = EVENT_DATES[city] || '2026';
+  var time     = EVENT_TIMES[city] || '9am – 8pm';
+  var short    = cityName.split(',')[0];
+  var trainer  = TRAINERS[city]    || 'Alan P. Hill';
 
-  // Override account based on city
-  const key = STRIPE_KEYS[acct];
+  // Nav
+  document.getElementById('navCity').textContent = short;
+  // Hero left
+  document.getElementById('confirmCity').textContent = cityName;
+  document.getElementById('confirmCityShort').textContent = short;
+  document.getElementById('confirmDates').textContent = dates;
+  document.getElementById('confirmTime').textContent  = time;
+  // City bg photo
+  document.getElementById('heroBg').style.backgroundImage =
+    "url('/assets/cities/" + city + ".webp')";
+  // Footer trainer quote
+  document.getElementById('footerTrainer').textContent = '— ' + trainer;
+  // Page title
+  document.title = "You're In — MMI " + short + " 2026";
 
-  if (upsell.buttonId && upsell.buttonId.startsWith('buy_btn_')) {
-    container.innerHTML = '';
-    const btn = document.createElement('stripe-buy-button');
-    btn.setAttribute('buy-button-id', upsell.buttonId);
+  // Stripe VIP button (if ID provided)
+  if (VIP_BTN_ID && VIP_BTN_ID.startsWith('buy_btn_')) {
+    var acct = MY_CITIES.includes(city) ? 'my' : 'eu';
+    var key  = STRIPE_KEYS[acct];
+    var wrap = document.getElementById('stripeVip');
+    var btn  = document.createElement('stripe-buy-button');
+    btn.setAttribute('buy-button-id', VIP_BTN_ID);
     btn.setAttribute('publishable-key', key);
-    container.appendChild(btn);
+    wrap.appendChild(btn);
+    // Hide placeholder buttons when Stripe is active
+    document.getElementById('btnVipTop').style.display   = 'none';
+    document.getElementById('btnVipFinal').style.display = 'none';
   }
-  // If no buttonId set, placeholder remains showing
-});
+})();
 </script>
+
 </body>
 </html>
