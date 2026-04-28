@@ -51,28 +51,20 @@ h2.stitle strong{font-weight:700}
 .brand-logo{font-family:"Cinzel",serif;font-weight:700;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-lt) 0%,var(--gold) 50%,var(--gold-lt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:flex-end;transition:background .3s}.nav-scrolled{background:rgba(255,255,255,0.97)!important;backdrop-filter:blur(12px);border-bottom:1px solid var(--border-lt)}
-.nav-logo{display:flex;align-items:center;gap:0;text-decoration:none}
-.nav-logo-text{font-family:"Cinzel",serif;font-size:17px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1.5px;line-height:1}
-.nav-logo-sub{font-family:"Montserrat",sans-serif;font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest);margin-left:10px;border-left:1px solid var(--border);padding-left:10px}
-.btn-nav{background:rgba(255,255,255,0.92);color:var(--gold);padding:9px 22px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--gold);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:7px;border-radius:4px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-lt);padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
+/* brand block — left */
+.nav-brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.nav-sig{font-family:"Montserrat",sans-serif;font-size:8.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted-lt);line-height:1;margin-bottom:4px}
+.nav-name{font-family:"Cinzel",serif;font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1.5px;line-height:1}
+.nav-divider{width:1px;height:32px;background:var(--border);flex-shrink:0}
+.nav-programme{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--forest);line-height:1}
+/* CTA — right */
+.btn-nav{background:transparent;color:var(--gold);padding:10px 24px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1.5px solid var(--gold);cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:8px;border-radius:4px}
 .btn-nav:hover{background:var(--gold);color:#fff}
+/* always white bg on nav — no need for transparent variant since brand needs white bg to render gold gradient */
 
-/* ── CORNER STICKER SVG ── */
-.corner-sticker{
-  position:fixed;
-  top:0;left:0;
-  z-index:101;
-  width:clamp(300px,52vw,580px);
-  pointer-events:none;
-  display:block;
-  line-height:0
-}
-.corner-sticker img{display:block;width:100%;height:auto}
-.cs-sig,.cs-brand,.cs-sub,.cs-rule{display:none}
-@media(max-width:600px){
-  .corner-sticker{width:clamp(240px,80vw,360px)}
-}
+/* corner sticker removed — brand lives in nav */
 
 /* ── LOADER ── */
 .geo-loader{position:fixed;inset:0;background:var(--white);z-index:999;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
@@ -82,7 +74,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;paddi
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:170px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 40px 80px;position:relative;overflow:hidden;background-color:var(--white);background-image:url('/assets/hero/Hero-desktop.webp');background-size:cover;background-position:right center;background-repeat:no-repeat}
 .hero::after{display:none}
 .zen-deco{display:none}
 .hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center}
@@ -342,8 +334,9 @@ footer a:hover{color:var(--gold-lt)}
 /* ── RESPONSIVE ── */
 @media(max-width:1040px){.trainer-grid{grid-template-columns:240px 1fr;gap:40px}}
 @media(max-width:900px){
-  nav{padding:0 20px}
-  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:160px 20px 48vh;align-items:flex-start}
+  nav{padding:0 20px;height:64px}
+  .nav-sig{display:none}
+  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:100px 20px 48vh;align-items:flex-start}
   .hero-inner{grid-template-columns:1fr;gap:0}
   section{padding:64px 20px}
   .stats-bar{padding:28px 20px}.stats-bar .si{grid-template-columns:1fr 1fr}
@@ -359,6 +352,9 @@ footer a:hover{color:var(--gold-lt)}
   .val-table td:nth-child(2){display:none}
 }
 @media(max-width:600px){
+  nav{padding:0 16px;height:58px}
+  .nav-name{font-size:14px}
+  .nav-programme{display:none}
   .stats-bar .si{grid-template-columns:1fr 1fr}
   .who-grid,.how-grid,.testi-grid,.ev-grid{grid-template-columns:1fr}
   .days-nav{flex-direction:column}
@@ -413,16 +409,17 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </div>
 
-<!-- CORNER STICKER — webp image, fixed top-left -->
-<div class="corner-sticker">
-  <img src="/assets/hero/millionaire_mind_corner_sticker.webp"
-       alt="Millionaire Mind Intensive Online"
-       width="960" height="220">
-</div>
-
-<!-- NAV -->
-<nav style="justify-content:flex-end">
-  <button class="btn-nav" onclick="openFeatured()">&#128274; Secure Seat</button>
+<!-- NAV — full brand identity integrated -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div>
+      <div class="nav-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
+      <div class="nav-name">Millionaire Mind&reg;</div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-programme">Intensive Online</div>
+  </a>
+  <button class="btn-nav" onclick="openFeatured()">&#128274;&nbsp; Secure Seat</button>
 </nav>
 
 <!-- ╔══════════════════════════════════════╗ -->
