@@ -2028,11 +2028,23 @@ function hideLoader(){
         }catch(e2){}
       }
       clearTimeout(tid);
-      initPage(findNearest(code));
-    }catch(e){initPage(findNearest(''));}
+      try{initPage(findNearest(code));}catch(e2){
+        // initPage threw — try default
+        try{initPage(EVENTS.find(function(e){return e.citySlug==='malaga';})||EVENTS[0]);}catch(e3){}
+        var gl=document.getElementById('geoLoader');
+        if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},300);}
+      }
+    }catch(e){
+      try{initPage(EVENTS[0]);}catch(e2){}
+      var gl=document.getElementById('geoLoader');
+      if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},300);}
+    }
   }catch(e){
     // Last-resort: ensure loader is always hidden even if initPage throws
-    hideLoader();
+    var gl=document.getElementById('geoLoader');
+    if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},600);}
+    // Try default city as last resort
+    try{initPage(EVENTS[0]);}catch(e2){}
   }
 })();
 
