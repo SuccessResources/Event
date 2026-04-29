@@ -543,8 +543,9 @@ footer a:hover{color:var(--gold-lt)}
   .hero-left{order:1;padding-bottom:0}
   /* Right col (pill + image) after CTA on mobile */
   .hero-right{order:2;padding-top:20px;width:100%}
-  /* Hide hero desktop image on mobile */
-  .hero-img-wrap{display:none}
+  /* Hero image on mobile — show below info bar, full width */
+  .hero-img-wrap{display:block;margin-top:16px;width:100%}
+  .hero-img-wrap img{max-width:100%;height:auto;object-fit:contain}
   /* Info bar: 2x2 grid on mobile */
   .hero-info-bar{
     display:grid;
