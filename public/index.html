@@ -1986,19 +1986,31 @@ function updateHeroPrice(ev){
 }
 
 // ── BOOT ────────────────────────────────────────────────────────────
+function hideLoader(){
+  var l=document.getElementById('geoLoader');
+  if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},700);}
+}
 (async()=>{
-  // ?city= param overrides geo detection
-  const cityParam = new URLSearchParams(window.location.search).get('city');
-  if(cityParam){
-    const match = EVENTS.find(e => e.citySlug === cityParam);
-    if(match){ initPage(match); return; }
-  }
-  // Normal geo detection
   try{
-    const r=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY);
-    const d=await r.json();
-    initPage(findNearest(d.country_code||''));
-  }catch(e){initPage(findNearest(''));}
+    // ?city= param overrides geo detection
+    const cityParam = new URLSearchParams(window.location.search).get('city');
+    if(cityParam){
+      const match = EVENTS.find(e => e.citySlug === cityParam);
+      if(match){ initPage(match); return; }
+    }
+    // Normal geo detection — abort after 4 s so the loader never hangs
+    try{
+      const ctrl=new AbortController();
+      const tid=setTimeout(()=>ctrl.abort(),4000);
+      const r=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY,{signal:ctrl.signal});
+      clearTimeout(tid);
+      const d=await r.json();
+      initPage(findNearest(d.country_code||''));
+    }catch(e){initPage(findNearest(''));}
+  }catch(e){
+    // Last-resort: ensure loader is always hidden even if initPage throws
+    hideLoader();
+  }
 })();
 
 
