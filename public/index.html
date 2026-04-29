@@ -1673,7 +1673,7 @@ const TRAINERS = {
 // btnId     = Online Event Stripe Button ID   (always $19 USD)
 // liveBtnId = Live Event Stripe Button ID     (local currency per event)
 // price/cur = Live event pass price & currency
-const EVENTS = [
+let EVENTS = [
   {city:'Kuala Lumpur',country:'Malaysia',flag:'🇲🇾',display:'Kuala Lumpur',dates:'1–3 May 2026',time:'9am–8pm GMT+8',eventDate:new Date('2026-05-01T09:00:00+08:00'),btnId:'buy_btn_1TPf03IMbI04nnt8ezfDNzTf',cartUrl:'https://www.digistore24.com/product/688424?city=kuala-lumpur',liveCartUrl:'https://srglobal.thrivecart.com/malaysia-may-standard-cart',liveBtnId:'buy_btn_1TPiA0GY6RiRFzHXJp4S4uUT',cur:'USD',price:19,trainer:'Alan',geo:['MY','SG','BN','ID','PH','TH','VN','MM','KH','LA','TL','CN','HK','MO','TW','JP','KR','MN','AU','NZ','FJ','PG','IN','LK','BD','PK','NP','BT','MV','AF'],citySlug:'kuala-lumpur',livePrice:83.16,liveCur:'MYR'},
   {city:'Malaga',country:'Spain',flag:'🇪🇸',display:'Malaga',dates:'22–24 May 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-05-22T09:00:00+02:00'),btnId:'buy_btn_1TPfwLGY6RiRFzHXmZsZbpnQ',cartUrl:'https://www.digistore24.com/product/688425?city=malaga',liveCartUrl:'https://successr.thrivecart.com/spain-may-standard-cart/',liveBtnId:'buy_btn_1TPidGGY6RiRFzHXxDavnL0k',cur:'USD',price:19,trainer:'Mac',geo:['ES','PT','MA','DZ','TN','LY','IT','MT','GR','CY','AL','BA','ME','MK','RS','SI','HR','AD','SM','VA'],citySlug:'malaga',livePrice:35.09,liveCur:'EUR'},
   {city:'Warsaw',country:'Poland',flag:'🇵🇱',display:'Warsaw',dates:'12–14 June 2026',time:'9am–8pm GMT+2',eventDate:new Date('2026-06-12T09:00:00+02:00'),btnId:'buy_btn_1TPfzBGY6RiRFzHXHPK0Dekh',cartUrl:'https://www.digistore24.com/product/688406?city=warsaw',liveCartUrl:'https://srglobal.thrivecart.com/poland-june-standard-cart',liveBtnId:'buy_btn_1TPifiGY6RiRFzHXa9sf6SZq',cur:'USD',price:19,trainer:'Mac',geo:['PL','CZ','SK','HU','UA','BY','LT','LV','EE','MD'],citySlug:'warsaw',livePrice:29.0,liveCur:'EUR'},
@@ -2010,53 +2010,62 @@ function hideLoader(){
   var l=document.getElementById('geoLoader');
   if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},700);}
 }
+
+// Fetch live events from Google Sheet via /api/events (3 s timeout)
+async function loadSheetEvents(){
+  try{
+    const ctrl=new AbortController();
+    setTimeout(()=>ctrl.abort(),3000);
+    const r=await fetch('/api/events',{signal:ctrl.signal});
+    if(!r.ok) throw new Error();
+    const data=await r.json();
+    if(Array.isArray(data)&&data.length>0){
+      return data.map(function(e){return Object.assign({},e,{eventDate:new Date(e.eventDate)});});
+    }
+  }catch(e){}
+  return null; // fall back to hardcoded EVENTS
+}
+
+// Geo detection: /api/geo → ipapi.co fallback (4 s total timeout)
+async function detectGeo(){
+  try{
+    const ctrl=new AbortController();
+    const tid=setTimeout(()=>ctrl.abort(),4000);
+    try{
+      const r=await fetch('/api/geo',{signal:ctrl.signal});
+      const d=await r.json();
+      clearTimeout(tid);
+      return d.country_code||'';
+    }catch(e1){
+      clearTimeout(tid);
+      const ctrl2=new AbortController();
+      const tid2=setTimeout(()=>ctrl2.abort(),4000);
+      try{
+        const r2=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY,{signal:ctrl2.signal});
+        clearTimeout(tid2);
+        const d2=await r2.json();
+        return d2.country_code||'';
+      }catch(e2){ clearTimeout(tid2); }
+    }
+  }catch(e){}
+  return '';
+}
+
 (async()=>{
   try{
-    // ?city= param overrides geo detection
-    const cityParam = new URLSearchParams(window.location.search).get('city');
+    const cityParam=new URLSearchParams(window.location.search).get('city');
+
+    // Load sheet events and detect geo in parallel for fastest boot
+    const[freshEvents,code]=await Promise.all([loadSheetEvents(),detectGeo()]);
+    if(freshEvents) EVENTS=freshEvents;
+
     if(cityParam){
-      const match = EVENTS.find(e => e.citySlug === cityParam);
-      if(match){ initPage(match); return; }
+      const match=EVENTS.find(e=>e.citySlug===cityParam);
+      if(match){initPage(match);return;}
     }
-    // Geo detection: /api/geo (Vercel edge header) → ipapi.co fallback → default
-    try{
-      const ctrl=new AbortController();
-      const tid=setTimeout(()=>ctrl.abort(),4000);
-      let code='';
-      try{
-        // Primary: Vercel injects x-vercel-ip-country, served by /api/geo
-        const r=await fetch('/api/geo',{signal:ctrl.signal});
-        const d=await r.json();
-        code=d.country_code||'';
-      }catch(e1){
-        // Fallback: ipapi.co
-        try{
-          clearTimeout(tid);
-          const ctrl2=new AbortController();
-          const tid2=setTimeout(()=>ctrl2.abort(),4000);
-          const r2=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY,{signal:ctrl2.signal});
-          clearTimeout(tid2);
-          const d2=await r2.json();
-          code=d2.country_code||'';
-        }catch(e2){}
-      }
-      clearTimeout(tid);
-      try{initPage(findNearest(code));}catch(e2){
-        // initPage threw — try default
-        try{initPage(EVENTS.find(function(e){return e.citySlug==='malaga';})||EVENTS[0]);}catch(e3){}
-        var gl=document.getElementById('geoLoader');
-        if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},300);}
-      }
-    }catch(e){
-      try{initPage(EVENTS[0]);}catch(e2){}
-      var gl=document.getElementById('geoLoader');
-      if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},300);}
-    }
+    initPage(findNearest(code));
   }catch(e){
-    // Last-resort: ensure loader is always hidden even if initPage throws
-    var gl=document.getElementById('geoLoader');
-    if(gl){gl.classList.add('hide');setTimeout(function(){gl.style.display='none'},600);}
-    // Try default city as last resort
+    hideLoader();
     try{initPage(EVENTS[0]);}catch(e2){}
   }
 })();
