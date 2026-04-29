@@ -520,22 +520,80 @@ footer a:hover{color:var(--gold-lt)}
 /* ── RESPONSIVE ── */
 @media(max-width:1040px){.trainer-grid{grid-template-columns:240px 1fr;gap:40px}}
 @media(max-width:900px){
-  nav{padding:0 20px;height:64px}
+  /* ── NAV ── */
+  nav{padding:0 16px;height:60px}
   .nav-sig{display:none}
-  .hero{background-image:url('/assets/hero/Hero-mobile.webp');background-position:center bottom;padding:100px 20px 48vh;align-items:flex-start}
-  .hero-inner{grid-template-columns:1fr;gap:0}
-  section{padding:64px 20px}
-  .stats-bar{padding:28px 20px}.stats-bar .si{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .nav-brand .nav-intensive{font-size:8px}
+
+  /* ── HERO — clean single column, headline first ── */
+  .hero{
+    background:var(--white);
+    padding:72px 20px 24px;
+    align-items:flex-start;
+    min-height:auto
+  }
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:0;
+    display:flex;
+    flex-direction:column
+  }
+  /* Left col first on mobile */
+  .hero-left{order:1;padding-bottom:0}
+  /* Right col (pill + image) after CTA on mobile */
+  .hero-right{order:2;padding-top:20px;width:100%}
+  /* Hide hero desktop image on mobile */
+  .hero-img-wrap{display:none}
+  /* Info bar: 2x2 grid on mobile */
+  .hero-info-bar{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width:100%;
+    max-width:100%;
+    border-radius:10px
+  }
+  .hib-item{
+    padding:12px 8px;
+    border-right:none;
+    border-bottom:1px solid rgba(0,0,0,0.07)
+  }
+  .hib-item:nth-child(odd){border-right:1px solid rgba(0,0,0,0.07)}
+  .hib-item:nth-child(3),.hib-item:nth-child(4){border-bottom:none}
+  .hib-icon svg{width:20px;height:20px}
+  /* Now live label */
+  .hero-now-live{font-size:10px;margin-bottom:8px}
+  /* Reduce title size on mobile */
+  .hero-title{font-size:clamp(26px,7vw,36px);margin-bottom:14px}
+  /* CTA full width */
+  .btn-primary{width:100%;max-width:100%;padding:16px 24px}
+
+  /* ── GENERAL ── */
+  section{padding:48px 20px}
+  .stats-bar{padding:24px 16px}
+  .stats-bar .si{grid-template-columns:1fr 1fr}
   .who-grid,.how-grid{grid-template-columns:1fr 1fr}
   .trainer-grid{grid-template-columns:1fr}
   .trainer-frame{display:none}
   .prob-grid{grid-template-columns:1fr}
-  .testi-grid{grid-template-columns:1fr 1fr}
+  .testi-grid{grid-template-columns:1fr}
   .day-content.active{grid-template-columns:1fr}
-  .ev-grid{grid-template-columns:1fr 1fr}
+  .ev-grid{grid-template-columns:1fr}
   .end-vid-grid{grid-template-columns:1fr}
   .end-grid{grid-template-columns:1fr}
   .val-table td:nth-child(2){display:none}
+
+  /* ── VIDEO BRIDGE ── */
+  .vb-inner{grid-template-columns:1fr;gap:24px}
+  .video-bridge{padding:40px 0}
+  .vb-media-strip{flex-wrap:wrap;gap:10px}
+
+  /* ── CITY IMAGE SECTION ── */
+  .city-grid{grid-template-columns:1fr;padding:28px 16px;gap:20px}
+  .city-col-right{display:none}
+  .city-image-section{min-height:auto}
+  .city-title-above{padding:24px 20px 16px}
+  .city-movement-title-above{font-size:clamp(22px,6vw,32px)}
 }
 @media(max-width:600px){
   nav{padding:0 16px;height:58px}
