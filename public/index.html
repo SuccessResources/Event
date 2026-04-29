@@ -589,7 +589,11 @@ footer a:hover{color:var(--gold-lt)}
   /* ── VIDEO BRIDGE ── */
   .vb-inner{grid-template-columns:1fr;gap:24px}
   .video-bridge{padding:40px 0}
-  .vb-media-strip{flex-wrap:wrap;gap:10px}
+  .video-bridge .si{padding:0 20px}
+  .vb-media-strip{flex-wrap:nowrap;overflow-x:auto;gap:0;padding:10px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .vb-media-strip::-webkit-scrollbar{display:none}
+  .vb-featured-label{font-size:8px;letter-spacing:2px;white-space:nowrap}
+  .vb-media-logos-wrap img{height:20px;min-width:180px}
 
   /* ── CITY IMAGE SECTION ── */
   .city-grid{grid-template-columns:1fr;padding:28px 16px;gap:20px}
