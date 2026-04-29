@@ -1710,6 +1710,7 @@ function renderTrainer(key){
 // ── INIT PAGE ───────────────────────────────────────────────────────
 function initPage(ev){
   FEATURED=ev;
+  try{
   document.getElementById('heroTag').textContent='Live Online Event \u00b7 '+ev.city+' \u00b7 2026';
   document.getElementById('heroLoc').textContent=ev.flag+' '+ev.city+', '+ev.country;
   document.getElementById('heroDates').textContent=ev.dates;
@@ -1800,6 +1801,10 @@ function initPage(ev){
   if(hm) hm.style.display='flex';
   document.getElementById('geoLoader').classList.add('hide');
   setTimeout(()=>document.getElementById('geoLoader').style.display='none',700);
+  }catch(err){
+    console.error('initPage error:', err.message, err.stack);
+    hideLoader();
+  }
 }
 
 // Safety net — if initPage throws, always hide loader
