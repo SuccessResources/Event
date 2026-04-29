@@ -1998,14 +1998,30 @@ function hideLoader(){
       const match = EVENTS.find(e => e.citySlug === cityParam);
       if(match){ initPage(match); return; }
     }
-    // Normal geo detection — abort after 4 s so the loader never hangs
+    // Geo detection: /api/geo (Vercel edge header) → ipapi.co fallback → default
     try{
       const ctrl=new AbortController();
       const tid=setTimeout(()=>ctrl.abort(),4000);
-      const r=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY,{signal:ctrl.signal});
+      let code='';
+      try{
+        // Primary: Vercel injects x-vercel-ip-country, served by /api/geo
+        const r=await fetch('/api/geo',{signal:ctrl.signal});
+        const d=await r.json();
+        code=d.country_code||'';
+      }catch(e1){
+        // Fallback: ipapi.co
+        try{
+          clearTimeout(tid);
+          const ctrl2=new AbortController();
+          const tid2=setTimeout(()=>ctrl2.abort(),4000);
+          const r2=await fetch('https://ipapi.co/json/?key='+IPAPI_KEY,{signal:ctrl2.signal});
+          clearTimeout(tid2);
+          const d2=await r2.json();
+          code=d2.country_code||'';
+        }catch(e2){}
+      }
       clearTimeout(tid);
-      const d=await r.json();
-      initPage(findNearest(d.country_code||''));
+      initPage(findNearest(code));
     }catch(e){initPage(findNearest(''));}
   }catch(e){
     // Last-resort: ensure loader is always hidden even if initPage throws
