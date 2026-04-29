@@ -1615,6 +1615,9 @@ const ONLINE_PRICE   = 19;          // online pass is always $19 USD
 let   FEATURED       = null;
 
 // ── TRAINERS  (data mirrors Google Sheet — Trainers tab) ────────────
+// Currency symbol helper
+function s(cur){ var m={'USD':'$','EUR':'€','GBP':'£','MYR':'RM','SGD':'S$'}; return m[cur]||cur+' '; }
+
 const TRAINERS = {
   Arnon:{
     init:'AB', first:'Arnon', last:'Barnes',
@@ -1791,6 +1794,12 @@ function initPage(ev){
   document.getElementById('geoLoader').classList.add('hide');
   setTimeout(()=>document.getElementById('geoLoader').style.display='none',700);
 }
+
+// Safety net — if initPage throws, always hide loader
+window.addEventListener('error', function(){
+  var l=document.getElementById('geoLoader');
+  if(l){ l.classList.add('hide'); setTimeout(function(){ l.style.display='none'; },100); }
+});
 
 // ── COUNTDOWN ───────────────────────────────────────────────────────
 function startCountdown(t){
