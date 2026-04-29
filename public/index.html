@@ -631,6 +631,12 @@ footer a:hover{color:var(--gold-lt)}
   .city-col-right{display:none}
   .city-image-section{min-height:auto}
 }
+
+.city-title-above{padding:40px 40px 24px;max-width:760px}
+.city-movement-title-above{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,44px);font-weight:800;color:var(--forest);line-height:1.15;margin-top:10px;letter-spacing:-0.5px}
+@media(max-width:900px){
+  .city-title-above{padding:28px 20px 16px}
+}
 </style>
 </head>
 <body>
@@ -898,7 +904,12 @@ footer a:hover{color:var(--gold-lt)}
 <!-- WORLD TOUR SECTION -->
 <section class="tour-section" id="register">
   <div class="si">
-    <!-- ── CITY IMAGE SECTION ──────────────────────────────────────────── -->
+    <!-- ── CITY TITLE — outside image ───────────────────────────────────── -->
+    <div class="city-title-above">
+      <div class="tour-header-tag">2026 World Tour</div>
+      <h2 class="city-movement-title-above">This Is Not a Local Event.<br>It&rsquo;s a Global Movement.</h2>
+    </div>
+<!-- ── CITY IMAGE SECTION ──────────────────────────────────────────── -->
     <div class="city-image-section" id="cityImageSection">
       <!-- Background city image -->
       <div class="city-img-bg" id="cityImgBg"></div>
@@ -908,8 +919,6 @@ footer a:hover{color:var(--gold-lt)}
       <div class="city-grid">
         <!-- Left: message -->
         <div class="city-col-left">
-          <div class="tour-header-tag" style="color:rgba(255,255,255,0.7)">2026 World Tour</div>
-          <h2 class="city-movement-title">This Is Not a Local Event.<br>It&rsquo;s a Global Movement.</h2>
           <p class="city-movement-sub">From Europe to Asia, this experience is moving city to city, with thousands of business owners, professionals and investors stepping into this room at each stop.</p>
           <div class="city-urgency">
             <p>The tour is already moving.</p>
