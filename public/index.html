@@ -1,19 +1,19 @@
-<!DOCTYPE html
-<html lang="en"
-<head
-<meta charset="UTF-8"
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"
-<link rel="icon" type="image/x-icon" href="/favicon.ico"
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"
-<meta name="viewport" content="width=device-width, initial-scale=1.0"
-<titleMillionaire Mind Intensive — Live Online Event 2026</title
-<!-- Google Tag Manager --
-<script(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-T79PHNK");</script
-<!-- Stripe --
-<script async src="https://js.stripe.com/v3/buy-button.js"</script
-<!-- Brand fonts: Cinzel = Trajan Pro web equivalent | Montserrat = Gotham web equivalent --
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"
-<style
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millionaire Mind Intensive — Live Online Event 2026</title>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-T79PHNK");</script>
+<!-- Stripe -->
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+<!-- Brand fonts: Cinzel = Trajan Pro web equivalent | Montserrat = Gotham web equivalent -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
 /* ═══════════════════════════════════════════════════════
    MILLIONAIRE MIND® BRAND GUIDE — LIGHT / WHITE THEME
    Colors: #054b03 forest | #028f02 green | #dabf88 gold-light | #a78138 gold
@@ -348,7 +348,7 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 /* ── MODAL — Starbucks × Apple ── */
 .modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,18,14,0.55);backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px}
 .modal-ov.open{display:flex}
-.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:840px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06);overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:840px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06)}
 /* Left panel — online (white) */
 .mpanel-online{background:#fff;padding:40px 36px;display:flex;flex-direction:column;position:relative}
 /* Right panel — in-person (very light green) */
@@ -399,21 +399,7 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .btn-modal-live:hover{background:#2a4a3e;transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.14)}
 .mpanel-skip{display:block;text-align:center;font-size:12px;color:var(--muted-lt);cursor:pointer;transition:color .2s;background:none;border:none;width:100%;font-family:inherit;padding:4px 0}
 .mpanel-skip:hover{color:var(--forest)}
-@media(max-width:700px){.modal-box{
-  grid-template-columns:1fr;
-  max-width:100%;
-  width:100%;
-  max-height:92vh;
-  border-radius:20px 20px 0 0;
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  overflow-y:auto;
-  overscroll-behavior:contain;
-  -webkit-overflow-scrolling:touch
-}
-.modal-ov.open{align-items:flex-end;padding:0}.mpanel-live{border-left:none;border-top:1px solid var(--border)}}
+@media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid var(--border)}}
 
 /* ── NEW FUNNEL SECTIONS ── */
 /* Problem section */
@@ -540,44 +526,44 @@ footer a:hover{color:var(--gold-lt)}
   .nav-links{display:none}
   .nav-brand .nav-intensive{font-size:8px}
 
-  /* ── HERO ── */
-  .hero{background:var(--white);padding:72px 20px 24px;align-items:flex-start;min-height:auto}
-  .hero-inner{display:flex!important;flex-direction:column!important}
+  /* ── HERO — clean single column, headline first ── */
+  .hero{
+    background:var(--white);
+    padding:72px 20px 24px;
+    align-items:flex-start;
+    min-height:auto
+  }
+  .hero-inner{display:flex!important;flex-direction:column!important;gap:0}
+  /* headline first */
   .hero-left{order:1!important;padding-bottom:0}
+  /* now-live + image + infobar after */
   .hero-right{order:2!important;padding-top:12px;width:100%;display:flex;flex-direction:column}
   .hero-now-live{order:1;margin-bottom:8px}
-  .hero-img-wrap{order:2}
-  .hero-info-bar{order:3;margin-top:12px}
-  /* Hero image on mobile — show below info bar, full width */
-  .hero-img-wrap{display:block;margin-top:16px;width:100%}
+  .hero-img-wrap{order:2;display:block;margin-top:16px;width:100%}
   .hero-img-wrap img{max-width:100%;height:auto;object-fit:contain}
-  /* Info bar: compact single horizontal strip on mobile */
-  .hero-info-bar{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-    width:100%;
-    max-width:100%;
-    border-radius:10px;
-    padding:12px 14px;
-    background:#fff;
-    box-shadow:0 2px 12px rgba(0,0,0,0.07)
-  }
-  .hib-item{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    gap:10px;
-    padding:4px 0;
-    border-right:none;
-    border-bottom:1px solid rgba(0,0,0,0.05);
-    text-align:left
-  }
+  .hero-info-bar{order:3;margin-top:12px;display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
+  /* Hide location row */
+  .hib-item:first-child{display:none}
+  .hib-item{display:flex;flex-direction:row;align-items:center;gap:10px;padding:4px 0;border-right:none;border-bottom:1px solid rgba(0,0,0,0.05);text-align:left}
   .hib-item:last-child{border-bottom:none}
   .hib-icon svg{width:16px;height:16px;flex-shrink:0}
-  /* Hide location pill on mobile */
-  .hib-item:first-child{display:none}
-  .hib-label{font-size:12px;letter-spacing:.3px;text-align:left;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hib-label{font-size:12px;letter-spacing:.3px;text-align:left;white-space:nowrap}
+  /* Info bar: 2x2 grid on mobile */
+  .hero-info-bar{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    width:100%;
+    max-width:100%;
+    border-radius:10px
+  }
+  .hib-item{
+    padding:12px 8px;
+    border-right:none;
+    border-bottom:1px solid rgba(0,0,0,0.07)
+  }
+  .hib-item:nth-child(odd){border-right:1px solid rgba(0,0,0,0.07)}
+  .hib-item:nth-child(3),.hib-item:nth-child(4){border-bottom:none}
+  .hib-icon svg{width:20px;height:20px}
   /* Now live label */
   .hero-now-live{font-size:10px;margin-bottom:8px}
   /* Reduce title size on mobile */
@@ -706,642 +692,642 @@ footer a:hover{color:var(--gold-lt)}
 
 .tour-feat-price{margin:16px 0 12px}
 .tour-price-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#333;background:#F7F7F7;border:1px solid #E5E5E5;padding:5px 14px;border-radius:100px}
-</style
-</head
-<body
+</style>
+</head>
+<body>
 
-<!-- GTM noscript --
-<noscript<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T79PHNK" height="0" width="0" style="display:none;visibility:hidden"</iframe</noscript
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T79PHNK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- SVG Icon System — outline, 1.5px stroke, consistent weight --
-<svg id="icon-defs" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"
-  <symbol id="i-globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="10" cy="10" r="8"/
-    <ellipse cx="10" cy="10" rx="3.5" ry="8"/
-    <line x1="2.5" y1="10" x2="17.5" y2="10"/
-    <line x1="4.5" y1="6.5" x2="15.5" y2="6.5"/
-    <line x1="4.5" y1="13.5" x2="15.5" y2="13.5"/
-  </symbol
-  <symbol id="i-lock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <rect x="4" y="9" width="12" height="9" rx="2"/
-    <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/
-  </symbol
-  <symbol id="i-calendar" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <rect x="3" y="4" width="14" height="13" rx="2"/
-    <line x1="3" y1="9" x2="17" y2="9"/
-    <line x1="7" y1="2" x2="7" y2="6"/
-    <line x1="13" y1="2" x2="13" y2="6"/
-  </symbol
-  <symbol id="i-briefcase" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <rect x="2" y="7" width="16" height="11" rx="2"/
-    <path d="M7 7V5a3 3 0 0 1 6 0v2"/
-    <line x1="2" y1="12" x2="18" y2="12"/
-  </symbol
-  <symbol id="i-trending" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <polyline points="2,15 7,9 11,12 18,4"/
-    <polyline points="13,4 18,4 18,9"/
-  </symbol
-  <symbol id="i-layers" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <polygon points="10,2 18,7 10,12 2,7"/
-    <polyline points="2,12 10,17 18,12"/
-    <polyline points="2,9.5 10,14.5 18,9.5"/
-  </symbol
-  <symbol id="i-target" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="10" cy="10" r="8"/
-    <circle cx="10" cy="10" r="4"/
-    <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/
-  </symbol
-  <symbol id="i-clock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="10" cy="10" r="8"/
-    <polyline points="10,5 10,10 13.5,12.5"/
-  </symbol
-  <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="10" cy="10" r="8"/
-    <polyline points="6.5,10.5 9,13 14.5,7.5"/
-  </symbol
-  <symbol id="i-arrow-r" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <line x1="3" y1="10" x2="17" y2="10"/
-    <polyline points="12,5 17,10 12,15"/
-  </symbol
-  <symbol id="i-people" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="7" cy="7" r="3"/
-    <path d="M1 17c0-3 2.5-5 6-5s6 2 6 5"/
-    <circle cx="14" cy="7" r="2.5"/
-    <path d="M14 12c2.5.6 4 2.5 4 5"/
-  </symbol
-  <symbol id="i-plane" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <path d="M17 3L9 11M7 9L3 8l-1 2 4 2.5L7.5 17l2-1L9 12l8-9z"/
-  </symbol
-  <symbol id="i-screen" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <rect x="2" y="3" width="16" height="11" rx="2"/
-    <line x1="7" y1="17" x2="13" y2="17"/
-    <line x1="10" y1="14" x2="10" y2="17"/
-  </symbol
-  <symbol id="i-users-small" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-    <circle cx="8" cy="6" r="3"/
-    <path d="M2 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/
-    <circle cx="15" cy="7" r="2"/
-    <path d="M15 11c2 .5 3.5 2 3.5 4.5"/
-  </symbol
-</svg
+<!-- SVG Icon System — outline, 1.5px stroke, consistent weight -->
+<svg id="icon-defs" xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <ellipse cx="10" cy="10" rx="3.5" ry="8"/>
+    <line x1="2.5" y1="10" x2="17.5" y2="10"/>
+    <line x1="4.5" y1="6.5" x2="15.5" y2="6.5"/>
+    <line x1="4.5" y1="13.5" x2="15.5" y2="13.5"/>
+  </symbol>
+  <symbol id="i-lock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="9" width="12" height="9" rx="2"/>
+    <path d="M7 9V6.5a3 3 0 0 1 6 0V9"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="14" height="13" rx="2"/>
+    <line x1="3" y1="9" x2="17" y2="9"/>
+    <line x1="7" y1="2" x2="7" y2="6"/>
+    <line x1="13" y1="2" x2="13" y2="6"/>
+  </symbol>
+  <symbol id="i-briefcase" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="16" height="11" rx="2"/>
+    <path d="M7 7V5a3 3 0 0 1 6 0v2"/>
+    <line x1="2" y1="12" x2="18" y2="12"/>
+  </symbol>
+  <symbol id="i-trending" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="2,15 7,9 11,12 18,4"/>
+    <polyline points="13,4 18,4 18,9"/>
+  </symbol>
+  <symbol id="i-layers" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="10,2 18,7 10,12 2,7"/>
+    <polyline points="2,12 10,17 18,12"/>
+    <polyline points="2,9.5 10,14.5 18,9.5"/>
+  </symbol>
+  <symbol id="i-target" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <circle cx="10" cy="10" r="4"/>
+    <circle cx="10" cy="10" r="1.5" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-clock" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <polyline points="10,5 10,10 13.5,12.5"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="8"/>
+    <polyline points="6.5,10.5 9,13 14.5,7.5"/>
+  </symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="3" y1="10" x2="17" y2="10"/>
+    <polyline points="12,5 17,10 12,15"/>
+  </symbol>
+  <symbol id="i-people" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="7" cy="7" r="3"/>
+    <path d="M1 17c0-3 2.5-5 6-5s6 2 6 5"/>
+    <circle cx="14" cy="7" r="2.5"/>
+    <path d="M14 12c2.5.6 4 2.5 4 5"/>
+  </symbol>
+  <symbol id="i-plane" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 3L9 11M7 9L3 8l-1 2 4 2.5L7.5 17l2-1L9 12l8-9z"/>
+  </symbol>
+  <symbol id="i-screen" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="16" height="11" rx="2"/>
+    <line x1="7" y1="17" x2="13" y2="17"/>
+    <line x1="10" y1="14" x2="10" y2="17"/>
+  </symbol>
+  <symbol id="i-users-small" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="6" r="3"/>
+    <path d="M2 18c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+    <circle cx="15" cy="7" r="2"/>
+    <path d="M15 11c2 .5 3.5 2 3.5 4.5"/>
+  </symbol>
+</svg>
 
-<!-- LOADER --
-<div class="geo-loader" id="geoLoader"<div<div class="loader-ring"</div<p class="loader-txt"Finding your nearest event</p</div</div
+<!-- LOADER -->
+<div class="geo-loader" id="geoLoader"><div><div class="loader-ring"></div><p class="loader-txt">Finding your nearest event</p></div></div>
 
-<!-- MODAL — two-panel premium ticket selector --
-<div class="modal-ov" id="modal"
-  <div class="modal-box"
-    <!-- LEFT: Online ticket --
-    <div class="mpanel-online"
-      <div class="mpanel-tag"<svg class="icon icon-sm" aria-hidden="true"<use href="#i-globe"/</svg Online Ticket</div
-      <div class="mpanel-sig"Millionaire Mind Intensive</div
-      <div class="mpanel-city" id="mEvName"</div
-      <div class="mpanel-dates" id="mEvDates"</div
-      <div class="mpanel-time" id="mEvTime"</div
-      <div class="mpanel-divider"</div
-      <div class="mpanel-list-label"What&rsquo;s included online:</div
-      <ul class="mpanel-list"
-        <liFull 3-day live stream &mdash; watch from anywhere</li
-        <liMillionaire Mind Digital Workbook</li
-        <liPre-Training Intention Sheet</li
-        <liAlumni Peer Network &mdash; 200+ Entrepreneurs</li
-        <liWeekly Review &amp; Relearn Sessions</li
-      </ul
-      <div class="mpanel-price-row"
-        <span class="mpanel-was"$199</span
-        <span class="mpanel-now"$19</span
-        <span class="mpanel-badge"Early Bird</span
-      </div
-      <div class="mpanel-guarantee"100% Money-Back &middot; If Day 1 doesn&rsquo;t blow your mind, we refund every cent</div
-      <div class="mpanel-cta-label"Secure your online seat</div
-      <a id="onlineCta" href="#" class="mpanel-buy-btn" target="_blank" rel="noopener"Secure My Online Seat &rarr;</a
-    </div
-    <!-- RIGHT: In-person upgrade --
-    <div class="mpanel-live"
-      <button class="modal-close" onclick="closeModal()"&#215;</button
-      <div class="mpanel-add-label"Add to your online ticket</div
-      <h3 class="mpanel-live-title"Be Physically <emIn the Room</em in <span id="mLiveCity"</span</h3
-      <p class="mpanel-live-desc"Your $19 online seat is confirmed on the left. Add this upgrade to also attend in person at the venue &mdash; same event, different experience.</p
-      <div class="mpanel-divider"</div
-      <div class="mpanel-benefits-label"Extra benefits in-person:</div
-      <ul class="mpanel-benefits" id="mBenefits"
-        <liPhysical seat at the venue</li
-        <liLive energy in the room with 200+ entrepreneurs</li
-        <liDirect interaction with your trainer on stage</li
-        <liIn-person networking and peer connections</li
-        <liAccess to VIP evening social after Day 1</li
-      </ul
-      <div class="mpanel-live-price" id="mLiveNow"</div
-      <div class="mpanel-live-price-note"live event ticket &middot; today only</div
-      <a id="liveCta" href="#" class="mpanel-buy-btn mpanel-buy-btn-live" target="_blank" rel="noopener"Upgrade to In-Person VIP &rarr;</a
-      <button class="mpanel-skip" onclick="closeModal()"No thanks &mdash; online only &rarr;</button
-    </div
-  </div
-</div
+<!-- MODAL — two-panel premium ticket selector -->
+<div class="modal-ov" id="modal">
+  <div class="modal-box">
+    <!-- LEFT: Online ticket -->
+    <div class="mpanel-online">
+      <div class="mpanel-tag"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-globe"/></svg> Online Ticket</div>
+      <div class="mpanel-sig">Millionaire Mind Intensive</div>
+      <div class="mpanel-city" id="mEvName"></div>
+      <div class="mpanel-dates" id="mEvDates"></div>
+      <div class="mpanel-time" id="mEvTime"></div>
+      <div class="mpanel-divider"></div>
+      <div class="mpanel-list-label">What&rsquo;s included online:</div>
+      <ul class="mpanel-list">
+        <li>Full 3-day live stream &mdash; watch from anywhere</li>
+        <li>Millionaire Mind Digital Workbook</li>
+        <li>Pre-Training Intention Sheet</li>
+        <li>Alumni Peer Network &mdash; 200+ Entrepreneurs</li>
+        <li>Weekly Review &amp; Relearn Sessions</li>
+      </ul>
+      <div class="mpanel-price-row">
+        <span class="mpanel-was">$199</span>
+        <span class="mpanel-now">$19</span>
+        <span class="mpanel-badge">Early Bird</span>
+      </div>
+      <div class="mpanel-guarantee">100% Money-Back &middot; If Day 1 doesn&rsquo;t blow your mind, we refund every cent</div>
+      <div class="mpanel-cta-label">Secure your online seat</div>
+      <a id="onlineCta" href="#" class="mpanel-buy-btn" target="_blank" rel="noopener">Secure My Online Seat &rarr;</a>
+    </div>
+    <!-- RIGHT: In-person upgrade -->
+    <div class="mpanel-live">
+      <button class="modal-close" onclick="closeModal()">&#215;</button>
+      <div class="mpanel-add-label">Add to your online ticket</div>
+      <h3 class="mpanel-live-title">Be Physically <em>In the Room</em> in <span id="mLiveCity"></span></h3>
+      <p class="mpanel-live-desc">Your $19 online seat is confirmed on the left. Add this upgrade to also attend in person at the venue &mdash; same event, different experience.</p>
+      <div class="mpanel-divider"></div>
+      <div class="mpanel-benefits-label">Extra benefits in-person:</div>
+      <ul class="mpanel-benefits" id="mBenefits">
+        <li>Physical seat at the venue</li>
+        <li>Live energy in the room with 200+ entrepreneurs</li>
+        <li>Direct interaction with your trainer on stage</li>
+        <li>In-person networking and peer connections</li>
+        <li>Access to VIP evening social after Day 1</li>
+      </ul>
+      <div class="mpanel-live-price" id="mLiveNow"></div>
+      <div class="mpanel-live-price-note">live event ticket &middot; today only</div>
+      <a id="liveCta" href="#" class="mpanel-buy-btn mpanel-buy-btn-live" target="_blank" rel="noopener">Upgrade to In-Person VIP &rarr;</a>
+      <button class="mpanel-skip" onclick="closeModal()">No thanks &mdash; online only &rarr;</button>
+    </div>
+  </div>
+</div>
 
-<!-- NAV — full brand identity integrated --
-<nav
-  <a class="nav-brand" href="#"
-    <div
-      <div class="nav-name"Millionaire Mind</div
-      <div class="nav-intensive"&mdash; INTENSIVE &mdash;</div
-    </div
-  </a
-  <div class="nav-links"
-    <a href="#about" class="nav-link"About</a
-    <a href="#curriculum" class="nav-link"Agenda</a
-    <a href="#who" class="nav-link"Who It&rsquo;s For</a
-    <a href="#faq" class="nav-link"FAQ</a
-    <a href="#testimonials" class="nav-link"Results</a
-  </div
-  <button class="btn-nav" onclick="openFeatured()"Save My Seat</button
-</nav
+<!-- NAV — full brand identity integrated -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div>
+      <div class="nav-name">Millionaire Mind</div>
+      <div class="nav-intensive">&mdash; INTENSIVE &mdash;</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#curriculum" class="nav-link">Agenda</a>
+    <a href="#who" class="nav-link">Who It&rsquo;s For</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#testimonials" class="nav-link">Results</a>
+  </div>
+  <button class="btn-nav" onclick="openFeatured()">Save My Seat</button>
+</nav>
 
-<!-- ╔══════════════════════════════════════╗ --
-<!-- ║  HERO                                ║ --
-<!-- ╚══════════════════════════════════════╝ --
-<section class="hero" id="hero"
+<!-- ╔══════════════════════════════════════╗ -->
+<!-- ║  HERO                                ║ -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="hero" id="hero">
 
-  <div class="hero-inner"
-    <div class="hero-left"
-      <!-- Hidden JS targets kept for compatibility --
-      <div id="heroTag" style="display:none"</div
-      <div id="heroLoc" style="display:none"</div
-      <div style="display:none"<div id="countdown"<span id="cdD"</span<span id="cdH"</span<span id="cdM"</span<span id="cdS"</span</div</div
+  <div class="hero-inner">
+    <div class="hero-left">
+      <!-- Hidden JS targets kept for compatibility -->
+      <div id="heroTag" style="display:none"></div>
+      <div id="heroLoc" style="display:none"></div>
+      <div style="display:none"><div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div></div>
 
-      <h1 class="hero-title"Loading...</h1
-      <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px"</p
+      <h1 class="hero-title">Loading...</h1>
+      <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px"></p>
 
-      <button class="btn-primary" onclick="openFeatured()"Save My Seat Now &nbsp;&rarr;</button
-      <div class="hero-trust"<svg class="icon icon-sm" aria-hidden="true"<use href="#i-clock"/</svg Takes less than 60 seconds &middot; Limited seats per city</div
+      <button class="btn-primary" onclick="openFeatured()">Save My Seat Now &nbsp;&rarr;</button>
+      <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds &middot; Limited seats per city</div>
 
-      <!-- Hidden meta for JS compatibility --
-      <div style="display:none" id="heroDates"</div
-      <div style="display:none" id="heroTime"</div
-    </div
-    <div class="hero-right"
-      <!-- Now Live In label above pill --
-      <div class="hero-now-live"Now Live In <span id="heroCity"Your City</span</div
-      <!-- Info bar --
-      <div class="hero-info-bar"
-        <div class="hib-item"
-          <div class="hib-icon"<svg viewBox="0 0 24 24"<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/<circle cx="12" cy="10" r="3"/</svg</div
-          <div class="hib-label" id="hibCity"Your City</div
-        </div
-        <div class="hib-item"
-          <div class="hib-icon"<svg viewBox="0 0 24 24"<rect x="3" y="4" width="18" height="18" rx="2"/<line x1="3" y1="10" x2="21" y2="10"/<line x1="8" y1="2" x2="8" y2="6"/<line x1="16" y1="2" x2="16" y2="6"/</svg</div
-          <div class="hib-label" id="hibDates"Loading...</div
-        </div
-        <div class="hib-item"
-          <div class="hib-icon"<svg viewBox="0 0 24 24"<circle cx="12" cy="12" r="10"/<polyline points="12 6 12 12 16 14"/</svg</div
-          <div class="hib-label" id="hibTime"Loading...</div
-        </div
-        <div class="hib-item"
-          <div class="hib-icon"<svg viewBox="0 0 24 24"<rect x="2" y="3" width="20" height="14" rx="2"/<line x1="8" y1="21" x2="16" y2="21"/<line x1="12" y1="17" x2="12" y2="21"/</svg</div
-          <div class="hib-label"Live Online</div
-        </div
-      </div
+      <!-- Hidden meta for JS compatibility -->
+      <div style="display:none" id="heroDates"></div>
+      <div style="display:none" id="heroTime"></div>
+    </div>
+    <div class="hero-right">
+      <!-- Now Live In label above pill -->
+      <div class="hero-now-live">Now Live In <span id="heroCity">Your City</span></div>
+      <!-- Info bar -->
+      <div class="hero-info-bar">
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="hib-label" id="hibCity">Your City</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
+          <div class="hib-label" id="hibDates">Loading...</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="hib-label" id="hibTime">Loading...</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="hib-label">Live Online</div>
+        </div>
+      </div>
 
-      <!-- Hero image — below pill, blends with white background --
-      <div class="hero-img-wrap"
-        <img src="/assets/hero/Hero-desktop.webp" alt="Millionaire Mind Intensive" loading="eager"
-      </div
-    </div
-  </div
-</section
-
-
-<!-- STATS --
-<div class="stats-bar"
-  <div class="si"
-    <div class="stat-item"
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/<circle cx="9" cy="7" r="4"/<path d="M23 21v-2a4 4 0 00-3-3.87"/<path d="M16 3.13a4 4 0 010 7.75"/</svg
-      <div<div class="stat-num"50,000+</div<div class="stat-label"Participants Worldwide</div
-
-    </div
-    </div
-    <div class="stat-item"
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"<circle cx="12" cy="12" r="10"/<line x1="2" y1="12" x2="22" y2="12"/<path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/</svg
-      <div<div class="stat-num"30+</div<div class="stat-label"Countries Reached</div</div
-    </div
-    <div class="stat-item"
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"<rect x="3" y="4" width="18" height="18" rx="2"/<line x1="3" y1="10" x2="21" y2="10"/<line x1="8" y1="2" x2="8" y2="6"/<line x1="16" y1="2" x2="16" y2="6"/<polyline points="9,15 11,17 15,13"/</svg
-      <div<div class="stat-num"20+</div<div class="stat-label"Years of Transformation</div</div
-    </div
-    <div class="stat-item"
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"<circle cx="12" cy="8" r="6"/<path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/</svg
-      <div<div class="stat-num"</div<div class="stat-label"Proven Frameworks<br<span style="font-weight:400;opacity:.7"Real Results</span</div</div
-    </div
-  </div
-</div
+      <!-- Hero image — below pill, blends with white background -->
+      <div class="hero-img-wrap">
+        <img src="/assets/hero/Hero-desktop.webp" alt="Millionaire Mind Intensive" loading="eager">
+      </div>
+    </div>
+  </div>
+</section>
 
 
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="si">
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <div><div class="stat-num">50,000+</div><div class="stat-label">Participants Worldwide</div>
+
+    </div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <div><div class="stat-num">30+</div><div class="stat-label">Countries Reached</div></div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><polyline points="9,15 11,17 15,13"/></svg>
+      <div><div class="stat-num">20+</div><div class="stat-label">Years of Transformation</div></div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      <div><div class="stat-num"></div><div class="stat-label">Proven Frameworks<br><span style="font-weight:400;opacity:.7">Real Results</span></div></div>
+    </div>
+  </div>
+</div>
 
 
-<!-- VIDEO BRIDGE --
-<section class="video-bridge"
-  <div class="si"
-    <div class="vb-inner"
-      <div class="vb-text"
-        <h2 class="vb-title"Why What You&rsquo;ve Tried Hasn&rsquo;t Worked Yet<br<span style="color:var(--green)"See What Actually Happens Inside</span</h2
-        <p class="vb-sub"Thousands of business owners and professionals have sat in this exact experience. Watch what it looks like — and what it does.</p
-        <div class="vb-media-strip"
-          <span class="vb-featured-label"Featured by</span
-          <div class="vb-media-logos-wrap"
-            <img src="/assets/All-Media-desktop.svg" alt="As featured in Forbes, CNBC, CNN, and more" loading="lazy"
-          </div
-        </div
-      </div
-      <div class="vb-player"
-        <div class="vb-facade" id="vbFacade" onclick="playVb()" onmouseenter="preloadVb()"
-          <div class="vb-facade-bg"</div
-          <div class="vb-play"
-            <svg viewBox="0 0 64 64" fill="none"
-              <circle cx="32" cy="32" r="31" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/
-              <polygon points="26,20 50,32 26,44" fill="#fff"/
-            </svg
-          </div
-        </div
+
+
+<!-- VIDEO BRIDGE -->
+<section class="video-bridge">
+  <div class="si">
+    <div class="vb-inner">
+      <div class="vb-text">
+        <h2 class="vb-title">Why What You&rsquo;ve Tried Hasn&rsquo;t Worked Yet<br><span style="color:var(--green)">See What Actually Happens Inside</span></h2>
+        <p class="vb-sub">Thousands of business owners and professionals have sat in this exact experience. Watch what it looks like — and what it does.</p>
+        <div class="vb-media-strip">
+          <span class="vb-featured-label">Featured by</span>
+          <div class="vb-media-logos-wrap">
+            <img src="/assets/All-Media-desktop.svg" alt="As featured in Forbes, CNBC, CNN, and more" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="vb-player">
+        <div class="vb-facade" id="vbFacade" onclick="playVb()" onmouseenter="preloadVb()">
+          <div class="vb-facade-bg"></div>
+          <div class="vb-play">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="31" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>
+              <polygon points="26,20 50,32 26,44" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
         <iframe id="vbFrame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none"
-          title="Millionaire Mind Intensive"</iframe
-      </div
-    </div
-  </div
-</section
+          title="Millionaire Mind Intensive"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- WORLD TOUR SECTION --
-<section class="tour-section" id="register"
-  <div class="si"
-    <!-- ── CITY TITLE — outside image ───────────────────────────────────── --
-    <div class="city-title-above"
-      <div class="tour-header-tag"2026 World Tour</div
-      <h2 class="city-movement-title-above"This Is Not a Local Event.<brIt&rsquo;s a Global Movement.</h2
-    </div
-<!-- ── CITY IMAGE SECTION ──────────────────────────────────────────── --
-    <div class="city-image-section" id="cityImageSection"
-      <!-- Background city image --
-      <div class="city-img-bg" id="cityImgBg"</div
-      <!-- Dark gradient overlay --
-      <div class="city-img-overlay"</div
-      <!-- 3-column grid --
-      <div class="city-grid"
-        <!-- Left: message --
-        <div class="city-col-left"
-          <p class="city-movement-sub"From Europe to Asia, this experience is moving city to city, with thousands of business owners, professionals and investors stepping into this room at each stop.</p
-          <div class="city-urgency"
-            <pThe tour is already moving.</p
-            <pLondon is filling. Berlin is next.</p
-            <p<strong id="tourUrgencyCity" style="color:var(--forest,#1E3932)"Your city</strong is now open.</p
-          </div
-          <p class="city-accent"You don&rsquo;t join later.<brYou join when it reaches you.</p
-        </div
-        <!-- Center: floating card --
-        <div class="city-col-center"
-          <div id="tourFeatured"</div
-        </div
-        <!-- Right: empty — city image shows through --
-        <div class="city-col-right"</div
-      </div
-    </div
+<!-- WORLD TOUR SECTION -->
+<section class="tour-section" id="register">
+  <div class="si">
+    <!-- ── CITY TITLE — outside image ───────────────────────────────────── -->
+    <div class="city-title-above">
+      <div class="tour-header-tag">2026 World Tour</div>
+      <h2 class="city-movement-title-above">This Is Not a Local Event.<br>It&rsquo;s a Global Movement.</h2>
+    </div>
+<!-- ── CITY IMAGE SECTION ──────────────────────────────────────────── -->
+    <div class="city-image-section" id="cityImageSection">
+      <!-- Background city image -->
+      <div class="city-img-bg" id="cityImgBg"></div>
+      <!-- Dark gradient overlay -->
+      <div class="city-img-overlay"></div>
+      <!-- 3-column grid -->
+      <div class="city-grid">
+        <!-- Left: message -->
+        <div class="city-col-left">
+          <p class="city-movement-sub">From Europe to Asia, this experience is moving city to city, with thousands of business owners, professionals and investors stepping into this room at each stop.</p>
+          <div class="city-urgency">
+            <p>The tour is already moving.</p>
+            <p>London is filling. Berlin is next.</p>
+            <p><strong id="tourUrgencyCity" style="color:var(--forest,#1E3932)">Your city</strong> is now open.</p>
+          </div>
+          <p class="city-accent">You don&rsquo;t join later.<br>You join when it reaches you.</p>
+        </div>
+        <!-- Center: floating card -->
+        <div class="city-col-center">
+          <div id="tourFeatured"></div>
+        </div>
+        <!-- Right: empty — city image shows through -->
+        <div class="city-col-right"></div>
+      </div>
+    </div>
 
-    <!-- ── NEXT STOPS LIST ─────────────────────────────────────────────── --
-    <div class="tour-next-header"
-      <div class="tour-next-line"</div
-      <span class="tour-next-label"Next Stops on the Tour</span
-      <div class="tour-next-line"</div
-    </div
-    <div id="tourList" class="tour-list"</div
-    <button id="tourViewAll" class="tour-view-all" onclick="toggleAllCities(this)"View all cities &darr;</button
-  </div
+    <!-- ── NEXT STOPS LIST ─────────────────────────────────────────────── -->
+    <div class="tour-next-header">
+      <div class="tour-next-line"></div>
+      <span class="tour-next-label">Next Stops on the Tour</span>
+      <div class="tour-next-line"></div>
+    </div>
+    <div id="tourList" class="tour-list"></div>
+    <button id="tourViewAll" class="tour-view-all" onclick="toggleAllCities(this)">View all cities &darr;</button>
+  </div>
 
-  <!-- ── STATS STRIP (full width) ────────────────────────────────────── --
-  <div class="tour-stats-strip"
-    <div class="si"
-      <div class="tour-stats-inner"
-        <div class="tsb-item"
-          <svg class="icon" aria-hidden="true"<use href="#i-globe"/</svg
-          <div class="tsb-num"12+</div
-          <div class="tsb-label"Cities</div
-        </div
-        <div class="tsb-item"
-          <svg class="icon" aria-hidden="true"<use href="#i-people"/</svg
-          <div class="tsb-label"Thousands of Participants</div
-        </div
-        <div class="tsb-item"
-          <svg class="icon" aria-hidden="true"<use href="#i-plane"/</svg
-          <div class="tsb-label"One Movement Around the World</div
-        </div
-        <div class="tsb-item"
-          <svg class="icon" aria-hidden="true"<use href="#i-calendar"/</svg
-          <div class="tsb-label"Each City. Limited Seats.</div
-        </div
-        <div class="tsb-cta"
-          <svg class="icon" aria-hidden="true" style="color:var(--gold)"<use href="#i-globe"/</svg
-          <div class="tsb-cta-text"The tour moves on.<brDon&rsquo;t miss your city.</div
-        </div
-      </div
-    </div
-  </div
-</section
+  <!-- ── STATS STRIP (full width) ────────────────────────────────────── -->
+  <div class="tour-stats-strip">
+    <div class="si">
+      <div class="tour-stats-inner">
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+          <div class="tsb-num">12+</div>
+          <div class="tsb-label">Cities</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-people"/></svg>
+          <div class="tsb-label">Thousands of Participants</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg>
+          <div class="tsb-label">One Movement Around the World</div>
+        </div>
+        <div class="tsb-item">
+          <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>
+          <div class="tsb-label">Each City. Limited Seats.</div>
+        </div>
+        <div class="tsb-cta">
+          <svg class="icon" aria-hidden="true" style="color:var(--gold)"><use href="#i-globe"/></svg>
+          <div class="tsb-cta-text">The tour moves on.<br>Don&rsquo;t miss your city.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ── NEW SECTION 2: PROBLEM (deep pain + self-recognition) ── --
-<section
-  <div class="si"
-    <div class="prob2-grid"
-      <div
-        <div class="stag-line"<spanWhy Most People Stay Stuck</span</div
-        <h2 class="stitle"Why Smart, Hardworking People Still Don&rsquo;t Become <strongFinancially Free</strong</h2
-        <div class="prob2-copy"
-          <pYou already know what to do.</p
-          <p class="muted"You&rsquo;ve read the books.<brTried the strategies.<brWorked harder than most people around you.</p
-          <pAnd yet &mdash; something doesn&rsquo;t add up.</p
-        </div
-        <div class="prob2-divider"</div
-        <div class="prob2-copy" style="margin-bottom:20px"
-          <p class="muted" style="font-size:15px"Income goes up&hellip; but wealth doesn&rsquo;t stay.<brOpportunities appear&hellip; but somehow slip away.<brYou get close to the next level&hellip; then stall.</p
-        </div
-        <div class="prob2-kicker"
-          It&rsquo;s not a strategy problem.<br
-          It&rsquo;s what&rsquo;s running underneath.<br
-          <emAnd until that changes &mdash; no new tactic will fix the result.</em
-        </div
-      </div
-      <div
-        <div class="prob2-stat"
-          <div class="prob2-stat-num"10M+</div
-          <div class="prob2-stat-label"People have sat in this room and confronted exactly what you&rsquo;re describing. The pattern is identical across countries, industries, and income levels.</div
-        </div
-        <div class="prob2-stat"
-          <div class="prob2-stat-num"30</div
-          <div class="prob2-stat-label"Years of evidence showing that the gap between knowing and doing is never a knowledge problem. It&rsquo;s always an internal one.</div
-        </div
-        <div class="prob2-stat"
-          <div class="prob2-stat-num"500</div
-          <div class="prob2-stat-label"Events run every year because once someone fixes what&rsquo;s running underneath, they send the people they care about to do the same.</div
-        </div
-      </div
-    </div
-  </div
-</section
+<!-- ── NEW SECTION 2: PROBLEM (deep pain + self-recognition) ── -->
+<section>
+  <div class="si">
+    <div class="prob2-grid">
+      <div>
+        <div class="stag-line"><span>Why Most People Stay Stuck</span></div>
+        <h2 class="stitle">Why Smart, Hardworking People Still Don&rsquo;t Become <strong>Financially Free</strong></h2>
+        <div class="prob2-copy">
+          <p>You already know what to do.</p>
+          <p class="muted">You&rsquo;ve read the books.<br>Tried the strategies.<br>Worked harder than most people around you.</p>
+          <p>And yet &mdash; something doesn&rsquo;t add up.</p>
+        </div>
+        <div class="prob2-divider"></div>
+        <div class="prob2-copy" style="margin-bottom:20px">
+          <p class="muted" style="font-size:15px">Income goes up&hellip; but wealth doesn&rsquo;t stay.<br>Opportunities appear&hellip; but somehow slip away.<br>You get close to the next level&hellip; then stall.</p>
+        </div>
+        <div class="prob2-kicker">
+          It&rsquo;s not a strategy problem.<br>
+          It&rsquo;s what&rsquo;s running underneath.<br>
+          <em>And until that changes &mdash; no new tactic will fix the result.</em>
+        </div>
+      </div>
+      <div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">10M+</div>
+          <div class="prob2-stat-label">People have sat in this room and confronted exactly what you&rsquo;re describing. The pattern is identical across countries, industries, and income levels.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">30</div>
+          <div class="prob2-stat-label">Years of evidence showing that the gap between knowing and doing is never a knowledge problem. It&rsquo;s always an internal one.</div>
+        </div>
+        <div class="prob2-stat">
+          <div class="prob2-stat-num">500</div>
+          <div class="prob2-stat-label">Events run every year because once someone fixes what&rsquo;s running underneath, they send the people they care about to do the same.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- TESTIMONIALS (VIDEO) --
-<section class="section-bg-off"
-  <div class="si"
-    <div class="stag-line"<spanWhat Graduates Say</span</div
-    <h2 class="stitle"Real People. <strongReal Results.</strong</h2
-    <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75"Across countries, industries and backgrounds &mdash; people have come through this experience and seen what was holding them back.</p
-    <div class="testi-grid"
-      <div class="vid-card"
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'851018349')"
-          <img src="https://vumbnail.com/851018349_large.jpg" alt="Iva Lenards" loading="lazy"
-          <div class="vid-play"<div class="vid-play-btn"<svg viewBox="0 0 24 24"<polygon points="5,3 19,12 5,21"/</svg</div</div
-        </div
-        <div class="vid-info"
-          <div class="vid-result"Mindset Shift</div
-          <p class="vid-quote"&ldquo;I was repeating the same financial patterns without realising it. At MMI, I started to see I had been thinking and reacting the same way for years.&rdquo;</p
-          <div class="vid-person"<div class="vid-av"IL</div<div<div class="vid-name"Iva Lenards</div<div class="vid-role"Antwerp, Belgium</div</div</div
-        </div
-      </div
-      <div class="vid-card"
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1108440962')"
-          <img src="https://vumbnail.com/1108440962_large.jpg" alt="Eamen Al-Mandawi" loading="lazy"
-          <div class="vid-play"<div class="vid-play-btn"<svg viewBox="0 0 24 24"<polygon points="5,3 19,12 5,21"/</svg</div</div
-        </div
-        <div class="vid-info"
-          <div class="vid-result"Internal Breakthrough</div
-          <p class="vid-quote"&ldquo;I was an engineer at BMW. On paper I was doing well. But inside I knew something was still off. MMI showed me success on the outside doesn&rsquo;t mean the limits are gone.&rdquo;</p
-          <div class="vid-person"<div class="vid-av"EA</div<div<div class="vid-name"Eamen Al-Mandawi</div<div class="vid-role"Germany</div</div</div
-        </div
-      </div
-      <div class="vid-card"
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'497262086')"
-          <img src="https://vumbnail.com/497262086_large.jpg" alt="Ryan Rieder" loading="lazy"
-          <div class="vid-play"<div class="vid-play-btn"<svg viewBox="0 0 24 24"<polygon points="5,3 19,12 5,21"/</svg</div</div
-        </div
-        <div class="vid-info"
-          <div class="vid-result"&pound;1M &rarr; &pound;5M in 4 Years</div
-          <p class="vid-quote"&ldquo;My family went through two bankruptcies. After MMI, my business grew from &pound;1M to &pound;5M a year. The shift was entirely in my mindset &mdash; not my strategy.&rdquo;</p
-          <div class="vid-person"<div class="vid-av"RR</div<div<div class="vid-name"Ryan Rieder</div<div class="vid-role"Business Owner, United Kingdom</div</div</div
-        </div
-      </div
-    </div
-  </div
-</section
+<!-- TESTIMONIALS (VIDEO) -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="stag-line"><span>What Graduates Say</span></div>
+    <h2 class="stitle">Real People. <strong>Real Results.</strong></h2>
+    <p style="font-size:15px;color:var(--muted);max-width:580px;line-height:1.75">Across countries, industries and backgrounds &mdash; people have come through this experience and seen what was holding them back.</p>
+    <div class="testi-grid">
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'851018349')">
+          <img src="https://vumbnail.com/851018349_large.jpg" alt="Iva Lenards" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">Mindset Shift</div>
+          <p class="vid-quote">&ldquo;I was repeating the same financial patterns without realising it. At MMI, I started to see I had been thinking and reacting the same way for years.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">IL</div><div><div class="vid-name">Iva Lenards</div><div class="vid-role">Antwerp, Belgium</div></div></div>
+        </div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1108440962')">
+          <img src="https://vumbnail.com/1108440962_large.jpg" alt="Eamen Al-Mandawi" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">Internal Breakthrough</div>
+          <p class="vid-quote">&ldquo;I was an engineer at BMW. On paper I was doing well. But inside I knew something was still off. MMI showed me success on the outside doesn&rsquo;t mean the limits are gone.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">EA</div><div><div class="vid-name">Eamen Al-Mandawi</div><div class="vid-role">Germany</div></div></div>
+        </div>
+      </div>
+      <div class="vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'497262086')">
+          <img src="https://vumbnail.com/497262086_large.jpg" alt="Ryan Rieder" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="vid-info">
+          <div class="vid-result">&pound;1M &rarr; &pound;5M in 4 Years</div>
+          <p class="vid-quote">&ldquo;My family went through two bankruptcies. After MMI, my business grew from &pound;1M to &pound;5M a year. The shift was entirely in my mindset &mdash; not my strategy.&rdquo;</p>
+          <div class="vid-person"><div class="vid-av">RR</div><div><div class="vid-name">Ryan Rieder</div><div class="vid-role">Business Owner, United Kingdom</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- TRAINER --
-<section
-  <div class="si"
-    <div class="trainer-grid"
-      <div<div class="trainer-frame" id="tFrame"<div class="trainer-initials" id="tInit"MA</div<div class="trainer-caption"<div class="trainer-cap-name" id="tCapName"</div<div class="trainer-cap-role" id="tCapRole"</div<div class="trainer-cert"&#10022; T. Harv Eker Certified</div</div</div</div
-      <div
-        <div class="stag-line"<spanYour Trainer</span</div
-        <h2 class="trainer-name" id="tName"</h2
-        <div class="trainer-role" id="tRole"</div
-        <div class="trainer-stats-row" id="tStats"</div
-        <div class="trainer-bio" id="tBio"</div
-      </div
-    </div
-  </div
-</section
+<!-- TRAINER -->
+<section>
+  <div class="si">
+    <div class="trainer-grid">
+      <div><div class="trainer-frame" id="tFrame"><div class="trainer-initials" id="tInit">MA</div><div class="trainer-caption"><div class="trainer-cap-name" id="tCapName"></div><div class="trainer-cap-role" id="tCapRole"></div><div class="trainer-cert">&#10022; T. Harv Eker Certified</div></div></div></div>
+      <div>
+        <div class="stag-line"><span>Your Trainer</span></div>
+        <h2 class="trainer-name" id="tName"></h2>
+        <div class="trainer-role" id="tRole"></div>
+        <div class="trainer-stats-row" id="tStats"></div>
+        <div class="trainer-bio" id="tBio"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ── NEW SECTION 3: OFFER (no-brainer decision) ── --
-<section class="offer-section"
-  <div class="si"
-    <div class="offer-inner"
-      <div class="offer-left"
-        <div class="offer-tag"The Experience</div
-        <h2 class="offer-title"A 3-Day Live Experience That Fixes <emThe Root</em &mdash; Not The Symptoms</h2
-        <p class="offer-desc"This is not a course you watch. It&rsquo;s a live, fully interactive experience where you work on what&rsquo;s actually in the way.</p
-        <ul class="offer-bullets"
-          <liIdentify the patterns that have been limiting your income</li
-          <liRewire the beliefs driving your financial decisions</li
-          <liBreak through the emotional blocks that no strategy can touch</li
-          <liWalk away with a clear 90-day action plan</li
-        </ul
-        <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65"All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p
-      </div
-      <div class="offer-right" style="display:flex;flex-direction:column;justify-content:center"
-        <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#fff;line-height:1.5;margin-bottom:28px;opacity:.9"&ldquo;Once you fix what&rsquo;s running underneath — the results take care of themselves.&rdquo;</p
-        <button class="offer-btn" onclick="openFeatured()"Secure My Seat &nbsp;&rarr;</button
-        <div class="offer-trust"Live &middot; Interactive &middot; Join from anywhere</div
-      </div
-    </div
-  </div
-</section
+<!-- ── NEW SECTION 3: OFFER (no-brainer decision) ── -->
+<section class="offer-section">
+  <div class="si">
+    <div class="offer-inner">
+      <div class="offer-left">
+        <div class="offer-tag">The Experience</div>
+        <h2 class="offer-title">A 3-Day Live Experience That Fixes <em>The Root</em> &mdash; Not The Symptoms</h2>
+        <p class="offer-desc">This is not a course you watch. It&rsquo;s a live, fully interactive experience where you work on what&rsquo;s actually in the way.</p>
+        <ul class="offer-bullets">
+          <li>Identify the patterns that have been limiting your income</li>
+          <li>Rewire the beliefs driving your financial decisions</li>
+          <li>Break through the emotional blocks that no strategy can touch</li>
+          <li>Walk away with a clear 90-day action plan</li>
+        </ul>
+        <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65">All in real time. With a room full of people going through the same breakthrough. Led by a T. Harv Eker certified trainer &mdash; live, not recorded.</p>
+      </div>
+      <div class="offer-right" style="display:flex;flex-direction:column;justify-content:center">
+        <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#fff;line-height:1.5;margin-bottom:28px;opacity:.9">&ldquo;Once you fix what&rsquo;s running underneath — the results take care of themselves.&rdquo;</p>
+        <button class="offer-btn" onclick="openFeatured()">Secure My Seat &nbsp;&rarr;</button>
+        <div class="offer-trust">Live &middot; Interactive &middot; Join from anywhere</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- CURRICULUM — light 3-day overview --
-<section
-  <div class="si"
-    <div class="stag-line"<spanThe 3-Day Process</span</div
-    <h2 class="stitle"What Happens <strongAcross 3 Days</strong</h2
-    <div class="day-overview"
-      <div class="day-ov-row"
-        <div class="day-ov-num"Day 1</div
-        <div class="day-ov-content"
-          <div class="day-ov-title"Understand the Pattern</div
-          <div class="day-ov-desc"See exactly what&rsquo;s been driving your financial results. Not strategies &mdash; the roots underneath them. You&rsquo;ll identify precisely why what you know and what you do are two different things.</div
-        </div
-      </div
-      <div class="day-ov-row"
-        <div class="day-ov-num"Day 2</div
-        <div class="day-ov-content"
-          <div class="day-ov-title"Break the Pattern</div
-          <div class="day-ov-desc"The emotional clearing process. The most powerful 2 hours of the weekend &mdash; and for many, of their financial life. Unresolved beliefs that have been running silently for years are identified and released.</div
-        </div
-      </div
-      <div class="day-ov-row"
-        <div class="day-ov-num"Day 3</div
-        <div class="day-ov-content"
-          <div class="day-ov-title"Rebuild a New One</div
-          <div class="day-ov-desc"Your personalised 90-day action plan. You leave with a specific next move and the internal wiring to actually execute it. This is where insight becomes irreversible change.</div
-        </div
-      </div
-    </div
-    <p class="day-ov-tagline"This is not theory. It&rsquo;s a guided process that changes how you think, decide and act around money &mdash; permanently.</p
-  </div
-</section
+<!-- CURRICULUM — light 3-day overview -->
+<section>
+  <div class="si">
+    <div class="stag-line"><span>The 3-Day Process</span></div>
+    <h2 class="stitle">What Happens <strong>Across 3 Days</strong></h2>
+    <div class="day-overview">
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 1</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Understand the Pattern</div>
+          <div class="day-ov-desc">See exactly what&rsquo;s been driving your financial results. Not strategies &mdash; the roots underneath them. You&rsquo;ll identify precisely why what you know and what you do are two different things.</div>
+        </div>
+      </div>
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 2</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Break the Pattern</div>
+          <div class="day-ov-desc">The emotional clearing process. The most powerful 2 hours of the weekend &mdash; and for many, of their financial life. Unresolved beliefs that have been running silently for years are identified and released.</div>
+        </div>
+      </div>
+      <div class="day-ov-row">
+        <div class="day-ov-num">Day 3</div>
+        <div class="day-ov-content">
+          <div class="day-ov-title">Rebuild a New One</div>
+          <div class="day-ov-desc">Your personalised 90-day action plan. You leave with a specific next move and the internal wiring to actually execute it. This is where insight becomes irreversible change.</div>
+        </div>
+      </div>
+    </div>
+    <p class="day-ov-tagline">This is not theory. It&rsquo;s a guided process that changes how you think, decide and act around money &mdash; permanently.</p>
+  </div>
+</section>
 
-<!-- WHO ATTENDS — trimmed to 3 bullets --
-<section class="section-bg-off"
-  <div class="si"
-    <div class="stag-line"<spanWho This Is For</span</div
-    <h2 class="stitle"Built for People Who Already Know <strongSomething Is Wrong</strong</h2
-    <ul class="who-bullets"
-      <li<strongBusiness owners &amp; entrepreneurs</strong who&rsquo;ve hit a revenue ceiling &mdash; working harder, earning more, but wealth isn&rsquo;t building the way it should.</li
-      <li<strongSenior professionals &amp; executives</strong with high income but no lasting wealth &mdash; lifestyle expands, savings don&rsquo;t. Something keeps resetting.</li
-      <li<strongInvestors &amp; freelancers</strong who understand all the vehicles but keep undoing their own progress. The knowledge is there. The results aren&rsquo;t following.</li
-    </ul
-  </div
-</section
+<!-- WHO ATTENDS — trimmed to 3 bullets -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="stag-line"><span>Who This Is For</span></div>
+    <h2 class="stitle">Built for People Who Already Know <strong>Something Is Wrong</strong></h2>
+    <ul class="who-bullets">
+      <li><strong>Business owners &amp; entrepreneurs</strong> who&rsquo;ve hit a revenue ceiling &mdash; working harder, earning more, but wealth isn&rsquo;t building the way it should.</li>
+      <li><strong>Senior professionals &amp; executives</strong> with high income but no lasting wealth &mdash; lifestyle expands, savings don&rsquo;t. Something keeps resetting.</li>
+      <li><strong>Investors &amp; freelancers</strong> who understand all the vehicles but keep undoing their own progress. The knowledge is there. The results aren&rsquo;t following.</li>
+    </ul>
+  </div>
+</section>
 
-<!-- PROBLEM / ROOTS --
-<section class="section-bg-off"
-  <div class="si"
-    <div class="prob-grid"
-      <div class="prob-text"
-        <div class="stag-line"<spanThe Root Cause</span</div
-        <h2 class="stitle"Why Budgets and Strategies Have <strongNever Worked</strong For You</h2
-        <pMost financial programmes teach you to work on the <strongfruits</strong of your life &mdash; your income, savings, investment strategy. You read the books. You follow the system. Six months later, nothing has changed.</p
-        <pThe reason is simple: if your <strongroots are wrong</strong, no amount of fruit-polishing will change your results. The roots are your beliefs, habits, and the unconscious money programming you&rsquo;ve been running since childhood.</p
-        <pT. Harv Eker spent 14 years struggling before discovering this. Once he stopped working on strategies and started working on roots &mdash; he went from zero to millionaire in under three years.</p
-        <blockquote class="pull"It is the roots that create the fruits. If you want to change the fruits, you first have to change the roots.</blockquote
-      </div
-      <div
-        <div class="tree-visual"
-          <div class="tree-part tree-fruits"<div class="tree-label"Fruits</div<div class="tree-desc"Your results: income, wealth, relationships, success</div</div
-          <div class="tree-conn"</div
-          <div class="tree-part tree-trunk"<div class="tree-label"Branches</div<div class="tree-desc"Your actions and daily behaviours</div</div
-          <div class="tree-conn"</div
-          <div class="tree-part tree-roots"<div class="tree-label"Roots</div<div class="tree-desc"Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)"this is where everything starts</strong</div</div
-        </div
-      </div
-    </div
-  </div
-</section
+<!-- PROBLEM / ROOTS -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="prob-grid">
+      <div class="prob-text">
+        <div class="stag-line"><span>The Root Cause</span></div>
+        <h2 class="stitle">Why Budgets and Strategies Have <strong>Never Worked</strong> For You</h2>
+        <p>Most financial programmes teach you to work on the <strong>fruits</strong> of your life &mdash; your income, savings, investment strategy. You read the books. You follow the system. Six months later, nothing has changed.</p>
+        <p>The reason is simple: if your <strong>roots are wrong</strong>, no amount of fruit-polishing will change your results. The roots are your beliefs, habits, and the unconscious money programming you&rsquo;ve been running since childhood.</p>
+        <p>T. Harv Eker spent 14 years struggling before discovering this. Once he stopped working on strategies and started working on roots &mdash; he went from zero to millionaire in under three years.</p>
+        <blockquote class="pull">It is the roots that create the fruits. If you want to change the fruits, you first have to change the roots.</blockquote>
+      </div>
+      <div>
+        <div class="tree-visual">
+          <div class="tree-part tree-fruits"><div class="tree-label">Fruits</div><div class="tree-desc">Your results: income, wealth, relationships, success</div></div>
+          <div class="tree-conn"></div>
+          <div class="tree-part tree-trunk"><div class="tree-label">Branches</div><div class="tree-desc">Your actions and daily behaviours</div></div>
+          <div class="tree-conn"></div>
+          <div class="tree-part tree-roots"><div class="tree-label">Roots</div><div class="tree-desc">Your beliefs, habits and unconscious money programming &mdash; <strong style="color:var(--gold-lt)">this is where everything starts</strong></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- VALUE STACK --
-<section
-  <div class="si"
-    <div class="stag-line"<spanWhat You Get</span</div
-    <h2 class="stitle"Everything Included for <strong$19</strong</h2
-    <table class="val-table"
-      <tbody
-        <tr<tdFull 3-Day Live Online Access &mdash; All Sessions</td<tdLive interactive Zoom event</td<td$199</td</tr
-        <tr<tdMillionaire Mind Digital Workbook</td<tdFull programme workbook</td<td$105</td</tr
-        <tr<tdPre-Training Intention Sheet</td<td90-minute prep session</td<td$105</td</tr
-        <tr<tdAlumni Network &amp; Post-Event Community</td<tdGlobal peer group worldwide</td<td$50</td</tr
-        <tr<tdWeekly Review &amp; Relearn Sessions</td<tdPost-event Zoom sessions</td<td$100</td</tr
-        <tr<tdOptional VIP In-Person Upgrade</td<tdJoin your trainer live in the host city</td<tdSeparate</td</tr
-      </tbody
-      <tfoot
-        <tr<tdTotal Value</td<td</td<td style="text-decoration:line-through;color:var(--muted-lt)"$559</td</tr
-        <tr<tdYour Investment Today</td<td</td<td$19</td</tr
-      </tfoot
-    </table
-  </div
-</section
+<!-- VALUE STACK -->
+<section>
+  <div class="si">
+    <div class="stag-line"><span>What You Get</span></div>
+    <h2 class="stitle">Everything Included for <strong>$19</strong></h2>
+    <table class="val-table">
+      <tbody>
+        <tr><td>Full 3-Day Live Online Access &mdash; All Sessions</td><td>Live interactive Zoom event</td><td>$199</td></tr>
+        <tr><td>Millionaire Mind Digital Workbook</td><td>Full programme workbook</td><td>$105</td></tr>
+        <tr><td>Pre-Training Intention Sheet</td><td>90-minute prep session</td><td>$105</td></tr>
+        <tr><td>Alumni Network &amp; Post-Event Community</td><td>Global peer group worldwide</td><td>$50</td></tr>
+        <tr><td>Weekly Review &amp; Relearn Sessions</td><td>Post-event Zoom sessions</td><td>$100</td></tr>
+        <tr><td>Optional VIP In-Person Upgrade</td><td>Join your trainer live in the host city</td><td>Separate</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total Value</td><td></td><td style="text-decoration:line-through;color:var(--muted-lt)">$559</td></tr>
+        <tr><td>Your Investment Today</td><td></td><td>$19</td></tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
 
-<!-- ENDORSEMENTS --
-<section class="section-bg-off"
-  <div class="si"
-    <div class="stag-line"<spanRecognised by Leaders</span</div
-    <h2 class="stitle"In Personal Growth &amp; <strongBusiness</strong</h2
-    <div class="end-vid-grid"
-      <div class="end-vid-card"
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1063463093')"
-          <img src="https://vumbnail.com/1063463093_large.jpg" alt="Vishen Lakhiani" loading="lazy"
-          <div class="vid-play"<div class="vid-play-btn"<svg viewBox="0 0 24 24"<polygon points="5,3 19,12 5,21"/</svg</div</div
-        </div
-        <div class="end-vid-info"<div class="end-vid-name"Vishen Lakhiani</div<div class="end-vid-role"Founder &amp; CEO, Mindvalley</div<p class="end-vid-quote"&ldquo;MMI made me confront what was actually holding me back.&rdquo;</p</div
-      </div
-      <div class="end-vid-card"
-        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1067730697')"
-          <img src="https://vumbnail.com/1067730697_large.jpg" alt="Peng Joon" loading="lazy"
-          <div class="vid-play"<div class="vid-play-btn"<svg viewBox="0 0 24 24"<polygon points="5,3 19,12 5,21"/</svg</div</div
-        </div
-        <div class="end-vid-info"<div class="end-vid-name"Peng Joon</div<div class="end-vid-role"Entrepreneur &amp; Speaker</div<p class="end-vid-quote"&ldquo;I came in skeptical. I didn&rsquo;t leave the same person.&rdquo;</p</div
-      </div
-    </div
-    <div class="end-grid"
-      <div class="end-card"<p class="end-quote"Study Harv&rsquo;s work as if your life depended on it&hellip; financially it may!</p<div class="end-person"Anthony Robbins</div<div class="end-role"Entrepreneur &amp; #1 NY Times Bestselling Author</div</div
-      <div class="end-card"<p class="end-quote"I have witnessed and admired Harv&rsquo;s work for years. I highly recommend this for anyone seeking to increase their financial, mental and emotional wealth.</p<div class="end-person"Jack Canfield</div<div class="end-role"Founder, Chicken Soup for the Soul</div</div
-      <div class="end-card"<p class="end-quote"Harv is one of the most extraordinary speakers and trainers in the world today. His techniques are transformational and he creates amazing results.</p<div class="end-person"Brian Tracy</div<div class="end-role"Bestselling Author &amp; Motivational Speaker</div</div
-      <div class="end-card"<p class="end-quote"Harv has a heart of gold and knows a ton about business. If you can take one of his programs I highly recommend it.</p<div class="end-person"Mark Victor Hansen</div<div class="end-role"Co-creator, Chicken Soup for the Soul Series</div</div
-    </div
-  </div
-</section
+<!-- ENDORSEMENTS -->
+<section class="section-bg-off">
+  <div class="si">
+    <div class="stag-line"><span>Recognised by Leaders</span></div>
+    <h2 class="stitle">In Personal Growth &amp; <strong>Business</strong></h2>
+    <div class="end-vid-grid">
+      <div class="end-vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1063463093')">
+          <img src="https://vumbnail.com/1063463093_large.jpg" alt="Vishen Lakhiani" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="end-vid-info"><div class="end-vid-name">Vishen Lakhiani</div><div class="end-vid-role">Founder &amp; CEO, Mindvalley</div><p class="end-vid-quote">&ldquo;MMI made me confront what was actually holding me back.&rdquo;</p></div>
+      </div>
+      <div class="end-vid-card">
+        <div class="vid-thumb-wrap" onclick="playVimeo(this,'1067730697')">
+          <img src="https://vumbnail.com/1067730697_large.jpg" alt="Peng Joon" loading="lazy">
+          <div class="vid-play"><div class="vid-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+        </div>
+        <div class="end-vid-info"><div class="end-vid-name">Peng Joon</div><div class="end-vid-role">Entrepreneur &amp; Speaker</div><p class="end-vid-quote">&ldquo;I came in skeptical. I didn&rsquo;t leave the same person.&rdquo;</p></div>
+      </div>
+    </div>
+    <div class="end-grid">
+      <div class="end-card"><p class="end-quote">Study Harv&rsquo;s work as if your life depended on it&hellip; financially it may!</p><div class="end-person">Anthony Robbins</div><div class="end-role">Entrepreneur &amp; #1 NY Times Bestselling Author</div></div>
+      <div class="end-card"><p class="end-quote">I have witnessed and admired Harv&rsquo;s work for years. I highly recommend this for anyone seeking to increase their financial, mental and emotional wealth.</p><div class="end-person">Jack Canfield</div><div class="end-role">Founder, Chicken Soup for the Soul</div></div>
+      <div class="end-card"><p class="end-quote">Harv is one of the most extraordinary speakers and trainers in the world today. His techniques are transformational and he creates amazing results.</p><div class="end-person">Brian Tracy</div><div class="end-role">Bestselling Author &amp; Motivational Speaker</div></div>
+      <div class="end-card"><p class="end-quote">Harv has a heart of gold and knows a ton about business. If you can take one of his programs I highly recommend it.</p><div class="end-person">Mark Victor Hansen</div><div class="end-role">Co-creator, Chicken Soup for the Soul Series</div></div>
+    </div>
+  </div>
+</section>
 
-<!-- FAQ — 4 essential questions --
-<section
-  <div class="si" style="max-width:740px"
-    <div class="stag-line"<spanCommon Questions</span</div
-    <h2 class="stitle"Everything You Need <strongto Know</strong</h2
-    <div class="faq-list"
-      <div class="faq-item"
-        <button class="faq-q" onclick="toggleFaq(this)"Is the content based on T. Harv Eker&rsquo;s teachings?<span+</span</button
-        <p class="faq-a"Yes. The programme covers all the knowledge imparted by T. Harv Eker himself. Every live event is led by a handpicked certified trainer chosen personally by T. Harv.</p
-      </div
-      <div class="faq-item"
-        <button class="faq-q" onclick="toggleFaq(this)"What makes this different from other financial programmes?<span+</span</button
-        <p class="faq-a"Most financial programmes teach you to work on the fruits &mdash; your income, savings, strategy. MMI works on the roots &mdash; the beliefs, habits and unconscious money programming running underneath. That&rsquo;s why people see change when nothing else has worked.</p
-      </div
-      <div class="faq-item"
-        <button class="faq-q" onclick="toggleFaq(this)"Is this a full-day event each day?<span+</span</button
-        <p class="faq-a"Yes &mdash; 9am to 8pm each day, fully live and interactive. Everything we do with the online event mirrors the in-person MMI experience, with variations to make the online format equally immersive.</p
-      </div
-      <div class="faq-item"
-        <button class="faq-q" onclick="toggleFaq(this)"What is your refund policy?<span+</span</button
-        <p class="faq-a"Attend Day 1. If you don&rsquo;t feel it was worth every cent of your $19, email us within 30 days for a full refund. No questions. No hassle. You have nothing to lose.</p
-      </div
-    </div
-  </div
-</section
+<!-- FAQ — 4 essential questions -->
+<section>
+  <div class="si" style="max-width:740px">
+    <div class="stag-line"><span>Common Questions</span></div>
+    <h2 class="stitle">Everything You Need <strong>to Know</strong></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the content based on T. Harv Eker&rsquo;s teachings?<span>+</span></button>
+        <p class="faq-a">Yes. The programme covers all the knowledge imparted by T. Harv Eker himself. Every live event is led by a handpicked certified trainer chosen personally by T. Harv.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What makes this different from other financial programmes?<span>+</span></button>
+        <p class="faq-a">Most financial programmes teach you to work on the fruits &mdash; your income, savings, strategy. MMI works on the roots &mdash; the beliefs, habits and unconscious money programming running underneath. That&rsquo;s why people see change when nothing else has worked.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Is this a full-day event each day?<span>+</span></button>
+        <p class="faq-a">Yes &mdash; 9am to 8pm each day, fully live and interactive. Everything we do with the online event mirrors the in-person MMI experience, with variations to make the online format equally immersive.</p>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is your refund policy?<span>+</span></button>
+        <p class="faq-a">Attend Day 1. If you don&rsquo;t feel it was worth every cent of your $19, email us within 30 days for a full refund. No questions. No hassle. You have nothing to lose.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- FINAL CTA --
-<section class="final-cta"
-  <div class="si" style="max-width:620px;margin:0 auto;position:relative;z-index:1;text-align:center"
-    <div class="stag-line" style="justify-content:center"<span id="finalCtaCity"Your City</span</div
-    <h2 class="final-title"<em id="finalCtaCity2"Your City</em Is Open<brRight Now</h2
-    <div class="final-urgency"
-      <pThis tour doesn&rsquo;t stay.</p
-      <pWhen this stop ends &mdash; it moves on.</p
-      <pFor less than the price of a business lunch,<bryou either step in now&hellip; or watch it pass.</p
-    </div
-    <button class="btn-primary-light" onclick="openFeatured()"Secure My Seat</button
-    <div class="final-note"Live &middot; Limited seats &middot; <span id="finalCtaCity3"Your City</span only</div
-  </div
-</section
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="si" style="max-width:620px;margin:0 auto;position:relative;z-index:1;text-align:center">
+    <div class="stag-line" style="justify-content:center"><span id="finalCtaCity">Your City</span></div>
+    <h2 class="final-title"><em id="finalCtaCity2">Your City</em> Is Open<br>Right Now</h2>
+    <div class="final-urgency">
+      <p>This tour doesn&rsquo;t stay.</p>
+      <p>When this stop ends &mdash; it moves on.</p>
+      <p>For less than the price of a business lunch,<br>you either step in now&hellip; or watch it pass.</p>
+    </div>
+    <button class="btn-primary-light" onclick="openFeatured()">Secure My Seat</button>
+    <div class="final-note">Live &middot; Limited seats &middot; <span id="finalCtaCity3">Your City</span> only</div>
+  </div>
+</section>
 
-<!-- FOOTER --
-<footer
-  <p style="font-family:Cinzel,serif;font-size:14px;color:rgba(255,255,255,0.7);letter-spacing:2px;margin-bottom:12px"Millionaire Mind&reg; Intensive</p
-  <p&copy; 2026 Success Resources &middot; All Rights Reserved</p
-  <p style="margin-top:8px"<a href="/privacy"Privacy Policy</a &middot; <a href="/terms"Terms &amp; Conditions</a &middot; <a href="/cookies"Cookies Policy</a &middot; <a href="https://www.millionairemindworld.com/sr"Contact Us</a</p
-  <p style="margin-top:16px;font-size:10px;max-width:680px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.25)"The information presented is intended for educational purposes only. Success Resources makes no representations with respect to accuracy, applicability, or completeness. Results shown are not typical. Individual results will vary.</p
-</footer
+<!-- FOOTER -->
+<footer>
+  <p style="font-family:Cinzel,serif;font-size:14px;color:rgba(255,255,255,0.7);letter-spacing:2px;margin-bottom:12px">Millionaire Mind&reg; Intensive</p>
+  <p>&copy; 2026 Success Resources &middot; All Rights Reserved</p>
+  <p style="margin-top:8px"><a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms &amp; Conditions</a> &middot; <a href="/cookies">Cookies Policy</a> &middot; <a href="https://www.millionairemindworld.com/sr">Contact Us</a></p>
+  <p style="margin-top:16px;font-size:10px;max-width:680px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.25)">The information presented is intended for educational purposes only. Success Resources makes no representations with respect to accuracy, applicability, or completeness. Results shown are not typical. Individual results will vary.</p>
+</footer>
 
-<script
+<script>
 
 // ── CONFIG ─────────────────────────────────────────────────────────
 const STRIPE_PK      = 'pk_live_YOUR_KEY';  // ← fill in: Stripe Dashboard → Developers → API Keys
@@ -1349,7 +1335,7 @@ const ZAPIER         = 'https://hooks.zapier.com/hooks/catch/3435365/ujvv088/';
 const IPAPI_KEY      = 'vmENJ3PceUgWfONVOujw2t8vHP1SHpeTagvsDHKksFnoHLDjSh';
 const DEFAULT_CITY   = 'Malaga';
 const SYM            = {USD:'$',EUR:'€',GBP:'£'};
-const s              = c = SYM[c]||'$';
+const s              = c => SYM[c]||'$';
 const ONLINE_PRICE   = 19;          // online pass is always $19 USD
 let   FEATURED       = null;
 
@@ -1412,8 +1398,8 @@ const EVENTS = [
 // ── GEO FIND ────────────────────────────────────────────────────────
 function findNearest(code){
   const now=new Date();
-  const up=EVENTS.filter(e=e.eventDatenow).sort((a,b)=a.eventDate-b.eventDate);
-  return up.find(e=e.geo.includes(code))||up.find(e=e.city===DEFAULT_CITY)||up[0]||EVENTS[0];
+  const up=EVENTS.filter(e=>e.eventDate>now).sort((a,b)=>a.eventDate-b.eventDate);
+  return up.find(e=>e.geo.includes(code))||up.find(e=>e.city===DEFAULT_CITY)||up[0]||EVENTS[0];
 }
 
 // ── RENDER TRAINER ──────────────────────────────────────────────────
@@ -1422,10 +1408,10 @@ function renderTrainer(key){
   // Caption + name + role + stats + bio (unchanged)
   document.getElementById('tCapName').textContent=t.first+' '+t.last;
   document.getElementById('tCapRole').textContent=t.title;
-  document.getElementById('tName').innerHTML=t.first+' <strong'+t.last+'</strong';
+  document.getElementById('tName').innerHTML=t.first+' <strong>'+t.last+'</strong>';
   document.getElementById('tRole').innerHTML=t.title;
-  document.getElementById('tStats').innerHTML=t.stats.map(st='<div<div class="ts-num"'+st.n+'</div<div class="ts-label"'+st.l+'</div</div').join('');
-  document.getElementById('tBio').innerHTML=t.bio.map(p='<p'+p+'</p').join('');
+  document.getElementById('tStats').innerHTML=t.stats.map(st=>'<div><div class="ts-num">'+st.n+'</div><div class="ts-label">'+st.l+'</div></div>').join('');
+  document.getElementById('tBio').innerHTML=t.bio.map(p=>'<p>'+p+'</p>').join('');
   // Photo: real image if available, otherwise initials
   const frame=document.getElementById('tFrame');
   const initEl=document.getElementById('tInit');
@@ -1513,9 +1499,9 @@ function initPage(ev){
   const hibCity  = document.getElementById('hibCity');
   const hibDates = document.getElementById('hibDates');
   const hibTime  = document.getElementById('hibTime');
-  if(hibCity)  hibCity.textContent = ev.city+', '+ev.country;
+  if(hibCity)  hibCity.innerHTML  = ev.city+'<br>'+ev.country;
   if(hibDates) hibDates.textContent = ev.dates;
-  if(hibTime)  hibTime.textContent = ev.time;
+  if(hibTime)  hibTime.innerHTML  = ev.time.replace(' ','<br>');
   // Tour urgency city (world tour section)
   const uc=document.getElementById('tourUrgencyCity');
   if(uc) uc.textContent=ev.city;
@@ -1538,14 +1524,14 @@ function initPage(ev){
   const hm=document.querySelector('.hero-meta');
   if(hm) hm.style.display='flex';
   document.getElementById('geoLoader').classList.add('hide');
-  setTimeout(()=document.getElementById('geoLoader').style.display='none',700);
+  setTimeout(()=>document.getElementById('geoLoader').style.display='none',700);
 }
 
 // ── COUNTDOWN ───────────────────────────────────────────────────────
 function startCountdown(t){
   function tick(){
     const d=t-new Date();
-    if(d<=0){document.getElementById('countdown').innerHTML='<div class="cd-live"Event is live — join now!</div';return;}
+    if(d<=0){document.getElementById('countdown').innerHTML='<div class="cd-live">Event is live — join now!</div>';return;}
     document.getElementById('cdD').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
     document.getElementById('cdH').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');
     document.getElementById('cdM').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');
@@ -1556,72 +1542,72 @@ function startCountdown(t){
 
 // ── EVENTS GRID ─────────────────────────────────────────────────────
 const LANDMARKS={
-  'kuala-lumpur':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="6" y="12" width="14" height="48"/<polygon points="6,12 13,5 20,12"/<rect x="32" y="12" width="14" height="48"/<polygon points="32,12 39,5 46,12"/<rect x="20" y="24" width="12" height="5"/<line x1="6" y1="26" x2="20" y2="26"/<line x1="32" y1="26" x2="46" y2="26"/</svg',
-  'malaga':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="4" y="32" width="44" height="28"/<rect x="4" y="20" width="14" height="12"/<rect x="34" y="20" width="14" height="12"/<polyline points="4,20 7,13 11,20 15,13 18,20"/<polyline points="34,20 37,13 41,20 45,13 48,20"/<path d="M22,60 L22,46 Q26,40 30,46 L30,60"/</svg',
-  'warsaw':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<polygon points="24,16 26,4 28,16"/<rect x="20" y="16" width="12" height="20"/<rect x="11" y="22" width="9" height="14"/<rect x="32" y="22" width="9" height="14"/<rect x="5" y="32" width="10" height="28"/<rect x="37" y="32" width="10" height="28"/<rect x="13" y="36" width="26" height="24"/<rect x="4" y="60" width="44" height="8"/</svg',
-  'london':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<polygon points="26,2 22,14 30,14"/<rect x="20" y="14" width="12" height="14"/<circle cx="26" cy="21" r="5"/<line x1="26" y1="21" x2="26" y2="18"/<line x1="26" y1="21" x2="29" y2="23"/<rect x="18" y="28" width="16" height="34"/<rect x="23" y="33" width="6" height="9" rx="3"/<rect x="23" y="46" width="6" height="6"/<rect x="14" y="62" width="24" height="6"/</svg',
-  'berlin':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="12" y="8" width="28" height="8"/<polygon points="24,5 26,1 28,5"/<rect x="8" y="16" width="36" height="6"/<line x1="11" y1="22" x2="11" y2="54"/<line x1="19" y1="22" x2="19" y2="54"/<line x1="27" y1="22" x2="27" y2="54"/<line x1="35" y1="22" x2="35" y2="54"/<line x1="43" y1="22" x2="43" y2="54"/<rect x="8" y="54" width="36" height="6"/<rect x="4" y="60" width="44" height="6"/</svg',
-  'johor-bahru':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="18" y="14" width="16" height="44"/<path d="M18,14 Q26,7 34,14"/<line x1="26" y1="3" x2="26" y2="11"/<rect x="8" y="24" width="10" height="34"/<rect x="34" y="24" width="10" height="34"/<line x1="20" y1="30" x2="32" y2="30"/<line x1="20" y1="40" x2="32" y2="40"/<rect x="4" y="58" width="44" height="6"/</svg',
-  'geneva':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<path d="M26,4 Q24,18 22,38 Q24,48 26,54"/<path d="M26,4 Q28,18 30,38 Q28,48 26,54"/<path d="M26,4 Q21,12 20,20"/<path d="M26,4 Q31,12 32,20"/<rect x="18" y="54" width="16" height="4" rx="2"/<rect x="12" y="58" width="28" height="4" rx="2"/<path d="M4,66 Q14,63 26,66 Q38,69 48,66"/</svg',
-  'madrid':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="6" y="20" width="40" height="32"/<rect x="4" y="16" width="44" height="4"/<rect x="6" y="8" width="10" height="12"/<rect x="36" y="8" width="10" height="12"/<polygon points="6,8 11,4 16,8"/<polygon points="36,8 41,4 46,8"/<rect x="12" y="24" width="5" height="8" rx="2"/<rect x="24" y="24" width="5" height="8" rx="2"/<rect x="36" y="24" width="5" height="8" rx="2"/<rect x="22" y="36" width="8" height="16" rx="4"/</svg',
-  'rotterdam':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<polygon points="12,8 16,4 20,10"/<line x1="16" y1="8" x2="20" y2="48"/<line x1="4" y1="48" x2="48" y2="48"/<line x1="16" y1="12" x2="26" y2="48"/<line x1="16" y1="17" x2="34" y2="48"/<line x1="16" y1="22" x2="42" y2="48"/<line x1="16" y1="27" x2="48" y2="48"/<line x1="16" y1="12" x2="8" y2="48"/<rect x="12" y="48" width="8" height="7"/<path d="M2,58 Q14,55 26,58 Q38,61 50,58"/</svg',
-  'birmingham':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<rect x="18" y="8" width="16" height="52"/<line x1="24" y1="2" x2="24" y2="8"/<line x1="28" y1="4" x2="28" y2="8"/<rect x="6" y="22" width="12" height="38"/<rect x="34" y="18" width="12" height="42"/<line x1="10" y1="28" x2="14" y2="28"/<line x1="10" y1="36" x2="14" y2="36"/<line x1="22" y1="16" x2="30" y2="16"/<line x1="22" y1="26" x2="30" y2="26"/<rect x="2" y="60" width="48" height="4"/</svg',
-  'brussels':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"<circle cx="26" cy="20" r="8"/<circle cx="26" cy="6" r="5"/<line x1="26" y1="11" x2="26" y2="12"/<circle cx="12" cy="20" r="5"/<line x1="17" y1="20" x2="18" y2="20"/<circle cx="40" cy="20" r="5"/<line x1="34" y1="20" x2="35" y2="20"/<circle cx="26" cy="34" r="5"/<line x1="26" y1="28" x2="26" y2="29"/<circle cx="14" cy="32" r="3.5"/<line x1="16" y1="27" x2="17" y2="28"/<circle cx="38" cy="32" r="3.5"/<line x1="36" y1="27" x2="35" y2="28"/<line x1="26" y1="39" x2="26" y2="54"/<rect x="20" y="54" width="12" height="4"/</svg'
+  'kuala-lumpur':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="6" y="12" width="14" height="48"/><polygon points="6,12 13,5 20,12"/><rect x="32" y="12" width="14" height="48"/><polygon points="32,12 39,5 46,12"/><rect x="20" y="24" width="12" height="5"/><line x1="6" y1="26" x2="20" y2="26"/><line x1="32" y1="26" x2="46" y2="26"/></svg>',
+  'malaga':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="4" y="32" width="44" height="28"/><rect x="4" y="20" width="14" height="12"/><rect x="34" y="20" width="14" height="12"/><polyline points="4,20 7,13 11,20 15,13 18,20"/><polyline points="34,20 37,13 41,20 45,13 48,20"/><path d="M22,60 L22,46 Q26,40 30,46 L30,60"/></svg>',
+  'warsaw':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="24,16 26,4 28,16"/><rect x="20" y="16" width="12" height="20"/><rect x="11" y="22" width="9" height="14"/><rect x="32" y="22" width="9" height="14"/><rect x="5" y="32" width="10" height="28"/><rect x="37" y="32" width="10" height="28"/><rect x="13" y="36" width="26" height="24"/><rect x="4" y="60" width="44" height="8"/></svg>',
+  'london':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="26,2 22,14 30,14"/><rect x="20" y="14" width="12" height="14"/><circle cx="26" cy="21" r="5"/><line x1="26" y1="21" x2="26" y2="18"/><line x1="26" y1="21" x2="29" y2="23"/><rect x="18" y="28" width="16" height="34"/><rect x="23" y="33" width="6" height="9" rx="3"/><rect x="23" y="46" width="6" height="6"/><rect x="14" y="62" width="24" height="6"/></svg>',
+  'berlin':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="12" y="8" width="28" height="8"/><polygon points="24,5 26,1 28,5"/><rect x="8" y="16" width="36" height="6"/><line x1="11" y1="22" x2="11" y2="54"/><line x1="19" y1="22" x2="19" y2="54"/><line x1="27" y1="22" x2="27" y2="54"/><line x1="35" y1="22" x2="35" y2="54"/><line x1="43" y1="22" x2="43" y2="54"/><rect x="8" y="54" width="36" height="6"/><rect x="4" y="60" width="44" height="6"/></svg>',
+  'johor-bahru':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="18" y="14" width="16" height="44"/><path d="M18,14 Q26,7 34,14"/><line x1="26" y1="3" x2="26" y2="11"/><rect x="8" y="24" width="10" height="34"/><rect x="34" y="24" width="10" height="34"/><line x1="20" y1="30" x2="32" y2="30"/><line x1="20" y1="40" x2="32" y2="40"/><rect x="4" y="58" width="44" height="6"/></svg>',
+  'geneva':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M26,4 Q24,18 22,38 Q24,48 26,54"/><path d="M26,4 Q28,18 30,38 Q28,48 26,54"/><path d="M26,4 Q21,12 20,20"/><path d="M26,4 Q31,12 32,20"/><rect x="18" y="54" width="16" height="4" rx="2"/><rect x="12" y="58" width="28" height="4" rx="2"/><path d="M4,66 Q14,63 26,66 Q38,69 48,66"/></svg>',
+  'madrid':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="6" y="20" width="40" height="32"/><rect x="4" y="16" width="44" height="4"/><rect x="6" y="8" width="10" height="12"/><rect x="36" y="8" width="10" height="12"/><polygon points="6,8 11,4 16,8"/><polygon points="36,8 41,4 46,8"/><rect x="12" y="24" width="5" height="8" rx="2"/><rect x="24" y="24" width="5" height="8" rx="2"/><rect x="36" y="24" width="5" height="8" rx="2"/><rect x="22" y="36" width="8" height="16" rx="4"/></svg>',
+  'rotterdam':'<svg viewBox="0 0 52 68" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><polygon points="12,8 16,4 20,10"/><line x1="16" y1="8" x2="20" y2="48"/><line x1="4" y1="48" x2="48" y2="48"/><line x1="16" y1="12" x2="26" y2="48"/><line x1="16" y1="17" x2="34" y2="48"/><line x1="16" y1="22" x2="42" y2="48"/><line x1="16" y1="27" x2="48" y2="48"/><line x1="16" y1="12" x2="8" y2="48"/><rect x="12" y="48" width="8" height="7"/><path d="M2,58 Q14,55 26,58 Q38,61 50,58"/></svg>',
+  'birmingham':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="18" y="8" width="16" height="52"/><line x1="24" y1="2" x2="24" y2="8"/><line x1="28" y1="4" x2="28" y2="8"/><rect x="6" y="22" width="12" height="38"/><rect x="34" y="18" width="12" height="42"/><line x1="10" y1="28" x2="14" y2="28"/><line x1="10" y1="36" x2="14" y2="36"/><line x1="22" y1="16" x2="30" y2="16"/><line x1="22" y1="26" x2="30" y2="26"/><rect x="2" y="60" width="48" height="4"/></svg>',
+  'brussels':'<svg viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="26" cy="20" r="8"/><circle cx="26" cy="6" r="5"/><line x1="26" y1="11" x2="26" y2="12"/><circle cx="12" cy="20" r="5"/><line x1="17" y1="20" x2="18" y2="20"/><circle cx="40" cy="20" r="5"/><line x1="34" y1="20" x2="35" y2="20"/><circle cx="26" cy="34" r="5"/><line x1="26" y1="28" x2="26" y2="29"/><circle cx="14" cy="32" r="3.5"/><line x1="16" y1="27" x2="17" y2="28"/><circle cx="38" cy="32" r="3.5"/><line x1="36" y1="27" x2="35" y2="28"/><line x1="26" y1="39" x2="26" y2="54"/><rect x="20" y="54" width="12" height="4"/></svg>'
 };
 
 function pickCity(el){openModal(el.getAttribute('data-btn'));}
 function buildTourSection(featuredEv){
   var now=new Date();
-  var upcoming=EVENTS.filter(function(e){return e.eventDatenow;}).sort(function(a,b){return a.eventDate-b.eventDate;});
+  var upcoming=EVENTS.filter(function(e){return e.eventDate>now;}).sort(function(a,b){return a.eventDate-b.eventDate;});
   var others=upcoming.filter(function(e){return e!==featuredEv;});
   var slug=featuredEv.citySlug||'london';
   // Set city background image
   var cityBg = document.getElementById('cityImgBg');
   if(cityBg) cityBg.style.backgroundImage = "url('/assets/cities/"+slug+".webp')";
   var featHTML=
-    '<div class="tour-featured-card"'+
-    '<div class="tour-feat-left"'+
-    '<div class="tour-feat-badge"&#9733; Your City</div'+
-    '<div class="tour-feat-city"'+featuredEv.city+',<br'+featuredEv.country+'</div'+
-    '<div class="tour-feat-meta"'+
-    '<div class="tour-feat-row"<svg class="icon icon-sm"<use href="#i-calendar"/</svg'+featuredEv.dates+'</div'+
-    '<div class="tour-feat-row"<svg class="icon icon-sm"<use href="#i-clock"/</svg'+featuredEv.time+'</div'+
-    '<div class="tour-feat-row"<svg class="icon icon-sm"<use href="#i-screen"/</svgLive Online \u00b7 Optional In-Person</div'+
-    '</div'+
-    '<div class="tour-feat-price"'+'<span class="tour-price-badge"Online from '+featuredEv.cur+' '+featuredEv.price+'</span'+'</div'+'<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)"Secure My Seat \u2192</button'+
-    '<div class="tour-feat-scarcity"<svg class="icon icon-sm" style="color:var(--gold)"<use href="#i-users-small"/</svg&nbsp;Limited seats. This stop is filling.</div'+
-    '</div'+
-    '<div class="tour-feat-right"'+
-    '<img src="/assets/cities/'+slug+'.webp" alt="'+featuredEv.city+'" loading="lazy" onerror="this.style.display=\'none\'"'+
-    '</div'+
-    '</div';
+    '<div class="tour-featured-card">'+
+    '<div class="tour-feat-left">'+
+    '<div class="tour-feat-badge">&#9733; Your City</div>'+
+    '<div class="tour-feat-city">'+featuredEv.city+',<br>'+featuredEv.country+'</div>'+
+    '<div class="tour-feat-meta">'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-calendar"/></svg>'+featuredEv.dates+'</div>'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-clock"/></svg>'+featuredEv.time+'</div>'+
+    '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-screen"/></svg>Live Online \u00b7 Optional In-Person</div>'+
+    '</div>'+
+    '<div class="tour-feat-price">'+'<span class="tour-price-badge">Online from '+featuredEv.cur+' '+featuredEv.price+'</span>'+'</div>'+'<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)">Secure My Seat \u2192</button>'+
+    '<div class="tour-feat-scarcity"><svg class="icon icon-sm" style="color:var(--gold)"><use href="#i-users-small"/></svg>&nbsp;Limited seats. This stop is filling.</div>'+
+    '</div>'+
+    '<div class="tour-feat-right">'+
+    '<img src="/assets/cities/'+slug+'.webp" alt="'+featuredEv.city+'" loading="lazy" onerror="this.style.display=\'none\'">'+
+    '</div>'+
+    '</div>';
   var featEl=document.getElementById('tourFeatured');
   if(featEl) featEl.innerHTML=featHTML;
   var rows=others.map(function(ev,i){
     var lm=LANDMARKS[ev.citySlug]||LANDMARKS['london'];
-    var hidden=i=6?' t-hidden':'';
-    return '<div class="tour-row'+hidden+'"'+
-      '<div class="tour-row-sketch"'+lm+'</div'+
-      '<div<div class="tour-row-city-name"'+ev.flag+' '+ev.city+'</div'+
-      '<div class="tour-row-country"'+ev.country+'</div</div'+
-      '<div class="tour-row-date-col"<span class="tour-row-date"'+ev.dates+'</span'+
-      '<span class="tour-row-time"'+ev.time+'</span</div'+
-      '<button class="tour-row-btn" data-btn="'+ev.btnId+'" onclick="pickCity(this)"View City \u2192</button'+
-      '</div';
+    var hidden=i>=6?' t-hidden':'';
+    return '<div class="tour-row'+hidden+'">'+
+      '<div class="tour-row-sketch">'+lm+'</div>'+
+      '<div><div class="tour-row-city-name">'+ev.flag+' '+ev.city+'</div>'+
+      '<div class="tour-row-country">'+ev.country+'</div></div>'+
+      '<div class="tour-row-date-col"><span class="tour-row-date">'+ev.dates+'</span>'+
+      '<span class="tour-row-time">'+ev.time+'</span></div>'+
+      '<button class="tour-row-btn" data-btn="'+ev.btnId+'" onclick="pickCity(this)">View City \u2192</button>'+
+      '</div>';
   }).join('');
   var listEl=document.getElementById('tourList');
   if(listEl) listEl.innerHTML=rows;
   var vbtn=document.getElementById('tourViewAll');
-  if(vbtn) vbtn.style.display=others.length6?'block':'none';
+  if(vbtn) vbtn.style.display=others.length>6?'block':'none';
 }
 function toggleAllCities(btn){
   var hidden=document.querySelectorAll('.tour-row.t-hidden');
   var rows=document.querySelectorAll('.tour-row');
-  if(hidden.length0){
+  if(hidden.length>0){
     hidden.forEach(function(r){r.classList.remove('t-hidden');});
     btn.textContent='View less ↑';
   } else {
-    rows.forEach(function(r,i){if(i=6)r.classList.add('t-hidden');});
+    rows.forEach(function(r,i){if(i>=6)r.classList.add('t-hidden');});
     btn.textContent='View all cities ↓';
   }
 }
@@ -1633,7 +1619,7 @@ function injectStripe(containerId, btnId){
   if(!wrap)return;
   wrap.innerHTML='';
   if(STRIPE_PK==='pk_live_YOUR_KEY'){
-    wrap.innerHTML='<div class="stripe-placeholder"&#9888; Stripe key not yet configured. Add your publishable key to go live.</div';
+    wrap.innerHTML='<div class="stripe-placeholder">&#9888; Stripe key not yet configured. Add your publishable key to go live.</div>';
   } else {
     const btn=document.createElement('stripe-buy-button');
     btn.setAttribute('buy-button-id',btnId);
@@ -1643,7 +1629,7 @@ function injectStripe(containerId, btnId){
 }
 
 function openModal(onlineBtnId){
-  const ev=EVENTS.find(e=e.btnId===onlineBtnId);
+  const ev=EVENTS.find(e=>e.btnId===onlineBtnId);
   if(!ev)return;
   const cs=s(ev.cur);
   const trainer=TRAINERS[ev.trainer];
@@ -1664,7 +1650,7 @@ function openModal(onlineBtnId){
       'Direct interaction with '+trainerName+' on stage',
       'In-person networking and peer connections',
       'Access to VIP evening social after Day 1'
-    ].map(t='<li'+t+'</li').join('');
+    ].map(t=>'<li>'+t+'</li>').join('');
   }
   // Set direct checkout links
   const onlineCta = document.getElementById('onlineCta');
@@ -1679,36 +1665,36 @@ function closeModal(){
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow='';
 }
-document.getElementById('modal').addEventListener('click',e={if(e.target===document.getElementById('modal'))closeModal();});
-document.addEventListener('keydown',e={if(e.key==='Escape')closeModal();});
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 // ── ZAPIER (fires on Stripe success event) ──────────────────────────
 // NOTE: For full customer data, configure Stripe Webhooks to post to:
 //       https://hooks.zapier.com/hooks/catch/3435365/ujvv088/
-window.addEventListener('stripe-buy-button:success',()={
+window.addEventListener('stripe-buy-button:success',()=>{
   if(!FEATURED)return;
   fetch(ZAPIER,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({event:'checkout_success',city:FEATURED.city,dates:FEATURED.dates,currency:FEATURED.cur,price:FEATURED.price,trainer:FEATURED.trainer,ts:new Date().toISOString()})
-  }).catch(()={});
+  }).catch(()=>{});
 });
 
 // ── VIMEO PLAYER ────────────────────────────────────────────────────
 function playVimeo(el, id) {
-  el.innerHTML = '<iframe src="https://player.vimeo.com/video/'+id+'?autoplay=1&color=028f02&title=0&byline=0&portrait=0&dnt=1" style="position:absolute;top:0;left:0;width:100%;height:100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen</iframe';
+  el.innerHTML = '<iframe src="https://player.vimeo.com/video/'+id+'?autoplay=1&color=028f02&title=0&byline=0&portrait=0&dnt=1" style="position:absolute;top:0;left:0;width:100%;height:100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
   el.style.cursor = 'default';
 }
 
 // ── FAQ / TABS ──────────────────────────────────────────────────────
 function toggleFaq(btn){btn.classList.toggle('open');btn.nextElementSibling.classList.toggle('show');}
 function switchDay(idx,btn){
-  document.querySelectorAll('.day-tab').forEach((t,i)=t.classList.toggle('active',i===idx));
-  document.querySelectorAll('.day-content').forEach((c,i)=c.classList.toggle('active',i===idx));
+  document.querySelectorAll('.day-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.day-content').forEach((c,i)=>c.classList.toggle('active',i===idx));
 }
 
 // ── NAV SCROLL ────────────────────────────────────────────────────────
-window.addEventListener('scroll',()={
+window.addEventListener('scroll',()=>{
   const nav=document.querySelector('nav');
-  if(window.scrollY20) nav.classList.add('nav-scrolled');
+  if(window.scrollY>20) nav.classList.add('nav-scrolled');
   else nav.classList.remove('nav-scrolled');
 },{passive:true});
 
@@ -1720,11 +1706,11 @@ function updateHeroPrice(ev){
 }
 
 // ── BOOT ────────────────────────────────────────────────────────────
-(async()={
+(async()=>{
   // ?city= param overrides geo detection
   const cityParam = new URLSearchParams(window.location.search).get('city');
   if(cityParam){
-    const match = EVENTS.find(e = e.citySlug === cityParam);
+    const match = EVENTS.find(e => e.citySlug === cityParam);
     if(match){ initPage(match); return; }
   }
   // Normal geo detection
@@ -1760,6 +1746,6 @@ function playVb(){
     obs.observe(el);
   }
 })();
-</script
-</body
-</html
+</script>
+</body>
+</html>
