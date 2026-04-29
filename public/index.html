@@ -584,7 +584,7 @@ footer a:hover{color:var(--gold-lt)}
   }
   .hib-item:last-child{border-bottom:none}
   .hib-icon svg{width:16px;height:16px;flex-shrink:0}
-  .hib-label{font-size:12px;letter-spacing:.5px;text-align:left;line-height:1.3}
+  .hib-label{font-size:12px;letter-spacing:.3px;text-align:left;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   /* Now live label */
   .hero-now-live{font-size:10px;margin-bottom:8px}
   /* Reduce title size on mobile */
@@ -1529,9 +1529,9 @@ function initPage(ev){
   const hibCity  = document.getElementById('hibCity');
   const hibDates = document.getElementById('hibDates');
   const hibTime  = document.getElementById('hibTime');
-  if(hibCity)  hibCity.innerHTML  = ev.city+'<br>'+ev.country;
+  if(hibCity)  hibCity.textContent = ev.city+', '+ev.country;
   if(hibDates) hibDates.textContent = ev.dates;
-  if(hibTime)  hibTime.innerHTML  = ev.time.replace(' ','<br>');
+  if(hibTime)  hibTime.textContent = ev.time;
   // Tour urgency city (world tour section)
   const uc=document.getElementById('tourUrgencyCity');
   if(uc) uc.textContent=ev.city;
