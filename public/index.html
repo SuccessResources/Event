@@ -779,8 +779,8 @@ footer a:hover{color:var(--gold-lt)}
         <div class="hero-city-live-name" id="heroCity">Your City</div>
       </div>
 
-      <h1 class="hero-title">You&rsquo;re Doing Everything Right. So Why Are You Still Stuck?</h1>
-      <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px">A 3-day live experience that helps you break through what is actually holding your results back.</p>
+      <h1 class="hero-title">Loading...</h1>
+      <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px"></p>
 
       <button class="btn-primary" onclick="openFeatured()">Save My Seat Now &nbsp;&rarr;</button>
       <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds &middot; Limited seats per city</div>
@@ -1437,6 +1437,53 @@ function initPage(ev){
   // Update hero + immediate CTA city
   const hc=document.getElementById('heroCity');
   if(hc) hc.textContent=ev.city.toUpperCase();
+
+  // Headline options — city default or ?option= override
+  var HEADLINES = {
+    'standard': {
+      h: 'You Know What To Do With Money. So Why Isn’t It Working?',
+      s: 'A 3-day live experience that fixes what’s underneath your financial results, not just the strategies.'
+    },
+    '1': {
+      h: 'You’re Earning More Than Ever. So Why Isn’t Wealth Growing?',
+      s: 'A 3-day live experience that uncovers the hidden patterns behind your financial results, not just the strategies.'
+    },
+    '2': {
+      h: 'You’ve Tried the Strategies. So Why Do Results Keep Resetting?',
+      s: 'This is where you fix what’s underneath, the part no strategy has been able to change.'
+    },
+    '3': {
+      h: 'You’re Doing Everything Right. So Why Are You Still Stuck?',
+      s: ''
+    },
+    '4': {
+      h: 'It’s Not Your Strategy. It’s What’s Running Underneath.',
+      s: 'Fix the root of your financial results in a 3-day live experience, not just the surface actions.'
+    },
+    '5': {
+      h: 'You Should Be Further Ahead By Now. So What’s Missing?',
+      s: 'A 3-day live experience that helps you close the gap between where you are and where you know you could be.'
+    }
+  };
+
+  // City default option mapping
+  var CITY_OPTION = {
+    'Kuala Lumpur': '1', 'Johor Bahru': '1',
+    'London': '2', 'Birmingham': '2',
+    'Warsaw': '4', 'Berlin': '4',
+    'Rotterdam': '5', 'Brussels': '5',
+    'Geneva': 'standard', 'Malaga': '3', 'Madrid': '3'
+  };
+
+  // ?option= param overrides city default
+  var optParam   = new URLSearchParams(window.location.search).get('option');
+  var optKey     = (optParam && HEADLINES[optParam]) ? optParam : (CITY_OPTION[ev.city] || '3');
+  var chosen     = HEADLINES[optKey] || HEADLINES['3'];
+
+  var heroTitle  = document.querySelector('.hero-title');
+  var heroSubEl  = document.querySelector('.hero-left .hero-sub');
+  if(heroTitle) heroTitle.textContent = chosen.h;
+  if(heroSubEl) heroSubEl.textContent = chosen.s;
 
   // Info bar pills
   const hibCity  = document.getElementById('hibCity');
