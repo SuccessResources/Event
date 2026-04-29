@@ -720,6 +720,17 @@ footer a:hover{color:var(--gold-lt)}
   .btn-primary-light{width:100%;max-width:100%;padding:16px 20px;font-size:11px;border-radius:100px;justify-content:center;display:flex}
   .final-note{font-size:9px;letter-spacing:1.5px;margin-top:16px}
 }
+
+.trainer-founder-grid{margin-bottom:48px}
+.founder-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,106,0.1);border:1px solid rgba(200,169,106,0.3);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:12px}
+.founder-cert{background:rgba(200,169,106,0.15);color:var(--gold)!important;font-size:10px}
+.trainer-divider{display:flex;align-items:center;gap:16px;margin:0 0 48px}
+.trainer-divider-line{flex:1;height:1px;background:var(--border)}
+.trainer-divider-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 8px}
+@media(max-width:900px){
+  .trainer-founder-grid{margin-bottom:32px}
+  .trainer-divider{margin:0 0 32px}
+}
 </style>
 </head>
 <body>
@@ -1146,16 +1157,54 @@ footer a:hover{color:var(--gold-lt)}
 <!-- TRAINER -->
 <section>
   <div class="si">
+    <div class="stag-line"><span>Behind the Programme</span></div>
+
+    <!-- T. Harv Eker — Founder -->
+    <div class="trainer-grid trainer-founder-grid">
+      <div>
+        <div class="trainer-frame" id="harvFrame">
+          <div class="trainer-initials">THE</div>
+          <div class="trainer-caption">
+            <div class="trainer-cap-name">T. Harv Eker</div>
+            <div class="trainer-cap-role">New York Times #1 Bestselling Author</div>
+            <div class="trainer-cert founder-cert">★ Founder &amp; Creator</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="founder-badge">Founder &amp; Creator</div>
+        <h2 class="trainer-name">T. Harv Eker</h2>
+        <div class="trainer-role">Author of <em>Secrets of the Millionaire Mind</em> &middot; Creator of the Millionaire Mind Intensive</div>
+        <div class="trainer-stats-row">
+          <div class="trainer-stat"><div class="trainer-stat-n">10M+</div><div class="trainer-stat-l">Lives Impacted</div></div>
+          <div class="trainer-stat"><div class="trainer-stat-n">30+</div><div class="trainer-stat-l">Countries</div></div>
+          <div class="trainer-stat"><div class="trainer-stat-n">#1</div><div class="trainer-stat-l">NY Times Bestseller</div></div>
+        </div>
+        <div class="trainer-bio">
+          <p>T. Harv Eker is the author of the #1 New York Times bestselling book <em>Secrets of the Millionaire Mind</em>, which has sold over 2 million copies worldwide. After years of financial struggle, Eker discovered that the root cause of financial results lies not in strategy, but in the unconscious programming each of us carries.</p>
+          <p>Once he changed his internal blueprint, he went from zero to millionaire in less than three years. He then developed the Millionaire Mind Intensive to share this exact methodology — a live experience that has since reached over 10 million people across 30+ countries.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="trainer-divider">
+      <div class="trainer-divider-line"></div>
+      <div class="trainer-divider-label">Your Trainer for This Event</div>
+      <div class="trainer-divider-line"></div>
+    </div>
+
+    <!-- Certified Trainer — dynamic -->
     <div class="trainer-grid">
       <div><div class="trainer-frame" id="tFrame"><div class="trainer-initials" id="tInit">MA</div><div class="trainer-caption"><div class="trainer-cap-name" id="tCapName"></div><div class="trainer-cap-role" id="tCapRole"></div><div class="trainer-cert">&#10022; T. Harv Eker Certified</div></div></div></div>
       <div>
-        <div class="stag-line"><span>Your Trainer</span></div>
         <h2 class="trainer-name" id="tName"></h2>
         <div class="trainer-role" id="tRole"></div>
         <div class="trainer-stats-row" id="tStats"></div>
         <div class="trainer-bio" id="tBio"></div>
       </div>
     </div>
+
   </div>
 </section>
 
