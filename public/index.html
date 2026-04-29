@@ -611,6 +611,9 @@ footer a:hover{color:var(--gold-lt)}
   .press-inner{gap:20px;padding:0 20px;flex-wrap:wrap;justify-content:center}
   .press-logo svg{height:22px}
 }
+
+.hero-now-live{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.hero-now-live span{color:var(--green)}
 </style>
 </head>
 <body>
@@ -774,11 +777,6 @@ footer a:hover{color:var(--gold-lt)}
       <div id="heroLoc" style="display:none"></div>
       <div style="display:none"><div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div></div>
 
-      <div class="hero-city-live">
-        <div class="hero-city-live-label">Now Live In</div>
-        <div class="hero-city-live-name" id="heroCity">Your City</div>
-      </div>
-
       <h1 class="hero-title">Loading...</h1>
       <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px"></p>
 
@@ -790,6 +788,8 @@ footer a:hover{color:var(--gold-lt)}
       <div style="display:none" id="heroTime"></div>
     </div>
     <div class="hero-right">
+      <!-- Now Live In label above pill -->
+      <div class="hero-now-live">Now Live In <span id="heroCity">Your City</span></div>
       <!-- Info bar -->
       <div class="hero-info-bar">
         <div class="hib-item">
