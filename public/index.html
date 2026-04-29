@@ -813,6 +813,64 @@ footer a:hover{color:var(--gold-lt)}
   font-size:52px;font-weight:700;color:rgba(30,57,50,0.15);
   background:var(--off-white);border-radius:4px
 }
+
+/* ══ SPAIN-STYLE CURRICULUM ════════════════════════════ */
+.spain-curriculum{background:var(--forest);padding:88px 44px;position:relative;overflow:hidden}
+.spain-curriculum::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(201,154,43,0.05),transparent 60%);pointer-events:none}
+.spain-section-head{text-align:center;max-width:680px;margin:0 auto 52px}
+.spain-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:500;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.spain-eyebrow::before,.spain-eyebrow::after{content:'';display:inline-block;width:20px;height:1px;background:rgba(201,168,76,0.5);vertical-align:middle;margin:0 12px 2px}
+.spain-section-title{font-family:'Montserrat',sans-serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:0}
+.spain-section-title em{font-style:normal;color:var(--gold-light)}
+.spain-curriculum .days-nav{border-color:rgba(255,255,255,0.14);border-radius:100px;max-width:440px;margin:40px 0 36px}
+.spain-curriculum .day-tab{color:rgba(255,255,255,0.6)}
+.spain-curriculum .day-tab.active{background:var(--forest-mid,#2d5244);color:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.spain-curriculum .day-content.active{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.spain-curriculum .session-card{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.07);border-top:2px solid var(--gold);padding:28px;border-radius:0 0 8px 8px}
+.spain-curriculum .session-num{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.spain-curriculum .session-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:16px}
+.spain-curriculum .session-points{list-style:none;padding:0}
+.spain-curriculum .session-points li{font-size:13px;color:rgba(255,255,255,0.65);padding:7px 0 7px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5}
+.spain-curriculum .session-points li:last-child{border-bottom:none}
+.spain-curriculum .session-points li::before{content:'→';position:absolute;left:0;color:var(--gold);font-size:11px;top:8px}
+
+/* ══ SPAIN-STYLE TRAINER ════════════════════════════════ */
+.spain-trainers{background:var(--forest);padding:88px 44px;border-top:1px solid rgba(255,255,255,0.06)}
+.spain-trainer-grid{display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start}
+.spain-trainer-divider{background:linear-gradient(180deg,transparent,rgba(212,175,55,0.3) 30%,rgba(212,175,55,0.3) 70%,transparent);align-self:stretch;margin:0 32px}
+.trp{padding:32px 24px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+.trp-portrait{grid-row:1/7;width:300px;flex-shrink:0}
+.trp-portrait img{width:100%;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5))}
+.trp-role{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.trp-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(22px,2.5vw,36px);line-height:1.1;text-transform:uppercase;letter-spacing:.05em;color:#fff;margin-bottom:16px}
+.trp-name span{color:var(--gold-light)}
+.trp-stats{display:flex;align-items:center;gap:0;margin-bottom:18px}
+.trp-stat{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);flex:1}
+.trp-stat+.trp-stat{border-left:none}
+.trp-stat-icon{font-size:15px;flex-shrink:0}
+.trp-stat-info{display:flex;flex-direction:column;gap:1px}
+.trp-stat-num{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--gold-light);line-height:1}
+.trp-stat-lbl{font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.trp-bio{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);margin-bottom:14px}
+.trp-bio b{color:var(--gold-light);font-weight:600}
+.trp-bio-wrap .trp-bio{margin-bottom:14px}
+.spain-trainers-bar{display:grid;grid-template-columns:1fr 1px 1fr;margin-top:52px;border:1px solid rgba(212,175,55,0.18);border-radius:6px;overflow:hidden;background:rgba(0,0,0,0.3)}
+.spain-trainers-bar-divider{background:rgba(212,175,55,0.2)}
+.trb-item{padding:18px 28px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:10px}
+.trb-item-icon{font-size:16px}
+
+/* Mobile */
+@media(max-width:900px){
+  .spain-curriculum{padding:48px 20px}
+  .spain-curriculum .day-content.active{grid-template-columns:1fr}
+  .spain-trainers{padding:48px 20px}
+  .spain-trainer-grid{grid-template-columns:1fr;gap:40px}
+  .spain-trainer-divider{display:none}
+  .trp{grid-template-columns:1fr;gap:16px}
+  .trp-portrait{grid-row:auto;width:200px;margin:0 auto}
+  .spain-trainers-bar{grid-template-columns:1fr;margin-top:32px}
+  .spain-trainers-bar-divider{display:none}
+}
 </style>
 </head>
 <body>
@@ -1255,56 +1313,47 @@ footer a:hover{color:var(--gold-lt)}
 </section>
 
 <!-- TRAINER -->
-<section id="about">
-  <div class="si">
-    <div class="stag-line"><span>Behind the Programme</span></div>
+<section class="spain-trainers" id="about">
+  <div class="section-inner">
+    <div class="spain-trainer-grid">
 
-    <!-- T. Harv Eker — Founder -->
-    <div class="trainer-grid trainer-founder-grid">
-      <div>
-        <div class="trainer-frame" id="harvFrame">
-          <img src="/assets/people/Harv-Eker.png" alt="T. Harv Eker" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block">
-          <div class="trainer-caption">
-            <div class="trainer-cap-name">T. Harv Eker</div>
-            <div class="trainer-cap-role">New York Times #1 Bestselling Author</div>
-            <div class="trainer-cert founder-cert">★ Founder &amp; Creator</div>
-          </div>
+      <!-- T. HARV EKER -->
+      <div class="trp">
+        <div class="trp-portrait">
+          <img src="/assets/people/Harv-Eker.png" alt="T. Harv Eker" loading="lazy">
         </div>
+        <div class="trp-role">Program Creator</div>
+        <h3 class="trp-name"><span>T. Harv</span> Eker</h3>
+        <div class="trp-stats">
+          <div class="trp-stat"><span class="trp-stat-icon">&#128100;</span><div class="trp-stat-info"><span class="trp-stat-num">10M+</span><span class="trp-stat-lbl">Attendees</span></div></div>
+          <div class="trp-stat"><span class="trp-stat-icon">&#128197;</span><div class="trp-stat-info"><span class="trp-stat-num">30+</span><span class="trp-stat-lbl">Years</span></div></div>
+        </div>
+        <p class="trp-bio">Creator of Millionaire Mind Intensive&reg;. Author of <em>Secrets of the Millionaire Mind</em> — one of the most influential books ever written on the psychology of wealth. He went from <b>zero to millionaire in less than 3 years</b> once he changed the root, not the strategy.</p>
+        <p class="trp-bio">His system has reshaped how <b>over 10 million people</b> across 30+ countries think about money, success, and financial freedom.</p>
       </div>
-      <div>
-        <div class="founder-badge">Founder &amp; Creator</div>
-        <h2 class="trainer-name">T. Harv Eker</h2>
-        <div class="trainer-role">Author of <em>Secrets of the Millionaire Mind</em> &middot; Creator of the Millionaire Mind Intensive</div>
-        <div class="trainer-stats-row">
-          <div class="trainer-stat"><div class="trainer-stat-n">10M+</div><div class="trainer-stat-l">Lives Impacted</div></div>
-          <div class="trainer-stat"><div class="trainer-stat-n">30+</div><div class="trainer-stat-l">Countries</div></div>
-          <div class="trainer-stat"><div class="trainer-stat-n">#1</div><div class="trainer-stat-l">NY Times Bestseller</div></div>
+
+      <!-- DIVIDER -->
+      <div class="spain-trainer-divider"></div>
+
+      <!-- CERTIFIED TRAINER (dynamic) -->
+      <div class="trp" id="trainerPanel">
+        <div class="trp-portrait">
+          <img id="tPhoto" src="/assets/people/Mac.png" alt="Trainer" loading="lazy">
         </div>
-        <div class="trainer-bio">
-          <p>T. Harv Eker is the author of the #1 New York Times bestselling book <em>Secrets of the Millionaire Mind</em>, which has sold over 2 million copies worldwide. After years of financial struggle, Eker discovered that the root cause of financial results lies not in strategy, but in the unconscious programming each of us carries.</p>
-          <p>Once he changed his internal blueprint, he went from zero to millionaire in less than three years. He then developed the Millionaire Mind Intensive to share this exact methodology — a live experience that has since reached over 10 million people across 30+ countries.</p>
-        </div>
+        <div class="trp-role" id="tRole2">Lead Trainer</div>
+        <h3 class="trp-name" id="tName2"></h3>
+        <div class="trp-stats" id="tStats2"></div>
+        <div id="tBio2" class="trp-bio-wrap"></div>
       </div>
+
     </div>
 
-    <!-- Divider -->
-    <div class="trainer-divider">
-      <div class="trainer-divider-line"></div>
-      <div class="trainer-divider-label">Your Trainer for This Event</div>
-      <div class="trainer-divider-line"></div>
+    <!-- Bottom bar -->
+    <div class="spain-trainers-bar">
+      <div class="trb-item"><span class="trb-item-icon">&#128101;</span> Built on Harv&rsquo;s System.</div>
+      <div class="spain-trainers-bar-divider"></div>
+      <div class="trb-item"><span class="trb-item-icon">&#127908;</span> Guided Live in the Room.</div>
     </div>
-
-    <!-- Certified Trainer — dynamic -->
-    <div class="trainer-grid">
-      <div><div class="trainer-frame" id="tFrame"><div class="trainer-initials" id="tInit">MA</div><div class="trainer-caption"><div class="trainer-cap-name" id="tCapName"></div><div class="trainer-cap-role" id="tCapRole"></div><div class="trainer-cert">&#10022; T. Harv Eker Certified</div></div></div></div>
-      <div>
-        <h2 class="trainer-name" id="tName"></h2>
-        <div class="trainer-role" id="tRole"></div>
-        <div class="trainer-stats-row" id="tStats"></div>
-        <div class="trainer-bio" id="tBio"></div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1333,35 +1382,84 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </section>
 
-<!-- CURRICULUM — light 3-day overview -->
-<section id="curriculum">
-  <div class="si">
-    <div class="stag-line"><span>The 3-Day Process</span></div>
-    <h2 class="stitle">What Happens <strong>Across 3 Days</strong></h2>
-    <div class="day-overview">
-      <div class="day-ov-row">
-        <div class="day-ov-num">Day 1</div>
-        <div class="day-ov-content">
-          <div class="day-ov-title">Understand the Pattern</div>
-          <div class="day-ov-desc">See exactly what&rsquo;s been driving your financial results. Not strategies &mdash; the roots underneath them. You&rsquo;ll identify precisely why what you know and what you do are two different things.</div>
-        </div>
+<!-- CURRICULUM -->
+<section class="spain-curriculum" id="curriculum">
+  <div class="section-inner">
+    <div class="spain-section-head">
+      <div class="spain-eyebrow">3-Day Programme</div>
+      <h2 class="spain-section-title">Three Days That Change <em>Everything.</em></h2>
+    </div>
+    <div class="days-nav">
+      <button class="day-tab active" onclick="switchDay(0,this)">Day 1</button>
+      <button class="day-tab" onclick="switchDay(1,this)">Day 2</button>
+      <button class="day-tab" onclick="switchDay(2,this)">Day 3</button>
+    </div>
+    <div class="day-content active" id="day0">
+      <div class="session-card">
+        <div class="session-num">Session 01 · Mindset Day</div>
+        <h3 class="session-title">Winning the Money Game</h3>
+        <ul class="session-points">
+          <li>Discover the #1 reason most people fail at the money game</li>
+          <li>Understand the two primary sources of passive income</li>
+          <li>Implement a proven money management system (JAW System)</li>
+          <li>The roots vs. fruits framework that explains your entire financial history</li>
+        </ul>
       </div>
-      <div class="day-ov-row">
-        <div class="day-ov-num">Day 2</div>
-        <div class="day-ov-content">
-          <div class="day-ov-title">Break the Pattern</div>
-          <div class="day-ov-desc">The emotional clearing process. The most powerful 2 hours of the weekend &mdash; and for many, of their financial life. Unresolved beliefs that have been running silently for years are identified and released.</div>
-        </div>
-      </div>
-      <div class="day-ov-row">
-        <div class="day-ov-num">Day 3</div>
-        <div class="day-ov-content">
-          <div class="day-ov-title">Rebuild a New One</div>
-          <div class="day-ov-desc">Your personalised 90-day action plan. You leave with a specific next move and the internal wiring to actually execute it. This is where insight becomes irreversible change.</div>
-        </div>
+      <div class="session-card">
+        <div class="session-num">Session 02 · Mindset Day</div>
+        <h3 class="session-title">Financial Freedom Blueprint</h3>
+        <ul class="session-points">
+          <li>The three keys to financial freedom — most only know one</li>
+          <li>How time and high ROI are the ultimate wealth-building tools</li>
+          <li>Top passive income vehicles: real estate, licensing, internet systems</li>
+          <li>Why knowing and doing are completely different skills</li>
+        </ul>
       </div>
     </div>
-    <p class="day-ov-tagline">This is not theory. It&rsquo;s a guided process that changes how you think, decide and act around money &mdash; permanently.</p>
+    <div class="day-content" id="day1">
+      <div class="session-card">
+        <div class="session-num">Session 03 · Reconditioning Day</div>
+        <h3 class="session-title">Winning the Mind Game</h3>
+        <ul class="session-points">
+          <li>Why some achieve success while others with the same knowledge don&rsquo;t</li>
+          <li>The Coin Exercise &mdash; a live demonstration of your unconscious money patterns</li>
+          <li>How you do anything is how you do everything &mdash; your financial mirror</li>
+          <li>Shift your mindset with empowering declarations that actually work</li>
+        </ul>
+      </div>
+      <div class="session-card">
+        <div class="session-num">Session 04 · Reconditioning Day</div>
+        <h3 class="session-title">Unlock Your Money Personality</h3>
+        <ul class="session-points">
+          <li>Identify your dominant type: Saver, Spender, Avoider, or Monk</li>
+          <li>How your personality shapes your financial habits and decisions</li>
+          <li>Strategies to balance your type for long-term stability</li>
+          <li>Why your biggest financial enemy is often yourself</li>
+        </ul>
+      </div>
+    </div>
+    <div class="day-content" id="day2">
+      <div class="session-card">
+        <div class="session-num">Session 05 · Transformation Day</div>
+        <h3 class="session-title">Master Your Money Emotions</h3>
+        <ul class="session-points">
+          <li>The emotional clearing session &mdash; most powerful 2 hours of the weekend</li>
+          <li>How unresolved guilt, fear, shame and anger are sabotaging you now</li>
+          <li>The guided process that identifies and permanently releases these blocks</li>
+          <li>Why this one session outweighs years of therapy for your financial life</li>
+        </ul>
+      </div>
+      <div class="session-card">
+        <div class="session-num">Session 06 · Transformation Day</div>
+        <h3 class="session-title">The Power of Action</h3>
+        <ul class="session-points">
+          <li>Why action is the critical bridge between thought, feeling and result</li>
+          <li>How to break through your comfort zone &mdash; and why discomfort = growth</li>
+          <li>Successful people feel fear too &mdash; they just don&rsquo;t let it stop them</li>
+          <li>Your personalised action plan for the 90 days after the event</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1589,6 +1687,18 @@ function renderTrainer(key){
   document.getElementById('tRole').innerHTML=t.title;
   document.getElementById('tStats').innerHTML=t.stats.map(st=>'<div><div class="ts-num">'+st.n+'</div><div class="ts-label">'+st.l+'</div></div>').join('');
   document.getElementById('tBio').innerHTML=t.bio.map(p=>'<p>'+p+'</p>').join('');
+  // Spain-style trainer panel
+  var tPhoto = document.getElementById('tPhoto');
+  var tName2 = document.getElementById('tName2');
+  var tRole2 = document.getElementById('tRole2');
+  var tStats2= document.getElementById('tStats2');
+  var tBio2  = document.getElementById('tBio2');
+  if(tPhoto) tPhoto.src = t.photo || '';
+  if(tPhoto) tPhoto.alt = t.first + ' ' + t.last;
+  if(tName2) tName2.innerHTML = '<span>'+t.first+'</span> '+t.last;
+  if(tRole2) tRole2.textContent = 'Lead Trainer · ' + (window.FEATURED ? window.FEATURED.city : '');
+  if(tStats2) tStats2.innerHTML = t.stats.map(s=>'<div class="trp-stat"><div class="trp-stat-info"><span class="trp-stat-num">'+s.n+'</span><span class="trp-stat-lbl">'+s.l+'</span></div></div>').join('');
+  if(tBio2)  tBio2.innerHTML = t.bio.map(p=>'<p class="trp-bio">'+p+'</p>').join('');
   // Photo: real image if available, otherwise initials
   const frame=document.getElementById('tFrame');
   const initEl=document.getElementById('tInit');
