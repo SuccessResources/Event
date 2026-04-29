@@ -61,7 +61,12 @@ h2.stitle strong{font-weight:800;font-style:italic}
 .brand-logo{font-family:"Cinzel",serif;font-weight:700;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-lt) 0%,var(--gold) 50%,var(--gold-lt) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:background .3s,box-shadow .3s}
+.nav-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--forest);line-height:1}
+.nav-intensive{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--forest);margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center}
+.nav-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--forest)}
 nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 /* brand block — luxury horizontal pill ─────────────────────── */
 .nav-brand{
@@ -106,10 +111,10 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 44px 88px;position:relative;overflow:hidden;background-color:var(--white);background-image:linear-gradient(to right,var(--white) 38%,rgba(255,255,255,0.05) 52%,transparent 60%),url('/assets/hero/Hero-desktop.webp');background-size:auto,50%;background-position:right center,right center;background-repeat:no-repeat,no-repeat}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 44px 88px;position:relative;overflow:hidden;background:var(--white)}
 .hero::after{display:none}
 .zen-deco{display:none}
-.hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(0,520px) 1fr;gap:0;align-items:center}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .hero-left{}
 .hero-sig{display:none}
 .hero-brand{display:none}
@@ -161,7 +166,14 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .btn-primary:hover::after{transform:translateX(4px)}
 .hero-access{font-family:"Montserrat",sans-serif;font-size:11px;color:var(--muted);margin-top:10px;letter-spacing:.5px}
 /* hero right panel — hidden, image handles right side */
-.hero-right{display:none}
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.hero-info-bar{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.hib-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 8px;border-right:1px solid var(--border);text-align:center}
+.hib-item:last-child{border-right:none}
+.hib-icon svg{width:28px;height:28px;stroke:var(--forest);fill:none;stroke-width:1.5}
+.hib-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--forest);line-height:1.4}
+.hero-city-photo{width:100%;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.12)}
+.hero-city-photo img{width:100%;display:block;object-fit:cover;height:380px}
 .hr-label,.hr-value,.hr-divider{display:none}
 
 /* ── STATS BAR ── */
@@ -543,6 +555,22 @@ footer a:hover{color:var(--gold-lt)}
 .mpanel-buy-btn:hover{background:var(--green);transform:translateY(-1px);box-shadow:0 6px 20px rgba(30,57,50,0.25)}
 .mpanel-buy-btn-live{background:var(--gold);color:#fff}
 .mpanel-buy-btn-live:hover{background:#b8832a}
+
+.hero-city-live{border-left:3px solid var(--forest);padding-left:16px;margin:0 0 20px}
+.hero-city-live-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);margin-bottom:4px}
+.hero-city-live-name{font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--forest);text-transform:uppercase;letter-spacing:1px;line-height:1.1}
+.stat-icon{width:28px;height:28px;color:rgba(255,255,255,0.7);flex-shrink:0}
+.stat-item{display:flex;align-items:center;gap:14px}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-right{order:-1}
+  .hero-info-bar{grid-template-columns:repeat(2,1fr);gap:12px}
+  .hib-item{border-right:none;border-bottom:1px solid var(--border)}
+  .hib-item:nth-child(2n){border-right:none}
+  .hib-item:last-child,.hib-item:nth-last-child(2){border-bottom:none}
+  .hero-city-photo img{height:240px}
+}
 </style>
 </head>
 <body>
@@ -680,13 +708,18 @@ footer a:hover{color:var(--gold-lt)}
 <nav>
   <a class="nav-brand" href="#">
     <div>
-      <div class="nav-sig">T. Harv Eker &middot; Signature Programme&reg;</div>
-      <div class="nav-name">Millionaire Mind&reg;</div>
+      <div class="nav-name">Millionaire Mind</div>
+      <div class="nav-intensive">&mdash; INTENSIVE &mdash;</div>
     </div>
-    <div class="nav-divider"></div>
-    <div class="nav-programme">Intensive Online</div>
   </a>
-  <button class="btn-nav" onclick="openFeatured()"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-lock"/></svg> Secure Seat</button>
+  <div class="nav-links">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#curriculum" class="nav-link">Agenda</a>
+    <a href="#who" class="nav-link">Who It&rsquo;s For</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="#testimonials" class="nav-link">Results</a>
+  </div>
+  <button class="btn-nav" onclick="openFeatured()">Save My Seat</button>
 </nav>
 
 <!-- ╔══════════════════════════════════════╗ -->
@@ -701,46 +734,48 @@ footer a:hover{color:var(--gold-lt)}
       <div id="heroLoc" style="display:none"></div>
       <div style="display:none"><div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div></div>
 
-      <!-- World Tour FOMO Hero -->
-      <div class="live-tag">Millionaire Mind&reg; Intensive &mdash; 2026 Global World Tour</div>
-      <h1 class="hero-title">Now Live in <strong id="heroCity">Your City</strong></h1>
-      <div class="hero-rule-line"></div>
-      <p class="hero-sub" style="display:block;font-size:16px;color:var(--ink-mid);line-height:1.8;max-width:520px;margin-bottom:14px">From London to Madrid. From Berlin to Kuala Lumpur.<br>This is not a local event &mdash; it&rsquo;s a global movement happening across cities right now.</p>
-      <p class="hero-sub" style="display:block;font-size:15px;color:var(--muted);line-height:1.8;max-width:520px;margin-bottom:18px">Thousands of business owners, professionals and investors are stepping into this room &mdash; not to learn more strategies, but to fix what&rsquo;s been silently limiting their income.</p>
-      <div class="hero-impact" style="margin-bottom:20px">
-        <p style="font-size:clamp(17px,1.8vw,22px);font-weight:600;color:var(--forest)">And right now &mdash; it&rsquo;s your city&rsquo;s turn.</p>
-        <p style="font-size:15px;color:var(--muted);font-weight:400">Miss this stop, and the tour moves on.</p>
+      <div class="live-tag">2026 Global World Tour</div>
+      <h1 class="hero-title">This is Not a Local Event. It&rsquo;s a Global Movement.</h1>
+      <p class="hero-sub" style="display:block;font-size:16px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:20px">The most powerful wealth event is coming to you <strong style="color:var(--green)">Live Online.</strong> This is your moment.</p>
+
+      <div class="hero-city-live">
+        <div class="hero-city-live-label">Now Live In</div>
+        <div class="hero-city-live-name" id="heroCity">Your City</div>
       </div>
-      <!-- Event meta — dynamically filled -->
-      <div class="hero-meta" style="display:flex;margin-bottom:22px">
-        <div class="hm"><div class="hm-l">Dates</div><div class="hm-v grn" id="heroDates">&mdash;</div></div>
-        <div class="hm"><div class="hm-l">Time</div><div class="hm-v" id="heroTime">&mdash;</div></div>
-        <div class="hm"><div class="hm-l">Format</div><div class="hm-v">Live Online</div></div>
-      </div>
-      <!-- Urgency badge -->
-      <div style="display:inline-flex;align-items:center;gap:8px;background:var(--green-lt);border:1px solid var(--green-md);padding:7px 16px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:20px">
-        <span style="width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 1.2s infinite"></span>
-        Early Access Closing
-      </div>
-      <button class="btn-primary" onclick="openFeatured()">Secure My Seat</button>
+
+      <p class="hero-sub" style="display:block;font-size:15px;color:var(--muted);line-height:1.75;max-width:520px;margin-bottom:28px">Join thousands of entrepreneurs, investors, and high achievers from around the world and master the mindset, strategies, and network to create lasting wealth and impact.</p>
+
+      <button class="btn-primary" onclick="openFeatured()">Save My Seat Now &nbsp;&rarr;</button>
       <div class="hero-trust"><svg class="icon icon-sm" aria-hidden="true"><use href="#i-clock"/></svg> Takes less than 60 seconds &middot; Limited seats per city</div>
+
+      <!-- Hidden meta for JS compatibility -->
+      <div style="display:none" id="heroDates"></div>
+      <div style="display:none" id="heroTime"></div>
     </div>
-    <div class="hero-right" id="heroTag">
-      <div class="hr-label">Live Online Event</div>
-      <div class="hr-value gold" style="font-size:16px">2026 World Tour</div>
-      <div class="hr-divider"></div>
-      <div class="hr-label">Programme</div>
-      <div class="hr-value">3-Day Live Experience</div>
-      <div class="hr-label">Duration</div>
-      <div class="hr-value">9am &ndash; 8pm each day</div>
-      <div class="hr-divider"></div>
-      <div class="hr-label">Investment</div>
-      <div class="hr-value gold">$29 Early Bird</div>
-      <div class="hr-label">Regular price</div>
-      <div class="hr-value" style="font-size:14px;text-decoration:line-through;opacity:.5">$199</div>
-      <div class="hr-divider"></div>
-      <div class="hr-label">Access</div>
-      <div class="hr-value" style="font-size:14px">Zoom &middot; Any device<br>Online + VIP In-Person</div>
+    <div class="hero-right">
+      <!-- Info bar -->
+      <div class="hero-info-bar">
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="hib-label" id="hibCity">Your City</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
+          <div class="hib-label" id="hibDates">Loading...</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="hib-label" id="hibTime">Loading...</div>
+        </div>
+        <div class="hib-item">
+          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="hib-label">Live Online</div>
+        </div>
+      </div>
+      <!-- City photo -->
+      <div class="hero-city-photo">
+        <img id="heroCityImg" src="/assets/cities/kuala-lumpur.webp" alt="Event city" loading="eager">
+      </div>
     </div>
   </div>
 </section>
@@ -749,10 +784,22 @@ footer a:hover{color:var(--gold-lt)}
 <!-- STATS -->
 <div class="stats-bar">
   <div class="si">
-    <div class="stat-item"><div class="stat-num">10M+</div><div class="stat-label">Event Participants</div></div>
-    <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Countries</div></div>
-    <div class="stat-item"><div class="stat-num">500</div><div class="stat-label">Events Per Year</div></div>
-    <div class="stat-item"><div class="stat-num">30</div><div class="stat-label">Years of Impact</div></div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <div><div class="stat-num">50,000+</div><div class="stat-label">Participants Worldwide</div></div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      <div><div class="stat-num">30+</div><div class="stat-label">Countries Reached</div></div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><polyline points="9,15 11,17 15,13"/></svg>
+      <div><div class="stat-num">20+</div><div class="stat-label">Years of Transformation</div></div>
+    </div>
+    <div class="stat-item">
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+      <div><div class="stat-num"></div><div class="stat-label">Proven Frameworks<br><span style="font-weight:400;opacity:.7">Real Results</span></div></div>
+    </div>
   </div>
 </div>
 
