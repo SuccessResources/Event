@@ -637,6 +637,11 @@ footer a:hover{color:var(--gold-lt)}
 @media(max-width:900px){
   .city-title-above{padding:28px 20px 16px}
 }
+
+.tour-feat-price{display:flex;align-items:center;gap:10px;margin:16px 0 12px;flex-wrap:wrap}
+.tour-feat-was{font-size:14px;text-decoration:line-through;color:var(--muted,#888);font-family:'Montserrat',sans-serif}
+.tour-feat-now{font-family:'Playfair Display',serif;font-size:36px;font-weight:800;color:var(--forest,#1E3932);line-height:1}
+.tour-feat-badge{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold,#C8973A);color:#fff;padding:4px 10px;border-radius:100px}
 </style>
 </head>
 <body>
@@ -1519,7 +1524,7 @@ function buildTourSection(featuredEv){
     '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-clock"/></svg>'+featuredEv.time+'</div>'+
     '<div class="tour-feat-row"><svg class="icon icon-sm"><use href="#i-screen"/></svg>Live Online \u00b7 Optional In-Person</div>'+
     '</div>'+
-    '<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)">Secure My Seat \u2192</button>'+
+    '<div class="tour-feat-price">'+'<span class="tour-feat-was">'+featuredEv.cur+' 199</span>'+'<span class="tour-feat-now">'+featuredEv.cur+' '+featuredEv.price+'</span>'+'<span class="tour-feat-badge">Early Bird</span>'+'</div>'+'<button class="tour-feat-btn" data-btn="'+featuredEv.btnId+'" onclick="pickCity(this)">Secure My Seat \u2192</button>'+
     '<div class="tour-feat-scarcity"><svg class="icon icon-sm" style="color:var(--gold)"><use href="#i-users-small"/></svg>&nbsp;Limited seats. This stop is filling.</div>'+
     '</div>'+
     '<div class="tour-feat-right">'+
