@@ -579,6 +579,27 @@ footer a:hover{color:var(--gold-lt)}
   mask-image:linear-gradient(to left,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%),
              linear-gradient(to top,rgba(0,0,0,1) 80%,rgba(0,0,0,0) 100%);
   mask-composite:intersect}
+
+/* ── VIDEO BRIDGE ── */
+.video-bridge{background:var(--white);padding:80px 0;border-top:1px solid var(--border)}
+.vb-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center}
+.vb-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.vb-eyebrow::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block}
+.vb-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--forest);line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px}
+.vb-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:380px}
+.vb-player{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;box-shadow:0 8px 48px rgba(0,0,0,0.14)}
+.vb-facade{position:absolute;inset:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .3s}
+.vb-facade-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--forest) 0%,#2d5244 100%)}
+.vb-play{position:relative;z-index:2;transition:transform .2s}
+.vb-facade:hover .vb-play{transform:scale(1.08)}
+.vb-facade::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.1);z-index:1;transition:background .2s}
+.vb-facade:hover::before{background:rgba(0,0,0,0)}
+.vb-play svg{width:72px;height:72px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.3))}
+@media(max-width:900px){
+  .vb-inner{grid-template-columns:1fr;gap:32px}
+  .video-bridge{padding:52px 0}
+  .vb-sub{max-width:100%}
+}
 </style>
 </head>
 <body>
@@ -813,6 +834,34 @@ footer a:hover{color:var(--gold-lt)}
     </div>
   </div>
 </div>
+
+
+<!-- VIDEO BRIDGE -->
+<section class="video-bridge">
+  <div class="si">
+    <div class="vb-inner">
+      <div class="vb-text">
+        <span class="vb-eyebrow">See It For Yourself</span>
+        <h2 class="vb-title">What Happens Inside the Room</h2>
+        <p class="vb-sub">Thousands of business owners and professionals have sat in this exact experience. Watch what it looks like — and what it does.</p>
+      </div>
+      <div class="vb-player">
+        <div class="vb-facade" id="vbFacade" onclick="playVb()" onmouseenter="preloadVb()">
+          <div class="vb-facade-bg"></div>
+          <div class="vb-play">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="31" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/>
+              <polygon points="26,20 50,32 26,44" fill="#fff"/>
+            </svg>
+          </div>
+        </div>
+        <iframe id="vbFrame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none"
+          title="Millionaire Mind Intensive"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WORLD TOUR SECTION -->
 <section class="tour-section" id="register">
@@ -1556,6 +1605,31 @@ function updateHeroPrice(ev){
   }catch(e){initPage(findNearest(''));}
 })();
 
+
+var _vbLoaded = false;
+function preloadVb(){
+  if(_vbLoaded) return; _vbLoaded = true;
+  var f = document.getElementById('vbFrame');
+  if(f && !f.src) f.src = 'https://player.vimeo.com/video/778765586?autoplay=0&badge=0&autopause=0';
+}
+function playVb(){
+  var facade = document.getElementById('vbFacade');
+  var f      = document.getElementById('vbFrame');
+  if(!f) return;
+  f.src = 'https://player.vimeo.com/video/778765586?autoplay=1&badge=0&autopause=0';
+  f.style.display = 'block';
+  if(facade) facade.style.display = 'none';
+}
+// IntersectionObserver preload
+(function(){
+  var el = document.getElementById('vbFrame');
+  if(el && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ preloadVb(); obs.disconnect(); }});
+    }, {rootMargin:'200px'});
+    obs.observe(el);
+  }
+})();
 </script>
 </body>
 </html>
