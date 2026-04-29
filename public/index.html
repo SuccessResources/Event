@@ -436,10 +436,6 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .offer-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:var(--forest);padding:18px 28px;font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:100px;width:100%;transition:all .25s;margin-bottom:10px}
 .offer-btn:hover{background:rgba(255,255,255,0.9);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
 .offer-trust{font-size:12px;color:rgba(255,255,255,0.3);text-align:center}
-@media(max-width:900px){
-  .prob2-grid{grid-template-columns:1fr;gap:40px}
-  .offer-inner{grid-template-columns:1fr;gap:40px}
-}
 
 /* ══ WORLD TOUR SECTION ══════════════════════════════════════════════════ */
 .tour-section{background:#fff;padding:0;border-top:1px solid var(--border)}
@@ -496,20 +492,6 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .tsb-cta{background:var(--forest);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
 .tsb-cta-text{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);line-height:1.5}
 /* Responsive */
-@media(max-width:900px){
-  .tour-header-row{grid-template-columns:1fr;gap:24px;padding:64px 0 32px}
-  .tour-featured-card{grid-template-columns:1fr}
-  .tour-feat-right{min-height:220px}
-  .tour-row{grid-template-columns:52px 1fr 120px;gap:8px}
-  .tour-row-btn{display:none}
-  .tour-stats-inner{grid-template-columns:1fr 1fr}
-  .tsb-cta{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.1)}
-}
-@media(max-width:600px){
-  .tour-row{grid-template-columns:44px 1fr;padding:14px 12px}
-  .tour-row-date-col{display:none}
-  .tour-stats-inner{grid-template-columns:1fr 1fr}
-}
 
 /* ── FOOTER ── */
 footer{background:var(--forest);padding:40px 48px;border-top:none}
@@ -519,102 +501,6 @@ footer a:hover{color:var(--gold-lt)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1040px){.trainer-grid{grid-template-columns:240px 1fr;gap:40px}}
-@media(max-width:900px){
-  /* ── NAV ── */
-  nav{padding:0 16px;height:60px}
-  .nav-sig{display:none}
-  .nav-links{display:none}
-  .nav-brand .nav-intensive{font-size:8px}
-
-  /* ── HERO — clean single column, headline first ── */
-  .hero{
-    background:var(--white);
-    padding:72px 20px 24px;
-    align-items:flex-start;
-    min-height:auto
-  }
-  .hero-inner{display:flex!important;flex-direction:column!important;gap:0}
-  /* headline first */
-  .hero-left{order:1!important;padding-bottom:0}
-  /* now-live + image + infobar after */
-  .hero-right{order:2!important;padding-top:12px;width:100%;display:flex;flex-direction:column}
-  .hero-now-live{order:1;margin-bottom:8px}
-  .hero-img-wrap{order:2;display:block;margin-top:16px;width:100%}
-  .hero-img-wrap img{max-width:100%;height:auto;object-fit:contain}
-  .hero-info-bar{order:3;margin-top:12px;display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:10px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.07)}
-  /* Hide location row */
-  .hib-item:first-child{display:none}
-  .hib-item{display:flex;flex-direction:row;align-items:center;gap:10px;padding:4px 0;border-right:none;border-bottom:1px solid rgba(0,0,0,0.05);text-align:left}
-  .hib-item:last-child{border-bottom:none}
-  .hib-icon svg{width:16px;height:16px;flex-shrink:0}
-  .hib-label{font-size:12px;letter-spacing:.3px;text-align:left;white-space:nowrap}
-  /* Info bar: 2x2 grid on mobile */
-  .hero-info-bar{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    width:100%;
-    max-width:100%;
-    border-radius:10px
-  }
-  .hib-item{
-    padding:12px 8px;
-    border-right:none;
-    border-bottom:1px solid rgba(0,0,0,0.07)
-  }
-  .hib-item:nth-child(odd){border-right:1px solid rgba(0,0,0,0.07)}
-  .hib-item:nth-child(3),.hib-item:nth-child(4){border-bottom:none}
-  .hib-icon svg{width:20px;height:20px}
-  /* Now live label */
-  .hero-now-live{font-size:10px;margin-bottom:8px}
-  /* Reduce title size on mobile */
-  .hero-title{font-size:clamp(26px,7vw,36px);margin-bottom:14px}
-  /* CTA full width */
-  .btn-primary{width:100%;max-width:100%;padding:16px 24px}
-
-  /* ── GENERAL ── */
-  section{padding:48px 20px}
-  .stats-bar{padding:24px 16px}
-  .stats-bar .si{grid-template-columns:1fr 1fr}
-  .who-grid,.how-grid{grid-template-columns:1fr 1fr}
-  .trainer-grid{grid-template-columns:1fr}
-  .trainer-frame{display:none}
-  .prob-grid{grid-template-columns:1fr}
-  .testi-grid{grid-template-columns:1fr}
-  .day-content.active{grid-template-columns:1fr}
-  .ev-grid{grid-template-columns:1fr}
-  .end-vid-grid{grid-template-columns:1fr}
-  .end-grid{grid-template-columns:1fr}
-  .val-table td:nth-child(2){display:none}
-
-  /* ── VIDEO BRIDGE ── */
-  .vb-inner{grid-template-columns:1fr;gap:24px}
-  .video-bridge{padding:40px 0}
-  .video-bridge .si{padding:0 20px}
-  .vb-media-strip{flex-wrap:nowrap;overflow-x:auto;gap:0;padding:10px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .vb-media-strip::-webkit-scrollbar{display:none}
-  .vb-featured-label{font-size:8px;letter-spacing:2px;white-space:nowrap}
-  .vb-media-logos-wrap img{height:20px;min-width:180px}
-
-  /* ── CITY IMAGE SECTION ── */
-  .city-grid{grid-template-columns:1fr;padding:28px 16px;gap:20px}
-  .city-col-right{display:none}
-  .city-image-section{min-height:auto}
-  .city-title-above{padding:24px 20px 16px}
-  .city-movement-title-above{font-size:clamp(22px,6vw,32px)}
-}
-@media(max-width:600px){
-  nav{padding:0 16px;height:58px}
-  .nav-name{font-size:14px}
-  .nav-programme{display:none}
-  .stats-bar .si{grid-template-columns:1fr 1fr}
-  .who-grid,.how-grid,.testi-grid,.ev-grid{grid-template-columns:1fr}
-  .days-nav{flex-direction:column}
-  .hero-meta{gap:16px}
-  .countdown{gap:2px}
-  .cd-num{font-size:28px}
-  .modal-box{padding:0}
-  .modal-body{padding:20px}
-}
 .mpanel-buy-btn{display:flex;align-items:center;justify-content:center;background:var(--forest);color:#fff;padding:16px 24px;font-family:"Montserrat",sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:100px;transition:all .2s;width:100%;text-align:center}
 .mpanel-buy-btn:hover{background:var(--green);transform:translateY(-1px);box-shadow:0 6px 20px rgba(30,57,50,0.25)}
 .mpanel-buy-btn-live{background:var(--gold);color:#fff}
@@ -645,11 +531,6 @@ footer a:hover{color:var(--gold-lt)}
 .vb-facade::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.1);z-index:1;transition:background .2s}
 .vb-facade:hover::before{background:rgba(0,0,0,0)}
 .vb-play svg{width:72px;height:72px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.3))}
-@media(max-width:900px){
-  .vb-inner{grid-template-columns:1fr;gap:32px}
-  .video-bridge{padding:52px 0}
-  .vb-sub{max-width:100%}
-}
 
 /* ── PRESS STRIP ── */
 .press-strip{background:var(--forest);padding:24px 0;overflow:hidden}
@@ -657,10 +538,6 @@ footer a:hover{color:var(--gold-lt)}
 .press-logo{display:flex;align-items:center;opacity:0.85;transition:opacity .2s;flex-shrink:0}
 .press-logo:hover{opacity:1}
 .press-logo svg{height:28px;width:auto}
-@media(max-width:900px){
-  .press-inner{gap:20px;padding:0 20px;flex-wrap:wrap;justify-content:center}
-  .press-logo svg{height:22px}
-}
 
 .hero-now-live{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .hero-now-live span{color:var(--green)}
@@ -682,17 +559,9 @@ footer a:hover{color:var(--gold-lt)}
 .city-accent{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gold,#C8973A);line-height:1.6}
 .city-col-center{display:flex;align-items:center;justify-content:center}
 .city-col-right{}
-@media(max-width:900px){
-  .city-grid{grid-template-columns:1fr;padding:36px 20px;gap:24px}
-  .city-col-right{display:none}
-  .city-image-section{min-height:auto}
-}
 
 .city-title-above{padding:40px 40px 24px;max-width:760px}
 .city-movement-title-above{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,44px);font-weight:800;color:var(--forest);line-height:1.15;margin-top:10px;letter-spacing:-0.5px}
-@media(max-width:900px){
-  .city-title-above{padding:28px 20px 16px}
-}
 
 .tour-feat-price{margin:16px 0 12px}
 .tour-price-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#333;background:#F7F7F7;border:1px solid #E5E5E5;padding:5px 14px;border-radius:100px}
@@ -710,6 +579,134 @@ footer a:hover{color:var(--gold-lt)}
     grid-template-columns:1fr!important
   }
   .mpanel-live{border-left:none!important;border-top:1px solid var(--border)!important}
+}
+
+/* ══════════════════════════════════════
+   MOBILE — Single authoritative block
+   All rules here. Nothing elsewhere.
+════════════════════════════════════════ */
+@media(max-width:900px){
+
+  /* ── VARIABLES ── */
+  :root{--mob-pad:20px}
+
+  /* ── NAV ── */
+  nav{padding:0 var(--mob-pad);height:60px}
+  .nav-sig,.nav-links,.nav-programme{display:none}
+  .nav-brand .nav-intensive{font-size:8px;letter-spacing:2px}
+  .nav-name{font-size:18px}
+  .btn-nav{padding:10px 18px;font-size:10px}
+
+  /* ── HERO ── */
+  .hero{background:var(--white);padding:72px var(--mob-pad) 24px;align-items:flex-start;min-height:auto}
+  .hero-inner{display:flex!important;flex-direction:column!important;gap:0}
+  .hero-left{order:1!important;padding-bottom:0}
+  .hero-right{order:2!important;padding-top:16px;width:100%;display:flex;flex-direction:column}
+  /* headline */
+  .hero-title{font-size:clamp(26px,7.5vw,34px);line-height:1.15;margin-bottom:12px;letter-spacing:-0.3px}
+  /* sub */
+  .hero-left .hero-sub{font-size:15px!important;line-height:1.7!important;margin-bottom:20px!important}
+  /* CTA */
+  .btn-primary{width:100%;max-width:100%;padding:16px 20px;font-size:11px;border-radius:100px}
+  .hero-trust{font-size:11px;margin-top:10px}
+  /* Now Live label */
+  .hero-now-live{font-size:10px;letter-spacing:1.5px;margin-bottom:10px}
+  /* Hero image */
+  .hero-img-wrap{order:2;display:block;margin-top:12px;width:100%;overflow:visible}
+  .hero-img-wrap img{width:100%;max-width:100%;height:auto;object-fit:contain}
+  /* Info bar — compact vertical list */
+  .hero-info-bar{
+    order:3;margin-top:12px;
+    display:flex!important;flex-direction:column;gap:0;
+    padding:10px 14px;border-radius:10px;
+    background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.07);
+    width:100%;max-width:100%
+  }
+  .hib-item:first-child{display:none}
+  .hib-item{
+    display:flex;flex-direction:row;align-items:center;gap:10px;
+    padding:7px 0;border-right:none;
+    border-bottom:1px solid rgba(0,0,0,0.05);text-align:left
+  }
+  .hib-item:last-child{border-bottom:none}
+  .hib-icon svg{width:15px;height:15px;flex-shrink:0;opacity:0.7}
+  .hib-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.5px;text-align:left;white-space:nowrap;color:var(--forest)}
+
+  /* ── STATS BAR ── */
+  .stats-bar{padding:20px var(--mob-pad)}
+  .stats-bar .si{grid-template-columns:1fr 1fr;gap:16px}
+  .stat-item{gap:10px}
+  .stat-num{font-size:28px}
+  .stat-label{font-size:10px}
+  .stat-icon{width:22px;height:22px}
+
+  /* ── GENERAL SECTIONS ── */
+  section{padding:48px var(--mob-pad)}
+  .si{padding:0}
+  .section-tag{font-size:10px}
+  h2,.section-title{font-size:clamp(24px,6.5vw,32px)!important;line-height:1.2}
+
+  /* ── VIDEO BRIDGE ── */
+  .video-bridge{padding:40px 0}
+  .video-bridge .si{padding:0 var(--mob-pad)}
+  .vb-inner{grid-template-columns:1fr;gap:24px}
+  .vb-title{font-size:clamp(20px,5.5vw,26px)}
+  .vb-sub{max-width:100%;font-size:14px}
+  .vb-play svg{width:56px;height:56px}
+  /* Media strip — horizontal scroll */
+  .vb-media-strip{
+    flex-wrap:nowrap;overflow-x:auto;gap:0;
+    padding:10px var(--mob-pad);
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin:0 calc(-1 * var(--mob-pad))
+  }
+  .vb-media-strip::-webkit-scrollbar{display:none}
+  .vb-featured-label{font-size:9px;letter-spacing:2px;white-space:nowrap;flex-shrink:0}
+  .vb-media-logos-wrap img{height:18px;min-width:160px}
+
+  /* ── PRESS STRIP ── */
+  .press-inner{gap:16px;padding:0 var(--mob-pad);flex-wrap:wrap;justify-content:center}
+  .press-logo svg{height:20px}
+
+  /* ── WORLD TOUR TITLE ── */
+  .city-title-above{padding:32px var(--mob-pad) 16px}
+  .city-movement-title-above{font-size:clamp(22px,6vw,30px);line-height:1.2}
+
+  /* ── CITY IMAGE SECTION ── */
+  .city-image-section{min-height:auto}
+  .city-grid{grid-template-columns:1fr;padding:28px var(--mob-pad);gap:16px}
+  .city-col-right{display:none}
+  .city-movement-title{font-size:clamp(20px,5.5vw,26px)}
+  .city-movement-sub{font-size:13px}
+  .city-urgency{font-size:13px}
+  .tour-featured-card{border-radius:12px}
+
+  /* ── TOUR LIST ── */
+  .tour-header-row{grid-template-columns:1fr;gap:24px;padding:48px 0 24px}
+  .tour-featured-card{grid-template-columns:1fr}
+  .tour-feat-right{min-height:200px}
+  .tour-row{grid-template-columns:44px 1fr;padding:14px 0;gap:8px}
+  .tour-row-btn,.tour-row-date-col{display:none}
+  .tour-stats-inner{grid-template-columns:1fr 1fr;gap:12px}
+  .tsb-cta{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.1)}
+
+  /* ── CONTENT SECTIONS ── */
+  .who-grid,.how-grid{grid-template-columns:1fr 1fr}
+  .trainer-grid{grid-template-columns:1fr}
+  .trainer-frame{display:none}
+  .prob-grid,.prob2-grid{grid-template-columns:1fr;gap:32px}
+  .offer-inner{grid-template-columns:1fr;gap:32px}
+  .testi-grid{grid-template-columns:1fr}
+  .day-content.active{grid-template-columns:1fr}
+  .ev-grid{grid-template-columns:1fr}
+  .end-vid-grid,.end-grid{grid-template-columns:1fr}
+  .val-table td:nth-child(2){display:none}
+  .days-nav{flex-direction:column}
+}
+
+@media(max-width:600px){
+  .who-grid,.how-grid,.testi-grid,.ev-grid{grid-template-columns:1fr}
+  .hero-title{font-size:clamp(24px,8vw,30px)}
 }
 </style>
 </head>
