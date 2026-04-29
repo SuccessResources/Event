@@ -348,7 +348,7 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 /* ── MODAL — Starbucks × Apple ── */
 .modal-ov{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,18,14,0.55);backdrop-filter:blur(16px);align-items:center;justify-content:center;padding:24px}
 .modal-ov.open{display:flex}
-.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:840px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06)}
+.modal-box{display:grid;grid-template-columns:1fr 1fr;max-width:840px;width:100%;max-height:92vh;overflow-y:auto;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06);overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 /* Left panel — online (white) */
 .mpanel-online{background:#fff;padding:40px 36px;display:flex;flex-direction:column;position:relative}
 /* Right panel — in-person (very light green) */
@@ -399,7 +399,21 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 .btn-modal-live:hover{background:#2a4a3e;transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,0,0,0.14)}
 .mpanel-skip{display:block;text-align:center;font-size:12px;color:var(--muted-lt);cursor:pointer;transition:color .2s;background:none;border:none;width:100%;font-family:inherit;padding:4px 0}
 .mpanel-skip:hover{color:var(--forest)}
-@media(max-width:700px){.modal-box{grid-template-columns:1fr}.mpanel-live{border-left:none;border-top:1px solid var(--border)}}
+@media(max-width:700px){.modal-box{
+  grid-template-columns:1fr;
+  max-width:100%;
+  width:100%;
+  max-height:92vh;
+  border-radius:20px 20px 0 0;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch
+}
+.modal-ov.open{align-items:flex-end;padding:0}.mpanel-live{border-left:none;border-top:1px solid var(--border)}}
 
 /* ── NEW FUNNEL SECTIONS ── */
 /* Problem section */
