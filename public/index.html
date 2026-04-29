@@ -547,12 +547,7 @@ footer a:hover{color:var(--gold-lt)}
     align-items:flex-start;
     min-height:auto
   }
-  .hero-inner{
-    grid-template-columns:1fr;
-    gap:0;
-    display:flex;
-    flex-direction:column
-  }
+  
   /* hero-left handled above */
   /* Right col (pill + image) after CTA on mobile */
   /* hero-left: title+sub first, then CTA */
@@ -651,8 +646,8 @@ footer a:hover{color:var(--gold-lt)}
 .stat-item{display:flex;align-items:center;gap:14px}
 @media(max-width:900px){
   .nav-links{display:none}
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-right{order:-1}
+  
+  
   .hero-info-bar{grid-template-columns:repeat(2,1fr);gap:12px}
   .hib-item{border-right:none;border-bottom:1px solid var(--border)}
   .hib-item:nth-child(2n){border-right:none}
