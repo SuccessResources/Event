@@ -609,8 +609,10 @@ footer a:hover{color:var(--gold-lt)}
 .hero-now-live{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .hero-now-live span{color:var(--green)}
 
-.vb-media-logos{margin-top:24px;opacity:0.7}
-.vb-media-logos img{max-width:100%;height:32px;object-fit:contain}
+.vb-media-strip{margin-top:28px;background:var(--forest);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:16px}
+.vb-featured-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
+.vb-media-logos-wrap{flex:1;display:flex;align-items:center}
+.vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
 </style>
 </head>
 <body>
@@ -850,8 +852,11 @@ footer a:hover{color:var(--gold-lt)}
       <div class="vb-text">
         <h2 class="vb-title">Why What You&rsquo;ve Tried Hasn&rsquo;t Worked Yet<br><span style="color:var(--green)">See What Actually Happens Inside</span></h2>
         <p class="vb-sub">Thousands of business owners and professionals have sat in this exact experience. Watch what it looks like — and what it does.</p>
-        <div class="vb-media-logos">
-          <img src="/assets/All-Media-desktop.svg" alt="As featured in Forbes, CNBC, CNN, and more" loading="lazy">
+        <div class="vb-media-strip">
+          <span class="vb-featured-label">Featured by</span>
+          <div class="vb-media-logos-wrap">
+            <img src="/assets/All-Media-desktop.svg" alt="As featured in Forbes, CNBC, CNN, and more" loading="lazy">
+          </div>
         </div>
       </div>
       <div class="vb-player">
