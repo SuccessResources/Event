@@ -1679,44 +1679,22 @@ function findNearest(code){
 
 // ── RENDER TRAINER ──────────────────────────────────────────────────
 function renderTrainer(key){
-  const t=TRAINERS[key]; if(!t)return;
-  // Caption + name + role + stats + bio (unchanged)
-  document.getElementById('tCapName').textContent=t.first+' '+t.last;
-  document.getElementById('tCapRole').textContent=t.title;
-  document.getElementById('tName').innerHTML=t.first+' <strong>'+t.last+'</strong>';
-  document.getElementById('tRole').innerHTML=t.title;
-  document.getElementById('tStats').innerHTML=t.stats.map(st=>'<div><div class="ts-num">'+st.n+'</div><div class="ts-label">'+st.l+'</div></div>').join('');
-  document.getElementById('tBio').innerHTML=t.bio.map(p=>'<p>'+p+'</p>').join('');
-  // Spain-style trainer panel
-  var tPhoto = document.getElementById('tPhoto');
-  var tName2 = document.getElementById('tName2');
-  var tRole2 = document.getElementById('tRole2');
-  var tStats2= document.getElementById('tStats2');
-  var tBio2  = document.getElementById('tBio2');
-  if(tPhoto) tPhoto.src = t.photo || '';
-  if(tPhoto) tPhoto.alt = t.first + ' ' + t.last;
-  if(tName2) tName2.innerHTML = '<span>'+t.first+'</span> '+t.last;
-  if(tRole2) tRole2.textContent = 'Lead Trainer · ' + (window.FEATURED ? window.FEATURED.city : '');
-  if(tStats2) tStats2.innerHTML = t.stats.map(s=>'<div class="trp-stat"><div class="trp-stat-info"><span class="trp-stat-num">'+s.n+'</span><span class="trp-stat-lbl">'+s.l+'</span></div></div>').join('');
-  if(tBio2)  tBio2.innerHTML = t.bio.map(p=>'<p class="trp-bio">'+p+'</p>').join('');
-  // Photo: real image if available, otherwise initials
-  const frame=document.getElementById('tFrame');
-  const initEl=document.getElementById('tInit');
-  // Remove old photo if switching trainers
-  const oldImg=frame.querySelector('.t-real-photo');
-  if(oldImg) oldImg.remove();
-  if(t.photo){
-    const img=document.createElement('img');
-    img.className='t-real-photo';
-    img.src=t.photo;
-    img.alt=t.first+' '+t.last;
-    img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:1';
-    frame.insertBefore(img,frame.firstChild);
-    initEl.style.display='none';
-  } else {
-    initEl.textContent=t.init;
-    initEl.style.display='';
-  }
+  var t = TRAINERS[key];
+  if(!t) return;
+
+  // Spain-style panel (new)
+  var tPhoto  = document.getElementById('tPhoto');
+  var tName2  = document.getElementById('tName2');
+  var tRole2  = document.getElementById('tRole2');
+  var tStats2 = document.getElementById('tStats2');
+  var tBio2   = document.getElementById('tBio2');
+  if(tPhoto){ tPhoto.src = t.photo || ''; tPhoto.alt = t.first+' '+t.last; }
+  if(tName2)  tName2.innerHTML  = '<span>'+t.first+'</span> '+t.last;
+  if(tRole2)  tRole2.textContent = 'Lead Trainer · '+(FEATURED ? FEATURED.city : '');
+  if(tStats2) tStats2.innerHTML  = t.stats.map(function(s){
+    return '<div class="trp-stat"><div class="trp-stat-info"><span class="trp-stat-num">'+s.n+'</span><span class="trp-stat-lbl">'+s.l+'</span></div></div>';
+  }).join('');
+  if(tBio2)   tBio2.innerHTML    = t.bio.map(function(p){ return '<p class="trp-bio">'+p+'</p>'; }).join('');
 }
 
 // ── INIT PAGE ───────────────────────────────────────────────────────
