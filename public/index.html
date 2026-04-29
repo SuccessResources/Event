@@ -111,7 +111,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .loader-txt{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:56px 44px 60px;position:relative;overflow:hidden;background-color:var(--white);background-image:linear-gradient(to right,var(--white) 32%,rgba(255,255,255,0) 50%),url('/assets/hero/Hero-desktop.webp');background-size:auto,52%;background-position:right bottom,right 20%;background-repeat:no-repeat,no-repeat}
+.hero{min-height:100vh;display:flex;align-items:center;padding:56px 44px 60px;position:relative;overflow:hidden;background:var(--white)}
 .hero::after{display:none}
 .zen-deco{display:none}
 .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
@@ -570,6 +570,15 @@ footer a:hover{color:var(--gold-lt)}
   .hib-item:last-child,.hib-item:nth-last-child(2){border-bottom:none}
   .hero-city-photo img{height:240px}
 }
+
+.hero-img-wrap{margin-top:20px;overflow:visible}
+.hero-img-wrap img{width:100%;max-width:560px;display:block;object-fit:contain;
+  -webkit-mask-image:linear-gradient(to left,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%),
+                     linear-gradient(to top,rgba(0,0,0,1) 80%,rgba(0,0,0,0) 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to left,rgba(0,0,0,1) 60%,rgba(0,0,0,0) 100%),
+             linear-gradient(to top,rgba(0,0,0,1) 80%,rgba(0,0,0,0) 100%);
+  mask-composite:intersect}
 </style>
 </head>
 <body>
@@ -782,7 +791,12 @@ footer a:hover{color:var(--gold-lt)}
   <div class="si">
     <div class="stat-item">
       <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-      <div><div class="stat-num">50,000+</div><div class="stat-label">Participants Worldwide</div></div>
+      <div><div class="stat-num">50,000+</div><div class="stat-label">Participants Worldwide</div>
+      <!-- Hero image — sits below pill, no frame, blends with white -->
+      <div class="hero-img-wrap">
+        <img src="/assets/hero/Hero-desktop.webp" alt="Millionaire Mind Intensive" loading="eager">
+      </div>
+    </div>
     </div>
     <div class="stat-item">
       <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
