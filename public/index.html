@@ -613,6 +613,24 @@ footer a:hover{color:var(--gold-lt)}
 .vb-featured-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
 .vb-media-logos-wrap{flex:1;display:flex;align-items:center}
 .vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
+
+/* ── CITY IMAGE SECTION ── */
+.city-image-section{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:stretch;margin-bottom:48px}
+.city-img-bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;transition:opacity .4s}
+.city-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.15) 65%,rgba(0,0,0,0) 100%)}
+.city-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 380px 1fr;gap:32px;padding:52px 40px;align-items:center}
+.city-col-left{color:#fff}
+.city-movement-title{font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,38px);font-weight:800;color:#fff;line-height:1.2;margin:10px 0 16px;letter-spacing:-0.5px}
+.city-movement-sub{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:20px;max-width:340px}
+.city-urgency{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.9;margin-bottom:12px;font-weight:500}
+.city-accent{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gold-lt,#D4A84B);line-height:1.6}
+.city-col-center{display:flex;align-items:center;justify-content:center}
+.city-col-right{}
+@media(max-width:900px){
+  .city-grid{grid-template-columns:1fr;padding:36px 20px;gap:24px}
+  .city-col-right{display:none}
+  .city-image-section{min-height:auto}
+}
 </style>
 </head>
 <body>
@@ -880,64 +898,34 @@ footer a:hover{color:var(--gold-lt)}
 <!-- WORLD TOUR SECTION -->
 <section class="tour-section" id="register">
   <div class="si">
-    <!-- ── HEADER ROW: heading + world map ─────────────────────────────── -->
-    <div class="tour-header-row">
-      <div>
-        <div class="tour-header-tag">2026 World Tour</div>
-        <h2 class="tour-header-h2">The Movement<br>Is Global</h2>
-        <div class="tour-header-rule"></div>
-        <p class="tour-header-sub">From Europe to Asia, this experience is moving city to city. This is not a local event. It is a global movement happening right now, with thousands of business owners, professionals and investors stepping into this room at each stop.</p>
-        <div class="tour-urgency-lines">
-          <p>The tour is already moving.</p>
-          <p>London is filling. Berlin is next.<br><strong id="tourUrgencyCity">Your city</strong> is now open.</p>
+    <!-- ── CITY IMAGE SECTION ──────────────────────────────────────────── -->
+    <div class="city-image-section" id="cityImageSection">
+      <!-- Background city image -->
+      <div class="city-img-bg" id="cityImgBg"></div>
+      <!-- Dark gradient overlay -->
+      <div class="city-img-overlay"></div>
+      <!-- 3-column grid -->
+      <div class="city-grid">
+        <!-- Left: message -->
+        <div class="city-col-left">
+          <div class="tour-header-tag" style="color:rgba(255,255,255,0.7)">2026 World Tour</div>
+          <h2 class="city-movement-title">This Is Not a Local Event.<br>It&rsquo;s a Global Movement.</h2>
+          <p class="city-movement-sub">From Europe to Asia, this experience is moving city to city, with thousands of business owners, professionals and investors stepping into this room at each stop.</p>
+          <div class="city-urgency">
+            <p>The tour is already moving.</p>
+            <p>London is filling. Berlin is next.</p>
+            <p><strong id="tourUrgencyCity" style="color:#fff">Your city</strong> is now open.</p>
+          </div>
+          <p class="city-accent">You don&rsquo;t join later.<br>You join when it reaches you.</p>
         </div>
-        <p class="tour-header-accent">You don&rsquo;t join later.<br>You join when it reaches you.</p>
-      </div>
-      <div>
-        <svg viewBox="0 0 540 230" class="tour-map-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs>
-    <pattern id="dp" width="6" height="6" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="0.9" fill="#888" opacity="0.22"/>
-    </pattern>
-  </defs>
-  <!-- Europe -->
-  <path d="M248,58 L258,48 L268,34 L280,30 L295,30 L308,34 L316,44 L312,56 L305,64 L295,70 L286,76 L275,80 L264,78 L257,72 L250,65 Z" fill="url(#dp)"/>
-  <path d="M280,30 L282,20 L292,16 L305,18 L310,26 L308,34 Z" fill="url(#dp)"/>
-  <!-- Mediterranean Africa (just northern strip) -->
-  <path d="M230,88 L260,86 L280,88 L298,90 L312,96 L310,108 L290,112 L265,110 L242,106 L228,98 Z" fill="url(#dp)" opacity="0.55"/>
-  <!-- Middle East + West Asia -->
-  <path d="M316,44 L332,48 L344,56 L350,68 L342,82 L324,86 L310,78 L308,64 L312,56 Z" fill="url(#dp)"/>
-  <!-- Central/South Asia -->
-  <path d="M344,56 L368,50 L392,56 L404,66 L408,82 L398,100 L382,112 L360,116 L344,106 L334,90 L336,76 L342,82 Z" fill="url(#dp)"/>
-  <!-- SE Asia peninsula -->
-  <path d="M398,82 L418,76 L438,80 L452,90 L454,108 L442,120 L422,122 L406,112 L398,100 Z" fill="url(#dp)"/>
-  <!-- Malay Peninsula -->
-  <path d="M420,120 L428,116 L436,122 L438,134 L430,142 L420,140 L414,130 Z" fill="url(#dp)"/>
-  <!-- Borneo/Sumatra hint -->
-  <path d="M432,134 L452,130 L466,136 L470,148 L454,152 L436,148 L432,138 Z" fill="url(#dp)"/>
-  <!-- East Asia -->
-  <path d="M440,80 L468,70 L498,68 L522,74 L528,88 L514,98 L492,100 L468,96 L452,88 L452,90 Z" fill="url(#dp)"/>
-  <!-- Arc: Europe → KL (primary) -->
-  <path d="M272,60 Q400,10 424,130" stroke="#c8a96a" stroke-width="1.8" fill="none" stroke-dasharray="5,3" opacity="0.85"/>
-  <!-- Arc: Europe → KL (secondary, slight offset) -->
-  <path d="M268,68 Q395,25 422,134" stroke="#c8a96a" stroke-width="1" fill="none" stroke-dasharray="3,5" opacity="0.45"/>
-  <!-- European city dots -->
-  <circle cx="270" cy="60" r="5" fill="#c8a96a"/>
-  <circle cx="267" cy="57" r="3.5" fill="#c8a96a"/>
-  <circle cx="277" cy="58" r="3.5" fill="#c8a96a"/>
-  <circle cx="279" cy="67" r="3.5" fill="#c8a96a"/>
-  <circle cx="264" cy="76" r="4" fill="#c8a96a"/>
-  <circle cx="290" cy="57" r="3.5" fill="#c8a96a"/>
-  <circle cx="301" cy="58" r="3.5" fill="#c8a96a"/>
-  <!-- KL / JB dots -->
-  <circle cx="423" cy="128" r="6" fill="#c8a96a"/>
-  <circle cx="426" cy="133" r="3.5" fill="#c8a96a"/>
-</svg>
+        <!-- Center: floating card -->
+        <div class="city-col-center">
+          <div id="tourFeatured"></div>
+        </div>
+        <!-- Right: empty — city image shows through -->
+        <div class="city-col-right"></div>
       </div>
     </div>
-
-    <!-- ── FEATURED CITY CARD (filled by JS) ──────────────────────────── -->
-    <div id="tourFeatured"></div>
 
     <!-- ── NEXT STOPS LIST ─────────────────────────────────────────────── -->
     <div class="tour-next-header">
@@ -1509,6 +1497,9 @@ function buildTourSection(featuredEv){
   var upcoming=EVENTS.filter(function(e){return e.eventDate>now;}).sort(function(a,b){return a.eventDate-b.eventDate;});
   var others=upcoming.filter(function(e){return e!==featuredEv;});
   var slug=featuredEv.citySlug||'london';
+  // Set city background image
+  var cityBg = document.getElementById('cityImgBg');
+  if(cityBg) cityBg.style.backgroundImage = "url('/assets/cities/"+slug+".webp')";
   var featHTML=
     '<div class="tour-featured-card">'+
     '<div class="tour-feat-left">'+
