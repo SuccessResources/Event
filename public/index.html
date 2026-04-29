@@ -600,6 +600,17 @@ footer a:hover{color:var(--gold-lt)}
   .video-bridge{padding:52px 0}
   .vb-sub{max-width:100%}
 }
+
+/* ── PRESS STRIP ── */
+.press-strip{background:var(--forest);padding:24px 0;overflow:hidden}
+.press-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:nowrap}
+.press-logo{display:flex;align-items:center;opacity:0.85;transition:opacity .2s;flex-shrink:0}
+.press-logo:hover{opacity:1}
+.press-logo svg{height:28px;width:auto}
+@media(max-width:900px){
+  .press-inner{gap:20px;padding:0 20px;flex-wrap:wrap;justify-content:center}
+  .press-logo svg{height:22px}
+}
 </style>
 </head>
 <body>
@@ -835,6 +846,54 @@ footer a:hover{color:var(--gold-lt)}
   </div>
 </div>
 
+
+
+<!-- PRESS STRIP -->
+<div class="press-strip">
+  <div class="press-inner">
+    <!-- Forbes -->
+    <div class="press-logo">
+      <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg"><text x="0" y="32" font-family="Georgia,serif" font-size="36" font-weight="bold" fill="white">Forbes</text></svg>
+    </div>
+    <!-- CNBC -->
+    <div class="press-logo">
+      <svg viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="8,4 16,20 8,36 0,20" fill="white"/>
+        <polygon points="18,4 26,20 18,36 10,20" fill="white"/>
+        <polygon points="28,4 36,20 28,36 20,20" fill="white"/>
+        <polygon points="38,4 46,20 38,36 30,20" fill="white"/>
+        <text x="50" y="28" font-family="Arial,sans-serif" font-size="17" font-weight="900" fill="white">CNBC</text>
+      </svg>
+    </div>
+    <!-- CNN -->
+    <div class="press-logo">
+      <svg viewBox="0 0 70 40" xmlns="http://www.w3.org/2000/svg"><text x="0" y="32" font-family="Arial,sans-serif" font-size="34" font-weight="900" fill="white">CNN</text></svg>
+    </div>
+    <!-- Men's Health -->
+    <div class="press-logo">
+      <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg"><text x="0" y="28" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="white" letter-spacing="1">MEN'S HEALTH</text></svg>
+    </div>
+    <!-- Fox News -->
+    <div class="press-logo">
+      <svg viewBox="0 0 110 40" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="30" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="white">FOX</text>
+        <rect x="50" y="6" width="58" height="28" fill="white" rx="2"/>
+        <text x="55" y="27" font-family="Arial,sans-serif" font-size="14" font-weight="900" fill="#1E3932">NEWS</text>
+      </svg>
+    </div>
+    <!-- USA Today -->
+    <div class="press-logo">
+      <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="20" r="14" fill="white"/>
+        <text x="36" y="28" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="white">USA TODAY</text>
+      </svg>
+    </div>
+    <!-- NY Times -->
+    <div class="press-logo">
+      <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg"><text x="0" y="28" font-family="Georgia,serif" font-size="20" font-style="italic" fill="white">The New York Times</text></svg>
+    </div>
+  </div>
+</div>
 
 <!-- VIDEO BRIDGE -->
 <section class="video-bridge">
