@@ -454,7 +454,7 @@ blockquote.pull::before{content:open-quote;font-size:48px;line-height:0;vertical
 /* World map */
 .tour-map-svg{width:100%;height:auto;display:block}
 /* Featured card */
-.tour-featured-card{background:#fff;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:52px;box-shadow:0 4px 32px rgba(5,75,3,0.07);border:1px solid var(--border-lt)}
+.tour-featured-card{background:#fff;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:52px;box-shadow:0 4px 32px rgba(5,75,3,0.07);border:1px solid var(--border-lt);background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .tour-feat-left{padding:40px 40px 36px}
 .tour-feat-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-lt);color:var(--forest);font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:20px;border:1px solid var(--green-md)}
 .tour-feat-city{font-family:"Playfair Display",serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:var(--forest);line-height:1.15;margin-bottom:20px}
@@ -616,14 +616,14 @@ footer a:hover{color:var(--gold-lt)}
 
 /* ── CITY IMAGE SECTION ── */
 .city-image-section{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:stretch;margin-bottom:48px}
-.city-img-bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;transition:opacity .4s}
-.city-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.5) 40%,rgba(0,0,0,0.15) 65%,rgba(0,0,0,0) 100%)}
+.city-img-bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;transition:opacity .4s;filter:saturate(0.88)}
+.city-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(255,255,255,0.92) 0%,rgba(255,255,255,0.55) 35%,rgba(255,255,255,0.08) 65%,rgba(255,255,255,0) 100%)}
 .city-grid{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 380px 1fr;gap:32px;padding:52px 40px;align-items:center}
-.city-col-left{color:#fff}
-.city-movement-title{font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,38px);font-weight:800;color:#fff;line-height:1.2;margin:10px 0 16px;letter-spacing:-0.5px}
-.city-movement-sub{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:20px;max-width:340px}
-.city-urgency{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.9;margin-bottom:12px;font-weight:500}
-.city-accent{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gold-lt,#D4A84B);line-height:1.6}
+.city-col-left{color:var(--ink,#111)}
+.city-movement-title{font-family:'Playfair Display',serif;font-size:clamp(26px,2.8vw,38px);font-weight:800;color:var(--forest,#1E3932);line-height:1.2;margin:10px 0 16px;letter-spacing:-0.5px}
+.city-movement-sub{font-size:14px;color:#555;line-height:1.8;margin-bottom:20px;max-width:340px}
+.city-urgency{font-size:14px;color:#333;line-height:1.9;margin-bottom:12px;font-weight:500}
+.city-accent{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:var(--gold,#C8973A);line-height:1.6}
 .city-col-center{display:flex;align-items:center;justify-content:center}
 .city-col-right{}
 @media(max-width:900px){
@@ -926,7 +926,7 @@ footer a:hover{color:var(--gold-lt)}
           <div class="city-urgency">
             <p>The tour is already moving.</p>
             <p>London is filling. Berlin is next.</p>
-            <p><strong id="tourUrgencyCity" style="color:#fff">Your city</strong> is now open.</p>
+            <p><strong id="tourUrgencyCity" style="color:var(--forest,#1E3932)">Your city</strong> is now open.</p>
           </div>
           <p class="city-accent">You don&rsquo;t join later.<br>You join when it reaches you.</p>
         </div>
