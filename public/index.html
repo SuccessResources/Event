@@ -553,13 +553,15 @@ footer a:hover{color:var(--gold-lt)}
     display:flex;
     flex-direction:column
   }
-  /* Left col first on mobile */
-  .hero-left{order:1;padding-bottom:0}
+  /* hero-left handled above */
   /* Right col (pill + image) after CTA on mobile */
-  .hero-right{order:2;padding-top:16px;width:100%;display:flex;flex-direction:column}
-  .hero-now-live{order:1}
-  .hero-info-bar{order:3;margin-top:12px}
+  /* hero-left: title+sub first, then CTA */
+  .hero-left{order:1;padding-bottom:0}
+  /* hero-right: now-live → image → infobar */
+  .hero-right{order:2;padding-top:12px;width:100%;display:flex;flex-direction:column}
+  .hero-now-live{order:1;margin-bottom:8px}
   .hero-img-wrap{order:2}
+  .hero-info-bar{order:3;margin-top:12px}
   /* Hero image on mobile — show below info bar, full width */
   .hero-img-wrap{display:block;margin-top:16px;width:100%}
   .hero-img-wrap img{max-width:100%;height:auto;object-fit:contain}
