@@ -1731,23 +1731,25 @@ const PATH_CITY_SLUG = window.location.pathname
   .toLowerCase();
 
 const FORCED_CITY_FROM_PATH = CITY_PATH_MAP[PATH_CITY_SLUG] || null;
-   function findNearest(code){
+function findNearest(code){
   const now = new Date();
   const up = EVENTS
     .filter(e => e.eventDate > now)
     .sort((a, b) => a.eventDate - b.eventDate);
 
-  // 🔥 PRIORITY 1: force city from URL (/london)
+  // 🔥 HARD OVERRIDE: if URL has city, STOP everything
   if (FORCED_CITY_FROM_PATH) {
     const forced = up.find(e => e.city === FORCED_CITY_FROM_PATH);
     if (forced) return forced;
+
+    // fallback if not found
+    return up[0] || EVENTS[0];
   }
 
-  // 🌍 PRIORITY 2: geo location
+  // 🌍 Normal flow (only if NO forced city)
   const geoMatch = up.find(e => e.geo.includes(code));
   if (geoMatch) return geoMatch;
 
-  // 🏙 PRIORITY 3: default city
   const defaultMatch = up.find(e => e.city === DEFAULT_CITY);
   if (defaultMatch) return defaultMatch;
 
