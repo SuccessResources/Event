@@ -1,3 +1,18 @@
 {
   "outputDirectory": "public"
 }
+{
+  "outputDirectory": "public",
+  "routes": [
+    {
+      "src": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "city"
+        }
+      ],
+      "dest": "/redirect.html"
+    }
+  ]
+}
