@@ -552,7 +552,7 @@ footer a:hover{color:var(--gold-lt)}
 .hero-now-live{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .hero-now-live span{color:var(--green)}
 
-.vb-media-strip{margin-top:32px;background:var(--forest);border-radius:10px;padding:14px 28px;display:flex;align-items:center;gap:20px;width:100%;justify-content:center}
+.vb-media-strip{margin-top:32px;background:var(--forest);border-radius:10px;padding:14px 28px;display:flex;align-items:center;gap:10px;width:100%}
 .vb-featured-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
 .vb-media-logos-wrap{flex:1;display:flex;align-items:center;display:none}
 .vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
@@ -896,6 +896,42 @@ footer a:hover{color:var(--gold-lt)}
 }
 
 @media(max-width:900px){
+}
+
+@media(max-width:900px){
+  /* "Featured by" floats above the strip */
+  .vb-featured-label{
+    display:block;
+    text-align:center;
+    margin-bottom:8px;
+    flex-shrink:unset;
+    white-space:nowrap
+  }
+  .vb-media-strip{
+    flex-direction:column;
+    gap:0;
+    padding:10px 12px 12px;
+    margin-top:20px
+  }
+  /* All logos in 1 row, scaled to fit */
+  .vb-logos-row{
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    width:100%;
+    overflow:hidden
+  }
+  .vb-logo{
+    font-size:9px !important;
+    padding:0 6px !important;
+    letter-spacing:.02em !important;
+    white-space:nowrap;
+    flex-shrink:1
+  }
+  .vb-logo-forbes{font-size:11px !important}
+  .vb-logo-divider{height:12px;flex-shrink:0}
 }
 </style>
   <link rel="preload" as="image" href="/assets/hero/hero-desktop.webp" fetchpriority="high">
