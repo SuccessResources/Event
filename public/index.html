@@ -1849,8 +1849,8 @@ function initPage(ev){
 
   var heroTitle  = document.querySelector('.hero-title');
   var heroSubEl  = document.querySelector('.hero-left .hero-sub');
-  if(heroTitle) heroTitle.textContent = chosen.h;
-  if(heroSubEl) heroSubEl.textContent = chosen.s;
+  if(heroTitle) heroTitle.innerHTML = chosen.h.replace(/\n/g,'<br>');
+  if(heroSubEl) heroSubEl.innerHTML = chosen.s.replace(/\n/g,'<br>');
 
   // Info bar pills
   const hibCity  = document.getElementById('hibCity');
