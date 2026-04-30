@@ -1870,7 +1870,7 @@ function initPage(ev){
   // ?option= param overrides city default
   var optParam   = new URLSearchParams(window.location.search).get('option');
   var optKey     = (optParam && HEADLINES[optParam]) ? optParam : (CITY_OPTION[ev.city] || '3');
-  var chosen     = HEADLINES[optKey] || HEADLINES['3'];
+  var chosen     = HEADLINES[optKey] || HEADLINES['standard'];
 
   var heroTitle  = document.querySelector('.hero-title');
   var heroSubEl  = document.querySelector('.hero-left .hero-sub');
