@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="preload" href="/assets/hero/Hero-desktop.webp" as="image" fetchpriority="high">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
@@ -63,9 +64,9 @@ h2.stitle strong{font-weight:800;font-style:italic}
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06);padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:background .3s,box-shadow .3s}
 .nav-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--forest);line-height:1}
-.nav-intensive{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--forest);margin-top:2px}
+.nav-intensive{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;color:var(--forest);margin-top:2px}
 .nav-links{display:flex;align-items:center;gap:32px;flex:1;justify-content:center}
-.nav-link{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .2s}
+.nav-link{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .2s}
 .nav-link:hover{color:var(--forest)}
 nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 /* brand block — luxury horizontal pill ─────────────────────── */
@@ -172,7 +173,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 .hib-item{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 12px;border-right:1px solid rgba(0,0,0,0.07);text-align:center}
 .hib-item:last-child{border-right:none}
 .hib-icon svg{width:26px;height:26px;stroke:var(--forest);fill:none;stroke-width:1.5;opacity:0.8}
-.hib-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--forest);line-height:1.5}
+.hib-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--forest);line-height:1.5}
 
 .hr-label,.hr-value,.hr-divider{display:none}
 
@@ -511,8 +512,8 @@ footer a:hover{color:var(--gold-lt)}
 
 
 .hero-city-live{border-left:3px solid var(--forest);padding-left:16px;margin:0 0 20px}
-.hero-city-live-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);margin-bottom:4px}
-.hero-city-live-name{font-family:'Montserrat',sans-serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--forest);text-transform:uppercase;letter-spacing:1px;line-height:1.1}
+.hero-city-live-label{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--forest);margin-bottom:4px}
+.hero-city-live-name{font-family:'Montserrat',system-ui,sans-serif;font-size:clamp(22px,3vw,34px);font-weight:900;color:var(--forest);text-transform:uppercase;letter-spacing:1px;line-height:1.1}
 .stat-icon{width:28px;height:28px;color:rgba(255,255,255,0.7);flex-shrink:0}
 .stat-item{display:flex;align-items:center;gap:14px}
 
@@ -523,7 +524,7 @@ footer a:hover{color:var(--gold-lt)}
 /* ── VIDEO BRIDGE ── */
 .video-bridge{background:var(--white);padding:80px 0;border-top:1px solid var(--border)}
 .vb-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center}
-.vb-eyebrow{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.vb-eyebrow{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .vb-eyebrow::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block}
 .vb-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--forest);line-height:1.2;margin-bottom:16px;letter-spacing:-0.5px}
 .vb-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:380px}
@@ -543,11 +544,11 @@ footer a:hover{color:var(--gold-lt)}
 .press-logo:hover{opacity:1}
 .press-logo svg{height:28px;width:auto}
 
-.hero-now-live{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.hero-now-live{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .hero-now-live span{color:var(--green)}
 
 .vb-media-strip{margin-top:28px;background:var(--forest);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:16px}
-.vb-featured-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
+.vb-featured-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
 .vb-media-logos-wrap{flex:1;display:flex;align-items:center}
 .vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
 
@@ -568,7 +569,7 @@ footer a:hover{color:var(--gold-lt)}
 .city-movement-title-above{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,44px);font-weight:800;color:var(--forest);line-height:1.15;margin-top:10px;letter-spacing:-0.5px}
 
 .tour-feat-price{margin:16px 0 12px}
-.tour-price-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:#333;background:#F7F7F7;border:1px solid #E5E5E5;padding:5px 14px;border-radius:100px}
+.tour-price-badge{display:inline-block;font-family:'Montserrat',system-ui,sans-serif;font-size:12px;font-weight:600;color:#333;background:#F7F7F7;border:1px solid #E5E5E5;padding:5px 14px;border-radius:100px}
 
 @media(max-width:700px){
   .modal-ov{padding:0!important;align-items:flex-end!important;justify-content:stretch!important}
@@ -634,7 +635,7 @@ footer a:hover{color:var(--gold-lt)}
   }
   .hib-item:last-child{border-bottom:none}
   .hib-icon svg{width:15px;height:15px;flex-shrink:0;opacity:0.7}
-  .hib-label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:.5px;text-align:left;white-space:nowrap;color:var(--forest)}
+  .hib-label{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.5px;text-align:left;white-space:nowrap;color:var(--forest)}
 
   /* ── STATS BAR ── */
   .stats-bar{padding:20px var(--mob-pad)}
@@ -723,11 +724,11 @@ footer a:hover{color:var(--gold-lt)}
 }
 
 .trainer-founder-grid{margin-bottom:48px}
-.founder-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,106,0.1);border:1px solid rgba(200,169,106,0.3);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:12px}
+.founder-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(200,169,106,0.1);border:1px solid rgba(200,169,106,0.3);color:var(--gold);font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:12px}
 .founder-cert{background:rgba(200,169,106,0.15);color:var(--gold)!important;font-size:10px}
 .trainer-divider{display:flex;align-items:center;gap:16px;margin:0 0 48px}
 .trainer-divider-line{flex:1;height:1px;background:var(--border)}
-.trainer-divider-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 8px}
+.trainer-divider-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);white-space:nowrap;padding:0 8px}
 @media(max-width:900px){
   .trainer-founder-grid{margin-bottom:32px}
   .trainer-divider{margin:0 0 32px}
@@ -743,7 +744,7 @@ footer a:hover{color:var(--gold-lt)}
 /* Top bar */
 .mbar{padding:24px 28px 18px;border-bottom:1px solid var(--border);text-align:center}
 .mbar-title{font-family:'Playfair Display',serif;font-size:clamp(17px,2vw,22px);font-weight:700;color:var(--forest);margin-bottom:6px}
-.mbar-sub{font-family:'Montserrat',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.5px}
+.mbar-sub{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;color:var(--muted);letter-spacing:.5px}
 
 /* Cards row */
 .mcards{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px 24px 0}
@@ -754,12 +755,12 @@ footer a:hover{color:var(--gold-lt)}
 .mcard-live{background:#F4F8F5;border:1.5px solid rgba(30,57,50,0.15)}
 
 /* Card tag */
-.mcard-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:14px;width:fit-content}
+.mcard-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:14px;width:fit-content}
 .mcard-tag-selected{background:rgba(30,100,60,0.08);color:var(--green);border:1px solid rgba(30,100,60,0.2)}
 .mcard-tag-immersive{background:rgba(200,151,58,0.1);color:var(--gold);border:1px solid rgba(200,151,58,0.25)}
 
 /* Card heading */
-.mcard-type{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--forest);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
+.mcard-type{font-family:'Montserrat',system-ui,sans-serif;font-size:13px;font-weight:800;color:var(--forest);letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px}
 .mcard-sub{font-size:13px;color:var(--muted);margin-bottom:14px}
 .mcard-divider{height:1px;background:var(--border);margin-bottom:14px}
 
@@ -771,14 +772,14 @@ footer a:hover{color:var(--gold-lt)}
 
 /* Price */
 .mcard-price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
-.mcard-cur{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:var(--muted)}
+.mcard-cur{font-family:'Montserrat',system-ui,sans-serif;font-size:13px;font-weight:600;color:var(--muted)}
 .mcard-amount{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--forest);line-height:1}
-.mcard-badge-early{font-family:'Montserrat',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(30,100,60,0.08);color:var(--green);border:1px solid rgba(30,100,60,0.2);padding:3px 10px;border-radius:100px;align-self:center}
+.mcard-badge-early{font-family:'Montserrat',system-ui,sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(30,100,60,0.08);color:var(--green);border:1px solid rgba(30,100,60,0.2);padding:3px 10px;border-radius:100px;align-self:center}
 .mcard-time{font-size:11px;color:var(--muted);margin-bottom:16px}
 .mcard-live-note{font-size:11px;color:var(--muted);margin-bottom:16px}
 
 /* Buttons */
-.mcard-btn{display:flex;align-items:center;justify-content:center;padding:14px 20px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:100px;transition:all .2s;margin-top:auto}
+.mcard-btn{display:flex;align-items:center;justify-content:center;padding:14px 20px;font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:100px;transition:all .2s;margin-top:auto}
 .mcard-btn-online{background:var(--forest);color:#fff}
 .mcard-btn-online:hover{background:var(--green);box-shadow:0 6px 20px rgba(30,57,50,0.25)}
 .mcard-btn-live{background:var(--forest);color:#fff}
@@ -819,9 +820,9 @@ footer a:hover{color:var(--gold-lt)}
 .spain-curriculum{background:var(--forest);padding:88px 44px;position:relative;overflow:hidden}
 .spain-curriculum::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(201,154,43,0.05),transparent 60%);pointer-events:none}
 .spain-section-head{text-align:center;max-width:680px;margin:0 auto 52px}
-.spain-eyebrow{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:500;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.spain-eyebrow{display:inline-block;font-family:'Montserrat',system-ui,sans-serif;font-weight:500;font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
 .spain-eyebrow::before,.spain-eyebrow::after{content:'';display:inline-block;width:20px;height:1px;background:rgba(201,168,76,0.5);vertical-align:middle;margin:0 12px 2px}
-.spain-section-title{font-family:'Montserrat',sans-serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:0}
+.spain-section-title{font-family:'Montserrat',system-ui,sans-serif;font-weight:300;font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:.02em;text-transform:uppercase;color:#fff;margin-bottom:0}
 .spain-section-title em{font-style:normal;color:var(--gold-light)}
 .spain-curriculum .days-nav{border-color:rgba(255,255,255,0.14);border-radius:100px;max-width:440px;margin:40px 0 36px}
 .spain-curriculum .day-tab{color:rgba(255,255,255,0.6)}
@@ -829,7 +830,7 @@ footer a:hover{color:var(--gold-lt)}
 .spain-curriculum .day-content.active{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .spain-curriculum .session-card{background:rgba(0,0,0,0.25);border:1px solid rgba(255,255,255,0.07);border-top:2px solid var(--gold);padding:28px;border-radius:0 0 8px 8px;overflow:hidden}
 .spain-curriculum .session-card-img{display:block;width:81%;aspect-ratio:1/1;object-fit:cover;object-position:center top;margin:0 auto 24px;border-radius:6px}
-.spain-curriculum .session-num{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.spain-curriculum .session-num{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .spain-curriculum .session-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:16px}
 .spain-curriculum .session-points{list-style:none;padding:0}
 .spain-curriculum .session-points li{font-size:13px;color:rgba(255,255,255,0.65);padding:7px 0 7px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5}
@@ -843,8 +844,8 @@ footer a:hover{color:var(--gold-lt)}
 .trp{padding:32px 24px;display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
 .trp-portrait{grid-row:1/7;width:300px;flex-shrink:0}
 .trp-portrait img{width:100%;height:auto;display:block;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5))}
-.trp-role{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.trp-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:clamp(22px,2.5vw,36px);line-height:1.1;text-transform:uppercase;letter-spacing:.05em;color:#fff;margin-bottom:16px}
+.trp-role{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.trp-name{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:clamp(22px,2.5vw,36px);line-height:1.1;text-transform:uppercase;letter-spacing:.05em;color:#fff;margin-bottom:16px}
 .trp-name span{color:var(--gold-light)}
 .trp-stats{display:flex;align-items:center;gap:0;margin-bottom:18px}
 .trp-stat{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);flex:1}
@@ -852,13 +853,13 @@ footer a:hover{color:var(--gold-lt)}
 .trp-stat-icon{font-size:15px;flex-shrink:0}
 .trp-stat-info{display:flex;flex-direction:column;gap:1px}
 .trp-stat-num{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--gold-light);line-height:1}
-.trp-stat-lbl{font-family:'Montserrat',sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.trp-stat-lbl{font-family:'Montserrat',system-ui,sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
 .trp-bio{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);margin-bottom:14px}
 .trp-bio b{color:var(--gold-light);font-weight:600}
 .trp-bio-wrap .trp-bio{margin-bottom:14px}
 .spain-trainers-bar{display:grid;grid-template-columns:1fr 1px 1fr;margin-top:52px;border:1px solid rgba(212,175,55,0.18);border-radius:6px;overflow:hidden;background:rgba(0,0,0,0.3)}
 .spain-trainers-bar-divider{background:rgba(212,175,55,0.2)}
-.trb-item{padding:18px 28px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:10px}
+.trb-item{padding:18px 28px;font-family:'Montserrat',system-ui,sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:10px}
 .trb-item-icon{font-size:16px}
 
 /* Mobile */
@@ -1332,7 +1333,7 @@ footer a:hover{color:var(--gold-lt)}
       <!-- T. HARV EKER -->
       <div class="trp">
         <div class="trp-portrait">
-          <img src="/assets/people/Harv-Eker.png" alt="T. Harv Eker" loading="lazy">
+          <img src="/assets/people/Harv-Eker.webp" alt="T. Harv Eker" loading="lazy">
         </div>
         <div class="trp-role">Program Creator</div>
         <h3 class="trp-name"><span>T. Harv</span> Eker</h3>
@@ -1350,7 +1351,7 @@ footer a:hover{color:var(--gold-lt)}
       <!-- CERTIFIED TRAINER (dynamic) -->
       <div class="trp" id="trainerPanel">
         <div class="trp-portrait">
-          <img id="tPhoto" src="/assets/people/Mac.png" alt="Trainer" loading="lazy">
+          <img id="tPhoto" src="/assets/people/Mac.webp" alt="Trainer" loading="lazy" width="600">
         </div>
         <div class="trp-role" id="tRole2">Lead Trainer</div>
         <h3 class="trp-name" id="tName2"></h3>
@@ -1636,7 +1637,7 @@ function s(cur){ var m={'USD':'$','EUR':'€','GBP':'£','MYR':'RM','SGD':'S$'};
 const TRAINERS = {
   Arnon:{
     init:'AB', first:'Arnon', last:'Barnes',
-    photo:'/assets/people/Arnon.png',
+    photo:'/assets/people/Arnon.webp',
     title:'Serial Entrepreneur · International Speaker · Peak Performance Trainer',
     bio:[
       'Arnon Barnes is a renowned serial entrepreneur, international speaker, peak performance trainer, and one of Europe\'s leading and most exciting business mentors. Born in South Africa, Arnon displayed an entrepreneurial spirit from a young age, starting his first business at just 11 years old.',
@@ -1647,7 +1648,7 @@ const TRAINERS = {
   },
   Mac:{
     init:'MA', first:'Mac', last:'Attram',
-    photo:'/assets/people/Mac.png',
+    photo:'/assets/people/Mac.webp',
     title:'Multi-award-winning speaker, Serial entrepreneur, Investor',
     bio:[
       'Mac is a multi-award-winning speaker, serial entrepreneur, investor, author of four books, and one of Europe\'s most respected business mentors. He was born in Ghana and raised in the UK. He previously won the "Executive Coach of the Year" award in the UK.',
@@ -1658,7 +1659,7 @@ const TRAINERS = {
   },
   Alan:{
     init:'AH', first:'Alan', last:'P. Hill',
-    photo:'/assets/people/Alan.png',
+    photo:'/assets/people/Alan.webp',
     title:'Serial entrepreneur, Property Investor, International Speaker & Coach',
     bio:[
       'Alan was living a fairly normal life till he lost everything at the age of 25 in an unexpected tragedy. He then made a decision that would change the course of his life forever.',
