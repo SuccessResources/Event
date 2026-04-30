@@ -1647,6 +1647,8 @@ const PATH_CITY_SLUG = window.location.pathname
   .toLowerCase();
 
 const FORCED_CITY_FROM_PATH = CITY_PATH_MAP[PATH_CITY_SLUG] || null;
+   // 🚀 SKIP GEO if URL has city
+const SKIP_GEO = !!FORCED_CITY_FROM_PATH;
 </script>
 const ONLINE_PRICE   = 19;          // online pass is always $19 USD
 let   FEATURED       = null;
@@ -2140,7 +2142,7 @@ async function detectGeo(){
       const match=EVENTS.find(e=>e.citySlug===cityParam);
       if(match){initPage(match);return;}
     }
-    initPage(findNearest(code));
+    let nearest;  if (SKIP_GEO) {   nearest = findNearest(null); } else {   nearest = findNearest(code); }  initPage(nearest);
   }catch(e){
     hideLoader();
     try{initPage(EVENTS[0]);}catch(e2){}
