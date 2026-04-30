@@ -2054,7 +2054,7 @@ function hideLoader(){
 async function loadSheetEvents(){
   try{
     const ctrl=new AbortController();
-    setTimeout(()=>ctrl.abort(),3000);
+    setTimeout(()=>ctrl.abort(),1000);
     const r=await fetch('/api/events',{signal:ctrl.signal});
     if(!r.ok) throw new Error();
     const data=await r.json();
@@ -2096,10 +2096,21 @@ async function detectGeo(){
     if(bootDone) return;
     bootDone=true;
     try{ initPage(EVENTS[0]); }catch(_e){ hideLoader(); }
-  },6500);
+  },3000);  // reduced from 6500ms
 
   try{
-    const cityParam=new URLSearchParams(window.location.search).get('city');
+    // Check URL path (/brussels) OR ?city= param — instant, no network needed
+    var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
+    var cityParam = new URLSearchParams(window.location.search).get('city');
+    var slugCheck = pathSlug || cityParam;
+    if(slugCheck){
+      var quickMatch = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
+      if(quickMatch){
+        bootDone=true; clearTimeout(bootGuard);
+        initPage(quickMatch);
+        return;
+      }
+    }
 
     // Load sheet events and detect geo in parallel for fastest boot
     const[freshEvents,code]=await Promise.all([loadSheetEvents(),detectGeo()]);
