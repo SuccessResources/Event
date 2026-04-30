@@ -1,17 +1,73 @@
 {
   "outputDirectory": "public",
   "routes": [
-    { "src": "/kuala-lumpur",     "dest": "/index.html" },
-    { "src": "/malaga",           "dest": "/index.html" },
-    { "src": "/warsaw",           "dest": "/index.html" },
-    { "src": "/london",           "dest": "/index.html" },
-    { "src": "/berlin",           "dest": "/index.html" },
-    { "src": "/johor-bahru",      "dest": "/index.html" },
-    { "src": "/geneva",           "dest": "/index.html" },
-    { "src": "/madrid",           "dest": "/index.html" },
-    { "src": "/rotterdam",        "dest": "/index.html" },
-    { "src": "/kuala-lumpur-oct", "dest": "/index.html" },
-    { "src": "/birmingham",       "dest": "/index.html" },
-    { "src": "/brussels",         "dest": "/index.html" }
+    {
+      "src": "/kuala-lumpur",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/malaga",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/warsaw",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/london",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/berlin",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/johor-bahru",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/geneva",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/madrid",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/rotterdam",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/kuala-lumpur-oct",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/birmingham",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/brussels",
+      "dest": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.webp",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }
