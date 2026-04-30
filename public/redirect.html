@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var city = params.get('city');
+
+      var allowedCities = [
+        'kuala-lumpur',
+        'malaga',
+        'warsaw',
+        'london',
+        'berlin',
+        'johor-bahru',
+        'geneva',
+        'madrid',
+        'rotterdam',
+        'kuala-lumpur-oct',
+        'birmingham',
+        'brussels'
+      ];
+
+      function slugify(value) {
+        return String(value || '')
+          .toLowerCase()
+          .trim()
+          .replace(/\s+/g, '-')
+          .replace(/[^a-z0-9-]/g, '');
+      }
+
+      if (city) {
+        var citySlug = slugify(city);
+
+        if (allowedCities.indexOf(citySlug) !== -1) {
+          params.delete('city');
+
+          var destination = '/' + citySlug;
+          var remainingQuery = params.toString();
+
+          if (remainingQuery) {
+            destination += '?' + remainingQuery;
+          }
+
+          window.location.replace(destination);
+        }
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to your event...</p>
+</body>
+</html>
