@@ -13,51 +13,87 @@
     },
     {
       "src": "/kuala-lumpur",
-      "dest": "/index.html?city=kuala-lumpur"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=kuala-lumpur"
+      }
     },
     {
       "src": "/malaga",
-      "dest": "/index.html?city=malaga"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=malaga"
+      }
     },
     {
       "src": "/warsaw",
-      "dest": "/index.html?city=warsaw"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=warsaw"
+      }
     },
     {
       "src": "/london",
-      "dest": "/index.html?city=london"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=london"
+      }
     },
     {
       "src": "/berlin",
-      "dest": "/index.html?city=berlin"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=berlin"
+      }
     },
     {
       "src": "/johor-bahru",
-      "dest": "/index.html?city=johor-bahru"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=johor-bahru"
+      }
     },
     {
       "src": "/geneva",
-      "dest": "/index.html?city=geneva"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=geneva"
+      }
     },
     {
       "src": "/madrid",
-      "dest": "/index.html?city=madrid"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=madrid"
+      }
     },
     {
       "src": "/rotterdam",
-      "dest": "/index.html?city=rotterdam"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=rotterdam"
+      }
     },
     {
       "src": "/kuala-lumpur-oct",
-      "dest": "/index.html?city=kuala-lumpur-oct"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=kuala-lumpur-oct"
+      }
     },
     {
       "src": "/birmingham",
-      "dest": "/index.html?city=birmingham"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=birmingham"
+      }
     },
     {
       "src": "/brussels",
-      "dest": "/index.html?city=brussels"
+      "status": 302,
+      "headers": {
+        "Location": "/index.html?city=brussels"
+      }
     }
   ]
 }
