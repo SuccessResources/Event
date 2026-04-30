@@ -664,14 +664,6 @@ footer a:hover{color:var(--gold-lt)}
   .vb-sub{max-width:100%;font-size:14px}
   .vb-play svg{width:56px;height:56px}
   /* Media strip — horizontal scroll */
-  .vb-media-strip{
-    flex-wrap:nowrap;overflow-x:auto;gap:0;
-    padding:10px var(--mob-pad);
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
-    margin:0 calc(-1 * var(--mob-pad))
-  }
-  .vb-media-strip::-webkit-scrollbar{display:none}
-  .vb-featured-label{font-size:9px;letter-spacing:2px;white-space:nowrap;flex-shrink:0}
   .vb-media-logos-wrap img{height:18px;min-width:160px}
 
   /* ── PRESS STRIP ── */
@@ -901,41 +893,9 @@ footer a:hover{color:var(--gold-lt)}
 .vb-logo-cnbc{font-family:'Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.15em}
 .vb-logo-divider{width:1px;height:16px;background:rgba(255,255,255,0.15);flex-shrink:0}
 @media(max-width:900px){
-  .vb-logos-row{gap:0;flex-wrap:wrap;justify-content:center}
-  .vb-logo{font-size:11px;padding:4px 10px}
-  .vb-logo-forbes{font-size:14px}
-  .vb-logo-nyt{font-size:9px}
-  .vb-logo-mh{font-size:9px}
-  .vb-logo-divider{display:none}
 }
 
 @media(max-width:900px){
-  .vb-media-strip{
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-    padding:16px 20px;
-    margin-top:20px;
-    border-radius:10px;
-    text-align:center
-  }
-  .vb-featured-label{
-    font-size:9px;letter-spacing:2.5px;
-    text-align:center;flex-shrink:unset
-  }
-  .vb-logos-row{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px 0;
-    justify-items:center;
-    flex:unset;
-    width:100%
-  }
-  .vb-logo{font-size:12px;padding:4px 6px;white-space:nowrap}
-  .vb-logo-forbes{font-size:15px}
-  .vb-logo-nyt{font-size:10px;letter-spacing:.05em}
-  .vb-logo-mh{font-size:10px}
-  .vb-logo-divider{display:none}
 }
 </style>
   <link rel="preload" as="image" href="/assets/hero/hero-desktop.webp" fetchpriority="high">
