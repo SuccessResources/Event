@@ -1865,13 +1865,7 @@ function initPage(ev){
   };
 
   // City default option mapping
-  var CITY_OPTION = {
-    'Kuala Lumpur': '1', 'Johor Bahru': '1',
-    'London': '2', 'Birmingham': '2',
-    'Warsaw': '4', 'Berlin': '4',
-    'Rotterdam': '5', 'Brussels': '5',
-    'Geneva': 'standard', 'Malaga': '3', 'Madrid': '3'
-  };
+  var CITY_OPTION = {};  // All cities use standard by default — override only with ?option=X
 
   // ?option= param overrides city default
   var optParam   = new URLSearchParams(window.location.search).get('option');
