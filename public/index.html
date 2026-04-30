@@ -2160,16 +2160,19 @@ async function detectGeo(){
 (async()=>{
   function hide(){ var l=document.getElementById('geoLoader'); if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},500);} }
 
-  // City from URL path or ?city= param — instant
+  var params    = new URLSearchParams(window.location.search);
   var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
-  var cityParam = new URLSearchParams(window.location.search).get('city');
+  var cityParam = params.get('city');
   var slugCheck = pathSlug || cityParam;
+
+  // Pick city
+  var ev = null;
   if(slugCheck){
-    var m = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
-    if(m){ try{ initPage(m); }catch(e){} hide(); return; }
+    ev = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
   }
-  // Root URL — show next upcoming event
-  try{ initPage(findNearest('')); }catch(e){}
+  if(!ev) ev = findNearest('');
+
+  try{ initPage(ev); }catch(e){ console.error('initPage:',e); }
   hide();
 })();
 
