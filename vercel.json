@@ -2,6 +2,10 @@
   "outputDirectory": "public",
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
       "src": "/",
       "has": [
         {
@@ -12,51 +16,11 @@
       "dest": "/redirect.html"
     },
     {
-      "src": "/kuala-lumpur",
+      "src": "/",
       "dest": "/index.html"
     },
     {
-      "src": "/malaga",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/warsaw",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/london",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/berlin",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/johor-bahru",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/geneva",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/madrid",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/rotterdam",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/kuala-lumpur-oct",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/birmingham",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/brussels",
+      "src": "/kuala-lumpur|/malaga|/warsaw|/london|/berlin|/johor-bahru|/geneva|/madrid|/rotterdam|/kuala-lumpur-oct|/birmingham|/brussels",
       "dest": "/index.html"
     }
   ]
