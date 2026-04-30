@@ -554,7 +554,7 @@ footer a:hover{color:var(--gold-lt)}
 
 .vb-media-strip{margin-top:28px;background:var(--forest);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:16px}
 .vb-featured-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;flex-shrink:0}
-.vb-media-logos-wrap{flex:1;display:flex;align-items:center}
+.vb-media-logos-wrap{flex:1;display:flex;align-items:center;display:none}
 .vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
 
 /* ── CITY IMAGE SECTION ── */
@@ -889,6 +889,25 @@ footer a:hover{color:var(--gold-lt)}
   .spain-trainers-bar{grid-template-columns:1fr;margin-top:32px}
   .spain-trainers-bar-divider{display:none}
 }
+
+/* ── Media logos strip ──────────────────────────── */
+.vb-logos-row{display:flex;align-items:center;flex-wrap:wrap;gap:4px 0;flex:1}
+.vb-logo{font-weight:800;color:rgba(255,255,255,0.85);letter-spacing:.02em;white-space:nowrap;padding:0 14px;font-size:13px}
+.vb-logo-forbes{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:16px}
+.vb-logo-cnn{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.15em;font-weight:900}
+.vb-logo-nyt{font-family:'Playfair Display',Georgia,serif;font-size:11px;letter-spacing:.08em}
+.vb-logo-fox{font-family:'Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.1em}
+.vb-logo-mh{font-family:'Montserrat',sans-serif;font-weight:900;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.vb-logo-cnbc{font-family:'Montserrat',sans-serif;font-weight:900;font-size:13px;letter-spacing:.15em}
+.vb-logo-divider{width:1px;height:16px;background:rgba(255,255,255,0.15);flex-shrink:0}
+@media(max-width:900px){
+  .vb-logos-row{gap:0;flex-wrap:wrap;justify-content:center}
+  .vb-logo{font-size:11px;padding:4px 10px}
+  .vb-logo-forbes{font-size:14px}
+  .vb-logo-nyt{font-size:9px}
+  .vb-logo-mh{font-size:9px}
+  .vb-logo-divider{display:none}
+}
 </style>
   <link rel="preload" as="image" href="/assets/hero/hero-desktop.webp" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/video-poster-index.webp">
@@ -1152,8 +1171,18 @@ footer a:hover{color:var(--gold-lt)}
         <p class="vb-sub">Thousands of business owners and professionals have sat in this exact experience. Watch what it looks like — and what it does.</p>
         <div class="vb-media-strip">
           <span class="vb-featured-label">Featured by</span>
-          <div class="vb-media-logos-wrap">
-            <img src="/assets/All-Media-desktop.svg" alt="As featured in Forbes, CNBC, CNN, and more" loading="lazy">
+          <div class="vb-logos-row">
+            <span class="vb-logo vb-logo-forbes">Forbes</span>
+            <span class="vb-logo-divider"></span>
+            <span class="vb-logo vb-logo-cnn">CNN</span>
+            <span class="vb-logo-divider"></span>
+            <span class="vb-logo vb-logo-nyt">The New York Times</span>
+            <span class="vb-logo-divider"></span>
+            <span class="vb-logo vb-logo-fox">Fox News</span>
+            <span class="vb-logo-divider"></span>
+            <span class="vb-logo vb-logo-mh">Men&rsquo;s Health</span>
+            <span class="vb-logo-divider"></span>
+            <span class="vb-logo vb-logo-cnbc">CNBC</span>
           </div>
         </div>
       </div>
