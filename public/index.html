@@ -1626,30 +1626,6 @@ footer a:hover{color:var(--gold-lt)}
 const STRIPE_PK      = 'pk_live_YOUR_KEY';  // ← fill in: Stripe Dashboard → Developers → API Keys
 const ZAPIER         = 'https://hooks.zapier.com/hooks/catch/3435365/ujvv088/';
 const IPAPI_KEY      = 'vmENJ3PceUgWfONVOujw2t8vHP1SHpeTagvsDHKksFnoHLDjSh';
-<script>
-const CITY_PATH_MAP = {
-  'kuala-lumpur': 'Kuala Lumpur',
-  'malaga': 'Malaga',
-  'warsaw': 'Warsaw',
-  'london': 'London',
-  'berlin': 'Berlin',
-  'johor-bahru': 'Johor Bahru',
-  'geneva': 'Geneva',
-  'madrid': 'Madrid',
-  'rotterdam': 'Rotterdam',
-  'kuala-lumpur-oct': 'Kuala Lumpur',
-  'birmingham': 'Birmingham',
-  'brussels': 'Brussels'
-};
-
-const PATH_CITY_SLUG = window.location.pathname
-  .replace(/^\/+|\/+$/g, '')
-  .toLowerCase();
-
-const FORCED_CITY_FROM_PATH = CITY_PATH_MAP[PATH_CITY_SLUG] || null;
-   // 🚀 SKIP GEO if URL has city
-const SKIP_GEO = !!FORCED_CITY_FROM_PATH;
-</script>
 const ONLINE_PRICE   = 19;          // online pass is always $19 USD
 let   FEATURED       = null;
 
@@ -1752,22 +1728,6 @@ function findNearest(code){
   const geoMatch = up.find(e => e.geo.includes(code));
   if (geoMatch) return geoMatch;
 
-  const defaultMatch = up.find(e => e.city === DEFAULT_CITY);
-  if (defaultMatch) return defaultMatch;
-
-  return up[0] || EVENTS[0];
-}
-  // 🔥 PRIORITY 1: forced city from URL (/london)
-  if (typeof FORCED_CITY_FROM_PATH !== 'undefined' && FORCED_CITY_FROM_PATH) {
-    const forced = up.find(e => e.city === FORCED_CITY_FROM_PATH);
-    if (forced) return forced;
-  }
-
-  // 🌍 PRIORITY 2: geo location
-  const geoMatch = up.find(e => e.geo.includes(code));
-  if (geoMatch) return geoMatch;
-
-  // 🏙 PRIORITY 3: default city
   const defaultMatch = up.find(e => e.city === DEFAULT_CITY);
   if (defaultMatch) return defaultMatch;
 
