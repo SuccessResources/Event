@@ -1,7 +1,4 @@
 {
-  "outputDirectory": "public"
-}
-{
   "outputDirectory": "public",
   "routes": [
     {
