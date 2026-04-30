@@ -2125,30 +2125,36 @@ async function detectGeo(){
 }
 
 (async()=>{
-  // 1. Load headlines.json — 2s timeout, safe fallback if unavailable
+  function hide(){ var l=document.getElementById('geoLoader'); if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},500);} }
+
   try{
-    var hlCtrl = new AbortController();
-    var hlTid  = setTimeout(function(){ hlCtrl.abort(); }, 2000);
-    var hlRes  = await fetch('/headlines.json', { signal: hlCtrl.signal });
-    clearTimeout(hlTid);
-    if(hlRes.ok){
-      var hlData = await hlRes.json();
-      if(hlData && typeof hlData === 'object') HEADLINES = hlData;
+    // 1. Headlines — 1.5s timeout, skip if slow
+    try{
+      var c=new AbortController(),t=setTimeout(function(){c.abort();},1500);
+      var hr=await fetch('/headlines.json',{signal:c.signal});
+      clearTimeout(t);
+      if(hr.ok){ var hd=await hr.json(); if(hd&&typeof hd==='object') HEADLINES=hd; }
+    }catch(e){}
+
+    // 2. City from URL path or ?city= param — instant
+    var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
+    var cityParam = new URLSearchParams(window.location.search).get('city');
+    var slugCheck = pathSlug || cityParam;
+    if(slugCheck){
+      var m=EVENTS.find(function(e){return e.citySlug===slugCheck;});
+      if(m){ initPage(m); hide(); return; }
     }
-  }catch(e){}
 
-  // 2. Instant city from URL path (/brussels) or ?city= param
-  var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
-  var cityParam = new URLSearchParams(window.location.search).get('city');
-  var slugCheck = pathSlug || cityParam;
-  if(slugCheck){
-    var m = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
-    if(m){ initPage(m); return; }
+    // 3. Root URL — next upcoming event
+    initPage(findNearest(''));
+    hide();
+
+  }catch(err){
+    console.error('Boot error:',err);
+    // Always try to show something
+    try{ initPage(EVENTS[0]); }catch(e){}
+    hide();
   }
-
-  // 3. Root URL — show next upcoming event instantly
-  var nearest = findNearest('');
-  initPage(nearest);
 })();
 
 
