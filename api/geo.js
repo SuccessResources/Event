@@ -1,6 +1,9 @@
-export default function handler(req, res) {
-  // Vercel sets x-vercel-ip-country on every request at the edge
-  const country = req.headers['x-vercel-ip-country'] || '';
-  res.setHeader('Cache-Control', 'no-store, no-cache');
-  res.json({ country_code: country });
+export const config = { runtime: 'edge' };
+
+export default function handler(req) {
+  const country = req.headers.get('x-vercel-ip-country') || '';
+  return new Response(
+    JSON.stringify({ country_code: country }),
+    { headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } }
+  );
 }
