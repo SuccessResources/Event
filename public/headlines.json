@@ -1,14 +1,10 @@
 {
-  "standard": {
-    "h": "You’ve Done Everything Right So Why Are You Still Not Getting Ahead",
-    "s": "You are earning, working, and learning more than most people around you. But the results are not matching your effort. The problem is not strategy. It is the pattern behind your decisions. Fix it in a 3 day live experience."
-  },
   "1": {
-    "h": "You’re Earning More Than Ever So Why Isn’t Your Wealth Growing",
+    "h": "You?re Earning More Than Ever So Why Isn?t Your Wealth Growing",
     "s": "If your income keeps increasing but your money does not stay, the problem is not strategy. It is the pattern behind your decisions. Fix it in 3 days."
   },
   "2": {
-    "h": "Your Income Went Up Your Lifestyle Did Too Your Wealth Didn’t",
+    "h": "Your Income Went Up Your Lifestyle Did Too Your Wealth Didn?t",
     "s": "This is why high income professionals stay stuck and how to finally break the cycle in a live 3 day experience."
   },
   "3": {
@@ -16,7 +12,7 @@
     "s": "If your income is not turning into real wealth, discover the hidden patterns keeping you stuck and fix them in real time."
   },
   "4": {
-    "h": "You’re Not Broke You’re Just Not Keeping What You Earn",
+    "h": "You?re Not Broke You?re Just Not Keeping What You Earn",
     "s": "High earners do not have a money problem. They have a pattern problem. Identify and rewire it in 3 days."
   },
   "5": {
@@ -24,7 +20,7 @@
     "s": "After 30 years and 10 million attendees, the answer is clear. It is not what you know. It is what is running underneath. Experience the shift live."
   },
   "6": {
-    "h": "You’ve Read The Books Tried The Strategies So Why Are You Still Stuck",
+    "h": "You?ve Read The Books Tried The Strategies So Why Are You Still Stuck",
     "s": "This is not about learning more. It is about fixing what is underneath your results. Experience the shift in 3 days."
   },
   "7": {
@@ -44,7 +40,7 @@
     "s": "Most people collect ideas but never change what is underneath. This is where real transformation begins."
   },
   "11": {
-    "h": "You’re Working Hard But Your Business Is Not Breaking Through",
+    "h": "You?re Working Hard But Your Business Is Not Breaking Through",
     "s": "If your effort is increasing but your results are not, the issue is not strategy. It is the pattern behind your decisions. Fix it in 3 days."
   },
   "12": {
@@ -56,7 +52,7 @@
     "s": "If your income keeps fluctuating, the real issue is deeper than your business model. Fix what is driving your results in 3 days."
   },
   "14": {
-    "h": "You’re Doing Everything Right But It Still Feels Harder Than It Should Be",
+    "h": "You?re Doing Everything Right But It Still Feels Harder Than It Should Be",
     "s": "When success feels like a constant struggle, it is not your tactics. It is the internal pattern running your decisions. Change it live."
   },
   "15": {
@@ -64,7 +60,7 @@
     "s": "The gap is not knowledge. It is execution driven by unconscious patterns. Identify and rewire them in 3 days."
   },
   "16": {
-    "h": "You’ve Made Money Before So Why Did It Slip Away",
+    "h": "You?ve Made Money Before So Why Did It Slip Away",
     "s": "If you have experienced financial setbacks, the issue is not your ability. It is the pattern behind your decisions. Fix it in 3 days."
   },
   "17": {
@@ -112,11 +108,15 @@
     "s": "You are earning, learning and trying. But the results are not matching your effort. Discover what is really holding you back and fix it at the root."
   },
   "28": {
-    "h": "You Are Not Lazy. You Are Not Broken. So Why Are You Still Stuck?",
+    "h": "You Are Not Lazy. You Are Not Broken.\nSo Why Are You Still Stuck?",
     "s": "If you have been blaming yourself for not getting results, the truth is deeper. Identify the hidden pattern driving your outcomes and change it in 3 days."
   },
   "29": {
     "h": "If Working Hard And Learning More Were Enough, You Would Already Be Getting Ahead",
     "s": "Most people are not stuck because of strategy. They are stuck because of patterns they cannot see. Discover what is really driving your results."
+  },
+  "standard": {
+    "h": "You?ve Done Everything Right So Why Are You Still Not Getting Ahead",
+    "s": "You are earning, working, and learning more than most people around you. But the results are not matching your effort. The problem is not strategy. It is the pattern behind your decisions. Fix it in a 3 day live experience."
   }
 }
