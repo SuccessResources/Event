@@ -104,7 +104,7 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 /* corner sticker removed — brand lives in nav */
 
 /* ── LOADER ── */
-.geo-loader{position:fixed;inset:0;background:var(--white);z-index:999;display:flex;align-items:center;justify-content:center;transition:opacity .5s}
+.geo-loader{position:fixed;inset:0;background:var(--white);z-index:999;display:none;align-items:center;justify-content:center;transition:opacity .5s}
 .geo-loader.hide{opacity:0;pointer-events:none}
 .geo-loader.hide{opacity:0;pointer-events:none}
 .loader-ring{width:36px;height:36px;border:2px solid var(--green-md);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 14px}
@@ -1613,6 +1613,17 @@ footer a:hover{color:var(--gold-lt)}
 </section>
 
 <!-- FOOTER -->
+<script>
+// Independent loader watchdog (runs even if main app script later errors)
+setTimeout(function(){
+  var l=document.getElementById('geoLoader');
+  if(l){
+    l.classList.add('hide');
+    setTimeout(function(){ l.style.display='none'; },700);
+  }
+},9000);
+</script>
+
 <footer>
   <p style="font-family:Cinzel,serif;font-size:14px;color:rgba(255,255,255,0.7);letter-spacing:2px;margin-bottom:12px">Millionaire Mind&reg; Intensive</p>
   <p>&copy; 2026 Success Resources &middot; All Rights Reserved</p>
@@ -1627,6 +1638,7 @@ const STRIPE_PK      = 'pk_live_YOUR_KEY';  // ← fill in: Stripe Dashboard →
 const ZAPIER         = 'https://hooks.zapier.com/hooks/catch/3435365/ujvv088/';
 const IPAPI_KEY      = 'vmENJ3PceUgWfONVOujw2t8vHP1SHpeTagvsDHKksFnoHLDjSh';
 const ONLINE_PRICE   = 19;          // online pass is always $19 USD
+const DEFAULT_CITY   = 'Kuala Lumpur';
 let   FEATURED       = null;
 
 // ── TRAINERS  (data mirrors Google Sheet — Trainers tab) ────────────
@@ -2049,6 +2061,11 @@ function hideLoader(){
   var l=document.getElementById('geoLoader');
   if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},700);}
 }
+
+// Absolute failsafe: never keep geo loader forever even if boot logic fails early
+setTimeout(function(){
+  try{ hideLoader(); }catch(_e){}
+},8000);
 
 // Fetch live events from Google Sheet via /api/events (3 s timeout)
 async function loadSheetEvents(){
