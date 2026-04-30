@@ -1118,7 +1118,7 @@ footer a:hover{color:var(--gold-lt)}
       <div id="heroLoc" style="display:none"></div>
       <div style="display:none"><div id="countdown"><span id="cdD"></span><span id="cdH"></span><span id="cdM"></span><span id="cdS"></span></div></div>
 
-      <h1 class="hero-title">Loading...</h1>
+      <h1 class="hero-title">You Know What To Do With Money. So Why Isn’t It Working?</h1>
       <p class="hero-sub" style="display:block;font-size:17px;color:var(--ink-mid);line-height:1.75;max-width:520px;margin-bottom:32px"></p>
 
       <button class="btn-primary" onclick="openFeatured()">Save My Seat Now &nbsp;&rarr;</button>
@@ -1837,7 +1837,14 @@ function initPage(ev){
   if(hc) hc.textContent=ev.city.toUpperCase();
 
   // Headline options — city default or ?option= override
-  var HEADLINES = {};  // loaded from /headlines.json at boot
+  var HEADLINES = {
+    "standard":{"h":"You Know What To Do With Money. So Why Isn’t It Working?","s":"The part controlling your results is underneath. Fix it in 3 days."},
+    "1":{"h":"You’re Earning More Than Ever. So Why Isn’t Wealth Growing?","s":"A 3-day live experience that uncovers the hidden patterns behind your financial results."},
+    "2":{"h":"You’ve Tried the Strategies. So Why Do Results Keep Resetting?","s":"Fix what’s underneath your financial results in 3 days, not years."},
+    "3":{"h":"You’re Doing Everything Right. So Why Are You Still Stuck?","s":"A 3-day live experience that helps you break through what is actually holding your results back."},
+    "4":{"h":"It’s Not Your Strategy. It’s What’s Running Underneath.","s":"Fix the root of your financial results in a 3-day live experience."},
+    "5":{"h":"You Should Be Further Ahead By Now. So What’s Missing?","s":"A 3-day live experience that helps you close the gap between where you are and where you could be."}
+  };  // extended from /headlines.json at boot
 
   // City default option mapping
   var CITY_OPTION = {};  // All cities use standard by default — override only with ?option=X
@@ -2133,7 +2140,7 @@ async function detectGeo(){
       var c=new AbortController(),t=setTimeout(function(){c.abort();},1500);
       var hr=await fetch('/headlines.json',{signal:c.signal});
       clearTimeout(t);
-      if(hr.ok){ var hd=await hr.json(); if(hd&&typeof hd==='object') HEADLINES=hd; }
+      if(hr.ok){ var hd=await hr.json(); if(hd&&typeof hd==='object') HEADLINES=Object.assign(HEADLINES,hd); }
     }catch(e){}
 
     // 2. City from URL path or ?city= param — instant
