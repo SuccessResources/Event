@@ -2091,54 +2091,20 @@ async function detectGeo(){
 }
 
 (async()=>{
-  var bootDone=false;
-  var bootGuard=setTimeout(function(){
-    if(bootDone) return;
-    bootDone=true;
-    try{ initPage(EVENTS[0]); }catch(_e){ hideLoader(); }
-  },3000);  // reduced from 6500ms
-
-  try{
-    // Check URL path (/brussels) OR ?city= param — instant, no network needed
-    var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
-    var cityParam = new URLSearchParams(window.location.search).get('city');
-    var slugCheck = pathSlug || cityParam;
-    if(slugCheck){
-      var quickMatch = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
-      if(quickMatch){
-        bootDone=true; clearTimeout(bootGuard);
-        initPage(quickMatch);
-        return;
-      }
-    }
-
-    // Load sheet events and detect geo in parallel for fastest boot
-    const[freshEvents,code]=await Promise.all([loadSheetEvents(),detectGeo()]);
-    if(freshEvents) EVENTS=freshEvents;
-
-    if(cityParam){
-      const match=EVENTS.find(e=>e.citySlug===cityParam);
-      if(match){
-        if(!bootDone){ bootDone=true; clearTimeout(bootGuard); initPage(match); }
-        return;
-      }
-    }
-
-    if(!bootDone){
-      bootDone=true;
-      clearTimeout(bootGuard);
-      let nearest;
-      if (SKIP_GEO) nearest = findNearest(null);
-      else nearest = findNearest(code);
-      initPage(nearest);
-    }
-  }catch(e){
-    if(!bootDone){
-      bootDone=true;
-      clearTimeout(bootGuard);
-      try{initPage(EVENTS[0]);}catch(e2){hideLoader();}
-    }
+  // 1. Instant: check URL path (/brussels) or ?city= param
+  var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
+  var cityParam = new URLSearchParams(window.location.search).get('city');
+  var slugCheck = pathSlug || cityParam;
+  if(slugCheck){
+    var m = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
+    if(m){ initPage(m); return; }
   }
+
+  // 2. No city in URL — show next upcoming event immediately (no geo API)
+  var now = new Date();
+  var upcoming = EVENTS.filter(function(e){ return e.eventDate > now; })
+                       .sort(function(a,b){ return a.eventDate - b.eventDate; });
+  initPage(upcoming[0] || EVENTS[0]);
 })();
 
 
