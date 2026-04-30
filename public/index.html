@@ -2091,6 +2091,13 @@ async function detectGeo(){
 }
 
 (async()=>{
+  var bootDone=false;
+  var bootGuard=setTimeout(function(){
+    if(bootDone) return;
+    bootDone=true;
+    try{ initPage(EVENTS[0]); }catch(_e){ hideLoader(); }
+  },6500);
+
   try{
     const cityParam=new URLSearchParams(window.location.search).get('city');
 
@@ -2100,12 +2107,26 @@ async function detectGeo(){
 
     if(cityParam){
       const match=EVENTS.find(e=>e.citySlug===cityParam);
-      if(match){initPage(match);return;}
+      if(match){
+        if(!bootDone){ bootDone=true; clearTimeout(bootGuard); initPage(match); }
+        return;
+      }
     }
-    let nearest;  if (SKIP_GEO) {   nearest = findNearest(null); } else {   nearest = findNearest(code); }  initPage(nearest);
+
+    if(!bootDone){
+      bootDone=true;
+      clearTimeout(bootGuard);
+      let nearest;
+      if (SKIP_GEO) nearest = findNearest(null);
+      else nearest = findNearest(code);
+      initPage(nearest);
+    }
   }catch(e){
-    hideLoader();
-    try{initPage(EVENTS[0]);}catch(e2){}
+    if(!bootDone){
+      bootDone=true;
+      clearTimeout(bootGuard);
+      try{initPage(EVENTS[0]);}catch(e2){hideLoader();}
+    }
   }
 })();
 
