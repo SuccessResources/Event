@@ -2125,9 +2125,12 @@ async function detectGeo(){
 }
 
 (async()=>{
-  // 1. Load headlines.json (safe JSON file, never breaks page)
+  // 1. Load headlines.json — 2s timeout, safe fallback if unavailable
   try{
-    var hlRes = await fetch('/headlines.json');
+    var hlCtrl = new AbortController();
+    var hlTid  = setTimeout(function(){ hlCtrl.abort(); }, 2000);
+    var hlRes  = await fetch('/headlines.json', { signal: hlCtrl.signal });
+    clearTimeout(hlTid);
     if(hlRes.ok){
       var hlData = await hlRes.json();
       if(hlData && typeof hlData === 'object') HEADLINES = hlData;
