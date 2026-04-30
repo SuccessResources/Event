@@ -10,6 +10,54 @@
         }
       ],
       "dest": "/redirect.html"
+    },
+    {
+      "src": "/kuala-lumpur",
+      "dest": "/index.html?city=kuala-lumpur"
+    },
+    {
+      "src": "/malaga",
+      "dest": "/index.html?city=malaga"
+    },
+    {
+      "src": "/warsaw",
+      "dest": "/index.html?city=warsaw"
+    },
+    {
+      "src": "/london",
+      "dest": "/index.html?city=london"
+    },
+    {
+      "src": "/berlin",
+      "dest": "/index.html?city=berlin"
+    },
+    {
+      "src": "/johor-bahru",
+      "dest": "/index.html?city=johor-bahru"
+    },
+    {
+      "src": "/geneva",
+      "dest": "/index.html?city=geneva"
+    },
+    {
+      "src": "/madrid",
+      "dest": "/index.html?city=madrid"
+    },
+    {
+      "src": "/rotterdam",
+      "dest": "/index.html?city=rotterdam"
+    },
+    {
+      "src": "/kuala-lumpur-oct",
+      "dest": "/index.html?city=kuala-lumpur-oct"
+    },
+    {
+      "src": "/birmingham",
+      "dest": "/index.html?city=birmingham"
+    },
+    {
+      "src": "/brussels",
+      "dest": "/index.html?city=brussels"
     }
   ]
 }
