@@ -2117,3 +2117,35 @@ function playVb(){
   .prob2-stat-num{font-size:36px}
   .prob2-stat{padding:18px 20px;margin-bottom:16px}
 >
+
+<script>
+(function () {
+  var CITY_PATHS = [
+    'kuala-lumpur',
+    'malaga',
+    'warsaw',
+    'london',
+    'berlin',
+    'johor-bahru',
+    'geneva',
+    'madrid',
+    'rotterdam',
+    'kuala-lumpur-oct',
+    'birmingham',
+    'brussels'
+  ];
+
+  var pathCity = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+
+  if (CITY_PATHS.indexOf(pathCity) === -1) {
+    return;
+  }
+
+  window.MMI_CITY_FROM_PATH = pathCity;
+
+  console.log('City detected from clean URL:', pathCity);
+})();
+</script>
+
+</body>
+</html>
