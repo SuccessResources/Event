@@ -1837,14 +1837,39 @@ function initPage(ev){
   if(hc) hc.textContent=ev.city.toUpperCase();
 
   // Headline options — city default or ?option= override
-  var HEADLINES = {
-    "standard":{"h":"You Know What To Do With Money. So Why Isn’t It Working?","s":"The part controlling your results is underneath. Fix it in 3 days."},
-    "1":{"h":"You’re Earning More Than Ever. So Why Isn’t Wealth Growing?","s":"A 3-day live experience that uncovers the hidden patterns behind your financial results."},
-    "2":{"h":"You’ve Tried the Strategies. So Why Do Results Keep Resetting?","s":"Fix what’s underneath your financial results in 3 days, not years."},
-    "3":{"h":"You’re Doing Everything Right. So Why Are You Still Stuck?","s":"A 3-day live experience that helps you break through what is actually holding your results back."},
-    "4":{"h":"It’s Not Your Strategy. It’s What’s Running Underneath.","s":"Fix the root of your financial results in a 3-day live experience."},
-    "5":{"h":"You Should Be Further Ahead By Now. So What’s Missing?","s":"A 3-day live experience that helps you close the gap between where you are and where you could be."}
-  };  // extended from /headlines.json at boot
+    var HEADLINES = {
+    "standard":{h:"You Know What To Do With Money. So Why Isn’t It Working?",s:"The part controlling your results is underneath. Fix it in 3 days."},
+    "1":{h:"You’re Earning More Than Ever. So Why Isn’t Wealth Growing?",s:"A 3-day live experience that uncovers the hidden patterns behind your financial results, not just the strategies."},
+    "2":{h:"You’ve Tried the Strategies. So Why Do Results Keep Resetting?",s:"Fix what’s underneath your financial results in 3 days, not years."},
+    "3":{h:"You’re Doing Everything Right. So Why Are You Still Stuck?",s:"A 3-day live experience that helps you break through what is actually holding your results back."},
+    "4":{h:"It’s Not Your Strategy. It’s What’s Running Underneath.",s:"Fix the root of your financial results in a 3-day live experience, not just the surface actions."},
+    "5":{h:"You Should Be Further Ahead By Now. So What’s Missing?",s:"A 3-day live experience that helps you close the gap between where you are and where you know you could be."},
+    "6":{h:"You’ve Read the Books and Tried the Strategies. So Why Are You Still Stuck?",s:"This is not about learning more. It is about fixing what is underneath your results. Experience the shift in 3 days."},
+    "7":{h:"You Know More Than Most People. But Your Life Has Not Changed.",s:"The gap is not knowledge. It is execution driven by hidden patterns. Identify and fix it live in 3 days."},
+    "8":{h:"Tired of Starting Over Every Time You Learn Something New?",s:"If every new strategy fades after a few weeks, the real issue is deeper. Fix the root in a live 3-day experience."},
+    "9":{h:"You Can See Your Patterns. But You Cannot Seem to Change Them.",s:"Awareness is not enough. You need to rewire what is driving your decisions. Do it live in 3 days."},
+    "10":{h:"If Personal Development Worked, You Would Already Be Further Ahead.",s:"Most people collect ideas but never change what is underneath. This is where real transformation begins."},
+    "11":{h:"You’re Working Hard. But Your Business Is Not Breaking Through.",s:"If your effort is increasing but your results are not, the issue is not strategy. It is the pattern behind your decisions. Fix it in 3 days."},
+    "12":{h:"Your Revenue Has Stopped Growing. No Matter How Hard You Push.",s:"You are not lacking strategy. You are repeating patterns that cap your growth. Identify and fix them in a live 3-day experience."},
+    "13":{h:"Some Months Are Great. Others Feel Like Starting Over Again.",s:"If your income keeps fluctuating, the real issue is deeper than your business model. Fix what is driving your results in 3 days."},
+    "14":{h:"You’re Doing Everything Right. But It Still Feels Harder Than It Should Be.",s:"When success feels like a constant struggle, it is not your tactics. It is the internal pattern running your decisions. Change it live."},
+    "15":{h:"You Know How to Grow a Business. So Why Is It Not Happening?",s:"The gap is not knowledge. It is execution driven by unconscious patterns. Identify and rewire them in 3 days."},
+    "16":{h:"You’ve Made Money Before. So Why Did It Slip Away?",s:"If you have experienced financial setbacks, the issue is not your ability. It is the pattern behind your decisions. Fix it in 3 days."},
+    "17":{h:"Tired of Learning the Hard Way With Your Money?",s:"If you keep paying for the same mistakes, it is not bad luck. It is a pattern you can change in a live 3-day experience."},
+    "18":{h:"You Used to Trust Yourself With Money. What Changed?",s:"Financial setbacks do not mean you are incapable. They reveal patterns you have not fixed yet. Change them in 3 days."},
+    "19":{h:"What If the Real Risk Is Repeating the Same Financial Mistakes?",s:"The biggest threat is not losing money once. It is repeating the same pattern again. Fix the root before it happens again."},
+    "20":{h:"You Already Know What Went Wrong. So Why Does It Keep Happening?",s:"Understanding your mistakes is not enough. You need to change what is driving them. Do it live in 3 days."},
+    "21":{h:"You Know Exactly What to Do. So Why Are You Still Not Doing It?",s:"The problem is not knowledge. It is the hidden pattern controlling your actions. Fix it in 3 days."},
+    "22":{h:"You Think About It and Plan It. But Rarely Execute It.",s:"Overthinking is not the issue. It is the internal pattern stopping action. Identify and change it live in 3 days."},
+    "23":{h:"Some Days You Are Productive. Other Days You Undo Everything.",s:"Inconsistency is not random. It is driven by unconscious patterns. Fix what is underneath in 3 days."},
+    "24":{h:"You Can See Your Own Patterns. But You Still Repeat Them.",s:"Awareness alone does not create change. You need to rewire what drives your behaviour. Do it live in 3 days."},
+    "25":{h:"If Knowing Was Enough, You Would Already Be Successful.",s:"Most people collect knowledge but never change behaviour. This is where real transformation begins."},
+    "26":{h:"You Know What to Do and You Work Hard. So Why Does Nothing Fully Change?",s:"Across income, business and life, the same pattern keeps repeating. Identify what is running underneath and finally break the cycle in 3 days."},
+    "27":{h:"Something Is Not Adding Up. And You Can Feel It.",s:"You are earning, learning and trying. But the results are not matching your effort. Discover what is really holding you back and fix it at the root."},
+    "28":{h:"You Are Not Lazy. You Are Not Broken. So What Is Actually Holding You Back?",s:"If you have been blaming yourself for not getting results, the truth is deeper. Identify the hidden pattern driving your outcomes and change it in 3 days."},
+    "29":{h:"If Working Hard and Learning More Were Enough, You Would Already Be Getting Ahead.",s:"Most people are not stuck because of strategy. They are stuck because of patterns they cannot see. Discover what is really driving your results."}
+  };
+  // extended from /headlines.json at boot
 
   // City default option mapping
   var CITY_OPTION = {};  // All cities use standard by default — override only with ?option=X
@@ -2134,34 +2159,17 @@ async function detectGeo(){
 (async()=>{
   function hide(){ var l=document.getElementById('geoLoader'); if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},500);} }
 
-  try{
-    // 1. Headlines — 1.5s timeout, skip if slow
-    try{
-      var c=new AbortController(),t=setTimeout(function(){c.abort();},1500);
-      var hr=await fetch('/headlines.json',{signal:c.signal});
-      clearTimeout(t);
-      if(hr.ok){ var hd=await hr.json(); if(hd&&typeof hd==='object') HEADLINES=Object.assign(HEADLINES,hd); }
-    }catch(e){}
-
-    // 2. City from URL path or ?city= param — instant
-    var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
-    var cityParam = new URLSearchParams(window.location.search).get('city');
-    var slugCheck = pathSlug || cityParam;
-    if(slugCheck){
-      var m=EVENTS.find(function(e){return e.citySlug===slugCheck;});
-      if(m){ initPage(m); hide(); return; }
-    }
-
-    // 3. Root URL — next upcoming event
-    initPage(findNearest(''));
-    hide();
-
-  }catch(err){
-    console.error('Boot error:',err);
-    // Always try to show something
-    try{ initPage(EVENTS[0]); }catch(e){}
-    hide();
+  // City from URL path or ?city= param — instant
+  var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
+  var cityParam = new URLSearchParams(window.location.search).get('city');
+  var slugCheck = pathSlug || cityParam;
+  if(slugCheck){
+    var m = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
+    if(m){ try{ initPage(m); }catch(e){} hide(); return; }
   }
+  // Root URL — show next upcoming event
+  try{ initPage(findNearest('')); }catch(e){}
+  hide();
 })();
 
 
