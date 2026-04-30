@@ -1873,7 +1873,8 @@ function initPage(ev){
   // extended from /headlines.json at boot
 
   // City default option mapping
-  var CITY_OPTION = {};  // All cities use standard by default — override only with ?option=X
+  var CITY_OPTION = {};  // All cities use standard by default
+  var DEFAULT_CITY = 'London';  // fallback city — override only with ?option=X
 
   // ?option= param overrides city default
   var optParam   = new URLSearchParams(window.location.search).get('option');
@@ -2160,20 +2161,20 @@ async function detectGeo(){
 (async()=>{
   function hide(){ var l=document.getElementById('geoLoader'); if(l){l.classList.add('hide');setTimeout(function(){l.style.display='none';},500);} }
 
-  var params    = new URLSearchParams(window.location.search);
-  var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
-  var cityParam = params.get('city');
-  var slugCheck = pathSlug || cityParam;
-
-  // Pick city
-  var ev = null;
-  if(slugCheck){
-    ev = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
+  try{
+    var pathSlug  = window.location.pathname.replace(/^\/+|\/+$/g,'');
+    var cityParam = new URLSearchParams(window.location.search).get('city');
+    var slugCheck = pathSlug || cityParam;
+    var ev = null;
+    if(slugCheck) ev = EVENTS.find(function(e){ return e.citySlug === slugCheck; });
+    if(!ev) ev = EVENTS.filter(function(e){ return e.eventDate > new Date(); }).sort(function(a,b){ return a.eventDate-b.eventDate; })[0] || EVENTS[0];
+    initPage(ev);
+  }catch(e){
+    console.error('Boot error:',e);
+    try{ initPage(EVENTS[0]); }catch(e2){}
+  }finally{
+    hide();
   }
-  if(!ev) ev = findNearest('');
-
-  try{ initPage(ev); }catch(e){ console.error('initPage:',e); }
-  hide();
 })();
 
 
