@@ -1626,30 +1626,6 @@ footer a:hover{color:var(--gold-lt)}
 const STRIPE_PK      = 'pk_live_YOUR_KEY';  // ← fill in: Stripe Dashboard → Developers → API Keys
 const ZAPIER         = 'https://hooks.zapier.com/hooks/catch/3435365/ujvv088/';
 const IPAPI_KEY      = 'vmENJ3PceUgWfONVOujw2t8vHP1SHpeTagvsDHKksFnoHLDjSh';
-<script>
-const CITY_PATH_MAP = {
-  'kuala-lumpur': 'Kuala Lumpur',
-  'malaga': 'Malaga',
-  'warsaw': 'Warsaw',
-  'london': 'London',
-  'berlin': 'Berlin',
-  'johor-bahru': 'Johor Bahru',
-  'geneva': 'Geneva',
-  'madrid': 'Madrid',
-  'rotterdam': 'Rotterdam',
-  'kuala-lumpur-oct': 'Kuala Lumpur',
-  'birmingham': 'Birmingham',
-  'brussels': 'Brussels'
-};
-
-const PATH_CITY_SLUG = window.location.pathname
-  .replace(/^\/+|\/+$/g, '')
-  .toLowerCase();
-
-const FORCED_CITY_FROM_PATH = CITY_PATH_MAP[PATH_CITY_SLUG] || null;
-   // 🚀 SKIP GEO if URL has city
-const SKIP_GEO = !!FORCED_CITY_FROM_PATH;
-</script>
 const ONLINE_PRICE   = 19;          // online pass is always $19 USD
 let   FEATURED       = null;
 
@@ -1752,22 +1728,6 @@ function findNearest(code){
   const geoMatch = up.find(e => e.geo.includes(code));
   if (geoMatch) return geoMatch;
 
-  const defaultMatch = up.find(e => e.city === DEFAULT_CITY);
-  if (defaultMatch) return defaultMatch;
-
-  return up[0] || EVENTS[0];
-}
-  // 🔥 PRIORITY 1: forced city from URL (/london)
-  if (typeof FORCED_CITY_FROM_PATH !== 'undefined' && FORCED_CITY_FROM_PATH) {
-    const forced = up.find(e => e.city === FORCED_CITY_FROM_PATH);
-    if (forced) return forced;
-  }
-
-  // 🌍 PRIORITY 2: geo location
-  const geoMatch = up.find(e => e.geo.includes(code));
-  if (geoMatch) return geoMatch;
-
-  // 🏙 PRIORITY 3: default city
   const defaultMatch = up.find(e => e.city === DEFAULT_CITY);
   if (defaultMatch) return defaultMatch;
 
@@ -2131,6 +2091,13 @@ async function detectGeo(){
 }
 
 (async()=>{
+  var bootDone=false;
+  var bootGuard=setTimeout(function(){
+    if(bootDone) return;
+    bootDone=true;
+    try{ initPage(EVENTS[0]); }catch(_e){ hideLoader(); }
+  },6500);
+
   try{
     const cityParam=new URLSearchParams(window.location.search).get('city');
 
@@ -2140,12 +2107,26 @@ async function detectGeo(){
 
     if(cityParam){
       const match=EVENTS.find(e=>e.citySlug===cityParam);
-      if(match){initPage(match);return;}
+      if(match){
+        if(!bootDone){ bootDone=true; clearTimeout(bootGuard); initPage(match); }
+        return;
+      }
     }
-    let nearest;  if (SKIP_GEO) {   nearest = findNearest(null); } else {   nearest = findNearest(code); }  initPage(nearest);
+
+    if(!bootDone){
+      bootDone=true;
+      clearTimeout(bootGuard);
+      let nearest;
+      if (SKIP_GEO) nearest = findNearest(null);
+      else nearest = findNearest(code);
+      initPage(nearest);
+    }
   }catch(e){
-    hideLoader();
-    try{initPage(EVENTS[0]);}catch(e2){}
+    if(!bootDone){
+      bootDone=true;
+      clearTimeout(bootGuard);
+      try{initPage(EVENTS[0]);}catch(e2){hideLoader();}
+    }
   }
 })();
 
@@ -2175,55 +2156,5 @@ function playVb(){
   }
 })();
 </script>
-</body>
-</html
-  /* ── WHO + PROB SECTIONS ── */
-  h2.stitle{font-size:clamp(22px,6.5vw,30px)!important;margin-bottom:16px;line-height:1.2}
-  .stag-line{margin-bottom:10px;gap:8px}
-  .stag-line::before{width:16px}
-  .stag-line span{font-size:9px;letter-spacing:3px}
-
-  /* Who bullets */
-  .who-bullets{padding-left:18px;margin:16px 0 0}
-  .who-bullets li{font-size:14px;color:var(--ink-mid);line-height:1.65;margin-bottom:14px;padding-left:4px}
-  .who-bullets li strong{color:var(--forest);font-weight:700;display:block;margin-bottom:2px}
-  .who-bullets li:last-child{margin-bottom:0}
-
-  /* Prob section */
-  .prob-text p{font-size:14px;line-height:1.75;margin-bottom:14px}
-  .prob2-copy p{font-size:clamp(15px,4.5vw,18px)}
-  .prob2-stat-num{font-size:36px}
-  .prob2-stat{padding:18px 20px;margin-bottom:16px}
->
-
-<script>
-(function () {
-  var CITY_PATHS = [
-    'kuala-lumpur',
-    'malaga',
-    'warsaw',
-    'london',
-    'berlin',
-    'johor-bahru',
-    'geneva',
-    'madrid',
-    'rotterdam',
-    'kuala-lumpur-oct',
-    'birmingham',
-    'brussels'
-  ];
-
-  var pathCity = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
-
-  if (CITY_PATHS.indexOf(pathCity) === -1) {
-    return;
-  }
-
-  window.MMI_CITY_FROM_PATH = pathCity;
-
-  console.log('City detected from clean URL:', pathCity);
-})();
-</script>
-
 </body>
 </html>
