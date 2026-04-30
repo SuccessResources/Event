@@ -36,18 +36,13 @@
         var citySlug = slugify(city);
 
         if (allowedCities.indexOf(citySlug) !== -1) {
-          params.delete('city');
-
-          var destination = '/' + citySlug;
-          var remainingQuery = params.toString();
-
-          if (remainingQuery) {
-            destination += '?' + remainingQuery;
-          }
-
-          window.location.replace(destination);
+          params.set('city', citySlug);
+          window.location.replace('/index.html?' + params.toString());
+          return;
         }
       }
+
+      window.location.replace('/index.html');
     })();
   </script>
 </head>
