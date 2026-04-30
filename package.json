@@ -1,0 +1,14 @@
+{
+  "name": "mmi-event",
+  "version": "1.0.0",
+  "description": "Millionaire Mind Intensive — 2026 World Tour landing page",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "lint": "echo 'No linting configured for static HTML'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  },
+  "devDependencies": {},
+  "private": true
+}
