@@ -192,13 +192,32 @@ nav.nav-scrolled{box-shadow:0 2px 20px rgba(5,75,3,0.08)}
 
 .hr-label,.hr-value,.hr-divider{display:none}
 
-/* ── STATS BAR ── */
-.stats-bar{background:var(--forest);padding:36px 40px}
-.stats-bar .si{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.stat-item{text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
-.stat-item:last-child{border-right:none}
-.stat-num{font-family:"Cinzel",serif;font-size:40px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.stat-label{font-family:"Montserrat",sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:6px}
+/* ── TRUST STRIP ── */
+.trust-strip{background:#f5f5f3;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);padding:36px 40px}
+.trust-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1px 1.6fr 1px 1fr;align-items:center;gap:0}
+.ts-divider{height:56px;background:rgba(0,0,0,0.1);align-self:center}
+/* Stats column */
+.ts-stats{display:flex;align-items:center;justify-content:center;gap:32px;padding:0 32px}
+.ts-stat{text-align:center}
+.ts-stat-num{font-family:"Cinzel",serif;font-size:32px;font-weight:700;background:linear-gradient(135deg,var(--gold-lt),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;letter-spacing:-0.5px}
+.ts-stat-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#777;margin-top:5px;line-height:1.4}
+/* Logos column */
+.ts-logos{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 36px}
+.ts-logos-label{font-family:"Montserrat",sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa;white-space:nowrap}
+.ts-logos-row{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0}
+.ts-logo{font-weight:800;color:rgba(0,0,0,0.22);letter-spacing:.02em;white-space:nowrap;padding:0 12px;font-size:15px;transition:color .2s}
+.ts-logo:hover{color:rgba(0,0,0,0.45)}
+.ts-logo-forbes{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:18px}
+.ts-logo-cnn{font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.15em;font-weight:900}
+.ts-logo-nyt{font-family:'Playfair Display',Georgia,serif;font-size:12px;letter-spacing:.08em}
+.ts-logo-fox{font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;letter-spacing:.1em}
+.ts-logo-mh{font-family:'Montserrat',sans-serif;font-weight:900;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.ts-logo-cnbc{font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;letter-spacing:.15em}
+.ts-logo-divider{width:1px;height:14px;background:rgba(0,0,0,0.1);flex-shrink:0}
+/* Trust statement column */
+.ts-statement{padding:0 32px;text-align:center}
+.ts-statement-quote{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#333;line-height:1.7;margin-bottom:8px}
+.ts-statement-attr{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#aaa}
 
 /* ── SECTIONS ── */
 section{padding:108px 40px}
@@ -562,11 +581,6 @@ footer a:hover{color:var(--gold-lt)}
 .hero-now-live{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--forest);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .hero-now-live span{color:var(--green)}
 
-.vb-media-strip{margin-top:32px;background:var(--forest);border-radius:10px;padding:14px 28px;display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
-.vb-featured-label{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);white-space:nowrap;display:block;text-align:center;flex-shrink:0}
-.vb-media-logos-wrap{flex:1;display:flex;align-items:center;display:none}
-.vb-media-logos-wrap img{width:100%;height:28px;object-fit:contain;object-position:left center}
-
 /* ── CITY IMAGE SECTION ── */
 .city-image-section{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:stretch;margin-bottom:48px}
 .city-img-bg{position:absolute;inset:0;background-size:cover;background-position:center center;background-repeat:no-repeat;transition:opacity .4s;filter:saturate(0.88)}
@@ -652,13 +666,17 @@ footer a:hover{color:var(--gold-lt)}
   .hib-icon svg{width:15px;height:15px;flex-shrink:0;opacity:0.7}
   .hib-label{font-family:'Montserrat',system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:.5px;text-align:left;white-space:nowrap;color:var(--forest)}
 
-  /* ── STATS BAR ── */
-  .stats-bar{padding:20px var(--mob-pad)}
-  .stats-bar .si{grid-template-columns:1fr 1fr;gap:16px}
-  .stat-item{gap:10px}
-  .stat-num{font-size:28px}
-  .stat-label{font-size:10px}
-  .stat-icon{width:22px;height:22px}
+  /* ── TRUST STRIP ── */
+  .trust-strip{padding:28px var(--mob-pad)}
+  .trust-strip-inner{grid-template-columns:1fr;gap:24px}
+  .ts-divider{display:none}
+  .ts-stats{gap:20px;justify-content:center}
+  .ts-stat-num{font-size:26px}
+  .ts-logos{padding:0}
+  .ts-logos-row{flex-wrap:wrap;gap:4px 0}
+  .ts-logo{font-size:10px !important;padding:0 8px !important}
+  .ts-logo-forbes{font-size:12px !important}
+  .ts-statement{padding:0}
 
   /* ── GENERAL SECTIONS ── */
   section{padding:36px var(--mob-pad)}
@@ -907,31 +925,6 @@ footer a:hover{color:var(--gold-lt)}
     flex-shrink:unset;
     white-space:nowrap
   }
-  .vb-media-strip{
-    flex-direction:column;
-    gap:0;
-    padding:10px 12px 12px;
-    margin-top:20px
-  }
-  /* All logos in 1 row, scaled to fit */
-  .vb-logos-row{
-    display:flex;
-    flex-wrap:nowrap;
-    align-items:center;
-    justify-content:center;
-    gap:0;
-    width:100%;
-    overflow:hidden
-  }
-  .vb-logo{
-    font-size:9px !important;
-    padding:0 6px !important;
-    letter-spacing:.02em !important;
-    white-space:nowrap;
-    flex-shrink:1
-  }
-  .vb-logo-forbes{font-size:11px !important}
-  .vb-logo-divider{height:12px;flex-shrink:0}
 }
 </style>
   <link rel="preload" as="image" href="/assets/hero/hero-desktop.webp" fetchpriority="high">
@@ -1180,26 +1173,55 @@ footer a:hover{color:var(--gold-lt)}
 
 
 <!-- STATS -->
-<div class="stats-bar">
-  <div class="si">
-    <div class="stat-item">
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-      <div><div class="stat-num">50,000+</div><div class="stat-label">Participants Worldwide</div>
+<div class="trust-strip">
+  <div class="trust-strip-inner">
 
+    <!-- Left: Social Proof Numbers -->
+    <div class="ts-stats">
+      <div class="ts-stat">
+        <div class="ts-stat-num">50,000+</div>
+        <div class="ts-stat-label">Participants<br>Worldwide</div>
+      </div>
+      <div class="ts-stat">
+        <div class="ts-stat-num">30+</div>
+        <div class="ts-stat-label">Countries<br>Reached</div>
+      </div>
+      <div class="ts-stat">
+        <div class="ts-stat-num">20+</div>
+        <div class="ts-stat-label">Years of<br>Transformation</div>
+      </div>
     </div>
+
+    <!-- Divider -->
+    <div class="ts-divider"></div>
+
+    <!-- Center: Media Logos -->
+    <div class="ts-logos">
+      <div class="ts-logos-label">As seen in</div>
+      <div class="ts-logos-row">
+        <span class="ts-logo ts-logo-forbes">Forbes</span>
+        <span class="ts-logo-divider"></span>
+        <span class="ts-logo ts-logo-cnn">CNN</span>
+        <span class="ts-logo-divider"></span>
+        <span class="ts-logo ts-logo-nyt">The New York Times</span>
+        <span class="ts-logo-divider"></span>
+        <span class="ts-logo ts-logo-fox">Fox News</span>
+        <span class="ts-logo-divider"></span>
+        <span class="ts-logo ts-logo-mh">Men&rsquo;s Health</span>
+        <span class="ts-logo-divider"></span>
+        <span class="ts-logo ts-logo-cnbc">CNBC</span>
+      </div>
     </div>
-    <div class="stat-item">
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-      <div><div class="stat-num">30+</div><div class="stat-label">Countries Reached</div></div>
+
+    <!-- Divider -->
+    <div class="ts-divider"></div>
+
+    <!-- Right: Trust Statement -->
+    <div class="ts-statement">
+      <div class="ts-statement-quote">&ldquo;Trusted by entrepreneurs, professionals, and investors worldwide to unlock their financial potential.&rdquo;</div>
+      <div class="ts-statement-attr">100% Money-Back Guarantee &middot; No Risk</div>
     </div>
-    <div class="stat-item">
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/><polyline points="9,15 11,17 15,13"/></svg>
-      <div><div class="stat-num">20+</div><div class="stat-label">Years of Transformation</div></div>
-    </div>
-    <div class="stat-item">
-      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-      <div><div class="stat-num"></div><div class="stat-label">Proven Frameworks<br><span style="font-weight:400;opacity:.7">Real Results</span></div></div>
-    </div>
+
   </div>
 </div>
 
@@ -1227,23 +1249,6 @@ footer a:hover{color:var(--gold-lt)}
         <iframe id="vbFrame" src="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
           style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:none"
           title="Millionaire Mind Intensive"></iframe>
-      </div>
-    </div>
-    <!-- MEDIA BAR — below video, full width single row -->
-    <div class="vb-media-strip">
-      <span class="vb-featured-label">Featured by</span>
-      <div class="vb-logos-row">
-        <span class="vb-logo vb-logo-forbes">Forbes</span>
-        <span class="vb-logo-divider"></span>
-        <span class="vb-logo vb-logo-cnn">CNN</span>
-        <span class="vb-logo-divider"></span>
-        <span class="vb-logo vb-logo-nyt">The New York Times</span>
-        <span class="vb-logo-divider"></span>
-        <span class="vb-logo vb-logo-fox">Fox News</span>
-        <span class="vb-logo-divider"></span>
-        <span class="vb-logo vb-logo-mh">Men&rsquo;s Health</span>
-        <span class="vb-logo-divider"></span>
-        <span class="vb-logo vb-logo-cnbc">CNBC</span>
       </div>
     </div>
   </div>
