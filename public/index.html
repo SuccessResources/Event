@@ -1122,7 +1122,7 @@ footer a:hover{color:var(--gold-lt)}
       <div class="hero-eyebrow" id="heroEyebrow">Live Online Event &middot; Loading&hellip;</div>
 
       <!-- Headline (overridden by JS HEADLINES system) -->
-      <h1 class="hero-title">A 3-Day Live Experience to Break the Hidden Money Patterns Keeping You Stuck</h1>
+      <h1 class="hero-title">Break the Hidden Money Patterns Keeping You Stuck &mdash; In 3 Days</h1>
 
       <!-- Subheadline (overridden by JS HEADLINES system) -->
       <p class="hero-sub"></p>
@@ -1131,8 +1131,8 @@ footer a:hover{color:var(--gold-lt)}
       <ul class="hero-bullets">
         <li>Identify the unconscious money patterns limiting your income</li>
         <li>Rewire the beliefs driving your financial decisions</li>
-        <li>Break through emotional blocks around wealth and success</li>
-        <li>Leave with a clear 90-day action plan</li>
+        <li>Break through emotional blocks around wealth</li>
+        <li>Walk away with a clear 90-day action plan</li>
       </ul>
 
       <!-- Event details card -->
@@ -1164,29 +1164,13 @@ footer a:hover{color:var(--gold-lt)}
       <div style="display:none" id="heroTime"></div>
     </div>
     <div class="hero-right">
-      <!-- Now Live In label above pill -->
-      <div class="hero-now-live">Now Live In <span id="heroCity">Your City</span></div>
-      <!-- Info bar -->
-      <div class="hero-info-bar">
-        <div class="hib-item">
-          <div class="hib-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div class="hib-label" id="hibCity">Your City</div>
-        </div>
-        <div class="hib-item">
-          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg></div>
-          <div class="hib-label" id="hibDates">Loading...</div>
-        </div>
-        <div class="hib-item">
-          <div class="hib-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <div class="hib-label" id="hibTime">Loading...</div>
-        </div>
-        <div class="hib-item">
-          <div class="hib-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div class="hib-label">Live Online</div>
-        </div>
-      </div>
+      <!-- Hidden JS targets kept for compatibility -->
+      <div style="display:none" id="heroCity"></div>
+      <div style="display:none" id="hibCity"></div>
+      <div style="display:none" id="hibDates"></div>
+      <div style="display:none" id="hibTime"></div>
 
-      <!-- Hero image — below pill, blends with white background -->
+      <!-- Hero image -->
       <div class="hero-img-wrap">
         <img src="/assets/hero/hero-desktop.webp" alt="Millionaire Mind Intensive" loading="eager">
       </div>
@@ -1880,7 +1864,7 @@ function initPage(ev){
 
   // Headline options — city default or ?option= override
       var HEADLINES = {
-    "standard":{h:"A 3-Day Live Experience to Break the Hidden Money Patterns Keeping You Stuck",s:"You may be earning, learning, and working harder than most people around you — but if wealth still isn’t building the way it should, the issue is not strategy. It’s the internal pattern driving your financial decisions."},
+    "standard":{h:"Break the Hidden Money Patterns Keeping You Stuck — In 3 Days",s:"You’re earning, learning, and working harder than most — but if wealth still isn’t building, the issue is not strategy. It’s the pattern behind your decisions."},
     "1":{h:"YOU ARE EARNING MORE THAN EVER. SO WHY ARE YOU NOT BUILDING WEALTH?",s:"If your income keeps increasing but your money does not stay, the problem is not strategy; it is the pattern behind your decisions. Fix it in 3 days."},
     "2":{h:"YOUR INCOME WENT UP; YOUR LIFESTYLE DID TOO; YOUR WEALTH DIDN'T.",s:"This is why high-income professionals stay stuck, and how to finally break the cycle in a live 3-day experience."},
     "3":{h:"MORE MONEY IN, BUT NOTHING TO SHOW FOR IT.",s:"If your income is not turning into real wealth, discover the hidden patterns keeping you stuck, and fix them in real time."},
