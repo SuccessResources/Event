@@ -836,10 +836,10 @@ footer a:hover{color:var(--gold-lt)}
 
 /* ══ SPAIN-STYLE TRAINER ════════════════════════════════ */
 .spain-trainers{background:var(--forest);padding:88px 44px;border-top:1px solid rgba(255,255,255,0.06)}
-.spain-trainer-grid{display:flex;flex-direction:column;gap:0}
-.spain-trainer-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,0.35) 20%,rgba(212,175,55,0.35) 80%,transparent);margin:0 24px}
-.trp{padding:48px 24px;display:grid;grid-template-columns:320px 1fr;gap:48px;align-items:start;align-content:start}
-.trp-portrait{grid-row:1/7;width:320px;flex-shrink:0;aspect-ratio:2/3;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.75),0 8px 24px rgba(0,0,0,0.5);background:#071407}
+.spain-trainer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start}
+.spain-trainer-divider{display:none}
+.trp{display:flex;flex-direction:column;gap:0}
+.trp-portrait{width:100%;aspect-ratio:2/3;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.75),0 8px 24px rgba(0,0,0,0.5);background:#071407}
 .trp-portrait::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));z-index:2;pointer-events:none}
 .trp-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,0.45) 70%,rgba(0,0,0,0.82) 100%);z-index:1;pointer-events:none}
 .trp-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center;transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)}
@@ -866,19 +866,9 @@ footer a:hover{color:var(--gold-lt)}
   .spain-curriculum .day-content.active{grid-template-columns:1fr}
   .spain-curriculum .session-card-img{width:70%}
   .spain-trainers{padding:48px 20px}
-  .spain-trainer-grid{flex-direction:column;gap:0}
-  .spain-trainer-divider{display:none}
-  /* stacked layout: image on top, text below — face never covered */
-  .trp{display:block;padding-top:80px;grid-template-columns:unset;background:rgba(0,0,0,0.3)}
-  .trp::after{display:none}
-  .trp-portrait{width:100%;max-width:280px;aspect-ratio:2/3;grid-row:auto;margin:0 auto 24px}
-  .trp-portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;-webkit-mask-image:none;mask-image:none}
-  .trp-role,.trp-name,.trp-stats,.trp-bio-wrap,.trp-bio{position:relative;z-index:auto}
-  .trp>.trp-role{padding:20px 24px 0;margin-bottom:0}
-  .trp>.trp-name{padding:8px 24px 0}
-  .trp>.trp-stats{padding:12px 24px 0;flex-wrap:wrap;gap:8px}
-  .trp>.trp-bio-wrap{padding:12px 24px 24px}
-  .trp-stat{flex:unset;min-width:120px}
+  .spain-trainer-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .trp{display:flex;flex-direction:column}
+  .trp-portrait{width:100%;aspect-ratio:2/3}
   .spain-trainers-bar{grid-template-columns:1fr;margin-top:32px}
   .spain-trainers-bar-divider{display:none}
 }
@@ -1404,29 +1394,39 @@ footer a:hover{color:var(--gold-lt)}
             <div class="trp-card-name"><span>T. Harv</span> Eker</div>
           </div>
         </div>
-        <div class="trp-role">Program Creator</div>
-        <h3 class="trp-name"><span>T. Harv</span> Eker</h3>
-        <p class="trp-bio">T. Harv Eker is a New York Times best-selling author famous for changing countless lives through his books <em>Secrets of the Millionaire Mind</em> and <em>Speedwealth</em>. Now equally recognized for his passion to assist others in achieving wealth, Eker&rsquo;s teachings have helped rescue <b>nearly two million people</b> from the throes of financial hardship &mdash; and into the welcoming arms of financial success.</p>
-        <p class="trp-bio">Eker reaches others so effectively because he understands their stories. He knows your struggles. Eker started from nothing and wound up becoming a multi-millionaire by shifting both his focus and his attitude. Using his unique blend of &ldquo;street smarts with heart,&rdquo; he now travels the globe showing people of all ages and backgrounds how they can follow in his footsteps.</p>
-        <p class="trp-bio">Eker possesses an unparalleled ability to inspire those around him to seek out the success they&rsquo;ve always imagined and <b>TAKE ACTION</b>. He also doesn&rsquo;t mince words. Eker gives it to you straight while introducing the steps necessary to set goals &mdash; and achieve them &mdash; by ignoring the fear and distractions that have been responsible for holding you back for far too long.</p>
       </div>
 
-      <!-- DIVIDER -->
-      <div class="spain-trainer-divider"></div>
-
-      <!-- CERTIFIED TRAINER (dynamic) -->
-      <div class="trp" id="trainerPanel">
+      <!-- MAC ATTRAM -->
+      <div class="trp">
         <div class="trp-portrait">
-          <img id="tPhoto" src="/assets/people/Mac.webp" alt="Trainer" loading="lazy" width="600">
+          <img src="/assets/people/Mac.webp" alt="Mac Attram" loading="lazy" width="600">
           <div class="trp-card-label">
-            <div class="trp-card-role" id="tCardRole">Lead Trainer</div>
-            <div class="trp-card-name" id="tCardName"></div>
+            <div class="trp-card-role">Lead Trainer</div>
+            <div class="trp-card-name"><span>Mac</span> Attram</div>
           </div>
         </div>
-        <div class="trp-role" id="tRole2">Lead Trainer</div>
-        <h3 class="trp-name" id="tName2"></h3>
-        <div class="trp-stats" id="tStats2"></div>
-        <div id="tBio2" class="trp-bio-wrap"></div>
+      </div>
+
+      <!-- ARNON BARNES -->
+      <div class="trp">
+        <div class="trp-portrait">
+          <img src="/assets/people/Arnon.webp" alt="Arnon Barnes" loading="lazy" width="600">
+          <div class="trp-card-label">
+            <div class="trp-card-role">Lead Trainer</div>
+            <div class="trp-card-name"><span>Arnon</span> Barnes</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALAN P. HILL -->
+      <div class="trp">
+        <div class="trp-portrait">
+          <img src="/assets/people/Alan.webp" alt="Alan P. Hill" loading="lazy" width="600">
+          <div class="trp-card-label">
+            <div class="trp-card-role">Lead Trainer</div>
+            <div class="trp-card-name"><span>Alan P.</span> Hill</div>
+          </div>
+        </div>
       </div>
 
     </div>
