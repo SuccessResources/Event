@@ -844,6 +844,10 @@ footer a:hover{color:var(--gold-lt)}
 .trp-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,0.45) 70%,rgba(0,0,0,0.82) 100%);z-index:1;pointer-events:none}
 .trp-portrait img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center;transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94)}
 .trp-portrait:hover img{transform:scale(1.06)}
+.trp-card-label{position:absolute;bottom:0;left:0;right:0;padding:20px 18px 20px;z-index:3;pointer-events:none}
+.trp-card-role{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.trp-card-name{font-family:'Montserrat',system-ui,sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;line-height:1.15}
+.trp-card-name span{color:var(--gold-lt)}
 .trp-role{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .trp-name{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:clamp(22px,2.5vw,36px);line-height:1.1;text-transform:uppercase;letter-spacing:.05em;color:#fff;margin-bottom:16px}
 .trp-name span{color:var(--gold-light)}
@@ -1401,6 +1405,10 @@ footer a:hover{color:var(--gold-lt)}
       <div class="trp">
         <div class="trp-portrait">
           <img src="/assets/people/Harv-Eker.webp" alt="T. Harv Eker" loading="lazy" width="700" height="700" decoding="async">
+          <div class="trp-card-label">
+            <div class="trp-card-role">Program Creator</div>
+            <div class="trp-card-name"><span>T. Harv</span> Eker</div>
+          </div>
         </div>
         <div class="trp-role">Program Creator</div>
         <h3 class="trp-name"><span>T. Harv</span> Eker</h3>
@@ -1408,8 +1416,9 @@ footer a:hover{color:var(--gold-lt)}
           <div class="trp-stat"><span class="trp-stat-icon">&#128100;</span><div class="trp-stat-info"><span class="trp-stat-num">10M+</span><span class="trp-stat-lbl">Attendees</span></div></div>
           <div class="trp-stat"><span class="trp-stat-icon">&#128197;</span><div class="trp-stat-info"><span class="trp-stat-num">30+</span><span class="trp-stat-lbl">Years</span></div></div>
         </div>
-        <p class="trp-bio">Creator of Millionaire Mind Intensive&reg;. Author of <em>Secrets of the Millionaire Mind</em> — one of the most influential books ever written on the psychology of wealth. He went from <b>zero to millionaire in less than 3 years</b> once he changed the root, not the strategy.</p>
-        <p class="trp-bio">His system has reshaped how <b>over 10 million people</b> across 30+ countries think about money, success, and financial freedom.</p>
+        <p class="trp-bio">T. Harv Eker is a New York Times best-selling author famous for changing countless lives through his books <em>Secrets of the Millionaire Mind</em> and <em>Speedwealth</em>. Now equally recognized for his passion to assist others in achieving wealth, Eker&rsquo;s teachings have helped rescue <b>nearly two million people</b> from the throes of financial hardship &mdash; and into the welcoming arms of financial success.</p>
+        <p class="trp-bio">Eker reaches others so effectively because he understands their stories. He knows your struggles. Eker started from nothing and wound up becoming a multi-millionaire by shifting both his focus and his attitude. Using his unique blend of &ldquo;street smarts with heart,&rdquo; he now travels the globe showing people of all ages and backgrounds how they can follow in his footsteps.</p>
+        <p class="trp-bio">Eker possesses an unparalleled ability to inspire those around him to seek out the success they&rsquo;ve always imagined and <b>TAKE ACTION</b>. He also doesn&rsquo;t mince words. Eker gives it to you straight while introducing the steps necessary to set goals &mdash; and achieve them &mdash; by ignoring the fear and distractions that have been responsible for holding you back for far too long.</p>
       </div>
 
       <!-- DIVIDER -->
@@ -1419,6 +1428,10 @@ footer a:hover{color:var(--gold-lt)}
       <div class="trp" id="trainerPanel">
         <div class="trp-portrait">
           <img id="tPhoto" src="/assets/people/Mac.webp" alt="Trainer" loading="lazy" width="600">
+          <div class="trp-card-label">
+            <div class="trp-card-role" id="tCardRole">Lead Trainer</div>
+            <div class="trp-card-name" id="tCardName"></div>
+          </div>
         </div>
         <div class="trp-role" id="tRole2">Lead Trainer</div>
         <h3 class="trp-name" id="tName2"></h3>
@@ -1808,14 +1821,19 @@ function renderTrainer(key){
   if(!t) return;
 
   // Spain-style panel (new)
-  var tPhoto  = document.getElementById('tPhoto');
-  var tName2  = document.getElementById('tName2');
-  var tRole2  = document.getElementById('tRole2');
-  var tStats2 = document.getElementById('tStats2');
-  var tBio2   = document.getElementById('tBio2');
+  var tPhoto    = document.getElementById('tPhoto');
+  var tName2    = document.getElementById('tName2');
+  var tRole2    = document.getElementById('tRole2');
+  var tStats2   = document.getElementById('tStats2');
+  var tBio2     = document.getElementById('tBio2');
+  var tCardName = document.getElementById('tCardName');
+  var tCardRole = document.getElementById('tCardRole');
   if(tPhoto){ tPhoto.src = t.photo || ''; tPhoto.alt = t.first+' '+t.last; }
-  if(tName2)  tName2.innerHTML  = '<span>'+t.first+'</span> '+t.last;
-  if(tRole2)  tRole2.textContent = 'Lead Trainer · '+(FEATURED ? FEATURED.city : '');
+  if(tName2)    tName2.innerHTML    = '<span>'+t.first+'</span> '+t.last;
+  if(tCardName) tCardName.innerHTML = '<span>'+t.first+'</span> '+t.last;
+  var roleLabel = 'Lead Trainer · '+(FEATURED ? FEATURED.city : '');
+  if(tRole2)    tRole2.textContent  = roleLabel;
+  if(tCardRole) tCardRole.textContent = roleLabel;
   if(tStats2) tStats2.innerHTML  = t.stats.map(function(s){
     return '<div class="trp-stat"><div class="trp-stat-info"><span class="trp-stat-num">'+s.n+'</span><span class="trp-stat-lbl">'+s.l+'</span></div></div>';
   }).join('');
