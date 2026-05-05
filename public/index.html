@@ -848,16 +848,10 @@ footer a:hover{color:var(--gold-lt)}
 .trp-card-role{font-family:'Montserrat',system-ui,sans-serif;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
 .trp-card-name{font-family:'Montserrat',system-ui,sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;line-height:1.15}
 .trp-card-name span{color:var(--gold-lt)}
-.trp-role{font-family:'Montserrat',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.trp-role{font-family:'Montserrat',system-ui,sans-serif;font-size:14px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .trp-name{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;font-size:clamp(22px,2.5vw,36px);line-height:1.1;text-transform:uppercase;letter-spacing:.05em;color:#fff;margin-bottom:16px}
 .trp-name span{color:var(--gold-light)}
-.trp-stats{display:flex;align-items:center;gap:0;margin-bottom:18px}
-.trp-stat{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);flex:1}
-.trp-stat+.trp-stat{border-left:none}
-.trp-stat-icon{font-size:15px;flex-shrink:0}
-.trp-stat-info{display:flex;flex-direction:column;gap:1px}
-.trp-stat-num{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--gold-light);line-height:1}
-.trp-stat-lbl{font-family:'Montserrat',system-ui,sans-serif;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.trp-stats{display:none}
 .trp-bio{font-size:14px;line-height:1.75;color:rgba(255,255,255,0.65);margin-bottom:14px}
 .trp-bio b{color:var(--gold-light);font-weight:600}
 .trp-bio-wrap .trp-bio{margin-bottom:14px}
@@ -1412,10 +1406,6 @@ footer a:hover{color:var(--gold-lt)}
         </div>
         <div class="trp-role">Program Creator</div>
         <h3 class="trp-name"><span>T. Harv</span> Eker</h3>
-        <div class="trp-stats">
-          <div class="trp-stat"><span class="trp-stat-icon">&#128100;</span><div class="trp-stat-info"><span class="trp-stat-num">10M+</span><span class="trp-stat-lbl">Attendees</span></div></div>
-          <div class="trp-stat"><span class="trp-stat-icon">&#128197;</span><div class="trp-stat-info"><span class="trp-stat-num">30+</span><span class="trp-stat-lbl">Years</span></div></div>
-        </div>
         <p class="trp-bio">T. Harv Eker is a New York Times best-selling author famous for changing countless lives through his books <em>Secrets of the Millionaire Mind</em> and <em>Speedwealth</em>. Now equally recognized for his passion to assist others in achieving wealth, Eker&rsquo;s teachings have helped rescue <b>nearly two million people</b> from the throes of financial hardship &mdash; and into the welcoming arms of financial success.</p>
         <p class="trp-bio">Eker reaches others so effectively because he understands their stories. He knows your struggles. Eker started from nothing and wound up becoming a multi-millionaire by shifting both his focus and his attitude. Using his unique blend of &ldquo;street smarts with heart,&rdquo; he now travels the globe showing people of all ages and backgrounds how they can follow in his footsteps.</p>
         <p class="trp-bio">Eker possesses an unparalleled ability to inspire those around him to seek out the success they&rsquo;ve always imagined and <b>TAKE ACTION</b>. He also doesn&rsquo;t mince words. Eker gives it to you straight while introducing the steps necessary to set goals &mdash; and achieve them &mdash; by ignoring the fear and distractions that have been responsible for holding you back for far too long.</p>
@@ -1834,9 +1824,6 @@ function renderTrainer(key){
   var roleLabel = 'Lead Trainer · '+(FEATURED ? FEATURED.city : '');
   if(tRole2)    tRole2.textContent  = roleLabel;
   if(tCardRole) tCardRole.textContent = roleLabel;
-  if(tStats2) tStats2.innerHTML  = t.stats.map(function(s){
-    return '<div class="trp-stat"><div class="trp-stat-info"><span class="trp-stat-num">'+s.n+'</span><span class="trp-stat-lbl">'+s.l+'</span></div></div>';
-  }).join('');
   if(tBio2)   tBio2.innerHTML    = t.bio.map(function(p){ return '<p class="trp-bio">'+p+'</p>'; }).join('');
 }
 
